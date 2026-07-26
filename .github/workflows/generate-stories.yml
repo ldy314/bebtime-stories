@@ -1,9 +1,9 @@
 name: Generate Bedtime Stories
 
 on:
-  # Automatic: runs at 23:00 Beijing time (15:00 UTC) every day
+  # Automatic: runs at 02:00 Beijing time (18:00 UTC previous day) every day
   schedule:
-    - cron: '0 15 * * *'
+    - cron: '0 18 * * *'
   # Manual: triggered by phone tap (workflow_dispatch)
   workflow_dispatch:
 
