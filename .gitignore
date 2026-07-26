@@ -2,3 +2,15 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+
+# Never commit environment files — they contain API keys
+.env
+.env.*
+.env.local
+.env.production
+
+# Never commit credentials
+credentials*
+secret*
+*.pem
+*.key
