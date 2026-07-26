@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>🌛 睡前故事 · 每日一个温柔的好梦</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --bg: #faf6f0;
+  --card: #fffdf8;
+  --primary: #f0b850;
+  --primary-light: #fef3d6;
+  --text: #5a4535;
+  --text-light: #9b8b7a;
+  --text-lighter: #c4b49a;
+  --border: #f0e6d6;
+  --shadow: 0 2px 12px rgba(180,160,130,0.12);
+  --shadow-hover: 0 4px 20px rgba(180,160,130,0.2);
+  --radius: 16px;
+  --lang-zh: #e8a040;
+  --lang-en: #6080a8;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Serif SC", serif;
+  color: var(--text);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,246,240,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+}
+
+.header-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.logo span { margin-right: 4px; }
+
+.search-box {
+  flex: 1;
+  max-width: 180px;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 14px;
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-box input:focus { border-color: var(--primary); }
+.search-box .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+/* ===== Language Switch ===== */
+.lang-switch {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lang-btn.active {
+  color: #fff;
+  border-color: transparent;
+}
+.lang-btn.active[data-lang="zh"] { background: var(--lang-zh); }
+.lang-btn.active[data-lang="en"] { background: var(--lang-en); }
+.lang-btn.active[data-lang="all"] { background: var(--primary); }
+
+/* ===== Tabs ===== */
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex-shrink: 0;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--card);
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* ===== Main ===== */
+.main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== Story Card ===== */
+.story-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+.story-card:active {
+  transform: scale(0.99);
+}
+.story-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.story-card-header {
+  padding: 20px 20px 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.story-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.story-card-date {
+  font-size: 12px;
+  color: var(--text-lighter);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.story-card-preview {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.story-card-footer {
+  padding: 0 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.age-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--primary-light);
+  color: #c8923a;
+}
+
+.lang-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.lang-tag.zh { background: #fef0e0; color: #d4881a; }
+.lang-tag.en { background: #e0eaf5; color: #5070a0; }
+
+.moral-tag {
+  font-size: 12px;
+  color: var(--text-lighter);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== Reading Page ===== */
+.reading-page {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg);
+  z-index: 200;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.reading-page.active { display: block; }
+
+.reading-header {
+  position: sticky;
+  top: 0;
+  background: rgba(250,246,240,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.back-btn {
+  font-size: 20px;
+  color: var(--text);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.back-btn:active { background: var(--primary-light); }
+
+.reading-title-bar {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reading-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.reading-date {
+  font-size: 13px;
+  color: var(--text-lighter);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.reading-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.reading-badges {
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.reading-badges .age-tag,
+.reading-badges .lang-tag {
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 14px;
+}
+
+.reading-divider {
+  text-align: center;
+  color: var(--text-lighter);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.reading-body {
+  font-size: 17px;
+  line-height: 2;
+  color: var(--text);
+  text-align: justify;
+}
+.reading-body p {
+  margin-bottom: 16px;
+  text-indent: 2em;
+}
+/* 英文故事不需要首行缩进 */
+.reading-body.lang-en p {
+  text-indent: 0;
+}
+.reading-body.lang-en {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.reading-moral {
+  margin-top: 36px;
+  padding: 20px 24px;
+  background: var(--primary-light);
+  border-radius: 16px;
+  border-left: 4px solid var(--primary);
+}
+.reading-moral-title {
+  font-size: 14px;
+  color: #c8923a;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.reading-moral-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #7a6550;
+}
+
+.reading-footer {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--text-lighter);
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-lighter);
+}
+.empty-state .emoji {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.empty-state p {
+  font-size: 15px;
+}
+
+/* ===== Loading ===== */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-lighter);
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 380px) {
+  html { font-size: 15px; }
+  .reading-body { font-size: 16px; }
+  .lang-btn { padding: 5px 10px; font-size: 11px; }
+}
+
+/* ===== Animation ===== */
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<div class="header">
+  <div class="header-inner">
+    <div class="logo"><span>🌛</span>睡前故事</div>
+    <div class="search-box">
+      <span class="icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="搜索故事...">
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="all">全部</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Tabs ===== -->
+<div class="tabs" id="tabs">
+  <div class="tab active" data-age="all">全部年龄</div>
+  <div class="tab" data-age="prenatal">胎教期</div>
+  <div class="tab" data-age="0-1">0-1岁</div>
+  <div class="tab" data-age="1-3">1-3岁</div>
+  <div class="tab" data-age="3-6">3-6岁</div>
+  <div class="tab" data-age="6+">6岁以上</div>
+</div>
+
+<!-- ===== Main List ===== -->
+<div class="main">
+  <div id="storyList"></div>
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <div class="emoji">🌙</div>
+    <p>还没有故事哦，明天再来看看吧</p>
+  </div>
+</div>
+
+<!-- ===== Reading Page ===== -->
+<div class="reading-page" id="readingPage">
+  <div class="reading-header">
+    <div class="back-btn" id="backBtn">←</div>
+    <div class="reading-title-bar" id="readingTitleBar">睡前故事</div>
+  </div>
+  <div class="reading-content" id="readingContent"></div>
+</div>
+
+<script>
+const EMBEDDED_STORIES = [{"id":"2026-07-16-cn","date":"2026年7月16日 · 星期四","dateShort":"07/16","title":"小星星的暖暖","language":"zh","ageGroup":"prenatal","ageLabel":"胎教期","preview":"在一个很远很远的地方，有一片安静的山谷。山谷里有一条浅浅的小溪，溪水叮叮咚咚，像在唱一首永远唱不完的歌...","moral":"被爱是一种温暖，爱别人是一种力量。这世界上的每一份在乎，都是一束看不见却永远不会熄灭的光。愿你被爱包围，也愿你成为别人的光。","content":["在一个很远很远的地方，有一片安静的山谷。山谷里有一条浅浅的小溪，溪水叮叮咚咚，像在唱一首永远唱不完的歌。","小溪边住着一只小兔子，名字叫棉棉。棉棉有一身像云朵一样柔软的白毛，和一双总是亮晶晶的大眼睛。","每天晚上，棉棉都会坐在溪边的大石头上，看着天上一颗一颗亮起来的星星。她最喜欢的是最亮的那一颗——那颗星星叫「暖暖」。","「暖暖，暖暖，」棉棉轻轻地说，「你离我那么远，会不会孤单呀？」","这天晚上，棉棉刚说完，就看见溪水里映着的星星忽然闪了一下。然后，一个小小的光点从水面上飘了起来，亮闪闪的，像一颗迷你的小太阳。","「你好呀，棉棉。」光点发出温柔的声音。","「你……你是暖暖吗？」棉棉惊讶地问。","「是呀。我听见你每天晚上都在跟我说话。」暖暖的光一闪一闪的，「我一点也不孤单，因为我知道你在看着我。被人在乎的感觉，就是最温暖的陪伴呀。」","棉棉开心极了，她和暖暖聊了很多很多：聊山谷里的花什么时候开，聊小溪里的小鱼爱玩什么游戏，聊风吹过树林时树叶会唱什么歌。","暖暖说：「棉棉，你知道吗？世界上有一种光，比星星更亮。」","「是什么光？」棉棉好奇地竖起耳朵。","「是爱呀。」暖暖轻轻地说，「当一个生命被另一个生命深深地爱着的时候，那种光比所有的星星加起来还要亮。你看不见它，但它一直都在。就像你每天来看我，就像风每天拥抱山谷，就像小溪永远陪着石头。」","棉棉听得入了神。她想起妈妈每天给她准备的胡萝卜，想起爸爸驮着她跳过小溪去看花，想起朋友们在草地上一起打滚儿的下午。","「原来我一直被这么多光包围着呀。」棉棉的心里暖暖的。","「是呀，」暖暖说，「而且将来，还会有更多更多的光来到你身边。也许是一个新朋友，也许是一个你想保护的人，也许是一个小小的、软软的、需要你牵着的手。」","棉棉的眼睛更亮了：「我会好好爱每一个来到我身边的人。」","暖暖慢慢地飘起来，越飘越高，回到了天上的星星群里。不过这一次，棉棉觉得天上的每一颗星星，都在对她眨眼睛，都变成了「暖暖」。","山谷里安安静静的。小溪还在叮叮咚咚地唱歌。棉棉趴在石头上，慢慢地闭上了眼睛，嘴角挂着甜甜的笑。","她知道，明天天亮的时候，山谷还在，小溪还在，爱她的和她爱的人，都在。","而那些看不见的光，也会一直在——在每一阵风里，在每一片叶子里，在每一个温柔的晚安里。","晚安，棉棉。","晚安，每一个被爱包围的小生命。"]},{"id":"2026-07-17-cn","date":"2026年7月17日 · 星期五","dateShort":"07/17","title":"小种子的春天","language":"zh","ageGroup":"prenatal","ageLabel":"胎教期","preview":"在春天刚刚到来的时候，一颗小小的种子落在了柔软湿润的泥土里。她圆圆滚滚的，裹着一层浅褐色的外衣，安安静静地睡着了...","moral":"世界上最深的爱，是在你还没有到来之前，就已经开始了。有一个人在等你，用尽了所有的温柔与耐心。愿你带着这份爱，勇敢地来到这个世界——因为你，本身就是最美的花开。","content":["在春天刚刚到来的时候，一颗小小的种子落在了柔软湿润的泥土里。她圆圆滚滚的，裹着一层浅褐色的外衣，安安静静地睡着了。","泥土里很黑，也很安静。可是小种子一点也不害怕，因为她能感觉到，头顶上有一片暖暖的东西，像一床看不见的被子，轻轻地盖着她。后来她才知道，那叫做「阳光」。","有一天，小种子在梦里听见了一个声音。那声音软软的、甜甜的，像是滴在花瓣上的露水。","「你好呀，小宝贝。」那个声音轻轻地说。","小种子动了动，她想回答，却发现自己还不会说话。她只能轻轻地晃了晃自己的壳。","那个声音又来了，每天都会来。有时候是早晨，声音里带着鸟鸣一样的清脆；有时候是傍晚，声音里带着晚风一样的温柔。声音的主人会给她唱歌，会给她讲泥土外面的世界——讲蓝得像宝石一样的天空，讲白得像棉花糖一样的云朵，讲那些飞来飞去、唱着歌的小鸟。","「等你出来了，我带你看最好看的花，喝最甜的露水，在草地上打一个下午的滚儿。」声音这样对她说。","小种子虽然听不懂全部，但她觉得心里暖洋洋的。她开始用力地吸收土壤里的养分，让自己的身体一天比一天饱满。她想快一点长大，她想看看那个每天对她说话的人，是什么样子的。","春雨来了，细细密密的雨丝渗进泥土里，像无数双温柔的手，轻轻托着她。春风也来了，在泥土外面呼呼地吹着，像在喊：「加油呀，加油呀，我们在外面等你！」","小种子越来越有力气了。她伸了伸身体，发现自己长出了一条白白嫩嫩的小尾巴——那是她的根，正牢牢地抓住脚下的泥土。她又往上挺了挺，头顶上冒出了一点嫩绿色的小芽。","「我快要看见你了。」小种子在心里默默地说。","终于有一天，小种子——不，现在她已经是一棵小苗了——用尽了全身的力气，向上一顶。","「啵。」","她破土而出了。","第一缕阳光轻轻地落在她的两片小叶子上。暖洋洋的。她眨了眨眼睛——如果叶子也能眨眼睛的话——看见了这个世界。","世界好大，好亮，好美。天空果然像蓝宝石，云朵果然像棉花糖，远处果然有小鸟在唱歌。","然后，她看到了那个每天对她说话的人。","那是一位年轻的妈妈。她蹲在小苗面前，眼里满是亮晶晶的东西——后来小苗知道，那叫「眼泪」，是开心的眼泪。妈妈的嘴角弯成了月牙，她的手轻轻地、小心翼翼地碰了碰小苗的叶子，像碰一颗世界上最珍贵的宝石。","「你终于来了。」妈妈轻轻地说，「我等你，等了整整一个春天。」","小苗迎着风摇了摇叶子。她想说好多好多话，可是她还是一棵小苗，还不会说话。","不过没关系。在未来的日子里，她有的是时间。她会开出最美的花给妈妈看，会在风里跳舞给妈妈看，会用每一片叶子、每一朵花瓣，告诉妈妈——","「谢谢你，在我还只是泥土里一颗小小的种子的时候，就已经那么那么地爱我。」"]},{"id":"2026-07-18-cn","date":"2026年7月18日 · 星期六","dateShort":"07/18","title":"小星星的礼物","language":"zh","ageGroup":"prenatal","ageLabel":"胎教期","preview":"在蓝蓝的天空尽头，住着一颗小小的星星。她没有别的星星那么大，也没有别的星星那么亮，但她有一颗特别温柔的心...","moral":"你还没来到这个世界的时候，就已经有人在默默地爱你、守护你了。你本身就是一份珍贵无比的礼物，带着满满的星光与期待。愿你带着这份温柔的爱，安心地成长——世界在等你，星星也在等你。","content":["在蓝蓝的天空尽头，住着一颗小小的星星。她没有别的星星那么大，也没有别的星星那么亮，但她有一颗特别温柔的心。每天晚上，她都会眨着亮晶晶的眼睛，安安静静地守着夜空。","有一天，小星星低头往下望，她看见一间温暖的小房子。窗户里透出橘黄色的灯光，一位妈妈正坐在床边，轻轻地拍着一个圆滚滚的小肚子，嘴里哼着一首好听的曲子。","小星星听啊听，她觉得那首曲子比天上的任何声音都好听。她好想送给这位妈妈和这个还没出生的小宝宝一份礼物。","可是星星能送什么礼物呢？她没有双手，不能包礼物；她没有口袋，不能装糖果。小星星有点发愁。","她跑去问月亮婆婆。月亮婆婆弯着银白色的眉毛，笑眯眯地说：「小傻瓜，你本身就是礼物呀。你的光，就是这世上最温柔的守护。」","小星星歪着脑袋想了想，她决定要做一件特别的事情。","从那天起，每当那位妈妈哄小宝宝睡觉的时候，小星星就把自己调到最亮、最温柔的模式。她不像流星那样急匆匆地划过，也不像烟花那样噼里啪啦地炸开——她只是安安静静地，在窗外的那一小片天空里，一闪，一闪，像一颗挂在天上的小夜灯。","她还请来了风姐姐。风姐姐轻轻地、轻轻地，从窗户缝里溜进去，把院子里的茉莉花香带进了房间。那香味淡淡的，像妈妈在宝宝额头上落下的吻。","她还请来了蟋蟀弟弟。蟋蟀弟弟在窗台下的草丛里，拉起了他的小提琴——「蛐蛐，蛐蛐，蛐——」声音轻轻的，软软的，像一首专门为小宝宝写的催眠曲。","有一天晚上，月亮婆婆特别高兴，她在天上铺开了一条银色的小路，从星星的家一直铺到那扇小窗户。小星星沿着这条小路，慢慢地滑下来——当然，她不会真的掉下来，她只是把自己暖暖的光，顺着月光一起，轻轻地洒进了房间。","小宝宝虽然还在妈妈的肚子里，但好像什么都感觉到了。他在水里翻了个小小的跟头，把妈妈的肚皮顶起了一个圆圆的小包。","妈妈低下头，温柔地摸了摸那个小包，笑着说：「你是不是也看见窗外的那颗小星星啦？她每天晚上都来陪我们呢。」","小星星在天上听见了，高兴得整颗心都亮了起来。她知道了，原来礼物不需要很大，不需要很贵重。一颗愿意陪伴的心，一束愿意守护的光，就是最好的礼物。","后来，小宝宝出生了。那是个有着亮晶晶眼睛的小婴儿。妈妈给他取了一个名字，叫做「小辰」。因为「辰」就是星星的意思。","每天晚上，当妈妈哄小辰睡觉的时候，她都会指着窗外的那颗小星星，轻轻地说：「看，那是你的守护星。她在你还没出生的时候，就开始爱你了。」","而小星星呢，她依然每天晚上都守在那扇窗户外面，一闪，一闪，用最温柔的光，守护着这个她用尽全心去爱的孩子。","因为她知道——爱，是世界上唯一不会熄灭的星光。"]},{"id":"2026-07-25-cn","date":"2026年7月25日 · 星期六","dateShort":"07/25","title":"啾啾的摇篮曲","language":"zh","ageGroup":"prenatal","ageLabel":"胎教期","preview":"森林里住着一只很小很小的小鸟，她的名字叫啾啾。啾啾的个子只有一颗橡果那么大，羽毛是浅浅的鹅黄色，像一朵会飞的小迎春花...","moral":"世界上最温柔的声音，不是最响亮的那一个，而是用心收集、轻轻送出的那一个。你来到这个世界之前，风在等你，水在等你，树叶在等你——它们把最好听的声音攒在一起，编成了一首只属于你的歌。愿你在这首歌里安心入睡，也愿你长大以后，把这份温柔继续唱给身边的人听。","content":["森林里住着一只很小很小的小鸟，她的名字叫啾啾。啾啾的个子只有一颗橡果那么大，羽毛是浅浅的鹅黄色，像一朵会飞的小迎春花。","啾啾有一副好嗓子，森林里的小动物都爱听她唱歌。可啾啾心里一直藏着一个愿望——她想学一首全世界最软、最轻、最温柔的摇篮曲。","大家问她：「你又不是妈妈，为什么要学摇篮曲呢？」啾啾歪着小脑袋，认真地回答：「因为在森林边上的那栋小房子里，有一位妈妈的肚子里，正住着一个还没有出生的小宝宝。我想等他来到这个世界的那一天，送他一首歌。」","啾啾拍拍翅膀，决定出发去寻找最温柔的声音。","她先飞到了山间的小溪旁。小溪从高高的石头上跌下来，溅起一串串水花，「哗啦啦，哗啦啦」地唱着歌。啾啾站在溪边的鹅卵石上，认真地听了好久好久。","「小溪姐姐，你的声音真好听，可不可以借给我一点点？」啾啾问。","小溪笑了起来，水面上泛起一圈一圈的酒窝：「我的声音太活泼啦，小宝宝听了会想蹦蹦跳跳的。不过，你可以把我最安静的那一段带走——就是月亮升起来的时候，我流过水草，『沙沙沙』的那一小段。那是我一天里最轻的声音。」","啾啾高兴地把「沙沙沙」收进了心里。她的胸口暖暖的，像装了一小团柔软的水草。","接着，她飞到了一棵很高很高的老槐树上。老槐树的叶子又多又密，风一吹，就发出「簌簌簌」的声音，像老爷爷在翻一本很旧很旧的书。","「槐树爷爷，您的声音好沉稳，好安心。可不可以借给我一点点？」","老槐树慢悠悠地抖了抖树枝，落下几片叶子，像是在点头：「我的声音太沉啦，小宝宝听了会觉得像在坐船。不过，你可以把我傍晚的那一段带走——就是晚风刚刚起来的时候，我的叶子互相说悄悄话，『窸窸窣窣』的那一小段。那是我一天里最温柔的声音。」","啾啾把「窸窸窣窣」也收进了心里。现在她的胸口装了两样东西，一小团水草的声音，和一小把叶子说悄悄话的声音。","最后，她飞到了一片芦苇荡。月光洒在芦苇上，每一根芦苇都亮亮的，像一根银色的琴弦。微风吹过，芦苇们轻轻摇晃，发出「嘘——嘘——」的声音，又轻又长，像是有人在很远很远的地方，吹着一支看不到的竹笛。","啾啾什么也没说，只是安安静静地站在芦苇尖上，闭上眼睛，让那个「嘘——嘘——」的声音，像一条银色的丝线一样，慢慢地绕进了她的心里。","现在，啾啾的心里装了三样东西——小溪的「沙沙沙」，老槐树的「窸窸窣窣」，还有芦苇荡的「嘘——嘘——」。它们混在一起，像一条软软的、暖暖的小毯子，在啾啾的心里轻轻地翻着、卷着。","啾啾试着唱了唱。啊呀，不对。她唱出来的声音太响了，像是在开一场森林音乐会。小宝宝需要的不是音乐会，小宝宝需要的是——一个轻轻的、暖暖的、像被抱在怀里一样的声音。","啾啾有点沮丧。她低着头，飞回了森林边上那栋小房子旁边的老榆树上。月亮已经升得老高老高了，小房子的窗户里，透出昏黄的灯光。","啾啾看见，那位妈妈正坐在摇椅上，一只手轻轻地、慢慢地拍着圆圆的肚子，另一只手翻着一本图画书。她的嘴唇在轻轻地动，好像在给肚子里的小宝宝念一个故事。","啾啾忽然明白了。她明白了为什么小溪说「把最安静的那一段带走」，为什么老槐树说「把傍晚说悄悄话的那一段带走」——因为最温柔的摇篮曲，不是一首很厉害的歌，而是一个人在你身边，轻轻地、慢慢地、不慌不忙地陪着你。","就像妈妈拍肚子的节奏。就像心跳的节奏。","啾啾深吸了一口气，把心里的三样声音揉在一起，揉成了一缕比月光还细的声音。然后，她张开小嘴巴，轻轻地、轻轻地唱了起来——","「沙沙沙」，像水流过水草。「窸窸窣窣」，像叶子说悄悄话。「嘘——嘘——」，像芦苇在月光里摇晃。","这首歌没有词，只有声音。可这些声音拼在一起，刚好是一颗心脏跳动的节奏——「咚，咚，咚，咚」——不快不慢，不轻不重，像一只温柔的手掌，一下一下地，拍着一个小小的、暖暖的后背。","妈妈好像听见了。她抬起头，朝窗外望了望，看见了老榆树枝头那只鹅黄色的小小鸟。她笑了，把窗户推开了一点点缝。","啾啾的歌声就顺着那条缝，像一缕月光一样，轻轻地溜了进去。它绕过窗帘，绕过床头的小台灯，最后落在了妈妈圆圆的肚子上——轻轻地，像一片羽毛。","肚子里的小宝宝动了动。不是那种大大的踢腿，而是一种很轻很轻的、像翻了个身的动。就好像他在妈妈的肚子里，听见了这首歌，然后安心地换了一个更舒服的姿势。","妈妈低下头，摸了摸肚子，眼睛弯弯的，轻声说：「宝宝，你听见了吗？有只小鸟在给你唱摇篮曲呢。她一定飞了好远好远的路，才找到这么温柔的声音。」","啾啾在树枝上听见了这句话，整只鸟都暖烘烘的。她忽然觉得，自己飞过的每一段路，听过的每一种声音，都是为了这一刻——为了把全世界的温柔，编成一首歌，送给一个还没出生的小宝宝。","从那以后，每天晚上，月亮升起来的时候，啾啾都会飞到老榆树上，把那首没有词的摇篮曲，轻轻地唱给小房子听。妈妈会打开窗户，让歌声飘进来，飘到她的肚子上，飘到小宝宝的耳朵里。","小宝宝在歌声里一天一天地长大。他学会了在妈妈肚子里翻跟头，学会了打哈欠，还学会了——在啾啾唱歌的时候，安安静静地、一动不动地，好像在认真地听。","后来有一天，小宝宝出生了。那是个胖乎乎的小家伙，哭声特别响亮。可当护士把他抱到妈妈怀里的时候，他还在哭。","妈妈轻轻地拍着他的后背，可他还在哭。窗外的啾啾急了，她飞到窗台上，用最轻最轻的声音，唱起了那首没有词的摇篮曲——「沙沙沙，窸窸窣窣，嘘——嘘——」","奇迹发生了。小家伙的哭声一点一点地小了下去。他的小拳头松开了，他的小脚丫不蹬了，他的眼睛慢慢地、慢慢地闭上了。他在妈妈怀里，安安静静地睡着了，嘴角还挂着一个很小很小的、像是微笑的弧度。","妈妈抬起头，看见窗台上那只鹅黄色的小鸟，眼眶一下子就红了。她用口型轻轻地说了一句：「谢谢你。」","啾啾歪了歪小脑袋，拍拍翅膀，飞回了森林里。月光洒在她鹅黄色的羽毛上，把她变成了一只会飞的小灯笼。","她想，原来最温柔的摇篮曲，是走遍全世界，把最好的声音收集起来，再轻轻地、轻轻地，放在一个新生命的耳边。","她想，原来每一个来到这个世界的小宝宝，都值得一首专门为他而唱的歌。","而她，一只只有橡果那么大的小鸟，却把整个世界的温柔，都唱进了一首歌里。"]},{"id":"2026-07-26-en","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"The Sneetch Who Forgot His Song","language":"en","ageGroup":"prenatal","ageLabel":"Prenatal","preview":"Far off in the Valley of Vroom, where the whispering weeds go swish and zoom, there lived a small Sneetch named Biddle-dee-Boo, who had lost his good night-song and didn't know what to do...","moral":"The sweetest song is the one that comes from your heart. No one can sing YOUR song for you — but when you share it with someone you love, it grows bigger and warmer, like a hug made of sound.","content":["Far off in the Valley of Vroom, where the whispering weeds go swish and zoom, where the hoo-ha flowers hum half the night long, and the crumbly-bum trees go chirp-chirp-cheep-bong — there lived a small Sneetch named Biddle-dee-Boo, who had lost his good night-song and didn't know what to do.","Now, every Sneetch, from the tallest to least, has a song of their own — it's a Sneetch-kind-of-beast kind of thing. When the moon gets up high in the star-spattered sky, every Sneetch opens wide with a sigh and they sing.","They sing to the snuffle-bugs sleeping in socks. They sing to the pebble-pups hiding in rocks. They sing to the little ones, tucked up in bed, with a warm golden tune that goes round in their head.","But Biddle-dee-Boo? He had NO song to sing. Not a hum, not a humma, not a single small thing.","'Oh WUMPUS and WOE!' cried poor Biddle-dee-Boo. 'I've forgotten my night-song! I don't have a CLUE!'","He sat on a stump and he rubbed at his head. He hummed and he hawed and he scratched it instead. He tried to remember — was it high? Was it low? Was it fast like a flibber-dee-flame? Was it slow?","Nothing came. Not a note. Not a teensy-small tone. Just the sound of the wind saying 'shush' all alone.","Now, waddling by on her soft orange feet, came a big friendly monster named Margle-dee-Meet. She had fur like a sunset and eyes like two bowls full of warm chocolate pudding for little small souls. She was BIG, she was round, she was gentle and kind — the sort of a someone who'd never leave a friend behind.","'Why, hello there!' she said, in a voice like warm pie. 'You look like a Sneetch with a tear in his eye. What's the matter, small friend? What's the fuss and the fret? You can tell Margle-dee — I'm a-listening yet.'","Biddle-dee-Boo sniffled and rubbed at his nose. 'I lost my good night-song! That's how it goes. Every Sneetch has a song that they sing to the moon, but mine has gone POOF and it might not come soon.'","Margle-dee-Meet sat right down on the ground. 'Well now,' she said, 'let me think this thing round. A song isn't something you FIND in a tree. A song isn't hiding behind a small flea. A song isn't lost like a button or bow — a song is a thing that a Sneetch already KNOWS.'","'But I DON'T know it!' Biddle-dee-Boo wailed with a frown. 'I've hummed and I've hawed and I've looked all around!'","'Shush, shush, little one,' said Margle-dee-Meet. She wrapped her big fuzzy arm round his feet. 'A song isn't something you look for outside. A song is a thing that lives right deep inside. It sits in your tummy, all warm and all round. It's been there since before you were found.'","Biddle-dee-Boo blinked. 'Since before I was found?'","'Since before you were found,' Margle nodded her head. 'Since before you were sleeping, since before you were fed. Since before you were even a thought or a dream — your song was already there, warm and round like a moonbeam.'","'But how do I find it?' asked Biddle, quite small.","'You don't FIND it,' said Margle, 'you let it come. That's all.'","So Biddle-dee-Boo sat quite still on the stump. He stopped his big thinking. He stopped his big WUMP. He closed both his eyes and he breathed — in, out, slow — like the wind through the crumbly-bum trees, soft and low.","And there, in the quiet, in the soft and the still, he felt something warm — like a hug, like a hill. A hum. Just a hum. Small as a seed in the ground. But it grew and it grew, with a warm golden sound.","It wasn't a song that he'd heard somewhere before. It wasn't a copy or echo or more. It was HIS — just his own — like a heartbeat, like a breath. It sounded like orange and warm chocolate — and fresh.","It sounded like 'shush' and it sounded like 'there'. It sounded like someone who'd always be near.","Biddle-dee-Boo opened his mouth and it came — his song, soft and warm, like a flickering flame. It wasn't too fancy. It wasn't too grand. But it filled up the valley like warm in a hand.","The whispering weeds went 'OHHH!' in the dark. The hoo-ha flowers gave a little spark-spark. The crumbly-bum trees went 'chirp-chirp-HURRAY!' and the snuffle-bugs woke up to see what'd come their way.","Margle-dee-Meet smiled a big fuzzy smile. 'You see?' she said softly. 'It was there all the while.'","Biddle-dee-Boo sang and he sang and he sang, and the sound of his song through the valley it rang. And all the small Sneetches who'd fallen asleep — they smiled in their dreams, for the song was so sweet.","Now, that Valley of Vroom has a wonderful rule that the Sneetches all learned from that night in the cool: A song is a thing you already own. You just have to be still — and it comes on its own.","And if someone is small, and they haven't found theirs yet — well, you sit with them softly. You don't need to fret. You just wrap them in warm, like a Margle-dee-Meet, and you wait for their song — for it's there, warm and sweet.","So hush now, small one. Be still, be at rest. Your song's in your tummy, all warm in your chest. You don't have to search. You don't have to try. You just have to breathe — and it'll come by and by.","Goodnight, little Sneetch. Goodnight, little one. Your song is already sung.","And the moon? She smiled down with a warm golden light. 'Sweet dreams,' she whispered. 'Sweet dreams tonight.'"]},{"id":"2026-07-26-en-01","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"Hush-a-Bye, Little Duck (0-1 yr)","language":"en","ageGroup":"0-1","ageLabel":"0-1 yr","preview":"Hush-a-bye, hush-a-bye, little brown duck. The pond goes shhh-shhh and the moon comes up. Kuplink, kuplank, kuplunk go the pebbles in the water...","moral":"The world is full of soft sounds that say goodnight — the water, the wind, the moon. And the softest sound of all is someone who loves you, breathing close.","content":["Hush-a-bye, hush-a-bye, little brown duck.","The pond goes shhh-shhh. The moon comes up.","Kuplink, kuplank, kuplunk — go the pebbles in the water. A little duck, name of Pip, floats on the pond. Pip is small. Pip is brown. Pip is sleepy.","Swish, swish, swish — go the cattails at the edge. Sway, sway, sway — goes the old willow tree.","Mama Duck says, 'Come, little Pip. Come, little one. Time for sleep. Time for done.'","Pip paddles, paddle-paddle-paddle. Pip comes to Mama. Mama tucks Pip under her wing. Warm. Soft. Close.","Shhh-shhh says the water. Hoo-hoo says the owl, far away. Kuplink, kuplank, kuplunk — a fish jumps, plop.","Mama hums. Hmmmm, hmmmm, hmmmm. It vibrates in her chest, warm like a drum.","Pip hears the hum. Pip feels the warm. Pip feels the close.","The fireflies blink — on, off, on, off — like tiny stars that got lost and fell in the reeds.","A bullfrog says: rummmm, rummmm, rummmm. Low and slow and round.","Shhh-shhh water. Hmmmm-hmmmm Mama. Rummmm-rummmm frog. Blink-blink firefly.","Pip's eyes go heavy. Pip's eyes go... slow... blink... close.","Hush-a-bye, hush-a-bye, little brown duck. The pond holds you. The moon watches. The whole wide world goes shhh.","Goodnight, pond. Goodnight, moon. Goodnight, little Pip, safe and warm, under Mama's wing.","Shhh. Shhh. Shhh."]},{"id":"2026-07-26-en-13","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"Mop the Puppy and the Big Blue Bucket (1-3 yr)","language":"en","ageGroup":"1-3","ageLabel":"1-3 yr","preview":"Mop was a puppy. A small, flopsy, tipsy puppy with ears like old socks. One morning, Mop found a bucket. A big blue bucket. It was sitting by the fence...","moral":"Sometimes the best adventures are the small ones — right in your own yard. And the best friends are the ones who share the mess with you.","content":["Mop was a puppy. A small, flopsy, tipsy puppy with ears like old socks.","One morning, Mop found a bucket. A big blue bucket. It was sitting by the fence.","Mop sniffed the bucket. Sniff, sniff, sniff. It smelled like water and old rubber and something else — something that made Mop's tail go thump-thump-thump.","Mop put one paw in the bucket. IN went the paw. Nothing happened.","Mop put the other paw in. IN went the other paw. Still nothing.","Mop climbed in the bucket. All the way in. Squish, squash — Mop was too big! But Mop didn't care. Mop sat in the bucket like a little king on a blue throne.","Then — BLOOP! — the bucket tipped. Over it went! Splash splash splash!","Out rolled Mop, ears over tail, tail over ears, right into a puddle of mud. Squelch, squish, squirt!","Mop was now a mud-puppy. A brown, drippy, grinning mud-puppy.","Along came Sal. Sal was a little girl with pigtails and a red dress. Sal was picking blueberries.","Kuplink, kuplank, kuplunk — went the blueberries in Sal's tin pail.","Sal looked at Mop. Mop looked at Sal.","'Oh, Mop!' said Sal. 'You are a MESS!'","Mop wagged his whole body, not just his tail. Mop was happy. Mop was always happy.","Sal sat down in the mud next to Mop. Plop. Now Sal was a mud-girl. A brown, drippy, grinning mud-girl.","Sal's mama came to the fence. She looked at Sal. She looked at Mop. She put her hands on her hips.","Then Sal's mama laughed. A big, round, rolling laugh, like a barrel going downhill.","'Well,' she said, 'I suppose that's what Saturdays are for.'","She brought the hose. Swish-swish-swish went the water. Clean went Sal. Clean went Mop. Clean went the blueberries that had rolled everywhere — kuplink, kuplank, kuplunk into the puddle.","Mop shook — SHAKE SHAKE SHAKE — water everywhere! Sal squealed and laughed.","And Sal's mama wrapped them both in a big warm towel, and carried them inside, and gave them warm bread with blueberry jam.","Mop fell asleep on the kitchen floor, dreaming of blue buckets and mud puddles and the sound of Sal laughing.","And Sal fell asleep at the table, with blueberry on her nose and jam on her chin.","And outside, the big blue bucket sat by the fence, waiting for tomorrow.","Because tomorrow, there would be another adventure. There always is, when you're small, and the world is big, and there's a bucket."]},{"id":"2026-07-26-en-36","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"The Gobblestop Machine of Professor Pifflewig (3-6 yr)","language":"en","ageGroup":"3-6","ageLabel":"3-6 yr","preview":"Now, you listen here, and I'll tell you a true story — well, true as stories get on Finchback Creek. There was a professor, name of Pifflewig, who built a machine that could gobble up sadness and turn it into something else entirely...","moral":"Sadness isn't something you can gobble up and throw away. But if you let someone sit beside you, and maybe tell a joke or two, the sadness gets smaller — not because it's gone, but because you're not carrying it alone.","content":["Now, you listen here, and I'll tell you a true story — well, true as stories get on Finchback Creek, where the catfish are as long as your arm and twice as sassy.","There was a professor. Name of Pifflewig. He lived in a crooked house on the hill above the creek, and he had more hair than sense, which is saying something, because he had a considerable amount of sense.","The professor was the sort of man who'd look at a teakettle and say, 'I wonder if I could make that fly.' And then he would. And then the teakettle would fly straight into Mrs. Grumpley's wash line, and there'd be clean underthings scattered across three counties, and Mrs. Grumpley would say words that are not fit for a children's story.","But I digress. This story is about the Gobblestop Machine.","The professor built it on a Tuesday. He was always building things on Tuesdays — he said Tuesdays had the right kind of wobble for invention.","The Gobblestop Machine was enormous. It had brass pipes and cogwheels and a funnel on top like an upside-down trumpet, and it went CLANK-A-CHUGGA-CHUGGA-WHIRRRR when you turned it on.","'What does it do?' asked young Tom Finch, who had come up the hill to see, on account of the noise being so loud it scared the chickens.","The professor beamed. His mustache wiggled like two caterpillars doing a dance. 'It GOBBLES sadness, my boy! You feed it in the top — and out the bottom comes something else entirely! Watch!'","The professor grabbed a jar. Inside the jar was a small grey cloud, sulking. It was, the professor explained, a jar of pure sadness, collected from old Mr. Hebble when his dog ran away.","He dumped the jar into the funnel. The machine went CLANK-A-CHUGGA-CHUGGA-WHIRRRR — and out the bottom rolled... a rubber chicken.","A rubber chicken that went SQUAWK when you squeezed it.","'You see?' said the professor. 'Sadness in, rubber chicken out! Brilliant!'","Tom Finch was not so sure. 'But Professor — what does old Mr. Hebble do with a rubber chicken?'","The professor hadn't thought of that. He scratched his head. His hair went in twelve directions at once.","They took the rubber chicken to Mr. Hebble. Mr. Hebble was sitting on his porch, looking at the empty spot where his dog's bowl used to be. He looked like a man who'd been rained on for a week.","Tom handed him the rubber chicken. Mr. Hebble looked at it. He squeezed it. SQUAWK.","Mr. Hebble did not laugh. He looked like he might cry again.","'It's not the same,' said Mr. Hebble, quiet-like. 'A chicken can't lick your face. A chicken can't sleep at the foot of your bed. A chicken don't miss you when you're gone.'","Tom Finch felt his heart go small in his chest. He looked at the professor. The professor's mustache drooped.","Well. The professor was not a man to give up. He went home and fiddled with the machine all night long. Sparks flew out the windows. Strange smells drifted across Finchback Creek. The machine went CLANK-A-CHUGGA-CHUGGA-WHIRRRR-BONG-ZIP-FIZZLE.","Wednesday morning, the professor came back. He did NOT bring a rubber chicken. He brought a box.","Inside the box was a small, furry, warm thing. It had big eyes and a waggy tail and it was, the professor admitted, not entirely a dog and not entirely a cat and not entirely anything you'd find in a book, but it was soft, and it was warm, and it had a heart that went thump-thump-thump.","'You can't gobble up sadness,' said the professor, 'and spit out the thing you lost. That's not how the world works. But I figured — maybe I could make something that needs taking care of. Something that'll look at you and say, 'You matter to me, you old rascal.'","Mr. Hebble held the furry thing. The furry thing licked his face. Mr. Hebble's mouth did something it hadn't done in a long time. It went up at the corners. It went up and up, until it was a smile, wobbly and wet, but real.","'You're an ugly little thing,' Mr. Hebble told the furry creature.","The furry creature wagged its tail harder.","Tom Finch went home that evening with a full heart. He thought about the professor's machine, sitting up on the hill, going CLANK-A-CHUGGA in the moonlight.","He reckoned the professor was half-right. You couldn't gobble up sadness and throw it away. Sadness was like Finchback Creek after a storm — it rose and it fell, and you couldn't make the water go by wishing.","But you could sit on the porch with someone while the water was high. You could bring them a furry thing that licked their face. You could tell a joke that wasn't very good, and watch them almost-smile.","And that, Tom figured, was about the best a machine could do. And about the best a person could do, too.","The Gobblestop Machine is still up on the hill, if you want to see it. It goes CLANK-A-CHUGGA sometimes, when the wind's right. The professor says he's working on a new model. This one turns loneliness into warm socks.","We'll see about that. But I wouldn't bet against him."]},{"id":"2026-07-26-en-6plus","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"The River Pirate of Tibbet's Bend (6+ yr)","language":"en","ageGroup":"6+","ageLabel":"6+ yr","preview":"Well now, if you were to ask me who was the most unlikely pirate ever to float a boat down the Old Muddy, I'd have to tell you about a girl named Clementine Finch. She was twelve years old, she had more freckles than sense, and she stole things that nobody in their right mind would want to steal...","moral":"The things we're ashamed of aren't always the things we should be. Sometimes what looks like stealing is just a person trying to hold onto something they're afraid of losing. And sometimes, the bravest thing you can do is put it back — and trust that the world won't forget you just because you stopped holding on.","content":["Well now, if you were to ask me who was the most unlikely pirate ever to float a boat down the Old Muddy, I'd have to tell you about a girl named Clementine Finch.","She was twelve years old. She had more freckles than sense, which her mother said was a dangerous combination. She had hair the color of a copper kettle left too long on the stove, and she had a way of looking at you that made you feel like she'd already figured out your secrets and was being polite about it.","She stole things.","Not the kind of things you'd expect a pirate to steal. She didn't want gold, or jewels, or fancy silver spoons with the mayor's initials on them, though Lord knows the mayor had enough of those.","No. Clementine Finch stole stories.","She'd drift her little flatboat — the Rattletrap, she called it, because it did — up to the docks at Tibbet's Bend, and she'd wait. She'd wait until some traveling salesman or river preacher or schoolteacher fresh off the steamboat sat down on a bench to rest, and then she'd sidle up, polite as you please, and she'd say:","'That's a fine hat, mister. I'll bet there's a story behind that hat.'","And nine times out of ten, there was. And the person would tell it. And Clementine would listen with those freckled eyes that saw right through you, and she'd nod, and she'd say 'Mmm-hmm' at all the right places, and when the story was done, she'd say:","'That's a real good one. Mind if I keep it?'","And the thing of it was — they always said yes. Because who minds giving away a story? It's not like a gold watch. You can tell a story and still have it yourself.","But that's where they were wrong. Because when Clementine took a story, she didn't just remember it. She took it. The way you'd take a stone from a creek bed. The person who told it would walk away feeling like something was missing, like a word was on the tip of their tongue but they couldn't quite — ","They couldn't remember their own story.","Clementine had a trunk on the Rattletrap, old and iron-bound, with a lock that had no key. And she'd put the stories in there, or that's how it seemed, because the trunk got heavier and heavier, and the people of Tibbet's Bend got quieter and quieter.","Old Captain Willits forgot the story of the big catfish he'd caught off the dock in '49. Mrs. Granger forgot the story of the winter the river froze solid and folks ice-skated from Tibbet's to Carthage. The schoolteacher forgot the story of the one-room schoolhouse and the blizzard and the fourteen children and the one stove.","A town that forgets its stories is a town that's forgetting itself. And a town that's forgetting itself starts to look like a photograph left in the sun — the edges go first, then the faces, then the whole thing fades to nothing.","It was young Tom — yes, the same Tom who'd later become entangled with a certain professor and his rubber chickens, but that's a different Tuesday — who figured it out. Tom was nine years old and had the kind of curiosity that gets children into trouble and out of it in equal measure.","He'd been watching Clementine. He'd noticed that the folks who talked to her seemed lighter afterward, but not in a good way. Lighter like a purse that's been picked. Lighter like a house where the furniture's been moved out.","Tom went down to the docks at dusk, when the steamboat had gone and the lamplighter was making his rounds. Clementine was sitting on the Rattletrap, her feet dangling in the water, her copper hair catching the last of the light.","'You're the river pirate,' Tom said.","Clementine looked at him. She didn't deny it. She had too much pride for that, and not quite enough sense to lie to a nine-year-old.","'I am,' she said.","'Why do you do it?'","Clementine was quiet for a long time. The river went shush-shush against the hull. A bullfrog said rummm-rummm from the reeds, like he was clearing his throat to speak.","'Because stories are the only things that last,' she said finally. 'Boats rot. Houses burn. People — ' she stopped. 'People leave. But stories, if you hold onto them tight enough, they stay. They're the only thing I've ever been able to keep.'","Tom, being nine, was not equipped to handle this level of sadness. But he was equipped to be honest, which is sometimes better.","'But they're not YOUR stories,' he said. 'And the town's forgetting itself. Captain Willits can't remember his catfish. Mrs. Granger can't remember the ice. If you take all the stories, there won't be anything left of Tibbet's Bend except the name, and even that might go.'","Clementine's face did something complicated. It went hard, then soft, then something in between that looked like it hurt.","'I didn't think about that,' she said. And Tom believed her, because she said it the way a person says something when they've just realized it's true.","She stood up. She went to the trunk. She put her hand on the lock — and it opened. Not because she had a key, but because, Tom reckoned, the trunk had been waiting to be opened by the right person at the right time, and this was it.","The trunk was full of light. Not lamp-light, not fire-light, but the kind of light that stories make when they're all crammed together — gold and blue and green and the particular amber of a summer evening when someone's just said 'and then — ' and you lean forward because you have to know what happens next.","Clementine reached in. She pulled out a story — it was like pulling a thread from a tapestry, except the thread was made of sound and memory and the smell of someone's kitchen fifty years ago.","She handed it to Tom.","'Take it back to Captain Willits,' she said. 'He'll know what it is.'","Tom held it. It was warm. It hummed, the way a tuning fork hums, except the note was the note of a fourteen-pound catfish and a dock and a man laughing on a July afternoon in 1849.","Tom ran.","He ran all the way to Captain Willits' house, and he pressed the story into the old man's hands, and Captain Willits' eyes went wide and then wet and then he laughed — a big, rolling, catfish-sized laugh — and the story slid back into him like a key into a lock, and he remembered.","Tom ran back to the docks. Clementine was still there, pulling stories out of the trunk, one by one, setting them on the dock like baby birds. They shimmered and hummed and waited.","All night, Tom and Clementine carried stories back to the people of Tibbet's Bend. Mrs. Granger got her ice storm back. The schoolteacher got her blizzard back. The barber got his story about the man who came in for a shave and turned out to be the governor, though that one might have been improved in the telling.","By dawn, the trunk was empty.","Clementine sat on the dock, her feet in the water, looking like a person who'd just given away everything they owned. Which, in a way, she had.","'Aren't you sad?' Tom asked. He felt like he should ask.","Clementine thought about it. Really thought about it, the way only someone who's spent years hoarding things can think about what it means to let them go.","'No,' she said slowly. 'I'm not sad. I'm lighter.' She looked at her hands, as if surprised to find them empty. 'I didn't know how heavy they were. I thought I was keeping them safe, but I think maybe I was just — scared.'","'Scared of what?'","'Scared of being forgotten,' she said. 'If I had all the stories, I thought, then I'd matter. I'd be the one who remembered. But that's not how it works, is it? Stories don't belong to one person. They belong to whoever needs them.'","Tom, who was nine and didn't know much about being scared of being forgotten, nodded anyway. He reckoned she was right.","Clementine stayed on the river. She's probably still there, for all I know, floating the Rattletrap up and down the Old Muddy. But she doesn't steal stories anymore.","Now she trades them.","She'll pull up to a dock and say, 'I'll tell you a story I heard in Hannibal, if you'll tell me one I can carry downstream.' And folks do, because a story shared is a story doubled, and a story hoarded is a story that dies.","The trunk is still on the Rattletrap. It's lighter now. Clementine says it smells like pine trees and old snow and fourteen children and one stove, which doesn't make any sense unless you know the stories, and then it makes all the sense in the world.","And if you ever find yourself on the Old Muddy, on a quiet evening, and you see a flatboat with a girl who has copper hair and too many freckles, you sit down and you tell her a story.","She'll trade you a better one."]},{"id":"2026-07-26-cn-01","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"小豆豆的觉觉（0-1岁）","language":"zh","ageGroup":"0-1","ageLabel":"0-1岁","preview":"哎呀呀，天黑啦，月亮出来啦。小豆豆的小手手揉揉眼睛，该觉觉喽。滴答，滴答，小闹钟在说话。呼——呼——窗外的风在说话...","moral":"世界在轻轻地说晚安。风在说，虫在说，月亮在说，妈妈的心跳也在说。所有的声音都在告诉你：安心睡吧，明天还会来。","content":["哎呀呀，天黑啦，月亮出来啦。","小豆豆的小手手揉揉眼睛，该觉觉喽。","滴答，滴答，小闹钟在说话。","呼——呼——窗外的风在说话。","知了知了，窗外的小虫在说话。","小豆豆竖起小耳朵，听呀听。","妈妈抱起小豆豆，摇呀摇，摇呀摇。","咚咚，咚咚。那是妈妈心跳的声音，好稳，好暖。","小豆豆贴着妈妈的胸口，听见了咚咚声。","好安心呀。好暖和呀。","滴答，滴答。呼——呼——。咚咚，咚咚。","三个声音在唱歌，唱一首觉觉的歌。","小豆豆的小嘴嘴打了个小哈欠。啊——","小豆豆的小眼皮，沉甸甸，沉甸甸。","慢慢合上啦。呼噜，呼噜。小豆豆睡着啦。","月亮偷偷看了一眼，笑了。它把光光调得柔柔的，轻轻地盖在小豆豆身上，像一条银色的小被子。","晚安，小闹钟。晚安，小风风。晚安，小虫虫。","晚安，小豆豆。明天见。"]},{"id":"2026-07-26-cn-13","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"小蚂蚁搬馒头渣（1-3岁）","language":"zh","ageGroup":"1-3","ageLabel":"1-3岁","preview":"老槐树底下，住着一只小蚂蚁，名字叫丁丁。丁丁个子小小的，可勤快了，每天一大早就爬出洞，这儿看看，那儿瞧瞧，找好吃的...","moral":"一个人搬不动的时候，找朋友帮忙不是丢脸的事。大家一起来，事情就变轻了。朋友多了，路就好走了。","content":["老槐树底下，住着一只小蚂蚁，名字叫丁丁。","丁丁个子小小的，可勤快了，每天一大早就爬出洞，这儿看看，那儿瞧瞧，找好吃的。","这天呀，丁丁在老槐树根底下，发现了一大块馒头渣！","白白的，软软的，比丁丁的身体大十倍！好家伙，够全家吃两天的。","丁丁高兴极了，赶紧跑过去，使劲儿搬。嘿哟，嘿哟！","搬不动。","丁丁换了个方向，从后面推。嘿哟，嘿哟！","还是搬不动。","丁丁又换了方向，从侧面顶。嘿哟，嘿哟！嘿——哟——！","馒头渣纹丝不动，倒好像在笑丁丁：小不点儿，别费劲儿啦。","丁丁急了，触角甩得啪啪响。怎么办呢？怎么办呢？","这时候，丁丁的好朋友胖胖爬过来了。胖胖胖乎乎的，走路一摇一摆，像个小肉球。","「丁丁，你在这儿干啥呢？」胖胖问。","「我发现了一块大馒头渣，可我搬不动！」丁丁说。","胖胖一看，眼睛都亮了：「好家伙，真大！我帮你！」","两个小蚂蚁，一前一后，嘿哟嘿哟，使劲儿搬。","馒头渣晃了晃，动了那么一点点。","「还差点儿！」丁丁说。","这时候，瘦瘦的豆豆也来了。豆豆腿长，跑得快。","「我来！我来！」豆豆在中间一扛。","嘿哟嘿哟！三个小蚂蚁一起使劲儿。","馒头渣骨碌骨碌，动起来了！","三只小蚂蚁高兴得触角碰触角，啪啪啪。","他们一边走一边喊号子：「一二三，搬搬搬！一二三，搬搬搬！」","馒头渣就这么一点一点，搬回了蚂蚁洞。","蚂蚁奶奶看见了，笑得合不拢嘴：「哎哟喂，我的好孩子们，真能干！」","那天晚上，蚂蚁洞里开馒头渣大餐。丁丁、胖胖、豆豆，吃得肚皮圆滚滚的。","丁丁想，一个人搬不动的时候，找朋友帮忙，不丢脸。大家一起来，事情就变轻了。","胖胖想，馒头渣真甜。","豆豆想，明天还得再找一块大的。","老槐树上的知了叫了起来：知了——知了——它好像也在说：知道了，知道了，朋友多了路好走。"]},{"id":"2026-07-26-cn-36","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"会说话的小书包（3-6岁）","language":"zh","ageGroup":"3-6","ageLabel":"3-6岁","preview":"后来啊，闹闹有了一个新书包。蓝色的，上面印着一只会眨眼的恐龙。闹闹可喜欢了。可是你猜怎么着？这个书包会说话...","moral":"大人说的「不许这样」「不许那样」，有时候不一定对。聪明的孩子会自己想一想，这事合不合道理。合道理的，就大胆去做。","content":["后来啊，闹闹有了一个新书包。","蓝色的，上面印着一只会眨眼的恐龙。闹闹可喜欢了，上学第一天就背着它，颠儿颠儿颠儿地跑了。","可是你猜怎么着？这个书包会说话。","可不是嘛。那天放学，闹闹走在胡同里，书包突然小声说了一句：「闹闹，你橡皮掉了。」","闹闹低头一看，可不嘛，橡皮就在脚边上。他赶紧捡起来塞进书包。","「你……你会说话？」闹闹小声问。","「当然会啦。」书包说，声音闷闷的，因为拉链没拉开。「我是个有想法的书包。怎么了，不行吗？」","闹闹乐了。从此，他和书包成了好朋友。","书包可有意思了，它有好多想法。","有一天，闹闹的数学考砸了，只得了六十分。他把卷子往书包里一塞，不想让妈妈看见。","书包说：「闹闹，这样不好吧。」","「有什么不好？妈妈看见了要骂我的。」","「可是藏起来，她就不知道你哪里不会呀。她不知道，就没法帮你。你下次还是不会。」","闹闹想了想，觉得书包说得有道理。他咬咬牙，回家把卷子拿给了妈妈。","你猜怎么着？妈妈没骂他，反而陪他一道一道把错题弄明白了。","闹闹对书包说：「你说得对。」","书包得意地晃了晃（虽然它没有腿，但闹闹感觉它晃了晃）。","又有一天，学校搞活动，要求每个同学带一样「最宝贝的东西」来分享。","闹闹犯了难。他最宝贝的东西是书包，可书包不想让别人看见自己会说话。","「你为什么不想让别人知道你会说话？」闹闹问。","书包叹了口气：「你想啊，要是别人知道我会说话，他们就会天天来翻我，让我说这说那。我可不想变成一个表演的工具。我是你的书包，只跟你说话，这多好。」","闹闹想了想，觉得书包说得对。有些好东西，就是自己知道的，不用给所有人看。","可是带什么呢？闹闹翻箱倒柜，找到了一个铁皮小青蛙，一捏就蹦。","「就带这个吧！」闹闹说。","「行。」书包说，「不过闹闹，我问你一个问题。」","「你说。」","「你们老师说，带最宝贝的东西。可你最宝贝的明明是我，你为什么不带我？」","闹闹愣住了。是呀，为什么不带书包呢？","「因为……因为你会说话，我不想让别人发现。」","「可你不带我去，不就是因为怕别人发现我的秘密吗？那我岂不是成了你的……麻烦？」","闹闹的心一下子揪起来了。他从来没想到，书包会这么想。","「你不是麻烦！」闹闹急了，「你是我最好的朋友！」","「那为什么不能带我？」","闹闹想了很久很久。后来，他做了一个决定。","第二天，闹闹背着书包去了学校。分享的时候，他站起来说：","「我最宝贝的东西，是我的书包。它不会说话，但它一直陪着我，装着我的课本、我的橡皮、我的卷子。它是我的好朋友。」","全班同学都看着闹闹，有的笑了，有的觉得他好奇怪。但是闹闹不介意。","因为书包在他背上，轻轻晃了晃。闹闹知道，那是书包在说：谢谢你。","回家的路上，书包说：「闹闹，你真勇敢。」","「有什么勇敢的？」","「你敢带一个不会说话的普通书包去，还敢说它是最宝贝的。别人可能觉得你好笑，但你不怕。这叫勇敢。」","闹闹笑了。他摸了摸书包上那只会眨眼的恐龙。","「大人说，不许跟书包说话，因为书包不会说话。可我觉得，如果一个东西陪你这么久，它就是有想法的，管它会不会说话呢。」","书包没吭声，但闹闹觉得它在笑。","那天晚上，闹闹做了一个梦，梦见书包长出了小短腿，跟着他一起去冒险。恐龙图案活了过来，在书包上跑来跑去。","醒来的时候，闹闹觉得，这世界真有意思。有些规矩，是给不懂事的大人定的。"]},{"id":"2026-07-26-cn-6plus","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"罐头里的城（6岁以上）","language":"zh","ageGroup":"6+","ageLabel":"6岁以上","preview":"孩子们，今天我给你们讲一件真事儿——嗯，至少我奶奶说是真的。那年她才九岁，在胡同口的小卖部买了一个罐头。罐头打开以后，里面不是黄桃，不是橘子，而是一座小小的城...","moral":"大人们说，这件事不可能，那件事不可能。可「不可能」三个字，往往是偷懒用的——懒得去想，懒得去看，懒得承认自己不知道。真正的勇敢，是面对不知道的东西时，先别急着说不。","content":["孩子们，今天我给你们讲一件真事儿——嗯，至少我奶奶说是真的。","那年她才九岁，叫小月，住在南锣鼓巷边上的一条胡同里。胡同口有个小卖部，卖糖葫芦、卖冰棍、卖汽水，还卖一种铁皮罐头。","那罐头上贴着一张发黄的纸条，写着三个字：「别打开」。","小月问小卖部的王奶奶：「这罐头里是啥呀？」","王奶奶说：「不知道。厂家寄来的，就这一罐。没人敢打开。你要是敢，就送你了。」","小月拿着罐头，颠了颠，轻飘飘的，好像里面什么也没有。","「别打开」三个字，搁在别的小孩身上，可能就算了。可小月不是别的小孩。她是那种老师越说「不许往墙上画画」，她越想往墙上画的小孩。","回到家，她把罐头搁在桌上，看了三天。第四天放学，她终于忍不住了——啪，拉开了盖儿。","你猜怎么着？","罐头里不是黄桃，不是橘子，也不是什么都没有。","罐头里是一座小小的城。","城很小，小得能放在手心里。城里头有房子，有街道，有路灯。再仔细看——哎哟喂，还有小小的人在走动！","小月趴在桌上，瞪大了眼睛看。她看见那城里的街道上，有小小的人在赶路，有小小的车子在跑（不知道是什么动的，可能是风）。街边有个小小的早点摊，一个胖乎乎的小人在炸油条。","小月「哇」了一声，吹了口气。","那口气对于小城里的人来说，大概是十二级台风。","油条摊子翻了，胖小人抱着脑袋跑，旁边的小人们也四散奔逃。","小月吓了一跳，赶紧缩回脑袋，不敢出气了。","过了一会儿，小城恢复了平静。胖小人把油条摊子扶起来，继续炸油条。小月看得目瞪口呆——这油条，得有多小啊？比头发丝还细吧？","她忽然觉得，自己像个巨人，又像个怪物。","这时候，罐头里传出来一个声音，细细的，像蚊子哼：","「那个……上面的大姑娘，能不能别吹气了？」","小月低头一看，城里最高的一栋楼的楼顶上，站着一个小人儿，穿西装，戴眼镜，手里拿着一个喇叭。","「你……你能看见我？」小月小声问。","「能啊。」小人说，「你是我们城里的传说。我们管你们叫『天上的大脸』。」","「天上的大脸？」小月差点笑出声。","「别笑，」小人说，严肃得很，「你一笑，对我们来说就是地震。」","小月赶紧憋住。她觉得这个城虽然小，但里头的人可认真了。","小人说：「我叫甄市长。我们罐头城，有个问题想请教您。」","「我？」小月指着自己的鼻子，「我一个九岁小孩，能帮你们什么？」","「正因为你是小孩，我们才找你。」甄市长推了推眼镜，「大人的罐头，我们试过，打不开。可你打开了。这说明——只有小孩能看见我们，能听见我们。」","小月觉得这事儿越来越有意思了。","甄市长说：「我们罐头城的灯光，快灭了。我们的灯是靠『真话』点亮的——城里的人说真话，灯就亮。可是最近，说真话的人越来越少，灯就一盏一盏灭了。再这么下去，全城就得黑灯瞎火了。」","「那……你们为什么不说真话？」","甄市长叹了口气：「因为说假话省事啊。说假话，不用得罪人。说假话，不用负责任。说假话，大家都笑嘻嘻的。可笑着笑着，灯就灭了。」","小月想了想，好像有点明白。她们班上也这样。明明那个同学做的手工不好看，可大家都说「真棒真棒」。明明那个同学的作文写得很一般，可老师说「写得不错」。大家笑嘻嘻的，可谁也不说真话。","「那……要我做什么？」","「你帮我们找一句话。」甄市长说，「一句真正的真话。不是那种『今天天气真好』的真话——是真的、从心底里说出来的、别人听了会愣一下的那种真话。有了这句话，灯就能重新亮。」","小月皱起眉头：「什么话才算『真正的真话』？」","「这个我们也不知道。」甄市长老老实实地说，「但我们知道——真话一说出来，你会知道的。因为罐头城的灯，会应一声。」","小月想了一晚上。","什么才是「真正的真话」呢？","「我今天作业写完了」是真话，但好像不够「真」。「妈妈做的饭不好吃」是真话，但说了会挨打。「我喜欢上学」……嗯，这个不一定是真话。","她翻来覆去地想，想得睡不着。","第二天放学，她路过胡同口，看见王奶奶在小卖部门口打瞌睡。旁边摆着几串糖葫芦，有一串的糖稀掉了，露出光秃秃的山楂。","小月本来想走，又停住了。","她回头，小声说：「王奶奶，那串糖葫芦的糖稀掉了，不好卖了。」","王奶奶睁开眼，愣了一下，然后笑了：「哎哟，还是你这孩子实在。别人都不跟我说。来，这串送你了，我再穿一串好的。」","小月拿着两串糖葫芦往家走。忽然——","她口袋里的罐头，亮了一下。","就一下。像是有人在里面划了一根火柴。","小月把罐头掏出来，打开盖儿一看——罐头城里，最中间那盏路灯，亮了。","亮起来的那盏灯，正好在油条摊旁边。炸油条的胖小人抬头看了看灯，又低头继续炸油条，脸上好像在笑。","甄市长在楼顶上对她挥了挥小旗子。","小月忽然明白了。","「真正的真话」，不是什么大道理，不是什么惊天动地的话。就是——该说的时候，说了。哪怕只是告诉王奶奶，她的糖葫芦坏了。","从那天起，小月开始试着说真话。","她对同学说：「你那个手工，纸糊歪了，要不我帮你弄弄？」同学先是不高兴，后来发现小月真的帮她弄好了，俩人成了好朋友。","她对妈妈说：「妈，今天这个汤有点咸。」妈妈先瞪了她一眼，然后自己也尝了一口，说：「还真是。」","每说一次真话，罐头城就亮一盏灯。","一个星期以后，罐头城全城都亮了。","甄市长用喇叭对小月说：「谢谢您！我们全城亮了！您真是个了不起的小孩！」","小月说：「我也没做什么呀，就是说真话。」","甄市长说：「对啊。就是『说真话』这三个字，难倒多少大人。」","后来，罐头城的盖子就再也打不开了。小月试了好几次，都不行。","可她不难过。因为她知道，罐头城在某个地方，亮堂堂地过日子。那里的灯，靠真话点亮。而她学会了说真话——这比一个会发光的罐头，值钱多了。","孩子们，我奶奶讲完这个故事，对我说了一句话，我一直记到现在。她说：","「大人们说，这件事不可能，那件事不可能。可『不可能』三个字，往往是偷懒用的——懒得去想，懒得去看，懒得承认自己不知道。你记住了，真正的勇敢，是面对不知道的东西时，先别急着说不。」","我把这句话，送给你们。"]},{"id":"2026-07-26-cn-test-bingbo","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"萤火虫想变成星星（冰波风格·胎教期）","language":"zh","ageGroup":"prenatal","ageLabel":"胎教期","preview":"夏天的夜晚，草地上升起一盏一盏小小的灯。那是萤火虫提着灯笼，在找一颗 lost 的星星。","moral":"每一个小小的光芒，都不必羡慕遥远的星辰。你发着光，就有人正被你照亮。","content":["夏天的夜晚，草地上升起一盏一盏小小的灯。那是萤火虫提着灯笼，在找一颗 lost 的星星。","「星星掉到哪里去了呢？」萤火虫自言自语。它的灯笼一闪，一闪，像在轻轻地问。","风听见了，风说：「我吹过整片田野，没有看见星星。但我闻到了桂花香，你要不要也闻一闻？」","萤火虫就停下来，闻了闻。桂花香是甜的，甜得像妈妈哼的歌。它心里软了一下，差点忘了要找星星。","它继续飞，飞过小溪。溪水叮叮咚咚，像有人在弹一架看不见的钢琴。萤火虫低头看，溪水里也有一盏小小的灯——那是它自己的倒影。","「原来我也会发光呀。」萤火虫对着水面说。水面上的萤火虫也对着它闪了闪，像在点头。","它又飞了一会儿，飞到一棵老槐树的枝头。老槐树的叶子沙沙响，像在讲一个很老很老的故事。","「你在讲什么呀？」萤火虫问。","「我在讲，」老槐树说，「很久很久以前，有一颗星星，它觉得自己不够亮，就从天上跳下来了。它落在草丛里，变成了一只小小的虫子，屁股后面挂着一盏灯。」","萤火虫愣住了。它低头看看自己屁股后面那盏小小的灯。","「那……那颗星星，后来回去了吗？」它小声问。","老槐树沙沙地笑了：「它不用回去了。因为它发现，草地比天空更需要一点光。天空已经有那么多星星了，可是草地到了晚上，黑漆漆的，什么也看不见。」","萤火虫没有说话。它飞起来，飞得很慢很慢。它看见草丛里有一只小蚂蚱，在黑暗里磕磕绊绊地跳；它看见一朵晚开的小花，在黑暗里找不到回家的蚂蚁。","萤火虫飞到小蚂蚱旁边，灯笼一闪一闪。小蚂蚱看见了光，不再磕绊了。","萤火虫飞到小花旁边，灯笼一闪一闪。蚂蚁借着光，找到了回家的路。","「原来，」萤火虫想，「我不必变成星星。我发着光，就有人正被这光照亮。」","夜更深了。草地上一盏一盏小小的灯，亮起来，又亮起来。那不是掉下来的星星，那是萤火虫——它们每一只，都是一颗决定留在地上的、温柔的星。"]},{"id":"2026-07-26-cn-test-jinbo","date":"2026年7月26日 · 星期日","dateShort":"07/26","title":"月亮走过的山岗（金波风格·胎教期）","language":"zh","ageGroup":"prenatal","ageLabel":"胎教期","preview":"月亮轻轻地，走过山岗。它走得很慢，像怕踩疼了山岗上的草。风轻轻吹，草轻轻摇，月亮轻轻走过山岗。","moral":"有些爱，是轻轻地来，轻轻地走，不惊动你，却一直都在。就像月亮，走过山岗，走过你的窗，走进你的梦里。","content":["月亮轻轻地，走过山岗。","它走得很慢，像怕踩疼了山岗上的草。","风轻轻吹，草轻轻摇，月亮轻轻走过山岗。","山岗下有一座小房子。小房子的窗户亮着，橘黄色的光，暖暖的。窗户里，有一位妈妈，正轻轻地拍着圆圆的肚子。","「宝宝，」妈妈说，「你听见月亮了吗？月亮在走路呢。」","月亮听见了妈妈的话。它停下来，趴在山岗上，往下看。它看见妈妈的手，一下，一下，像在数着什么。","月亮想，妈妈在数什么呢？","也许在数日子。数着数着，宝宝就要来了。","也许在数心跳。一下，两下，三下，像一首小小的鼓。","也许什么也没数。只是拍着，拍着，就觉得很安心。","月亮想帮妈妈做点什么。它把自己的光，调得柔柔的，像一床薄薄的被子，轻轻地盖在小房子的屋顶上。","风也想帮忙。它从山岗上跑下来，绕过窗户缝，把院子里桂花的香味，送进了房间。香味是淡淡的，甜甜的，像妈妈在对宝宝说：「嘘，我在呢。」","院子里那棵老槐树也想帮忙。它把叶子摇得沙沙响，沙沙响，像在唱一首很老很老的歌。那首歌，老槐树的妈妈唱给它听过，现在它唱给月亮听，唱给风听，唱给小房子里那位妈妈和还没出生的宝宝听。","「宝宝，」妈妈又说，「你听，月亮在唱歌呢。」","月亮不好意思地笑了。它不会唱歌呀。可是它想，也许，光是会唱歌的。只是要用很轻很轻的心，才听得见。","于是月亮把光，调到最轻最轻。它走过山岗，走过小房子，走过窗户，走过妈妈的手，走过宝宝还没睁开的小耳朵。","光，轻轻地，轻轻地，像一句没有人听见的话。","可是宝宝听见了。宝宝在妈妈圆圆的肚子里，动了一下。不是踢，是动了一下，像翻了个身，像换了个姿势，像一个还不会说话的孩子，用唯一会的方式，回答了一声——","「我听见了。」","月亮走过了山岗。走得很慢，很慢。","它想，原来有些爱，是不用说话的。轻轻地来，轻轻地走，不惊动你，却一直都在。","风轻轻吹，草轻轻摇，月亮轻轻走过山岗。走过今夜，也走过每一个，有人在等待的夜。"]}];
+
+// ===== Story Data (dynamic load from stories.json) =====
+let stories = [];
+
+// ===== State =====
+let currentAgeFilter = 'all';
+let currentLangFilter = 'all';
+let searchKeyword = '';
+
+// ===== Load stories from JSON =====
+async function loadStories() {
+  // 先用内嵌数据渲染
+  stories = EMBEDDED_STORIES;
+  renderStoryList();
+  
+  // 再尝试从 stories.json 加载最新数据（如果成功则更新）
+  try {
+    const url = 'stories.json?t=' + Date.now();
+    const resp = await fetch(url);
+    if (resp.ok) {
+      const freshData = await resp.json();
+      if (freshData && freshData.length > 0) {
+        stories = freshData;
+        renderStoryList();
+      }
+    }
+  } catch (e) {
+    // fetch 失败也没关系，内嵌数据已经渲染了
+    console.log('Using embedded data (fetch failed):', e.message);
+  }
+}
+
+// ===== Render Story List =====
+function renderStoryList() {
+  const list = document.getElementById('storyList');
+  const empty = document.getElementById('emptyState');
+
+  let filtered = stories.slice().reverse();
+
+  // 年龄筛选
+  if (currentAgeFilter !== 'all') {
+    filtered = filtered.filter(s => s.ageGroup === currentAgeFilter);
+  }
+
+  // 语言筛选
+  if (currentLangFilter !== 'all') {
+    filtered = filtered.filter(s => (s.language || 'zh') === currentLangFilter);
+  }
+
+  // 搜索
+  if (searchKeyword) {
+    const kw = searchKeyword.toLowerCase();
+    filtered = filtered.filter(s =>
+      s.title.toLowerCase().includes(kw) ||
+      s.preview.toLowerCase().includes(kw) ||
+      s.moral.toLowerCase().includes(kw)
+    );
+  }
+
+  if (filtered.length === 0) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+
+  empty.style.display = 'none';
+
+  list.innerHTML = filtered.map(s => {
+    const lang = s.language || 'zh';
+    const langLabel = lang === 'zh' ? '中文' : 'EN';
+    const langIcon = lang === 'zh' ? '🇨🇳' : '🇬🇧';
+    return `
+    <div class="story-card fade-in" onclick="openStory('${s.id}')">
+      <div class="story-card-header">
+        <div class="story-card-title">${s.title}</div>
+        <div class="story-card-date">${s.dateShort}</div>
+      </div>
+      <div class="story-card-preview">${s.preview}</div>
+      <div class="story-card-footer">
+        <span class="age-tag">🍼 ${s.ageLabel}</span>
+        <span class="lang-tag ${lang}">${langIcon} ${langLabel}</span>
+        <span class="moral-tag">✨ ${s.moral.substring(0, 30)}...</span>
+      </div>
+    </div>
+    `;
+  }).join('');
+}
+
+// ===== Open Story =====
+function openStory(id) {
+  const s = stories.find(x => x.id === id);
+  if (!s) return;
+
+  const lang = s.language || 'zh';
+  const langLabel = lang === 'zh' ? '中文' : 'English';
+  const langIcon = lang === 'zh' ? '🇨🇳' : '🇬🇧';
+  const moralTitle = lang === 'zh' ? '✨ 故事小语' : '✨ Story Lesson';
+  const footerText = lang === 'zh' ? '晚安，好梦' : 'Good night, sweet dreams';
+
+  const page = document.getElementById('readingPage');
+  const content = document.getElementById('readingContent');
+  const titleBar = document.getElementById('readingTitleBar');
+
+  titleBar.textContent = s.title;
+
+  content.innerHTML = `
+    <div class="reading-date">${s.date}</div>
+    <h1 class="reading-title">🌛 ${s.title}</h1>
+    <div class="reading-badges">
+      <span class="age-tag">🍼 ${s.ageLabel}</span>
+      <span class="lang-tag ${lang}">${langIcon} ${langLabel}</span>
+    </div>
+    <div class="reading-divider">— ✿ —</div>
+    <div class="reading-body lang-${lang}">
+      ${s.content.map(p => `<p>${p}</p>`).join('')}
+    </div>
+    <div class="reading-moral">
+      <div class="reading-moral-title">${moralTitle}</div>
+      <div class="reading-moral-text">${s.moral}</div>
+    </div>
+    <div class="reading-footer">
+      <span>🌙</span> ${footerText} <span>🌙</span>
+    </div>
+  `;
+
+  page.classList.add('active');
+  page.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+// ===== Close Story =====
+function closeStory() {
+  const page = document.getElementById('readingPage');
+  page.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ===== Event Listeners =====
+document.getElementById('backBtn').addEventListener('click', closeStory);
+
+// 年龄筛选
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentAgeFilter = tab.dataset.age;
+    renderStoryList();
+  });
+});
+
+// 语言筛选
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentLangFilter = btn.dataset.lang;
+    renderStoryList();
+  });
+});
+
+// 搜索
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  searchKeyword = e.target.value.trim();
+  renderStoryList();
+});
+
+// ===== Init =====
+loadStories();
+
+// ===== 下拉刷新（手机端） =====
+let touchStartY = 0;
+let isRefreshing = false;
+document.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+});
+document.addEventListener('touchmove', (e) => {
+  const scrollY = window.scrollY;
+  const currentY = e.touches[0].clientY;
+  if (scrollY === 0 && currentY - touchStartY > 80 && !isRefreshing) {
+    isRefreshing = true;
+    loadStories().finally(() => {
+      setTimeout(() => { isRefreshing = false; }, 1000);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
