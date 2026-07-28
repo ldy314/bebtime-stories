@@ -2170,3 +2170,125 @@ And two songs become one song. And the one song becomes sleep.
 
 
 ---
+
+---
+
+
+## 想睡觉的小星星 → 露珠邮递员（胎教期·重新生成）
+
+> 2026年7月26日 星期日 | 中文 | 胎教期 | 张秋生小巴掌童话 + 金波抒情风格
+
+天还没亮透的时候，竹林里每一片叶子上都住着一个小小的露珠邮递员。他们背着亮晶晶的小包裹，排成细细的队伍，沿着叶脉往下滑——吧嗒，吧嗒，吧嗒——像一串没有声音的铃铛。 最小的那个露珠邮递员叫小晶晶。她是昨晚的月色凝成的，圆溜溜的，透明的，风一吹就轻轻晃一晃，像一颗会呼吸的珍珠。今天轮到小晶晶送信——一封从山那边寄来的信，信封上画了一朵云，云里面写着："收信人——住在竹林东边第一个鸟窝下方第三片草叶上的妈妈。" 小晶晶深深吸了一口气——她吸的是晨雾的味道，凉凉的、甜甜的，还有一点点竹叶的清香。"走啦！"她对自己说，然后沿着叶脉往下滑——咕噜咕噜，咕噜咕噜——像坐滑梯一样，一直滑到叶尖尖上。 叶尖尖下面是一片苔藓，软软的、绿绿的，像一块绿色的小地毯。小晶晶跳了下去——啪——在苔藓上弹了弹，没有碎，稳稳地站住了。她开心地晃了晃身体，亮晶晶的水光在苔藓上一闪一闪的。 接下来要爬过一块大石头。石头上有细细的纹路，像老爷爷额头上的皱纹。小晶晶一步一步，小心地绕过那些纹路。有一道纹路里住着三只蚂蚁，它们正在做早操——"一二三四，二二三四"——看见小晶晶，都停了下来。"你背着的是什么呀？"最小的那只蚂蚁问。小晶晶挺了挺圆鼓鼓的身子，说："是一封很重要的信，要送给草叶上的妈妈。"三只蚂蚁齐声说："那你快去吧，我们帮你把前面的路扫干净。" 蚂蚁们用触角把小路上的尘土扫开，小晶晶顺利地走了过去。"谢谢你们！"她回头喊了一声，亮晶晶的身体在阳光里闪着七彩的光。 然后是穿过一片枯叶。枯叶是去年秋天落下来的，已经变成了褐色，上面有虫虫咬出的小洞洞。小晶晶从一个小洞里钻过去——啵——身体被洞口挤成了椭圆形，过了洞口又弹回圆圆的形状，好玩极了。枯叶下面藏着一只小蜗牛，正在慢悠悠地吃早餐。"嗨，小露珠，你这么急去哪儿呀？"蜗牛慢吞吞地问，一个字还没说完，小晶晶已经从另一个洞洞里钻出去了。 终于到了一片矮矮的草丛。小晶晶数着："第一片草叶，第二片草叶，第三片草叶——就是这里！"第三片草叶的根部长着一朵小小的野菊花，菊花的旁边，一位妈妈正静静地坐着。她不是人类的妈妈，是一只纺织娘。纺织娘妈妈的怀里抱着六颗淡绿色的小小的卵，她用薄薄的翅膀轻轻地盖着它们，嘴里哼着温柔的曲子："睡吧，睡吧，我的小宝贝，风在林子外面等着呢，等你们醒来，它就带你们去看世界……" 小晶晶屏住呼吸——她怕自己"啵"的一声破了——慢慢地、慢慢地靠近。她走到纺织娘妈妈的脚边，把背上的小包裹递了过去。小包裹在空气中自己展开了——原来里面装着的不是信纸，而是一小段歌声。那歌声从山那边飘过来的，是一个爸爸的声音，他唱着和纺织娘妈妈一模一样的曲子："睡吧，睡吧，我的小宝贝，我在山这边等着呢……" 纺织娘妈妈听着听着，眼睛湿润了。她低下头，看见脚边小小的露珠邮递员，小晶晶已经快要被太阳晒得透明了，却还努力地举着那封歌声信。"谢谢你，小晶晶。"纺织娘妈妈说，然后把那首歌又唱了一遍，唱给怀里的六颗小卵听，也唱给已经快要蒸发了的小晶晶听。 小晶晶听着听着，觉得自己变轻了、变淡了，慢慢升了起来，升到草叶上空，升到竹林的顶上，变成了一缕看不见的水汽。但她很开心——因为她知道，那封信已经送到了。那位妈妈和那六颗还没出生的小宝宝，都听到了从山那边飘来的歌。 第二天的清晨，竹林里又结出了新的露珠。其中有一颗圆圆的小露珠，在叶尖上醒来的时候，发现自己背上已经有一个亮晶晶的小包裹在等她了。下一个邮递员继续出发。吧嗒，吧嗒，吧嗒——穿过晨雾，越过山岗，把温柔送到每一个等待的角落。
+
+**寓意：** 世界上最美的等待，就是知道有人正穿过晨雾、越过山岗，只为把温柔送到你身边。
+
+---
+
+
+## The Little Brook That Learned to Wait（胎教期·重新生成）
+
+> 2026年7月26日 星期日 | English | Prenatal | McCloskey Natural + Dr. Seuss Rhyme Style
+
+Way up in the rolling hills, where the morning mist curled like sleepy cats around the oak trees, there lived a tiny brook. She was so small that a squirrel could hop across her in one leap, and her water ran so softly that you had to bend down very close to hear her sing: trickle-trickle, hush-hush, trickle-trickle, hush-hush. The little brook had a job. Every morning, she carried messages from the top of the hill down to the valley below. A fallen petal from the wild rose bushes — that was a hello from the hilltop. A tiny pebble, smoothed round by the water — that was a story from somewhere upstream. The brook carried them all, trickle-trickle, hush-hush, never rushing, never stopping. One misty morning, the oldest oak tree on the hill leaned down — creak, creak, creak — and whispered to the brook. 'Little one,' said the oak, his voice like wind through old branches, 'there is something special coming to the valley. Something small. Something new. Something that has never been here before. Could you wait for it?' The little brook had never been asked to wait before. She was always moving, always flowing, always going somewhere. 'Wait?' she bubbled. 'How do you wait when you are made of running water?' The old oak smiled — his bark crinkled like a thousand tiny smiles all at once. 'You wait by being gentle,' he said. 'You wait by singing softly. You wait by noticing every little thing along the way.' So the little brook tried. She slowed her water to the gentlest trickle — barely a whisper, just enough to keep moving. She sang her quietest song: trickle... trickle... hush... hush... And she began to notice things she had never noticed before. She noticed that the moss on her stones had tiny silver tips that caught the morning light. She noticed that a water beetle had built a nest under her bank — a little dome of mud and bubbles, with tiny beetle eggs inside, each one smaller than a pinhead. She noticed that when the sun hit her water at just the right angle, she made rainbows — not big shouting rainbows, but tiny quiet ones, no bigger than a baby's fingernail, that danced on the pebbles. Day after day, the brook waited. Trickle-trickle, hush-hush. The wild roses bloomed and dropped their petals. The water beetle's eggs hatched into tiny swimming specks. The oak tree's leaves turned from spring-green to deep summer-green. And still the brook waited. She did not know what she was waiting for, exactly. But she trusted the old oak, and she trusted the waiting itself. Then one evening, when the sky was the color of a ripening blueberry and the first star was just blinking awake, something changed. The air grew soft — softer than it had ever been. The wind stopped and held its breath. Even the crickets paused their night song for one long, hushed moment. And then the brook heard it. A tiny sound. Not from the water, not from the wind, not from any creature in the valley. It came from a little house at the edge of the meadow. A sound so small that only someone who had been waiting — really waiting — could hear it. Waaaaaaah. Waaaaaaah. A baby's first cry. The little brook trembled with joy. Her water sparkled brighter than it had ever sparkled before. She wanted to rush down and see — but she remembered: be gentle. So she flowed, slow and soft, down the last stretch of hill, carrying a wild rose petal and a smooth round pebble as her welcome gifts. Trickle-trickle, hush-hush, welcome-to-the-world, welcome-to-the-world. The old oak watched from the hilltop, his branches swaying in a breeze that felt like a blessing. 'You see,' he whispered to the night, 'the brook learned what the river never could. Some things are worth slowing down for.' And every night after that, the little brook sang her quietest lullaby — trickle-trickle, hush-hush — flowing past the little house at the edge of the meadow, carrying her song to the baby who was learning to sleep under the stars. Trickle-trickle, hush-hush. Sleep, little one, sleep.
+
+**寓意：** Some things take time to arrive, and the waiting itself is part of the gift. A gentle heart that learns to wait learns to love.
+
+---
+
+## 月亮爷爷巡夜（胎教期）
+
+**2026年7月27日 · 星期一 | 中文 | 胎教期**
+
+孩子们，你们知道吗？每天晚上，等你们都睡下了，月亮爷爷就要出来巡夜啦。他提着一盏银灯笼，慢悠悠地走过山岗，走过小河，走过你家的窗台。
+
+孩子们，你们知道吗？每天晚上，等你们都睡下了，月亮爷爷就要出来巡夜啦。他提着一盏银灯笼，慢悠悠地走过山岗，走过小河，走过你家的窗台。他的脚步很轻很轻，轻得连风都听不见。
+月亮爷爷先走到山坡上。小草们正歪着脑袋打瞌睡呢，有的还嘟嘟囔囔地说梦话。月亮爷爷把灯笼往低处放了放，银色的光像水一样淌下来，淌过每一片叶子。小草们觉得暖融融的，翻了个身，睡得更香了。
+咕咚——咕咚——山脚下的小溪还在流。月亮爷爷蹲下来，对着小溪说：'小溪呀小溪，天黑了，你也该歇歇了。'小溪说：'月亮爷爷，我停不下来呀，我得给下游的小鱼送水去。'月亮爷爷笑了笑，从灯笼里拨出一点光，撒在小溪水面上。溪水一下子亮闪闪的，像铺了一条银被子。小溪流着流着，声音越来越小，越来越小，最后变成细细的、柔柔的'沙沙沙'，像在唱催眠曲。
+月亮爷爷又走到老槐树跟前。老槐树已经一百多岁了，胡子（就是那些气根）拖得老长老长。知了在树上睡得正沉，偶尔'吱——'叫半声，又没音了。月亮爷爷轻轻拍了拍老槐树的树干：'老伙计，夜深了。'老槐树的叶子沙沙响了几下，像在说：'嗯，知道了。'然后整棵树安安静静的，一动也不动。
+走着走着，月亮爷爷来到一扇窗前。窗里头，有一位妈妈正侧着身子睡，手轻轻搭在肚子上。肚子里有个小宝宝，还没出生呢。月亮爷爷把灯笼贴近窗户，银光透过玻璃，柔柔地洒在妈妈的肚子上。
+小宝宝在里头动了动。他感觉到了——那光暖暖的，像妈妈的手掌，像爸爸的声音，像外面的风和溪水混在一起的味道。小宝宝不知道那是什么，但他觉得安全，觉得踏实，又安静地蜷起来。
+月亮爷爷站在窗外，看了好一会儿。他没说话，只是把灯笼举得更高一些，让光更均匀地铺满整间屋子。然后他踮起脚，悄悄地走了。
+吧嗒，吧嗒。这是月亮爷爷的脚步声吗？不是的，孩子们。月亮爷爷走路是没有声音的。那是什么？那是远处的小青蛙，在池塘边数星星呢——一颗、两颗、三颗……数着数着，自己也打了个哈欠，扑通一声跳进水里，睡了。
+月亮爷爷走啊走，走过田野，走过竹林，走过每一户亮着灯的和灭了灯的人家。走到天边的时候，他回头望了一眼——整个世界都安安静静的。小草睡了，小溪睡了，知了睡了，老槐树睡了，妈妈睡了，宝宝也睡了。
+月亮爷爷笑了笑，把灯笼别在腰间，自己也坐到云朵上，打了个哈欠。'嗯，今晚的夜，巡完了。'
+孩子们，下次你睡不着的时候，就想想月亮爷爷。他提着银灯笼，正从你的窗前经过呢。他不会吵你，只是悄悄地看你一眼，把一点银光留在你的枕头边。然后你就会觉得——嗯，暖暖的，软软的，可以睡了。
+
+> **寓意：** 每一份安宁都不是凭空而来的。月亮爷爷的巡夜告诉我们：世界上总有人在你看不到的地方，悄悄地守护着你。就像妈妈怀着你的时候，她的心跳、她的呼吸、她轻声哼的歌，都是为你巡夜的银灯笼。你不必害怕黑暗，因为爱，一直在你身边走着。
+
+---
+
+## The Robin Who Counted Stars (Prenatal)
+
+**2026年7月27日 · 星期一 | English | Prenatal**
+
+In the old maple tree by the stone wall, Mrs. Robin had a nest. It was a fine nest, round and soft, made of dried grass and mud and the softest bits of moss she could find.
+
+In the old maple tree by the stone wall, Mrs. Robin had a nest. It was a fine nest, round and soft, made of dried grass and mud and the softest bits of moss she could find. She had worked on it for three whole days, flying back and forth, back and forth, until her wings ached and her beak was tired.
+Now the nest was ready, and in it lay three small eggs, blue as the evening sky. Mrs. Robin sat on them carefully, tucking her warm feathers around them like a blanket. She could feel them beneath her - smooth and cool and full of promise.
+Kuplink. Kuplank. Kuplunk. That was the sound of a berry dropping into a tin pail somewhere down the hill. Mrs. Robin cocked her head. That would be old Mr. McCracken, picking blueberries in the twilight, the way he did every summer evening. She had watched him from this very tree last summer, when she was just a fledgling herself.
+The sun went down behind the ridge, and the sky turned from gold to rose to deep, deep blue. One by one, the stars came out - first one, then three, then seven, then too many to count.
+But Mrs. Robin tried anyway.
+'One,' she said softly, looking at the brightest one. 'Two.' She found another, just above the steeple of the white church. 'Three.' There was one peeking through the branches of the pine tree. 'Four, five, six...' She counted slowly, in a whisper, the way you count sheep when you cannot sleep.
+Her eggs did not move. They did not cheep or wiggle. But Mrs. Robin counted the stars for them anyway, the way a mother hums a lullaby to a child who has not yet learned to listen.
+Down below, the creek murmured its nighttime song - shush, shush, shush - like a brook clearing its throat before bedtime. A bullfrog in the mill pond said 'br-r-rump' once, then thought better of it and closed his mouth. The fireflies came out, drifting among the cattails like tiny lanterns, like the stars had come down to visit the ground.
+Mrs. Robin counted the fireflies too. 'Seven, eight, nine...' But they kept moving, and she lost track. She ruffled her feathers in a small huff. 'Well,' she said to her eggs, 'I suppose stars are easier. They stay where you put them.'
+A breeze came up from the south, warm and smelling of hay and clover. It rustled through the maple leaves above her head - shhh, shhh, shhh - as if the tree itself were saying 'hush.' Mrs. Robin settled deeper into her nest. The eggs were warm. The night was kind. The stars were out.
+She counted three more stars - 'ten, eleven, twelve' - and then her eyes grew heavy. The numbers started to blur together. Twelve became twenty. Twenty became a hundred. A hundred became just... light. Soft, silver light, falling through the leaves like rain.
+'Thirteen,' she murmured, her beak barely moving. 'Four... teen...'
+And then Mrs. Robin was asleep, and the stars kept watch for her.
+In the morning, the sun would come up and dry the dew on the grass, and Mr. McCracken would come out with his pail, kuplink, kuplank, kuplunk, and the world would be busy and bright again. But for now, in the old maple tree by the stone wall, three small blue eggs waited in their warm nest, and their mother counted stars for them in her dreams.
+And the stars, patient and old, did not mind being counted. They had been waiting a very long time to be noticed by someone small and new. They could wait a little longer.
+
+> **Moral:** Even before we arrive, we are already loved. Mrs. Robin counting the stars for her unhatched chicks reminds us that the world prepares a place for us before we even know it exists. Every lullaby sung to an unborn child, every gentle word whispered in the dark, is like a star being counted - a small light saved up, waiting to welcome us home.
+
+## 月光小船（胎教期）
+
+*2026年7月28日 · 星期二 · 胎教期*
+
+在银河的最深处，那里没有白天，只有温柔的夜晚。银河的水面像一匹无边无际的深蓝色绸缎，上面缀满了碎钻石一样的星星。水面上，漂着一艘小小的船。
+这艘船小到什么程度呢？小到一片月光刚好铺满它的船底，小到一只萤火虫落在船头，整艘船就会轻轻往下沉一沉。它叫「月光小船」，是用月亮最温柔的那一束光编织而成的。船身泛着淡淡的银白色，像妈妈手指尖的温度，软软的、暖暖的。
+每天晚上，当人间的灯火一盏一盏熄灭，月光小船就从银河的尽头出发了。撑船的是个白胡子老爷爷，他的胡须长极了，垂到水面上，被星光染成了淡银色。他不是别人，正是月亮爷爷——白天他在天上睡觉，晚上他就变成了月光小船的老船夫。
+月亮爷爷撑着船，从银河的东边划到西边。他不捕鱼，不捞虾，他有一个世界上最温柔的工作——收集悄悄话。
+什么是悄悄话呢？就是每一位妈妈在夜里对肚子里宝宝说的话。有的妈妈说：'宝宝，妈妈今天吃了你最爱吃的草莓。'有的妈妈说：'宝宝，爸爸今天给你买了一件小衣裳，上面绣着一只小兔子。'有的妈妈什么也不说，只是把手轻轻放在肚子上，一下一下地抚摸——那也是悄悄话，只是不用嘴巴说，用心说。
+这些悄悄话啊，像蒲公英的种子一样，乘着晚风轻轻地飘起来，飘过屋顶，飘过树梢，飘到银河里，变成一粒一粒小小的光点。月亮爷爷就用月光小船的船头轻轻地接住它们——叮，叮，叮——每接住一颗，船底就会闪一下温柔的亮光。
+在这些悄悄话里，有一颗特别特别亮的。它是从一座开满栀子花的小院子里飘来的。那里的窗户半开着，白色的纱帘被风吹得一鼓一鼓，像一个在呼吸的梦。窗户后面，住着一位妈妈和一个小宝宝——正在妈妈肚子里慢慢长大的你。
+妈妈的悄悄话是这样飘来的：她坐在窗前，手里拿着一个小小的针线篮，里面有一块柔软的棉布，上面绣了一半的小星星。她的手指很慢很慢地缝着，心里想的是：等宝宝来了，就用这块布做一个小枕头，让宝宝天天枕着星星睡觉。
+她没有说出声，但她的心在说话。那声音比风吹过风铃还轻，比露珠从草尖滑落还安静——咕噜噜，咕噜噜。月亮爷爷却听到了，他把船靠过去，用胡须尖儿轻轻一碰，那颗悄悄话就落进了船舱里。
+月亮爷爷把悄悄话装进一只小小的贝壳里。这只贝壳是他在银河底找到的，通体半透明，里面仿佛有一层薄薄的珍珠粉。他把贝壳合上，放在月光小船最安全的那只小篮子里。篮子里已经有好几十只这样的贝壳了，每一只里都装着一句妈妈的悄悄话。
+啵——啵——啵——那些贝壳轻轻碰撞着，发出珍珠滚动般的声音。它们都在等同一件事：等宝宝出生的那一天。
+那一天到来的时候，月光小船会从银河一路漂到人间。月亮爷爷会打开每一只贝壳，所有妈妈的悄悄话会像萤火虫一样飞出来，绕着宝宝的摇篮轻轻地飞，飞成一条闪光的河。那时候，宝宝虽然还不能听懂话，但会闻到妈妈的爱，闻到栀子花的香，闻到银河里星星的味道——那味道啊，像甜甜的米糊，又像凉凉的夜风。
+而那只从栀子花小院飘来的贝壳，打开后会变成一个最甜的梦。梦里有一个妈妈，坐在窗前，正在绣一颗小星星。她的手指很慢，但每一针都准准的，因为每一针都是爱。
+等待的日子一天天过去。有时候月亮爷爷也会把船停在一片云的后面，静静地看一看那座小院子。栀子花谢了又开，开了又谢，妈妈的肚子一天比一天圆，像一个小小的地球仪，里面装着一个小小的宇宙。
+月亮爷爷看着看着，胡须会笑得翘起来。他活了很久很久，见过成千上万个宝宝来到这个世界。但他从来没有看腻。因为每一个宝宝，都是这世界上独一无二的一颗小星星。每一句悄悄话，都是这银河里唯一的一道光。
+今晚，月光小船又出发了。月亮爷爷撑着船，桨在水面上划出银色的涟漪——哗啦，哗啦——像时间轻柔的脚步。他要去接新的悄悄话了。也许，你的妈妈的悄悄话正在路上呢。
+闭上眼睛吧，小宝贝。在你的小宇宙里翻个身，打个小小的哈欠。月光小船正从你的窗外经过——不，它不会吵你，它只是路过，把你的名字记在老船夫的那本星星册子里。等你来的那一天，月亮爷爷会第一个告诉你：'嘿，小家伙，银河的船票已经给你准备好啦。'
+
+> **Moral:** 等待不是空白的时间，而是爱在静静生长。月光小船收集的每一句悄悄话，都是妈妈种下的一颗种子。宝宝虽然还看不见这个世界，但世界已经把所有的温柔都准备好了——在月光里，在风里，在每一个宁静的夜晚里。
+
+## The Little Whispering Stream (Prenatal)
+
+*2026年7月28日 · 星期二 · Prenatal*
+
+Deep in the quiet meadow, where the grass grows tall and the clover nods in the breeze, there ran a little stream. It was not a big stream. It was not a loud stream. It was the kind of stream a rabbit could hop across in one jump - boing! - and a fawn could wade through without the water reaching its knees.
+Every evening, just as the sun dipped behind the ridge and the sky turned the color of peach fuzz, the little stream began to whisper. Shush-shush. Trickle-trickle. Plip-plop-plip. It was a song that had no words, but somehow it said everything.
+The stream had been singing this song for as long as anyone could remember. It sang to the cattails that grew along its banks - swish, swish - and they swayed in time. It sang to the dragonflies with their wings like spun glass - skitter-skatter - and they danced above the water. It sang to the fat old bullfrog who lived under the mossy log - croak-croak, ribbit-ribbit - and he blinked his golden eyes and listened.
+But the stream had a secret. There was someone it wanted very much to sing to. Someone who was not a cattail, or a dragonfly, or even a bullfrog.
+This someone lived in a little white house on the hill, just above the meadow. The house had a red door and a porch swing that creaked in the wind - eee-ahh, eee-ahh. And inside the house lived a mama and... someone very small.
+The stream had heard about this someone from the wind. The wind was a great traveler - it went everywhere! It had pushed through the lace curtain of the nursery window and had seen the little crib, the soft blankets, the mobile of wooden stars that turned and turned in the afternoon light. And the wind had felt something else: a warmth so gentle, so patient, that it could only mean one thing. Someone was on their way.
+'I must sing to them,' said the little stream. 'I must sing the softest song I know.'
+But the stream was down in the meadow, and the house was up on the hill. How could a little stream make its voice travel all that way?
+The stream thought and thought. Trickle-trickle. Think-think. And then it had an idea.
+'Wind!' called the stream. 'Oh, Wind! Would you carry my song up the hill?'
+The wind rustled through the tall grass - whoosh, whoosh - and said, 'Of course, little stream. I carry all sorts of things. Pollen and seeds and the smell of rain. A song is no trouble at all.'
+So that evening, when the peach-colored sky began to deepen, the stream sang its very best song. Shush-shush, trickle-trickle, plip-plop-plip. It sang about how the moon reflects on still water, a silver coin that cannot be spent. It sang about how the first crocus pushes through the snow in March - brave little purple thing! It sang about the way a mama deer nudges her spotted fawn to stand up for the very first time.
+The wind caught every note and carried it up the hill - whish, whish, whish. Past the cattails. Past the dragonflies. Past the fat old bullfrog who croaked a blessing as the song went by.
+The wind slipped through the crack under the red door and spiraled up the stairs. It found the nursery with the lace curtain and the wooden-star mobile. And there, in the quiet room where a mama sat knitting something small and soft, it let the stream's song fall like a gentle rain.
+Plip-plop. Shush-shush. Trickle-trickle.
+The mama paused her knitting. She tilted her head. 'Do you hear that?' she whispered. But no one answered - at least, not with words.
+But the someone very small, the someone growing in the warm dark, felt the song. Not with ears - it was too soon for ears. But with something older, something deeper. The rhythm of the water. The rise and fall of the melody. It was like being rocked, gently, gently, the way the stream rocks a fallen leaf down its course.
+Night after night, the stream sent its song up the hill. And night after night, the someone very small grew a little bigger, a little stronger, a little more ready to meet the world. And all the while, the song was there - a thread of silver sound, tying the meadow to the nursery, the stream to the crib, the waiting world to the one who was coming.
+Kuplink, kuplank, kuplunk. That was the sound of evening settling over the meadow. The stream's song grew softer, softer, until it was barely a whisper. The bullfrog closed his eyes. The dragonflies folded their wings. The wind, tired from its work, curled up in the pine trees and went to sleep.
+And the someone on the hill, who was not quite ready to arrive, drifted into a dream. In the dream, there was water. Warm water. And the gentlest voice saying: shush-shush. Trickle-trickle. Wait for me. I will be here when you come.
+The stream keeps singing still, every evening, waiting for the day when the red door will open and someone new will be carried down to the meadow to dip tiny toes in the cool, clear water. On that day, the song will change - it will be louder, happier, full of splashes and giggles. But for now, the little stream whispers. And that is enough.
+
+> **Moral:** Some of the sweetest songs are the ones we cannot hear yet. The stream did not know who it was singing to, but it sang anyway - the way a mother hums to a baby months before that baby can hear. Love does not wait for an answer. It begins long before the hello.

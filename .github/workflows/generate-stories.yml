@@ -1,10 +1,10 @@
 name: Generate Bedtime Stories
 
 on:
-  # Automatic: runs at 23:00 Beijing time (15:00 UTC) every day
+  # Automatic: runs at 02:00 Beijing time (18:00 UTC previous day) every day
   schedule:
-    - cron: '0 15 * * *'
-  # Manual: triggered by phone tap (workflow_dispatch)
+    - cron: '0 18 * * *'
+  # Manual: triggered via Actions tab
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,17 @@ jobs:
       - name: Generate stories
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        working-directory: github-pages
         run: node scripts/generate-story.js
+
+      - name: Sync root stories.json
+        run: |
+          cp github-pages/stories.json stories.json
+
+      - name: Copy generated HTML files to root
+        run: |
+          cp github-pages/bedtime-story-*.html . 2>/dev/null || true
+          cp github-pages/index.html . 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
