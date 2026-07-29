@@ -2292,3 +2292,43 @@ And the someone on the hill, who was not quite ready to arrive, drifted into a d
 The stream keeps singing still, every evening, waiting for the day when the red door will open and someone new will be carried down to the meadow to dip tiny toes in the cool, clear water. On that day, the song will change - it will be louder, happier, full of splashes and giggles. But for now, the little stream whispers. And that is enough.
 
 > **Moral:** Some of the sweetest songs are the ones we cannot hear yet. The stream did not know who it was singing to, but it sang anyway - the way a mother hums to a baby months before that baby can hear. Love does not wait for an answer. It begins long before the hello.
+
+## 给风系个铃铛（胎教期）
+
+*2026年7月29日 · 星期三 · 胎教期*
+
+傍晚的时候，妈妈坐在窗前，手里拿着一只小小的铃铛。铃铛是铜色的，只有一颗樱桃那么大，系着一根淡粉色的丝带。妈妈把丝带绕在窗框上，打了一个蝴蝶结。然后她把手轻轻放在肚子上，小声说：「叮叮叮，唱给还没出生的小宝贝听吧。」
+风正好路过窗台。它停下来——风没有脚，可它还是停了一下——想：小宝贝？什么小宝贝？风到处跑，什么都见过，可它没见过这个「小宝贝」。
+风悄悄溜进屋子里。它看见一间小小的房间，墙刷成了鹅黄色，窗帘上绣着小云朵。房间中央摆着一只木头小床，小床里铺着软软的棉被，棉被上放着一只布偶兔子。小床空空的，可风觉得，那不是「空」，而是「满」——满满地装着等待。
+风明白了。它从窗缝里钻出去，呼——地跑远了。它要去准备一份礼物。
+风跑过一片麦田，金黄色的麦穗在夕阳里摇晃。风穿过麦穗，沙沙沙，沙沙沙。它把这声音轻轻卷起来，像卷一匹丝绸，卷啊卷，卷成一个小小的声音团子，揣在怀里。
+风又跑过一条小河。河水在石头上溅起水花，叮咚，叮咚。风弯下腰，把水声也捡起来，和麦浪的声音放在一起。叮咚叮咚，沙沙沙沙，两种声音混在一起，像一首还没写完的歌。
+风继续跑。它经过一棵老槐树，老槐树的叶子被风吹得哗啦哗啦响。风说：「老槐树，借我一点声音吧。」老槐树抖了抖身子，抖下最柔软的一片叶子，那片叶子打着旋儿落下来，发出簌簌的一声。风接住了。
+风又路过一片荷塘。青蛙们正在开晚会，咕呱咕呱，此起彼伏。一只小青蛙鼓着腮帮子，用力叫了一声——咕——，那声音又圆又亮，像一颗绿色的珠子。风把它也收进了怀里。
+天黑了。风抱着满满一怀的声音，跑回来了。它轻轻撞了一下窗框上的小铃铛。
+叮——
+铃铛响了。可这一次，铃声里不只有铃铛自己的声音。沙沙沙，是麦浪。叮咚叮咚，是小河。簌簌簌，是老槐树的落叶。咕——，是小青蛙。所有的声音都从铃铛里流淌出来，像一条温柔的小溪，流进那间鹅黄色的小房间。
+妈妈靠在摇椅上，闭着眼睛，嘴角弯弯的。她的手还放在肚子上。小宝贝在温暖的地方，什么都看不见，可他听到了——不是用耳朵，是用一种比耳朵更古老的方式。他感觉到了世界在轻轻摇晃，像水波，像摇篮，像妈妈的心跳。
+铃铛不响了。风悄悄地走了，去准备明天的声音团子。窗外的月亮照着小铃铛，铜色的铃铛在月光下闪着微微的光，像一颗小星星落在了窗台上。
+妈妈在摇椅上睡着了。小房间里安安静静的。只有布偶兔子的眼睛亮晶晶的，好像在替所有人守望着——那还没来的小宝贝，和这已经准备好的世界。
+
+> **Moral:** 世界不会等小宝贝出生才开始爱他。风在跑，铃在响，麦浪在沙沙，青蛙在唱歌——一切温柔的声音，都是这个世界提前写好的情书。等待不是空白，等待是爱在练习。
+
+## The Owl Who Practiced Lullabies (Prenatal)
+
+*2026年7月29日 · 星期三 · Prenatal*
+
+In the old oak tree at the edge of the lane, there lived a small owl with a very plain name. Her name was Hattie, she was feathered and round, and she lived where the moss grew soft on the ground. Each night she would practice her hoo-hoo-hoo - hoo-hoo, hoo-hoo, hoo-hoo-hoo-hoo. But that wasn't the song she wanted to do.
+For Hattie had heard (from the wind, who tells all to the birds and the bugs and the trees, short and tall) that someone was coming to the house down the bend - the little white house where the garden path ends. And this someone was small. So new and so small, not here yet at all!
+'I must learn a lullaby,' Hattie declared. She puffed up her feathers and carefully stared at the moon and the stars and the whispering trees. 'A lullaby comes from the simplest of things.' So she tucked up her wings and she flew through the night to find all the sounds that were gentle and light.
+First she flew to the meadow where crickets kept time - chirk-chirk, chirk-chirk, in a rhythm of rhyme. 'Oh crickets,' said Hattie, 'may I borrow your beat? I'm making a song for someone quite sweet.' The crickets looked up with their shiny black eyes and played her a rhythm, a gentle surprise. Chirk-chirk, chirk-chirk. Hattie nodded her head. 'That's the beginning!' she happily said.
+Next she visited Bumbleby Pond, where the frogs sang songs from their lily-pad, moss-covered logs. A bullfrog named Milton, green-speckled and fat, cleared his wide throat and went: 'Rrribbit-rrr-AT!' 'Too loud,' Hattie whispered. 'Try softer, my friend.' So Milton tried again, softer this time, around the bend. 'Rrribbit... rrribbit... rrribbit-hush-hush.' 'Perfect!' said Hattie. 'Not too much, not too less, just.'
+Then she stopped by the stream where the water ran clear and listened to bubbles go plip-plop, plip-phere. Plink-plank, plink-plank, kuplink-kuplank-kuplunk. 'That's the sound of a lullaby, chunk by chunk!' She gathered the water-sounds up in her head and mixed them with crickets and frogs, well-bred.
+Back in her oak tree, she sorted it out - the chirk of the crickets, the plink of the trout (well, not a real trout, but the bubble-sounds, too), the rrribbit of Milton (soft, not loud, like new). She arranged them and hummed them and tried them again until her small feathers stood up like a pen.
+Hoo-hoo, she began. Then: chirk-chirk, hoo-hoo. Plink-plank, rrribbit-hush. Hoo-hoo, hoo-hoo. It wasn't quite music, it wasn't quite words. It was the sound of the night when the dreaming occurs. It was the sound of the stream when the moonlight is silver. It was the sound of a mother's hum by the window-shiver.
+Each night she practiced, and each night it grew softer and sweeter and truer and new. The wind carried pieces of it down the lane to the little white house with the red door and pane. And inside the house, in a room painted pale, a mama sat rocking, slow as a snail. She heard a faint hoo-hoo on the breeze and smiled at the moon and the old oak trees.
+'Someone out there is singing to you,' she whispered so soft to the someone below, in the warm, safe dark. 'The world is practicing its song.'
+For the world doesn't wait for a baby to arrive to start being gentle, to start being kind. The crickets keep time and the bullfrogs keep tune and the stream makes its music beneath the soft moon. And the owl in the oak tree practices each night a lullaby woven of meadow sounds and light.
+Hoo-hoo, chirk-chirk. Plink-plank, hush-hush. Kuplink, kuplank, kuplunk. Rrribbit. Hoo. And somewhere, small and warm and not-quite-here, someone listened without ears to the song the world had been rehearsing all year.
+
+> **Moral:** The world begins singing to a child long before the child can hear. Every cricket's chirp and stream-bubble and owl's hoot is the earth's way of saying: we are ready for you. Love doesn't wait for a hello - it practices its song in advance.

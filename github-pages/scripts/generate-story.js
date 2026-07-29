@@ -190,7 +190,7 @@ function buildStoryObj(raw, dateStr, language, ageInfo) {
     title,
     language,
     ageGroup: ageInfo.group,
-    ageLabel: language === 'zh' ? ageInfo.labelCn : ageInfo.labelEn,
+    ageLabel: language === 'cn' ? ageInfo.labelCn : ageInfo.labelEn,
     preview,
     moral,
     content
@@ -223,7 +223,7 @@ async function main() {
   for (const dateStr of datesToCheck) {
     const hasCn = stories.some(s => s.id === `${dateStr}-cn`);
     const hasEn = stories.some(s => s.id === `${dateStr}-en`);
-    if (!hasCn) missingStories.push({ dateStr, language: 'zh' });
+    if (!hasCn) missingStories.push({ dateStr, language: 'cn' });
     if (!hasEn) missingStories.push({ dateStr, language: 'en' });
   }
 
