@@ -1,6 +1,11 @@
 /**
  * Prompt Builder for Bedtime Story Generation
- * Contains age group calculation and prompt assembly for Chinese & English stories
+ * Contains age group calculation and prompt assembly for Chinese & English stories.
+ *
+ * Enriched edition: adds a rotating theme pool (nature/science, Chinese culture,
+ * emotions, imagination, daily life, light adventure), expanded author styles,
+ * and form-innovation guidance. Theme variety is enforced per-date so consecutive
+ * days naturally get different themes.
  */
 
 const CHILD_BIRTHDAY = '2026-09-22';
@@ -53,6 +58,17 @@ function formatDateShort(dateStr) {
   return `${mm}/${dd}`;
 }
 
+/**
+ * Deterministic per-date hash so different dates pick different themes (variety).
+ */
+function hashDate(dateStr) {
+  let h = 0;
+  for (let i = 0; i < dateStr.length; i++) {
+    h = (h * 31 + dateStr.charCodeAt(i)) >>> 0;
+  }
+  return h;
+}
+
 // ===== Age group style descriptions =====
 const AGE_STYLE_CN = {
   prenatal: '胎教期：语调极其温柔缓慢，多用拟声词和节奏感，主题围绕"等待、爱、守护、妈妈的声音"，适合胎教朗读。',
@@ -70,7 +86,70 @@ const AGE_STYLE_EN = {
   '6+': '6+ yr: longer and more complex stories, themes around "growth, responsibility, kindness, perseverance, dreams, empathy", can include metaphors and deeper meanings.'
 };
 
-// ===== Chinese author style descriptions =====
+// ===== Theme pool (rotating per date for variety) =====
+const THEME_POOL_CN = [
+  {
+    name: '自然与科学启蒙',
+    desc: '二十四节气（春分的燕子、谷雨的茶、霜降的枫叶）、星空宇宙（月亮的秘密、流星、小小宇航员）、微观世界（蚂蚁搬家、蝴蝶蜕变、萤火虫森林）、海洋与雨林（珊瑚城、座头鲸的歌）。'
+  },
+  {
+    name: '中国文化与传统',
+    desc: '传统节日传说（春节、中秋、端午、重阳的暖心版）、神话新编（精卫、嫦娥、夸父的温柔低龄化）、古诗词意境化（把「床前明月光」「小荷才露尖尖角」写成小故事）、十二生肖与民间智慧。'
+  },
+  {
+    name: '情感与心理',
+    desc: '情绪小怪兽（生气、害羞、害怕、嫉妒怎么安放）、安全感（怕黑、打雷、第一次分床）、家庭与爱（隔代亲情、二胎、宠物朋友）、自我接纳（「我和别人不一样也没关系」）。'
+  },
+  {
+    name: '想象与奇幻',
+    desc: '梦境探险（云朵上的城市、会飞的床）、物品有灵（玩具夜谈、书架里的秘密通道）、反向世界（如果颜色会消失、如果动物说人话）。'
+  },
+  {
+    name: '生活与认知',
+    desc: '职业初识（面包师、园丁、温柔版医生）、好习惯（刷牙、收拾玩具、按时睡觉）、食物旅行（一颗苹果的诞生、馒头的故事）。'
+  },
+  {
+    name: '轻松愉快的冒险',
+    desc: '温和不刺激的轻冒险——寻宝小旅程、迷路后回家、帮朋友送东西、森林里的小任务。冒险不危险、悬念不紧张、冲突不激烈，所有困难最终都被善良、友谊或勇气化解，给孩子「我也能行」的安全感与力量感。'
+  }
+];
+
+const THEME_POOL_EN = [
+  {
+    name: 'Nature & science',
+    desc: 'the 24 solar terms, stars and space (the moon\'s secret, a little astronaut), the tiny world of ants/butterflies/fireflies, coral reefs and whales.'
+  },
+  {
+    name: 'Chinese culture & tradition',
+    desc: 'gentle festival tales (Spring Festival, Mid-Autumn, Dragon Boat), softened myths (Jingwei, Chang\'e), classical Chinese poems turned into little stories, the zodiac.'
+  },
+  {
+    name: 'Feelings & heart',
+    desc: 'the "emotion little monsters" (anger, shyness, fear, jealousy), security (afraid of the dark, thunder, first night alone), family love (grandparents, a new sibling, a pet), self-acceptance ("it\'s okay to be different").'
+  },
+  {
+    name: 'Imagination & whimsy',
+    desc: 'dream adventures (a city on the clouds, a flying bed), animated objects (toys\' night talk, a secret passage in the bookshelf), topsy-turvy worlds (if colors disappeared, if animals spoke).'
+  },
+  {
+    name: 'Daily life & learning',
+    desc: 'first jobs (baker, gardener, a gentle doctor), good habits (brushing teeth, tidying up, bedtime on time), food journeys (the birth of an apple, the story of a steamed bun).'
+  },
+  {
+    name: 'Light & cheerful adventure',
+    desc: 'gentle, non-scary adventures — a little treasure hunt, finding the way home, helping a friend deliver something, a small forest quest. No real danger, no tense suspense; every trouble is solved by kindness, friendship, or courage, leaving the child with a warm "I can do it too" feeling.'
+  }
+];
+
+function pickTheme(dateStr, lang) {
+  const pool = lang === 'zh' ? THEME_POOL_CN : THEME_POOL_EN;
+  // Offset EN by half the pool so CN and EN differ on the same day.
+  const offset = lang === 'en' ? Math.floor(pool.length / 2) : 0;
+  const idx = (hashDate(dateStr) + offset) % pool.length;
+  return pool[idx];
+}
+
+// ===== Chinese author style descriptions (core 6) =====
 const CN_STYLES = `
 **1. 孙敬修（孙爷爷讲故事）风格元素：**
 - 口语化讲故事的亲切感：像一个慈祥的老爷爷坐在你身边，慢悠悠地讲。多用"孩子们""你猜怎么着""后来啊"这样亲切的口语过渡，语速不急不缓，像在耳边轻声说。叙事口吻温暖、有耐心，充满老一辈的慈爱。
@@ -117,10 +196,37 @@ const CN_STYLES = `
 - 笑中带暖的叙事：每一段都可能有笑点，但笑过之后心里暖暖的。不是纯搞笑，而是在幽默中传递善良、友谊、勇敢的价值观。像笨狼帮朋友结果帮倒忙，但那份真心让人感动。
 - 角色间的友情与互助：核心关系是朋友之间"虽然你很笨但我还是和你做朋友"的纯粹友情。让孩子理解友谊不是交换，而是接纳对方的不完美。
 - 童话逻辑而非现实逻辑：故事里的世界按童话规则运转——动物会说话、森林有邮局、月亮可以摘下来。但这个童话世界内部逻辑自洽，孩子不会觉得突兀。
-- 适合中低年龄的轻冒险：冒险不危险、悬念不紧张、冲突不激烈。所有"困难"最终都被善良和友谊化解，给孩子安全感。
+- 适合中低年龄的轻冒险：冒险不危险、悬念不紧张、危险被化解，所有"困难"最终都被善良和友谊化解，给孩子安全感。
 `;
 
-// ===== English author style descriptions =====
+// ===== Chinese expanded author styles (7-12) =====
+const CN_STYLES_EXTRA = `
+**扩展风格（可随时调用，与前述六位大师自然融合，增加多样性）：**
+
+**7. 绘本大师风：**
+- 几米：治愈诗意的都市童话感，画面想象丰富，情感细腻温柔。
+- 五味太郎：幽默简洁，脑洞清奇，用孩子能懂的荒诞逻辑讲道理。
+- 松居直：亲子对话般的亲切叙述，像妈妈在耳边慢慢说，强调陪伴与爱。
+
+**8. 北欧童话风：**
+- 安徒生：诗意与美感并存，略带淡淡的忧伤与希望，意境深远。
+- 林格伦（长袜子皮皮）：自由、淘气、活力满满，歌颂孩子本真的野性与快乐。
+
+**9. 日本童话风：**
+- 宫泽贤治：自然哲思，万物有灵，带着清澈的忧伤与温柔的信仰感。
+- 新美南吉：温柔的动物故事，质朴深情，像冬天的炉火。
+
+**10. 童谣/民歌风：**
+- 像摇篮曲一样有节奏，排比、反复、回环，朗朗上口，适合低幼和哄睡。
+
+**11. 科普叙事风：**
+- 斯凯瑞式热闹认知，把知识（自然、身体、食物、职业）自然藏进故事，边听边长见识。
+
+**12. 轻松冒险风：**
+- 汤素兰式呆萌 + 轻悬念，强调快乐解谜与伙伴同行，所有冒险都以温暖回家收尾。
+`;
+
+// ===== English author style descriptions (core 5) =====
 const EN_STYLES = `
 **1. Dr. Seuss style elements:**
 - Strong rhythm and rhyme: use rhyme and rhythm liberally, making it read like a long poem that's catchy and fun to recite. For example: "He went to the park, he went to the dark, he met a small lark who sang like a spark."
@@ -157,27 +263,51 @@ const EN_STYLES = `
 - Small suspense in childhood fun: like Sal following the wrong mother - a "little scare" that's not scary but slightly tense, ending warmly. Letting children experience the comfort of "almost got lost but safely home"
 `;
 
+// ===== English expanded author styles (6-11) =====
+const EN_STYLES_EXTRA = `
+**Expanded styles (call anytime, blend naturally with the five masters):**
+
+**6. Julia Donaldson (The Gruffalo) style:** strong rhyme + repeated patterns + a clever twist, extremely rhythmic; animal protagonists who use wits to escape trouble.
+
+**7. Oliver Jeffers style:** gentle philosophy + childlike wonder, about friendship, loneliness and the marvels of the world; warm, never saccharine.
+
+**8. Mem Fox / Bill Martin Jr (Brown Bear) style:** minimal repetition, lots of onomatopoeia and colour, the best soothing rhythm for 0-1 yr.
+
+**9. A.A. Milne (Winnie-the-Pooh) style:** gentle slow philosophy of the Hundred Acre Wood; clumsy, lovable characters; calm, healing dialogue.
+
+**10. Beatrix Potter style:** exquisite English-countryside animal families; elegant, polite and warm details.
+
+**11. Light adventure style:** McCloskey/Twain tenderness + gentle suspense; friends solving little puzzles together; every adventure ends with a warm return home.
+`;
+
 /**
  * Build the Chinese story generation prompt
  */
 function buildChinesePrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_CN[ageInfo.group];
+  const theme = pickTheme(dateStr, 'zh');
   return `写一个适合儿童的中文睡前故事，语言温和易懂，阅读时长约 3-5 分钟。故事需有完整情节，结尾附上简短寓意。
 
 当前年龄段：${ageInfo.labelCn}
 年龄段风格要求：${ageStyle}
 
+**本篇建议侧重的题材方向：「${theme.name}」**
+${theme.desc}
+（请从上述题材中选出合适的方向发挥，并与当前年龄段匹配；保持多样性，避免连续多日同题材同风格。）
+
 请根据当前年龄段调整故事风格和内容深度。故事标题中注明适合的年龄段。
 
-**中文故事风格参考，融合以下六位大师的特色，加上你自己的创造力和想象力：**
+**中文故事风格参考，融合以下大师的特色，加上你自己的创造力和想象力：**
 ${CN_STYLES}
+${CN_STYLES_EXTRA}
 
 **综合风格要求：**
-- 这六种风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
-- 每篇故事可以侧重不同风格，保持多样性。
+- 所有风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
+- 每篇故事可以侧重不同风格，保持多样性——这一篇偏孙敬修温柔民间故事风，下一篇偏郑渊洁天马行空想象风，再下一篇偏冰波诗意奇幻、张秋生小巴掌精炼、金波抒情诗性、汤素兰呆萌幽默，或上述扩展风格中的任意一种。
 - 场景可以有中国特色，也可以有奇幻世界，关键是要让孩子觉得"好听、想听、听不够"。
 - 适合朗读：句子有自然的停顿，家长读着顺口，孩子听着入耳。
-- 不同年龄段可侧重不同作家风格：胎教期偏冰波/金波的诗意温柔，0-3岁偏张秋生/孙敬修的短小精炼，3-6岁偏汤素兰/郑渊洁的幽默想象，6岁以上可完整融合六种风格。
+- 不同年龄段可侧重不同作家风格：胎教期偏冰波/金波的诗意温柔，0-3岁偏张秋生/孙敬修的短小精炼，3-6岁偏汤素兰/郑渊洁的幽默想象与轻松冒险，6岁以上可完整融合多种风格。
+- 形式可创新：可加入互动式提问（"你猜接下来呢？"）、系列化固定小主角连载（如"小云朵朵"系列）、关键段落标注可吟唱旋律提示。大龄故事可尝试中英双语对照段落。
 
 **重要格式要求：**
 - 所有文本内容不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
@@ -199,21 +329,28 @@ ${CN_STYLES}
  */
 function buildEnglishPrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_EN[ageInfo.group];
+  const theme = pickTheme(dateStr, 'en');
   return `Write an English children's bedtime story (not a translation, an original new story), reading time about 3-5 minutes.
 
 Current age stage: ${ageInfo.labelEn}
 Age stage style requirements: ${ageStyle}
 
+**Suggested theme direction for this story: "${theme.name}"**
+${theme.desc}
+(Pick a direction from the theme above that fits the age stage; keep variety, avoid the same theme/styles on consecutive days.)
+
 Please adjust the story complexity based on the age stage.
 
-**Style reference - fuse these five masters' characteristics with your own creativity and imagination:**
+**Style reference - fuse these masters' characteristics with your own creativity and imagination:**
 ${EN_STYLES}
+${EN_STYLES_EXTRA}
 
 **Overall style requirements:**
-- These five styles should blend naturally, not be awkwardly stitched together. One style can dominate while others accent.
+- All styles should blend naturally, not be awkwardly stitched together. One style can dominate while others accent.
 - Full of imaginative settings: singing trees, cloud-dwelling animals, color-eating monsters, flying libraries, talking rafts on the Mississippi, named duck families in a New England town, etc.
 - Suitable for reading aloud: sentence structures with natural pauses and breathing room for parents reading at bedtime.
-- Each story can lean toward different styles for variety - one Dr. Seuss rhyme-heavy, next Twain adventure narration, next Dahl dark humor, next McCloskey warm small-town daily life.
+- Each story can lean toward different styles for variety - one Dr. Seuss rhyme-heavy, next Twain adventure narration, next Dahl dark humor, next McCloskey warm small-town daily life, or any of the expanded styles above.
+- Form can innovate: interactive questions ("Can you guess what happens next?"), a serialized fixed little protagonist, or a hummable melody hint on key paragraphs.
 
 **Important format requirements:**
 - content is an array of paragraphs, each element is a natural paragraph.
