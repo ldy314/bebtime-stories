@@ -36,26 +36,25 @@ function getAgeInfo(dateStr) {
  */
 function getChineseWeekday(dateStr) {
   const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-  const d = new Date(dateStr + 'T00:00:00+08:00');
-  return weekdays[d.getDay()];
+  const [y, m, d] = dateStr.split('-').map(Number);
+  // 直接用 dateStr 解析为 UTC 日历日，彻底脱离运行环境时区
+  return weekdays[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
 }
 
 /**
  * Format date as "YYYY年M月D日"
  */
 function formatDateCn(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00+08:00');
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return `${y}年${m}月${d}日`;
 }
 
 /**
  * Format date short as "MM/DD"
  */
 function formatDateShort(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00+08:00');
-  const mm = String(d.getMonth() + 1).padStart(2, '0');
-  const dd = String(d.getDate()).padStart(2, '0');
-  return `${mm}/${dd}`;
+  const [, m, d] = dateStr.split('-');
+  return `${m}/${d}`;
 }
 
 /**

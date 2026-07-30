@@ -618,7 +618,7 @@
   },
   {
     "id": "2026-07-26-en",
-    "date": "2026年7月26日 · 星期X",
+    "date": "2026年7月26日 · 星期日",
     "dateShort": "07/26",
     "title": "The Little Brook That Learned to Wait (Prenatal)",
     "language": "en",
@@ -813,8 +813,8 @@
   },
   {
     "id": "2026-07-30-cn",
-    "date": "2026年7月29日 · 星期三",
-    "dateShort": "07/29",
+    "date": "2026年7月30日 · 星期四",
+    "dateShort": "07/30",
     "title": "【胎教期】月亮妈妈的摇篮曲",
     "language": "zh",
     "ageGroup": "prenatal",
@@ -833,8 +833,8 @@
   },
   {
     "id": "2026-07-30-en",
-    "date": "2026年7月29日 · 星期三",
-    "dateShort": "07/29",
+    "date": "2026年7月30日 · 星期四",
+    "dateShort": "07/30",
     "title": "The Little Lantern's Journey (Prenatal)",
     "language": "en",
     "ageGroup": "prenatal",
