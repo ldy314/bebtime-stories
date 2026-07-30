@@ -1,6 +1,11 @@
 /**
  * Prompt Builder for Bedtime Story Generation
- * Contains age group calculation and prompt assembly for Chinese & English stories
+ * Contains age group calculation and prompt assembly for Chinese & English stories.
+ *
+ * Enriched edition: adds a rotating theme pool (nature/science, Chinese culture,
+ * emotions, imagination, daily life, light adventure), expanded author styles,
+ * and form-innovation guidance. Theme variety is enforced per-date so consecutive
+ * days naturally get different themes.
  */
 
 const CHILD_BIRTHDAY = '2026-09-22';
@@ -31,26 +36,36 @@ function getAgeInfo(dateStr) {
  */
 function getChineseWeekday(dateStr) {
   const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-  const d = new Date(dateStr + 'T00:00:00+08:00');
-  return weekdays[d.getDay()];
+  const [y, m, d] = dateStr.split('-').map(Number);
+  // 直接用 dateStr 解析为 UTC 日历日，彻底脱离运行环境时区
+  return weekdays[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
 }
 
 /**
  * Format date as "YYYY年M月D日"
  */
 function formatDateCn(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00+08:00');
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return `${y}年${m}月${d}日`;
 }
 
 /**
  * Format date short as "MM/DD"
  */
 function formatDateShort(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00+08:00');
-  const mm = String(d.getMonth() + 1).padStart(2, '0');
-  const dd = String(d.getDate()).padStart(2, '0');
-  return `${mm}/${dd}`;
+  const [, m, d] = dateStr.split('-');
+  return `${m}/${d}`;
+}
+
+/**
+ * Deterministic per-date hash so different dates pick different themes (variety).
+ */
+function hashDate(dateStr) {
+  let h = 0;
+  for (let i = 0; i < dateStr.length; i++) {
+    h = (h * 31 + dateStr.charCodeAt(i)) >>> 0;
+  }
+  return h;
 }
 
 // ===== Age group style descriptions =====
@@ -70,7 +85,70 @@ const AGE_STYLE_EN = {
   '6+': '6+ yr: longer and more complex stories, themes around "growth, responsibility, kindness, perseverance, dreams, empathy", can include metaphors and deeper meanings.'
 };
 
-// ===== Chinese author style descriptions =====
+// ===== Theme pool (rotating per date for variety) =====
+const THEME_POOL_CN = [
+  {
+    name: '自然与科学启蒙',
+    desc: '二十四节气（春分的燕子、谷雨的茶、霜降的枫叶）、星空宇宙（月亮的秘密、流星、小小宇航员）、微观世界（蚂蚁搬家、蝴蝶蜕变、萤火虫森林）、海洋与雨林（珊瑚城、座头鲸的歌）。'
+  },
+  {
+    name: '中国文化与传统',
+    desc: '传统节日传说（春节、中秋、端午、重阳的暖心版）、神话新编（精卫、嫦娥、夸父的温柔低龄化）、古诗词意境化（把「床前明月光」「小荷才露尖尖角」写成小故事）、十二生肖与民间智慧。'
+  },
+  {
+    name: '情感与心理',
+    desc: '情绪小怪兽（生气、害羞、害怕、嫉妒怎么安放）、安全感（怕黑、打雷、第一次分床）、家庭与爱（隔代亲情、二胎、宠物朋友）、自我接纳（「我和别人不一样也没关系」）。'
+  },
+  {
+    name: '想象与奇幻',
+    desc: '梦境探险（云朵上的城市、会飞的床）、物品有灵（玩具夜谈、书架里的秘密通道）、反向世界（如果颜色会消失、如果动物说人话）。'
+  },
+  {
+    name: '生活与认知',
+    desc: '职业初识（面包师、园丁、温柔版医生）、好习惯（刷牙、收拾玩具、按时睡觉）、食物旅行（一颗苹果的诞生、馒头的故事）。'
+  },
+  {
+    name: '轻松愉快的冒险',
+    desc: '温和不刺激的轻冒险——寻宝小旅程、迷路后回家、帮朋友送东西、森林里的小任务。冒险不危险、悬念不紧张、冲突不激烈，所有困难最终都被善良、友谊或勇气化解，给孩子「我也能行」的安全感与力量感。'
+  }
+];
+
+const THEME_POOL_EN = [
+  {
+    name: 'Nature & science',
+    desc: 'the 24 solar terms, stars and space (the moon\'s secret, a little astronaut), the tiny world of ants/butterflies/fireflies, coral reefs and whales.'
+  },
+  {
+    name: 'Chinese culture & tradition',
+    desc: 'gentle festival tales (Spring Festival, Mid-Autumn, Dragon Boat), softened myths (Jingwei, Chang\'e), classical Chinese poems turned into little stories, the zodiac.'
+  },
+  {
+    name: 'Feelings & heart',
+    desc: 'the "emotion little monsters" (anger, shyness, fear, jealousy), security (afraid of the dark, thunder, first night alone), family love (grandparents, a new sibling, a pet), self-acceptance ("it\'s okay to be different").'
+  },
+  {
+    name: 'Imagination & whimsy',
+    desc: 'dream adventures (a city on the clouds, a flying bed), animated objects (toys\' night talk, a secret passage in the bookshelf), topsy-turvy worlds (if colors disappeared, if animals spoke).'
+  },
+  {
+    name: 'Daily life & learning',
+    desc: 'first jobs (baker, gardener, a gentle doctor), good habits (brushing teeth, tidying up, bedtime on time), food journeys (the birth of an apple, the story of a steamed bun).'
+  },
+  {
+    name: 'Light & cheerful adventure',
+    desc: 'gentle, non-scary adventures — a little treasure hunt, finding the way home, helping a friend deliver something, a small forest quest. No real danger, no tense suspense; every trouble is solved by kindness, friendship, or courage, leaving the child with a warm "I can do it too" feeling.'
+  }
+];
+
+function pickTheme(dateStr, lang) {
+  const pool = lang === 'zh' ? THEME_POOL_CN : THEME_POOL_EN;
+  // Offset EN by half the pool so CN and EN differ on the same day.
+  const offset = lang === 'en' ? Math.floor(pool.length / 2) : 0;
+  const idx = (hashDate(dateStr) + offset) % pool.length;
+  return pool[idx];
+}
+
+// ===== Chinese author style descriptions (core 6) =====
 const CN_STYLES = `
 **1. 孙敬修（孙爷爷讲故事）风格元素：**
 - 口语化讲故事的亲切感：像一个慈祥的老爷爷坐在你身边，慢悠悠地讲。多用"孩子们""你猜怎么着""后来啊"这样亲切的口语过渡，语速不急不缓，像在耳边轻声说。叙事口吻温暖、有耐心，充满老一辈的慈爱。
@@ -117,10 +195,37 @@ const CN_STYLES = `
 - 笑中带暖的叙事：每一段都可能有笑点，但笑过之后心里暖暖的。不是纯搞笑，而是在幽默中传递善良、友谊、勇敢的价值观。像笨狼帮朋友结果帮倒忙，但那份真心让人感动。
 - 角色间的友情与互助：核心关系是朋友之间"虽然你很笨但我还是和你做朋友"的纯粹友情。让孩子理解友谊不是交换，而是接纳对方的不完美。
 - 童话逻辑而非现实逻辑：故事里的世界按童话规则运转——动物会说话、森林有邮局、月亮可以摘下来。但这个童话世界内部逻辑自洽，孩子不会觉得突兀。
-- 适合中低年龄的轻冒险：冒险不危险、悬念不紧张、冲突不激烈。所有"困难"最终都被善良和友谊化解，给孩子安全感。
+- 适合中低年龄的轻冒险：冒险不危险、悬念不紧张、危险被化解，所有"困难"最终都被善良和友谊化解，给孩子安全感。
 `;
 
-// ===== English author style descriptions =====
+// ===== Chinese expanded author styles (7-12) =====
+const CN_STYLES_EXTRA = `
+**扩展风格（可随时调用，与前述六位大师自然融合，增加多样性）：**
+
+**7. 绘本大师风：**
+- 几米：治愈诗意的都市童话感，画面想象丰富，情感细腻温柔。
+- 五味太郎：幽默简洁，脑洞清奇，用孩子能懂的荒诞逻辑讲道理。
+- 松居直：亲子对话般的亲切叙述，像妈妈在耳边慢慢说，强调陪伴与爱。
+
+**8. 北欧童话风：**
+- 安徒生：诗意与美感并存，略带淡淡的忧伤与希望，意境深远。
+- 林格伦（长袜子皮皮）：自由、淘气、活力满满，歌颂孩子本真的野性与快乐。
+
+**9. 日本童话风：**
+- 宫泽贤治：自然哲思，万物有灵，带着清澈的忧伤与温柔的信仰感。
+- 新美南吉：温柔的动物故事，质朴深情，像冬天的炉火。
+
+**10. 童谣/民歌风：**
+- 像摇篮曲一样有节奏，排比、反复、回环，朗朗上口，适合低幼和哄睡。
+
+**11. 科普叙事风：**
+- 斯凯瑞式热闹认知，把知识（自然、身体、食物、职业）自然藏进故事，边听边长见识。
+
+**12. 轻松冒险风：**
+- 汤素兰式呆萌 + 轻悬念，强调快乐解谜与伙伴同行，所有冒险都以温暖回家收尾。
+`;
+
+// ===== English author style descriptions (core 5) =====
 const EN_STYLES = `
 **1. Dr. Seuss style elements:**
 - Strong rhythm and rhyme: use rhyme and rhythm liberally, making it read like a long poem that's catchy and fun to recite. For example: "He went to the park, he went to the dark, he met a small lark who sang like a spark."
@@ -157,27 +262,51 @@ const EN_STYLES = `
 - Small suspense in childhood fun: like Sal following the wrong mother - a "little scare" that's not scary but slightly tense, ending warmly. Letting children experience the comfort of "almost got lost but safely home"
 `;
 
+// ===== English expanded author styles (6-11) =====
+const EN_STYLES_EXTRA = `
+**Expanded styles (call anytime, blend naturally with the five masters):**
+
+**6. Julia Donaldson (The Gruffalo) style:** strong rhyme + repeated patterns + a clever twist, extremely rhythmic; animal protagonists who use wits to escape trouble.
+
+**7. Oliver Jeffers style:** gentle philosophy + childlike wonder, about friendship, loneliness and the marvels of the world; warm, never saccharine.
+
+**8. Mem Fox / Bill Martin Jr (Brown Bear) style:** minimal repetition, lots of onomatopoeia and colour, the best soothing rhythm for 0-1 yr.
+
+**9. A.A. Milne (Winnie-the-Pooh) style:** gentle slow philosophy of the Hundred Acre Wood; clumsy, lovable characters; calm, healing dialogue.
+
+**10. Beatrix Potter style:** exquisite English-countryside animal families; elegant, polite and warm details.
+
+**11. Light adventure style:** McCloskey/Twain tenderness + gentle suspense; friends solving little puzzles together; every adventure ends with a warm return home.
+`;
+
 /**
  * Build the Chinese story generation prompt
  */
 function buildChinesePrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_CN[ageInfo.group];
+  const theme = pickTheme(dateStr, 'zh');
   return `写一个适合儿童的中文睡前故事，语言温和易懂，阅读时长约 3-5 分钟。故事需有完整情节，结尾附上简短寓意。
 
 当前年龄段：${ageInfo.labelCn}
 年龄段风格要求：${ageStyle}
 
+**本篇建议侧重的题材方向：「${theme.name}」**
+${theme.desc}
+（请从上述题材中选出合适的方向发挥，并与当前年龄段匹配；保持多样性，避免连续多日同题材同风格。）
+
 请根据当前年龄段调整故事风格和内容深度。故事标题中注明适合的年龄段。
 
-**中文故事风格参考，融合以下六位大师的特色，加上你自己的创造力和想象力：**
+**中文故事风格参考，融合以下大师的特色，加上你自己的创造力和想象力：**
 ${CN_STYLES}
+${CN_STYLES_EXTRA}
 
 **综合风格要求：**
-- 这六种风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
-- 每篇故事可以侧重不同风格，保持多样性。
+- 所有风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
+- 每篇故事可以侧重不同风格，保持多样性——这一篇偏孙敬修温柔民间故事风，下一篇偏郑渊洁天马行空想象风，再下一篇偏冰波诗意奇幻、张秋生小巴掌精炼、金波抒情诗性、汤素兰呆萌幽默，或上述扩展风格中的任意一种。
 - 场景可以有中国特色，也可以有奇幻世界，关键是要让孩子觉得"好听、想听、听不够"。
 - 适合朗读：句子有自然的停顿，家长读着顺口，孩子听着入耳。
-- 不同年龄段可侧重不同作家风格：胎教期偏冰波/金波的诗意温柔，0-3岁偏张秋生/孙敬修的短小精炼，3-6岁偏汤素兰/郑渊洁的幽默想象，6岁以上可完整融合六种风格。
+- 不同年龄段可侧重不同作家风格：胎教期偏冰波/金波的诗意温柔，0-3岁偏张秋生/孙敬修的短小精炼，3-6岁偏汤素兰/郑渊洁的幽默想象与轻松冒险，6岁以上可完整融合多种风格。
+- 形式可创新：可加入互动式提问（"你猜接下来呢？"）、系列化固定小主角连载（如"小云朵朵"系列）、关键段落标注可吟唱旋律提示。大龄故事可尝试中英双语对照段落。
 
 **重要格式要求：**
 - 所有文本内容不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
@@ -199,21 +328,28 @@ ${CN_STYLES}
  */
 function buildEnglishPrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_EN[ageInfo.group];
+  const theme = pickTheme(dateStr, 'en');
   return `Write an English children's bedtime story (not a translation, an original new story), reading time about 3-5 minutes.
 
 Current age stage: ${ageInfo.labelEn}
 Age stage style requirements: ${ageStyle}
 
+**Suggested theme direction for this story: "${theme.name}"**
+${theme.desc}
+(Pick a direction from the theme above that fits the age stage; keep variety, avoid the same theme/styles on consecutive days.)
+
 Please adjust the story complexity based on the age stage.
 
-**Style reference - fuse these five masters' characteristics with your own creativity and imagination:**
+**Style reference - fuse these masters' characteristics with your own creativity and imagination:**
 ${EN_STYLES}
+${EN_STYLES_EXTRA}
 
 **Overall style requirements:**
-- These five styles should blend naturally, not be awkwardly stitched together. One style can dominate while others accent.
+- All styles should blend naturally, not be awkwardly stitched together. One style can dominate while others accent.
 - Full of imaginative settings: singing trees, cloud-dwelling animals, color-eating monsters, flying libraries, talking rafts on the Mississippi, named duck families in a New England town, etc.
 - Suitable for reading aloud: sentence structures with natural pauses and breathing room for parents reading at bedtime.
-- Each story can lean toward different styles for variety - one Dr. Seuss rhyme-heavy, next Twain adventure narration, next Dahl dark humor, next McCloskey warm small-town daily life.
+- Each story can lean toward different styles for variety - one Dr. Seuss rhyme-heavy, next Twain adventure narration, next Dahl dark humor, next McCloskey warm small-town daily life, or any of the expanded styles above.
+- Form can innovate: interactive questions ("Can you guess what happens next?"), a serialized fixed little protagonist, or a hummable melody hint on key paragraphs.
 
 **Important format requirements:**
 - content is an array of paragraphs, each element is a natural paragraph.
@@ -229,11 +365,198 @@ Return a JSON object in this format:
 }`;
 }
 
+// ===== Weekly science story (real popular-science articles) =====
+// 每个语言一个"源池"，源之间确定性轮换（按周），保证云端/本地一致。
+// 中文源池：环球科学（杂志 RSS）+ 博物（博物杂志官方微博，经 RSSHub 桥接，
+//   内容多为动物/植物/自然，极适合给孩子讲）。英文源池：Scientific American。
+const SCIENCE_FEEDS = {
+  zh: [
+    { url: 'https://www.huanqiukexue.com/?feed=rss2', source: '环球科学' },
+    { url: 'https://rsshub.app/weibo/user/1195054531', source: '博物' }
+  ],
+  en: [
+    { url: 'https://www.scientificamerican.com/platform/syndication/rss/', source: 'Scientific American' }
+  ]
+};
+
+function stripHtmlTags(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/&#[0-9]+;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function parseRss(xml) {
+  if (!xml || typeof xml !== 'string') return [];
+  const items = [];
+  const itemRe = /<item[\s\S]*?<\/item>/gi;
+  let m;
+  while ((m = itemRe.exec(xml)) !== null) {
+    const block = m[0];
+    const get = (tag) => {
+      const r = new RegExp('<' + tag + '[^>]*>([\\s\\S]*?)<\\/' + tag + '>', 'i');
+      const mm = block.match(r);
+      if (!mm) return '';
+      return mm[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1');
+    };
+    const title = stripHtmlTags(get('title'));
+    const desc = stripHtmlTags(get('description'));
+    const link = get('link').replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').trim();
+    const pubDate = get('pubDate');
+    if (title) items.push({ title, description: desc.slice(0, 600), link, pubDate });
+  }
+  return items;
+}
+
+function inCurrentMonth(pubDateStr, ref) {
+  if (!pubDateStr) return true;
+  const d = new Date(pubDateStr);
+  if (isNaN(d.getTime())) return true;
+  return d.getUTCFullYear() === ref.getUTCFullYear() && d.getUTCMonth() === ref.getUTCMonth();
+}
+
+async function fetchScienceArticle(lang) {
+  const feeds = SCIENCE_FEEDS[lang];
+  if (!Array.isArray(feeds) || feeds.length === 0) return null;
+  const weekIdx = Math.floor(Date.now() / (7 * 86400000));
+  // 确定性选源：每周固定一个主源，保证云端/本地一致
+  const primaryIdx = hashDate('sci-feed-' + weekIdx + lang) % feeds.length;
+  // 先试主选源；若主源抓取失败或当月无文章，依次尝试其余源；全失败才回退 null
+  const order = [primaryIdx, ...feeds.map((_, i) => i).filter((i) => i !== primaryIdx)];
+  for (const idx of order) {
+    const feed = feeds[idx];
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 12000);
+      const res = await fetch(feed.url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (bedtime-story-bot)' },
+        signal: ctrl.signal
+      });
+      clearTimeout(timer);
+      if (!res.ok) continue;
+      const xml = await res.text();
+      const ref = new Date();
+      let items = parseRss(xml).filter((it) => inCurrentMonth(it.pubDate, ref));
+      if (items.length === 0) items = parseRss(xml); // 当月无则回退全部
+      if (items.length === 0) continue;
+      const pick = items[hashDate('sci' + weekIdx + lang + feed.source) % items.length];
+      return { title: pick.title, summary: pick.description, url: pick.link, source: feed.source };
+    } catch (e) {
+      continue; // 该源失败，尝试下一个源
+    }
+  }
+  return null; // 所有源均失败 → 上层回退到 AI 自拟主题，保证每天都有科学故事
+}
+
+// 每周随机一天（确定性，云端/本地一致，绝不重复）
+function isScienceDay(dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const date = new Date(Date.UTC(y, m - 1, d));
+  const weekday = date.getUTCDay(); // 0=周日 .. 6=周六
+  const epoch = Date.UTC(2026, 6, 16); // 项目起点 2026-07-16（周四）
+  const weekIndex = Math.floor((date - epoch) / (7 * 86400000));
+  const target = hashDate('sci-day-' + weekIndex) % 7;
+  return weekday === target;
+}
+
+function scienceFallbackTopic(dateStr, lang) {
+  const topics = lang === 'zh'
+    ? ['萤火虫为什么会发光', '星星为什么会眨眼', '海浪是怎么来的', '小种子怎么长成大树', '彩虹是怎么画出来的', '月亮为什么有圆有缺', '小蚂蚁怎么搬动大饼干', '雨是从哪儿来的']
+    : ['Why fireflies glow', 'Why stars twinkle', 'Where ocean waves come from', 'How a tiny seed becomes a tree', 'How rainbows are painted', 'Why the moon changes shape', 'How ants carry big cookies', 'Where rain comes from'];
+  return topics[hashDate(dateStr + lang) % topics.length];
+}
+
+function buildScienceChinesePrompt(article, ageInfo, dateStr) {
+  const ageStyle = AGE_STYLE_CN[ageInfo.group];
+  const seed = article
+    ? `本月《${article.source}》真实科普报道：《${article.title}》。报道摘要：${article.summary}`
+    : `一个科普主题：「${scienceFallbackTopic(dateStr, 'zh')}」`;
+  const hint = article
+    ? `（灵感真实来自《${article.source}》，请保留其中的科学内核，但用孩子能懂的温柔语言重述，不要照抄专业术语）`
+    : '（未能抓取到当期杂志内容，请围绕这个科普主题创作）';
+  return `写一个适合儿童的中文睡前科学故事，语言温和易懂，阅读时长约 3-5 分钟。${hint}
+
+当前年龄段：${ageInfo.labelCn}
+年龄段风格要求：${ageStyle}
+
+本期科学素材：${seed}
+
+要求：
+- 把真实科学内容改编成孩子爱听的故事，保留科学内核（如现象、原理的童趣化解释），但用拟声词、温柔节奏和"守护/好奇/惊喜"的情绪包装。
+- 适合胎教/哄睡朗读，句子有自然停顿，家长读着顺口。
+- 故事标题必须以「🔬科学故事」开头，并注明适合的年龄段。
+- 结尾用一两句话点出这个科学小知识，让孩子带着好奇入睡。
+
+中文故事风格参考（融合大师特色 + 你的创造力）：
+${CN_STYLES}
+${CN_STYLES_EXTRA}
+
+重要格式要求：
+- 所有文本内容不得使用中文弯引号""，请使用「」或普通单引号'代替。
+- content 是段落数组，每个元素是一个自然段。
+- preview 是故事前两句话的摘要。
+- moral 是这个科学小知识的简短说明。
+
+请返回JSON对象：
+{
+  "title": "🔬科学故事（年龄段）：故事标题",
+  "preview": "故事前两句话作为预览",
+  "moral": "本篇的科学小知识",
+  "content": ["第一段落...", "第二段落..."]
+}`;
+}
+
+function buildScienceEnglishPrompt(article, ageInfo, dateStr) {
+  const ageStyle = AGE_STYLE_EN[ageInfo.group];
+  const seed = article
+    ? `A real popular-science article from this month's ${article.source}: "${article.title}". Summary: ${article.summary}`
+    : `a science topic: "${scienceFallbackTopic(dateStr, 'en')}"`;
+  const hint = article
+    ? `(Inspired by real ${article.source} content — keep the genuine science kernel but retell it in gentle, child-friendly language; don't copy jargon.)`
+    : '(Could not fetch the magazine; please write about this science topic.)';
+  return `Write an English children's bedtime science story (original, not a translation), reading time about 3-5 minutes. ${hint}
+
+Current age stage: ${ageInfo.labelEn}
+Age stage style requirements: ${ageStyle}
+
+This story's science seed: ${seed}
+
+Requirements:
+- Adapt the real science into a story kids love: keep the science kernel but wrap it in onomatopoeia, a soft rhythm, and feelings of wonder, safety and curiosity.
+- Suitable for prenatal/soothing read-aloud; natural pauses; parent-friendly.
+- Title must start with "🔬 Science Story" and note the age range.
+- End with one or two lines revealing the little science fact, so the child falls asleep curious.
+
+Style reference (fuse these masters + your creativity):
+${EN_STYLES}
+${EN_STYLES_EXTRA}
+
+Format requirements:
+- content is an array of paragraphs.
+- preview is the first two sentences.
+- moral is the little science fact.
+
+Return a JSON object:
+{
+  "title": "🔬 Science Story (age range): Story Title",
+  "preview": "First two sentences",
+  "moral": "The little science fact",
+  "content": ["Paragraph 1...", "Paragraph 2..."]
+}`;
+}
+
 module.exports = {
   getAgeInfo,
   getChineseWeekday,
   formatDateCn,
   formatDateShort,
   buildChinesePrompt,
-  buildEnglishPrompt
+  buildEnglishPrompt,
+  isScienceDay,
+  fetchScienceArticle,
+  buildScienceChinesePrompt,
+  buildScienceEnglishPrompt
 };

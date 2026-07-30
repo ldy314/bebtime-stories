@@ -66,6 +66,7 @@ const storyCards = stories.map((s, i) => {
   <div class="story-date">${esc(s.date)}</div>
   <div class="story-title">${esc(s.title)}</div>
   <div class="story-lang-badge">${langLabel(s.language)}</div>
+  ${s.category === 'science' ? `<div class="story-lang-badge" style="color:#2a9d8f;font-weight:600;margin-top:2px;">🔬 科学故事 · ${esc(s.source || '科学杂志')}</div>` : ''}
   <div class="story-divider">— ✿ —</div>
 
   <div class="story-body">
@@ -259,6 +260,25 @@ const html = `<!DOCTYPE html>
     .story-body { font-size: 16px; }
     .toc-list a { font-size: 14px; }
   }
+  /* ===== 故事风格介绍 ===== */
+  .style-intro {
+    max-width: 680px; width: 100%; margin: 0 auto 32px;
+    background: #fef9f0; border-radius: 24px; padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4); position: relative; overflow: hidden;
+  }
+  .style-intro::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, #a8d8ea, #ffb347, #ffcc33);
+  }
+  .style-intro h2 { text-align: center; color: #5c4d3c; font-size: 22px; font-weight: 600; margin-bottom: 18px; letter-spacing: 2px; }
+  .style-intro h4 { font-size: 15px; color: #c8923a; margin: 18px 0 8px; letter-spacing: 1px; }
+  .style-intro h4:first-of-type { margin-top: 4px; }
+  .style-intro p { font-size: 15px; line-height: 1.9; color: #5a4535; }
+  .style-intro ul { margin: 0 0 8px; padding-left: 20px; }
+  .style-intro li { font-size: 15px; line-height: 1.9; color: #5a4535; margin-bottom: 6px; }
+  .style-intro b { color: #e8963b; }
+  .style-intro .si-note { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #e8dcc4; font-size: 14px; color: #7a6550; font-style: italic; text-align: center; }
+  @media (max-width: 600px) { .style-intro { padding: 32px 24px; } .style-intro p, .style-intro li { font-size: 14px; } }
 </style>
 </head>
 <body>
@@ -298,6 +318,25 @@ const html = `<!DOCTYPE html>
 ${tocEntries}
     </ul>
   </div>
+</div>
+
+<!-- ===== 故事风格介绍 ===== -->
+<div class="style-intro">
+  <h2>✨ 故事风格介绍</h2>
+  <p>这些睡前故事，是写给正在妈妈肚子里、一天天长大的小宝贝的。随着宝宝慢慢长大，故事的语气、题材和风格会悄悄变化——像四季一样，每个阶段都有属于自己的温度。</p>
+  <h4>📅 按年龄，故事会这样变</h4>
+  <ul>
+    <li><b>胎教期（出生前）</b>：极温柔缓慢，多用拟声词与节奏感，讲等待、爱、守护与妈妈的声音。</li>
+    <li><b>0-1 岁</b>：极简短句，大量重复与拟声（动物叫、自然声），陪宝宝认识感官与世界。</li>
+    <li><b>1-3 岁</b>：简单情节，小动物或日常物品当主角，聊生活习惯、情绪和友谊。</li>
+    <li><b>3-6 岁</b>：完整小故事，加入对话与轻松冒险，讲勇气、分享、诚实与好奇心。</li>
+    <li><b>6 岁以上</b>：更长更深，带比喻和寓意，聊成长、责任、善良与梦想。</li>
+  </ul>
+  <h4>🎨 故事都有哪些题材？</h4>
+  <p>自然与科学启蒙 · 中国文化与传统 · 情感与心理 · 想象与奇幻 · 生活与认知 · 轻松愉快的冒险</p>
+  <h4>✍️ 文字里有谁的味道？</h4>
+  <p>中文故事融合孙敬修、冰波、金波、张秋生、郑渊洁、汤素兰等大师的温柔笔触；英文故事带着 Dr. Seuss 的韵律、McCloskey 的自然、Dahl 的幽默与 Sesame Street 的暖意。每天中英各一篇，陪宝宝用两种语言说晚安。</p>
+  <p class="si-note">每一篇都标注了适合的年龄段。愿这些温柔的声音，成为宝宝来到世界前，最早听到的爱。</p>
 </div>
 
 ${storyCards}
