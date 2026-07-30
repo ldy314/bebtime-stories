@@ -1,8 +1,20 @@
+#!/usr/bin/env node
+/**
+ * Generate collection HTML from stories.json
+ * Creates a single-page HTML with all stories listed.
+ * 
+ * Usage: node scripts/generate-collection-html.js
+ */
+
 const fs = require('fs');
 const path = require('path');
 
+const ROOT_DIR = path.join(__dirname, '..');
+const STORIES_PATH = path.join(ROOT_DIR, 'stories.json');
+const OUTPUT_PATH = path.join(ROOT_DIR, 'collection.html');
+
 // Read stories.json
-const stories = JSON.parse(fs.readFileSync('C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app/stories.json', 'utf8'));
+const stories = JSON.parse(fs.readFileSync(STORIES_PATH, 'utf8'));
 
 // HTML escape helper
 function esc(s) {
@@ -13,7 +25,6 @@ function esc(s) {
 }
 
 // Convert story body paragraphs to HTML
-// content can be a string or an array of paragraph strings
 function bodyToHtml(body, isFirst) {
   let paras;
   if (Array.isArray(body)) {
@@ -29,22 +40,21 @@ function bodyToHtml(body, isFirst) {
   }).join('\n\n');
 }
 
-// Convert moral to HTML (split lines with <br>)
+// Convert moral to HTML
 function moralToHtml(moral) {
   return esc(moral).replace(/\n+/g, '<br>');
 }
 
 // Get short date for TOC
 function shortDate(dateStr) {
-  // dateStr like "2026年7月16日 · 星期四"
-  const m = dateStr.match(/(\d+)月(\d+)日/);
-  if (m) return `${m[1]}月${m[2]}日`;
+  const m = dateStr.match(/(\d+)\u6708(\d+)\u65e5/);
+  if (m) return `${m[1]}\u6708${m[2]}\u65e5`;
   return dateStr;
 }
 
 // Get language label
 function langLabel(lang) {
-  return lang === 'en' ? '🇬🇧 EN' : '🇨🇳 中文';
+  return lang === 'en' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDE8\uD83C\uDDE9 \u4E2D\u6587';
 }
 
 // Build TOC entries
@@ -56,17 +66,17 @@ const tocEntries = stories.map((s, i) => {
 // Build story cards
 const storyCards = stories.map((s, i) => {
   const moralText = s.moral || '';
-  const moralTitle = s.language === 'en' ? 'Story Lesson' : '故事小语';
-  const moralIcon = '✨';
-  
+  const moralTitle = s.language === 'en' ? 'Story Lesson' : '\u6545\u4E8B\u5C0F\u8BED';
+  const moralIcon = '\u2728';
+
   return `<!-- ===== ${langLabel(s.language)} Story ${i+1} ===== -->
 <div class="story-card" id="story-${i+1}">
-  <div class="moon">🌙</div>
-  <div class="stars">✦ ✦ ✦</div>
+  <div class="moon">\uD83C\uDF19</div>
+  <div class="stars">\u2726 \u2726 \u2726</div>
   <div class="story-date">${esc(s.date)}</div>
   <div class="story-title">${esc(s.title)}</div>
   <div class="story-lang-badge">${langLabel(s.language)}</div>
-  <div class="story-divider">— ✿ —</div>
+  <div class="story-divider">\u2014 \u273F \u2014</div>
 
   <div class="story-body">
 ${bodyToHtml(s.content, i === 0)}
@@ -79,7 +89,7 @@ ${bodyToHtml(s.content, i === 0)}
     </div>
   </div>
 
-  <div class="story-back"><a href="#">↑ 回到目录</a></div>
+  <div class="story-back"><a href="#">\u2191 \u56DE\u5230\u76EE\u5F55</a></div>
 </div>`;
 }).join('\n\n');
 
@@ -89,7 +99,7 @@ const html = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>睡前故事合集 · 星光下的温柔</title>
+<title>\u7761\u524D\u6545\u4E8B\u5408\u96C6 \xB7 \u661F\u5149\u4E0B\u7684\u6E29\u67D4</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -99,7 +109,7 @@ const html = `<!DOCTYPE html>
     padding: 20px;
   }
 
-  /* ===== 封面 ===== */
+  /* ===== Cover ===== */
   .cover {
     max-width: 680px; width: 100%; margin: 0 auto 32px;
     background: linear-gradient(135deg, #fef9f0 0%, #fff3d6 100%);
@@ -145,7 +155,7 @@ const html = `<!DOCTYPE html>
     font-size: 12px; color: #b0a08a; letter-spacing: 1px;
   }
 
-  /* ===== 目录 ===== */
+  /* ===== TOC ===== */
   .toc {
     background: rgba(255,255,255,0.5);
     border-radius: 16px;
@@ -177,7 +187,7 @@ const html = `<!DOCTYPE html>
     font-size: 12px; color: #b0a08a; margin-left: auto;
   }
 
-  /* ===== 故事卡片 ===== */
+  /* ===== Story cards ===== */
   .story-card {
     max-width: 680px; width: 100%; margin: 0 auto 32px;
     background: #fef9f0;
@@ -245,7 +255,7 @@ const html = `<!DOCTYPE html>
   }
   .story-back a:hover { color: #e8963b; }
 
-  /* ===== 页脚 ===== */
+  /* ===== Footer ===== */
   .footer {
     max-width: 680px; margin: 0 auto;
     text-align: center; padding: 32px 0;
@@ -259,7 +269,8 @@ const html = `<!DOCTYPE html>
     .story-body { font-size: 16px; }
     .toc-list a { font-size: 14px; }
   }
-  /* ===== 故事风格介绍 ===== */
+
+  /* ===== Style intro ===== */
   .style-intro {
     max-width: 680px; width: 100%; margin: 0 auto 32px;
     background: #fef9f0; border-radius: 24px; padding: 40px;
@@ -282,28 +293,28 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
 
-<!-- ===== 封面 ===== -->
+<!-- ===== Cover ===== -->
 <div class="cover">
-  <div class="cover-moon">🌙</div>
-  <div class="cover-stars">✦ ✦ ✦</div>
-  <div class="cover-emoji">🌛</div>
-  <h1>星光下的温柔</h1>
-  <div class="subtitle">睡前故事合集 · 中英双语</div>
+  <div class="cover-moon">\uD83C\uDF19</div>
+  <div class="cover-stars">\u2726 \u2726 \u2726</div>
+  <div class="cover-emoji">\uD83C\uDF1A</div>
+  <h1>\u661F\u5149\u4E0B\u7684\u6E29\u67D4</h1>
+  <div class="subtitle">\u7761\u524D\u6545\u4E8B\u5408\u96C6 \xB7 \u4E2D\u82F1\u53CC\u8BED</div>
   <p class="intro">
-    这是一本为即将到来的宝宝准备的睡前故事集。<br>
-    中文故事融合孙敬修、郑渊洁、冰波、张秋生、金波、汤素兰六位大师风格；<br>
-    英文故事融合Dr. Seuss、芝麻街、Roald Dahl、Mark Twain、Robert McCloskey五位大师风格。<br>
-    愿这些温柔的文字，化作星光，<br>
-    轻轻落在宝宝的心上。
+    \u8FD9\u662F\u4E00\u672C\u4E3A\u5373\u5C06\u5230\u6765\u7684\u5B9D\u5B9D\u51C6\u5907\u7684\u7761\u524D\u6545\u4E8B\u96C6\u3002<br>
+    \u4E2D\u6587\u6545\u4E8B\u878D\u5408\u5B59\u656C\u4FEE\u3001\u90D1\u6E0A\u6D01\u3001\u51B0\u6CE2\u3001\u5F20\u79CB\u751F\u3001\u91D1\u6CE2\u3001\u6C64\u7D20\u5170\u516D\u4F4D\u5927\u5E08\u98CE\u683C\uFF1B<br>
+    \u82F1\u6587\u6545\u4E8B\u878D\u5408Dr. Seuss\u3001\u829D\u9EBB\u8857\u3001Roald Dahl\u3001Mark Twain\u3001Robert McCloskey\u4E94\u4F4D\u5927\u5E08\u98CE\u683C\u3002<br>
+    \u613F\u8FD9\u4E9B\u6E29\u67D4\u7684\u6587\u5B57\uFF0C\u5316\u4F5C\u661F\u5149\uFF0C<br>
+    \u8F7B\u8F7B\u843D\u5728\u5B9D\u5B9D\u7684\u5FC3\u4E0A\u3002
   </p>
   <div class="stats">
     <div class="stat">
       <div class="stat-num">${stories.length}</div>
-      <div class="stat-label">篇故事</div>
+      <div class="stat-label">\u7BC7\u6545\u4E8B</div>
     </div>
     <div class="stat">
       <div class="stat-num">${stories.filter(s => s.language === 'zh').length}</div>
-      <div class="stat-label">中文</div>
+      <div class="stat-label">\u4E2D\u6587</div>
     </div>
     <div class="stat">
       <div class="stat-num">${stories.filter(s => s.language === 'en').length}</div>
@@ -312,45 +323,45 @@ const html = `<!DOCTYPE html>
   </div>
 
   <div class="toc">
-    <div class="toc-title">📖 目 录</div>
+    <div class="toc-title">\uD83D\uDCD6 \u76EE \u5F55</div>
     <ul class="toc-list">
 ${tocEntries}
     </ul>
   </div>
 </div>
 
-<!-- ===== 故事风格介绍 ===== -->
+<!-- ===== Style intro ===== -->
 <div class="style-intro">
-  <h2>✨ 故事风格介绍</h2>
-  <p>这些睡前故事，是写给正在妈妈肚子里、一天天长大的小宝贝的。随着宝宝慢慢长大，故事的语气、题材和风格会悄悄变化——像四季一样，每个阶段都有属于自己的温度。</p>
-  <h4>📅 按年龄，故事会这样变</h4>
+  <h2>\u2728 \u6545\u4E8B\u98CE\u683C\u4ECB\u7ECD</h2>
+  <p>\u8FD9\u4E9B\u7761\u524D\u6545\u4E8B\uFF0C\u662F\u5199\u7ED9\u6B63\u5728\u5988\u5988\u809A\u5B50\u91CC\u3001\u4E00\u5929\u5929\u957F\u5927\u7684\u5C0F\u5B9D\u8D1D\u7684\u3002\u968F\u7740\u5B9D\u5B9D\u6162\u6162\u957F\u5927\uFF0C\u6545\u4E8B\u7684\u8BED\u6C14\u3001\u9898\u6750\u548C\u98CE\u683C\u4F1A\u6084\u6084\u53D8\u5316\u2014\u2014\u50CF\u56DB\u5B63\u4E00\u6837\uFF0C\u6BCF\u4E2A\u9636\u6BB5\u90FD\u6709\u5C5E\u4E8E\u81EA\u5DF1\u7684\u6E29\u5EA6\u3002</p>
+  <h4>\uD83D\uDCC5 \u6309\u5E74\u9F84\uFF0C\u6545\u4E8B\u4F1A\u8FD9\u6837\u53D8</h4>
   <ul>
-    <li><b>胎教期（出生前）</b>：极温柔缓慢，多用拟声词与节奏感，讲等待、爱、守护与妈妈的声音。</li>
-    <li><b>0-1 岁</b>：极简短句，大量重复与拟声（动物叫、自然声），陪宝宝认识感官与世界。</li>
-    <li><b>1-3 岁</b>：简单情节，小动物或日常物品当主角，聊生活习惯、情绪和友谊。</li>
-    <li><b>3-6 岁</b>：完整小故事，加入对话与轻松冒险，讲勇气、分享、诚实与好奇心。</li>
-    <li><b>6 岁以上</b>：更长更深，带比喻和寓意，聊成长、责任、善良与梦想。</li>
+    <li><b>\u80CE\u6559\u671F\uFF08\u51FA\u751F\u524D\uFF09</b>\uFF1A\u6781\u6E29\u67D4\u7F13\u6162\uFF0C\u591A\u7528\u62DF\u58F0\u8BCD\u4E0E\u8282\u594F\u611F\uFF0C\u8BB2\u7B49\u5F85\u3001\u7231\u3001\u5B88\u62A4\u4E0E\u5988\u5988\u7684\u58F0\u97F3\u3002</li>
+    <li><b>0-1 \u5C81</b>\uFF1A\u6781\u7B80\u77ED\u53E5\uFF0C\u5927\u91CF\u91CD\u590D\u4E0E\u62DF\u58F0\uFF08\u52A8\u7269\u53EB\u3001\u81EA\u7136\u58F0\uFF09\uFF0C\u966A\u5B9D\u5B9D\u8BA4\u8BC6\u611F\u5B98\u4E0E\u4E16\u754C\u3002</li>
+    <li><b>1-3 \u5C81</b>\uFF1A\u7B80\u5355\u60C5\u8282\uFF0C\u5C0F\u52A8\u7269\u6216\u65E5\u5E38\u7269\u54C1\u5F53\u4E3B\u89D2\uFF0C\u804A\u751F\u6D3B\u4E60\u60EF\u3001\u60C5\u7EEA\u548C\u53CB\u8C0A\u3002</li>
+    <li><b>3-6 \u5C81</b>\uFF1A\u5B8C\u6574\u5C0F\u6545\u4E8B\uFF0C\u52A0\u5165\u5BF9\u8BDD\u4E0E\u8F7B\u677E\u5192\u9669\uFF0C\u8BB2\u52C7\u6C14\u3001\u5206\u4EAB\u3001\u8BDA\u5B9E\u4E0E\u597D\u5947\u5FC3\u3002</li>
+    <li><b>6 \u5C81\u4EE5\u4E0A</b>\uFF1A\u66F4\u957F\u66F4\u6DF1\uFF0C\u5E26\u6BD4\u55BB\u548C\u5BD3\u610F\uFF0C\u804A\u6210\u957F\u3001\u8D23\u4EFB\u3001\u5584\u826F\u4E0E\u68A6\u60F3\u3002</li>
   </ul>
-  <h4>🎨 故事都有哪些题材？</h4>
-  <p>自然与科学启蒙 · 中国文化与传统 · 情感与心理 · 想象与奇幻 · 生活与认知 · 轻松愉快的冒险</p>
-  <h4>✍️ 文字里有谁的味道？</h4>
-  <p>中文故事融合孙敬修、冰波、金波、张秋生、郑渊洁、汤素兰等大师的温柔笔触；英文故事带着 Dr. Seuss 的韵律、McCloskey 的自然、Dahl 的幽默与 Sesame Street 的暖意。每天中英各一篇，陪宝宝用两种语言说晚安。</p>
-  <p class="si-note">每一篇都标注了适合的年龄段。愿这些温柔的声音，成为宝宝来到世界前，最早听到的爱。</p>
+  <h4>\uD83C\uDFA8 \u6545\u4E8B\u90FD\u6709\u54EA\u4E9B\u9898\u6750\uFF1F</h4>
+  <p>\u81EA\u7136\u4E0E\u79D1\u5B66\u542F\u8499 \xB7 \u4E2D\u56FD\u6587\u5316\u4E0E\u4F20\u7EDF \xB7 \u60C5\u611F\u4E0E\u5FC3\u7406 \xB7 \u60F3\u8C61\u4E0E\u5947\u5E7B \xB7 \u751F\u6D3B\u4E0E\u8BA4\u77E5 \xB7 \u8F7B\u677E\u6109\u5FEB\u7684\u5192\u9669</p>
+  <h4>\u270D\uFE0F \u6587\u5B57\u91CC\u6709\u8C01\u7684\u5473\u9053\uFF1F</h4>
+  <p>\u4E2D\u6587\u6545\u4E8B\u878D\u5408\u5B59\u656C\u4FEE\u3001\u51B0\u6CE2\u3001\u91D1\u6CE2\u3001\u5F20\u79CB\u751F\u3001\u90D1\u6E0A\u6D01\u3001\u6C64\u7D20\u5170\u7B49\u5927\u5E08\u7684\u6E29\u67D4\u7B14\u89E6\uFF1B\u82F1\u6587\u6545\u4E8B\u5E26\u7740 Dr. Seuss \u7684\u97F5\u5F8B\u3001McCloskey \u7684\u81EA\u7136\u3001Dahl \u7684\u5E7D\u9ED8\u4E0E Sesame Street \u7684\u6696\u610F\u3002\u6BCF\u5929\u4E2D\u82F1\u5404\u4E00\u7BC7\uFF0C\u966A\u5B9D\u5B9D\u7528\u4E24\u79CD\u8BED\u8A00\u8BF4\u665A\u5B89\u3002</p>
+  <p class="si-note">\u6BCF\u4E00\u7BC7\u90FD\u6807\u6CE8\u4E86\u9002\u5408\u7684\u5E74\u9F84\u6BB5\u3002\u613F\u8FD9\u4E9B\u6E29\u67D4\u7684\u58F0\u97F3\uFF0C\u6210\u4E3A\u5B9D\u5B9D\u6765\u5230\u4E16\u754C\u524D\uFF0C\u6700\u65E9\u542C\u5230\u7684\u7231\u3002</p>
 </div>
 
 ${storyCards}
 
-<!-- ===== 页脚 ===== -->
+<!-- ===== Footer ===== -->
 <div class="footer">
-  🌙 星光下的温柔 · 睡前故事合集 · 每日更新中 🌙<br>
-  <span style="font-size:11px;opacity:0.6">最后更新：${new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'})}</span>
+  \uD83C\uDF19 \u661F\u5149\u4E0B\u7684\u6E29\u67D4 \xB7 \u7761\u524D\u6545\u4E8B\u5408\u96C6 \xB7 \u6BCF\u65E5\u66F4\u65B0\u4E2D \uD83C\uDF19<br>
+  <span style="font-size:11px;opacity:0.6">\u6700\u540E\u66F4\u65B0\uFF1A${new Date().toISOString()}</span>
 </div>
 
 </body>
 </html>`;
 
 // Write output
-fs.writeFileSync(path.join(__dirname, 'bedtime-story-collection.html'), html, 'utf8');
-console.log('Generated bedtime-story-collection.html with', stories.length, 'stories');
+fs.writeFileSync(OUTPUT_PATH, html, 'utf8');
+console.log('Generated collection.html with', stories.length, 'stories');
 console.log('ZH stories:', stories.filter(s => s.language === 'zh').length);
 console.log('EN stories:', stories.filter(s => s.language === 'en').length);
