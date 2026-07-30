@@ -13,8 +13,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const REPO_PB = 'C:/Users/Administrator/WorkBuddy/Claw/github-bedtime-stories/scripts/prompt-builder.js';
-const GUIDE = 'C:/Users/Administrator/WorkBuddy/automation-2026-07-16-11-56-46/STORY_STYLE_GUIDE.md';
+// 优先使用仓库内相对路径（镜像环境），缺失时回退到原 WorkBuddy 绝对路径
+function resolvePath(preferred, fallback) {
+  try { return fs.existsSync(preferred) ? preferred : fallback; }
+  catch (e) { return fallback; }
+}
+
+const REPO_PB = resolvePath(path.join(__dirname, '..', 'github-pages', 'scripts', 'prompt-builder.js'),
+                            'C:/Users/Administrator/WorkBuddy/Claw/github-bedtime-stories/scripts/prompt-builder.js');
+const GUIDE = resolvePath(path.join(__dirname, 'STORY_STYLE_GUIDE.md'),
+                          'C:/Users/Administrator/WorkBuddy/automation-2026-07-16-11-56-46/STORY_STYLE_GUIDE.md');
 
 function fail(msg) {
   console.error(msg);

@@ -39,7 +39,7 @@ seen_ids = set()
 for s in stories:
     sid = s['id']
     # Only keep standard format
-    if re.match(r'\d{4}-\d{2}-\d{2}-(cn|en)$', sid):
+    if re.match(r'\d{4}-\d{2}-\d{2}-(science-)?(cn|en)$', sid):
         # Deduplicate (keep first occurrence of each id)
         if sid not in seen_ids:
             seen_ids.add(sid)

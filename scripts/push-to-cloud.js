@@ -12,8 +12,16 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const REPO = 'C:/Users/Administrator/WorkBuddy/Claw/github-bedtime-stories';
-const H5 = 'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app';
+// 优先使用仓库内相对路径（镜像环境），缺失时回退到原 WorkBuddy 绝对路径
+function resolvePath(preferred, fallback) {
+  try { return fs.existsSync(preferred) ? preferred : fallback; }
+  catch (e) { return fallback; }
+}
+
+const REPO = resolvePath(path.join(__dirname, '..', 'github-pages'),
+                         'C:/Users/Administrator/WorkBuddy/Claw/github-bedtime-stories');
+const H5 = resolvePath(path.join(__dirname, '..'),
+                       'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app');
 
 function run(cmd, cwd, allowFail) {
   try {

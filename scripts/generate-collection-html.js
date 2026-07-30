@@ -1,8 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
+// 优先使用仓库内相对路径（镜像环境），缺失时回退到原 WorkBuddy 绝对路径
+function resolvePath(preferred, fallback) {
+  try { return fs.existsSync(preferred) ? preferred : fallback; }
+  catch (e) { return fallback; }
+}
+
 // Read stories.json
-const stories = JSON.parse(fs.readFileSync('C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app/stories.json', 'utf8'));
+const stories = JSON.parse(fs.readFileSync(
+  resolvePath(path.join(__dirname, '..', 'stories.json'),
+              'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app/stories.json'), 'utf8'));
 
 // HTML escape helper
 function esc(s) {

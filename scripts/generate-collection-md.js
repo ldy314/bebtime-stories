@@ -7,8 +7,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const H5 = 'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app';
-const MD_PATH = 'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-collection.md';
+// 优先使用仓库内相对路径（镜像环境），缺失时回退到原 WorkBuddy 绝对路径
+function resolvePath(preferred, fallback) {
+  try { return fs.existsSync(preferred) ? preferred : fallback; }
+  catch (e) { return fallback; }
+}
+
+const H5 = resolvePath(path.join(__dirname, '..'),
+                       'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app');
+const MD_PATH = resolvePath(path.join(__dirname, '..', 'bedtime-story-collection.md'),
+                            'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-collection.md');
 
 const stories = JSON.parse(fs.readFileSync(path.join(H5, 'stories.json'), 'utf8'));
 

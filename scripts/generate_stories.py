@@ -527,8 +527,7 @@ cn_nums = {"0": "零", "1": "一", "2": "二", "3": "三", "4": "四", "5": "五
 
 def to_chinese_date(date_str):
     """Convert '2026年7月19日' to '二〇二六年七月十九日'"""
-    import re as re2
-    m = re2.match(r'(\d+)年(\d+)月(\d+)日', date_str)
+    m = re.match(r'(\d+)年(\d+)月(\d+)日', date_str)
     if m:
         y, mo, d = m.groups()
         y_cn = ''.join(cn_nums.get(c, c) for c in y)
