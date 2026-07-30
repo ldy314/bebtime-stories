@@ -76,6 +76,7 @@ const storyCards = stories.map((s, i) => {
   <div class="story-date">${esc(s.date)}</div>
   <div class="story-title">${esc(s.title)}</div>
   <div class="story-lang-badge">${langLabel(s.language)}</div>
+  ${s.category === 'science' ? `<div class="story-lang-badge" style="color:#2a9d8f;font-weight:600;margin-top:2px;">🔬 科学故事 · ${esc(s.source || '科学杂志')}</div>` : ''}
   <div class="story-divider">\u2014 \u273F \u2014</div>
 
   <div class="story-body">

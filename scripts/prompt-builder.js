@@ -365,11 +365,183 @@ Return a JSON object in this format:
 }`;
 }
 
+// ===== Weekly science story (real popular-science articles) =====
+const SCIENCE_FEEDS = {
+  zh: 'https://www.huanqiukexue.com/?feed=rss2',                                         // 环球科学（《科学美国人》中文版）
+  en: 'https://www.scientificamerican.com/platform/syndication/rss/'                    // Scientific American
+};
+const SCIENCE_SOURCE_NAME = { zh: '环球科学', en: 'Scientific American' };
+
+function stripHtmlTags(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/&#[0-9]+;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function parseRss(xml) {
+  if (!xml || typeof xml !== 'string') return [];
+  const items = [];
+  const itemRe = /<item[\s\S]*?<\/item>/gi;
+  let m;
+  while ((m = itemRe.exec(xml)) !== null) {
+    const block = m[0];
+    const get = (tag) => {
+      const r = new RegExp('<' + tag + '[^>]*>([\\s\\S]*?)<\\/' + tag + '>', 'i');
+      const mm = block.match(r);
+      if (!mm) return '';
+      return mm[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1');
+    };
+    const title = stripHtmlTags(get('title'));
+    const desc = stripHtmlTags(get('description'));
+    const link = get('link').replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').trim();
+    const pubDate = get('pubDate');
+    if (title) items.push({ title, description: desc.slice(0, 600), link, pubDate });
+  }
+  return items;
+}
+
+function inCurrentMonth(pubDateStr, ref) {
+  if (!pubDateStr) return true;
+  const d = new Date(pubDateStr);
+  if (isNaN(d.getTime())) return true;
+  return d.getUTCFullYear() === ref.getUTCFullYear() && d.getUTCMonth() === ref.getUTCMonth();
+}
+
+async function fetchScienceArticle(lang) {
+  const url = SCIENCE_FEEDS[lang];
+  if (!url) return null;
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 12000);
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (bedtime-story-bot)' },
+      signal: ctrl.signal
+    });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+    const xml = await res.text();
+    const ref = new Date();
+    let items = parseRss(xml).filter((it) => inCurrentMonth(it.pubDate, ref));
+    if (items.length === 0) items = parseRss(xml); // 当月无则回退全部
+    if (items.length === 0) return null;
+    const weekIdx = Math.floor(Date.now() / (7 * 86400000));
+    const pick = items[hashDate('sci' + weekIdx + lang) % items.length];
+    return { title: pick.title, summary: pick.description, url: pick.link, source: SCIENCE_SOURCE_NAME[lang] };
+  } catch (e) {
+    return null; // 抓取失败 → 上层回退到 AI 自拟主题，保证每天都有故事
+  }
+}
+
+// 每周随机一天（确定性，云端/本地一致，绝不重复）
+function isScienceDay(dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const date = new Date(Date.UTC(y, m - 1, d));
+  const weekday = date.getUTCDay(); // 0=周日 .. 6=周六
+  const epoch = Date.UTC(2026, 6, 16); // 项目起点 2026-07-16（周四）
+  const weekIndex = Math.floor((date - epoch) / (7 * 86400000));
+  const target = hashDate('sci-day-' + weekIndex) % 7;
+  return weekday === target;
+}
+
+function scienceFallbackTopic(dateStr, lang) {
+  const topics = lang === 'zh'
+    ? ['萤火虫为什么会发光', '星星为什么会眨眼', '海浪是怎么来的', '小种子怎么长成大树', '彩虹是怎么画出来的', '月亮为什么有圆有缺', '小蚂蚁怎么搬动大饼干', '雨是从哪儿来的']
+    : ['Why fireflies glow', 'Why stars twinkle', 'Where ocean waves come from', 'How a tiny seed becomes a tree', 'How rainbows are painted', 'Why the moon changes shape', 'How ants carry big cookies', 'Where rain comes from'];
+  return topics[hashDate(dateStr + lang) % topics.length];
+}
+
+function buildScienceChinesePrompt(article, ageInfo, dateStr) {
+  const ageStyle = AGE_STYLE_CN[ageInfo.group];
+  const seed = article
+    ? `本月《环球科学》真实科普报道：《${article.title}》。报道摘要：${article.summary}`
+    : `一个科普主题：「${scienceFallbackTopic(dateStr, 'zh')}」`;
+  const hint = article
+    ? '（灵感真实来自《环球科学》，请保留其中的科学内核，但用孩子能懂的温柔语言重述，不要照抄专业术语）'
+    : '（未能抓取到当期杂志内容，请围绕这个科普主题创作）';
+  return `写一个适合儿童的中文睡前科学故事，语言温和易懂，阅读时长约 3-5 分钟。${hint}
+
+当前年龄段：${ageInfo.labelCn}
+年龄段风格要求：${ageStyle}
+
+本期科学素材：${seed}
+
+要求：
+- 把真实科学内容改编成孩子爱听的故事，保留科学内核（如现象、原理的童趣化解释），但用拟声词、温柔节奏和"守护/好奇/惊喜"的情绪包装。
+- 适合胎教/哄睡朗读，句子有自然停顿，家长读着顺口。
+- 故事标题必须以「🔬科学故事」开头，并注明适合的年龄段。
+- 结尾用一两句话点出这个科学小知识，让孩子带着好奇入睡。
+
+中文故事风格参考（融合大师特色 + 你的创造力）：
+${CN_STYLES}
+${CN_STYLES_EXTRA}
+
+重要格式要求：
+- 所有文本内容不得使用中文弯引号""，请使用「」或普通单引号'代替。
+- content 是段落数组，每个元素是一个自然段。
+- preview 是故事前两句话的摘要。
+- moral 是这个科学小知识的简短说明。
+
+请返回JSON对象：
+{
+  "title": "🔬科学故事（年龄段）：故事标题",
+  "preview": "故事前两句话作为预览",
+  "moral": "本篇的科学小知识",
+  "content": ["第一段落...", "第二段落..."]
+}`;
+}
+
+function buildScienceEnglishPrompt(article, ageInfo, dateStr) {
+  const ageStyle = AGE_STYLE_EN[ageInfo.group];
+  const seed = article
+    ? `A real popular-science article from this month's Scientific American: "${article.title}". Summary: ${article.summary}`
+    : `a science topic: "${scienceFallbackTopic(dateStr, 'en')}"`;
+  const hint = article
+    ? "(Inspired by real Scientific American content — keep the genuine science kernel but retell it in gentle, child-friendly language; don't copy jargon.)"
+    : '(Could not fetch the magazine; please write about this science topic.)';
+  return `Write an English children's bedtime science story (original, not a translation), reading time about 3-5 minutes. ${hint}
+
+Current age stage: ${ageInfo.labelEn}
+Age stage style requirements: ${ageStyle}
+
+This story's science seed: ${seed}
+
+Requirements:
+- Adapt the real science into a story kids love: keep the science kernel but wrap it in onomatopoeia, a soft rhythm, and feelings of wonder, safety and curiosity.
+- Suitable for prenatal/soothing read-aloud; natural pauses; parent-friendly.
+- Title must start with "🔬 Science Story" and note the age range.
+- End with one or two lines revealing the little science fact, so the child falls asleep curious.
+
+Style reference (fuse these masters + your creativity):
+${EN_STYLES}
+${EN_STYLES_EXTRA}
+
+Format requirements:
+- content is an array of paragraphs.
+- preview is the first two sentences.
+- moral is the little science fact.
+
+Return a JSON object:
+{
+  "title": "🔬 Science Story (age range): Story Title",
+  "preview": "First two sentences",
+  "moral": "The little science fact",
+  "content": ["Paragraph 1...", "Paragraph 2..."]
+}`;
+}
+
 module.exports = {
   getAgeInfo,
   getChineseWeekday,
   formatDateCn,
   formatDateShort,
   buildChinesePrompt,
-  buildEnglishPrompt
+  buildEnglishPrompt,
+  isScienceDay,
+  fetchScienceArticle,
+  buildScienceChinesePrompt,
+  buildScienceEnglishPrompt
 };
