@@ -143,6 +143,8 @@ if (series.length) {
   <div class="cover-moon">🐱</div>
   <div class="cover-stars">✦ ✦ ✦</div>
   <div class="cover-emoji">🐱</div>
+  <div class="series-section-title">🐱 黑猫当当历险记 · 每周系列</div>
+  <p class="series-section-note">每周六更新一集，不占用每日故事名额。点开听听调皮小黑猫当当的冒险吧～</p>
   <h1>黑猫当当历险记</h1>
   <div class="subtitle">每周一集 · 温暖连载</div>
   <p class="intro">一只调皮的小黑猫当当，和姐姐白猫小不点、哥哥狸花猫八百，在爸爸妈妈的家里上演一集又一集温柔又好玩的冒险。每集都悄悄告诉孩子：要听爸爸妈妈的话。</p>
@@ -353,6 +355,20 @@ const html = `<!DOCTYPE html>
   .style-intro b { color: #e8963b; }
   .style-intro .si-note { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #e8dcc4; font-size: 14px; color: #7a6550; font-style: italic; text-align: center; }
   @media (max-width: 600px) { .style-intro { padding: 32px 24px; } .style-intro p, .style-intro li { font-size: 14px; } }
+
+  /* ===== 系列分区标题 ===== */
+  .series-section-title {
+    max-width: 680px; width: 100%; margin: 0 auto 16px;
+    text-align: center;
+    font-size: 26px; font-weight: 700; letter-spacing: 3px;
+    color: #6b4ea0;
+    padding: 18px 0;
+  }
+  .series-section-note {
+    max-width: 680px; width: 100%; margin: 0 auto 32px;
+    text-align: center; font-size: 14px; line-height: 1.8;
+    color: #8a7ba8;
+  }
 </style>
 </head>
 <body>
@@ -417,9 +433,9 @@ ${tocEntries}
   <p class="si-note">\u6BCF\u4E00\u7BC7\u90FD\u6807\u6CE8\u4E86\u9002\u5408\u7684\u5E74\u9F84\u6BB5\u3002\u613F\u8FD9\u4E9B\u6E29\u67D4\u7684\u58F0\u97F3\uFF0C\u6210\u4E3A\u5B9D\u5B9D\u6765\u5230\u4E16\u754C\u524D\uFF0C\u6700\u65E9\u542C\u5230\u7684\u7231\u3002</p>
 </div>
 
-${storyCards}
-
 ${seriesBlock}
+
+${storyCards}
 
 <!-- ===== Footer ===== -->
 <div class="footer">
