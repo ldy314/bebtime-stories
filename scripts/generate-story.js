@@ -22,7 +22,11 @@ const {
   formatDateCn,
   formatDateShort,
   buildChinesePrompt,
-  buildEnglishPrompt
+  buildEnglishPrompt,
+  isScienceDay,
+  fetchScienceArticle,
+  buildScienceChinesePrompt,
+  buildScienceEnglishPrompt
 } = require('./prompt-builder');
 
 // ===== Configuration =====
@@ -162,7 +166,7 @@ function sanitizeText(text) {
 /**
  * Validate and build a story object
  */
-function buildStoryObj(raw, dateStr, language, ageInfo) {
+function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
   const dateCn = formatDateCn(dateStr);
   const weekday = getChineseWeekday(dateStr);
   const dateShort = formatDateShort(dateStr);
@@ -183,8 +187,10 @@ function buildStoryObj(raw, dateStr, language, ageInfo) {
   // Filter out empty paragraphs
   content = content.filter(p => p && p.trim());
 
-  return {
-    id: `${dateStr}-${language}`,
+  const langSuffix = language === 'zh' ? 'cn' : 'en';
+  const idSuffix = category === 'science' ? `science-${langSuffix}` : langSuffix;
+  const obj = {
+    id: `${dateStr}-${idSuffix}`,
     date: `${dateCn} · ${weekday}`,
     dateShort,
     title,
@@ -193,8 +199,11 @@ function buildStoryObj(raw, dateStr, language, ageInfo) {
     ageLabel: language === 'zh' ? ageInfo.labelCn : ageInfo.labelEn,
     preview,
     moral,
-    content
+    content,
+    category
   };
+  if (category === 'science' && raw.source) obj.source = raw.source;
+  return obj;
 }
 
 // ===== Main =====
@@ -225,6 +234,13 @@ async function main() {
     const hasEn = stories.some(s => s.id === `${dateStr}-en`);
     if (!hasCn) missingStories.push({ dateStr, language: 'zh' });
     if (!hasEn) missingStories.push({ dateStr, language: 'en' });
+    // 每周随机一天：额外生成中英双语「科学故事」（确定性，云端/本地一致）
+    if (isScienceDay(dateStr)) {
+      const hasSciCn = stories.some(s => s.id === `${dateStr}-science-cn`);
+      const hasSciEn = stories.some(s => s.id === `${dateStr}-science-en`);
+      if (!hasSciCn) missingStories.push({ dateStr, language: 'zh', category: 'science' });
+      if (!hasSciEn) missingStories.push({ dateStr, language: 'en', category: 'science' });
+    }
   }
 
   if (missingStories.length === 0) {
@@ -243,21 +259,35 @@ async function main() {
 
   // Generate each missing story
   const newStories = [];
-  for (const { dateStr, language } of missingStories) {
+  for (const { dateStr, language, category } of missingStories) {
     const ageInfo = getAgeInfo(dateStr);
-    console.log(`\nGenerating ${language.toUpperCase()} story for ${dateStr} (${ageInfo.labelCn || ageInfo.labelEn})...`);
+    const isSci = category === 'science';
+    const logName = isSci ? `SCIENCE ${language.toUpperCase()}` : language.toUpperCase();
+    console.log(`\nGenerating ${logName} story for ${dateStr} (${ageInfo.labelCn || ageInfo.labelEn})...`);
 
     try {
-      const prompt = language === 'zh'
-        ? buildChinesePrompt(dateStr, ageInfo)
-        : buildEnglishPrompt(dateStr, ageInfo);
+      let prompt, raw, tag;
+      if (isSci) {
+        const article = await fetchScienceArticle(language);
+        tag = `${dateStr}-science-${language === 'zh' ? 'cn' : 'en'}`;
+        prompt = language === 'zh'
+          ? buildScienceChinesePrompt(article, ageInfo, dateStr)
+          : buildScienceEnglishPrompt(article, ageInfo, dateStr);
+        raw = await callAPIWithRetry(prompt, tag);
+        if (article && article.source) raw.source = article.source; // 标记来源杂志
+      } else {
+        tag = `${dateStr}-${language}`;
+        prompt = language === 'zh'
+          ? buildChinesePrompt(dateStr, ageInfo)
+          : buildEnglishPrompt(dateStr, ageInfo);
+        raw = await callAPIWithRetry(prompt, tag);
+      }
 
-      const raw = await callAPIWithRetry(prompt, `${dateStr}-${language}`);
-      const story = buildStoryObj(raw, dateStr, language, ageInfo);
+      const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');
 
       // Validate required fields
       if (!story.title || !story.content || story.content.length === 0) {
-        console.error(`  WARNING: Story for ${dateStr}-${language} has missing fields, skipping.`);
+        console.error(`  WARNING: Story for ${tag} has missing fields, skipping.`);
         continue;
       }
 
@@ -265,7 +295,7 @@ async function main() {
       console.log(`  Title: ${story.title}`);
       console.log(`  Paragraphs: ${story.content.length}`);
     } catch (err) {
-      console.error(`  ERROR generating ${dateStr}-${language}: ${err.message}`);
+      console.error(`  ERROR generating ${dateStr}-${language}${isSci ? ' (science)' : ''}: ${err.message}`);
       // Continue with other stories even if one fails
     }
   }
