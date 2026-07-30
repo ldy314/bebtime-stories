@@ -184,7 +184,7 @@ function buildStoryObj(raw, dateStr, language, ageInfo) {
   content = content.filter(p => p && p.trim());
 
   return {
-    id: `${dateStr}-${language}`,
+    id: `${dateStr}-${language === 'zh' ? 'cn' : 'en'}`,
     date: `${dateCn} · ${weekday}`,
     dateShort,
     title,
