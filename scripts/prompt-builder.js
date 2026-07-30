@@ -366,11 +366,18 @@ Return a JSON object in this format:
 }
 
 // ===== Weekly science story (real popular-science articles) =====
+// 每个语言一个"源池"，源之间确定性轮换（按周），保证云端/本地一致。
+// 中文源池：环球科学（杂志 RSS）+ 博物（博物杂志官方微博，经 RSSHub 桥接，
+//   内容多为动物/植物/自然，极适合给孩子讲）。英文源池：Scientific American。
 const SCIENCE_FEEDS = {
-  zh: 'https://www.huanqiukexue.com/?feed=rss2',                                         // 环球科学（《科学美国人》中文版）
-  en: 'https://www.scientificamerican.com/platform/syndication/rss/'                    // Scientific American
+  zh: [
+    { url: 'https://www.huanqiukexue.com/?feed=rss2', source: '环球科学' },
+    { url: 'https://rsshub.app/weibo/user/1195054531', source: '博物' }
+  ],
+  en: [
+    { url: 'https://www.scientificamerican.com/platform/syndication/rss/', source: 'Scientific American' }
+  ]
 };
-const SCIENCE_SOURCE_NAME = { zh: '环球科学', en: 'Scientific American' };
 
 function stripHtmlTags(s) {
   if (!s) return '';
@@ -412,28 +419,36 @@ function inCurrentMonth(pubDateStr, ref) {
 }
 
 async function fetchScienceArticle(lang) {
-  const url = SCIENCE_FEEDS[lang];
-  if (!url) return null;
-  try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 12000);
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (bedtime-story-bot)' },
-      signal: ctrl.signal
-    });
-    clearTimeout(timer);
-    if (!res.ok) return null;
-    const xml = await res.text();
-    const ref = new Date();
-    let items = parseRss(xml).filter((it) => inCurrentMonth(it.pubDate, ref));
-    if (items.length === 0) items = parseRss(xml); // 当月无则回退全部
-    if (items.length === 0) return null;
-    const weekIdx = Math.floor(Date.now() / (7 * 86400000));
-    const pick = items[hashDate('sci' + weekIdx + lang) % items.length];
-    return { title: pick.title, summary: pick.description, url: pick.link, source: SCIENCE_SOURCE_NAME[lang] };
-  } catch (e) {
-    return null; // 抓取失败 → 上层回退到 AI 自拟主题，保证每天都有故事
+  const feeds = SCIENCE_FEEDS[lang];
+  if (!Array.isArray(feeds) || feeds.length === 0) return null;
+  const weekIdx = Math.floor(Date.now() / (7 * 86400000));
+  // 确定性选源：每周固定一个主源，保证云端/本地一致
+  const primaryIdx = hashDate('sci-feed-' + weekIdx + lang) % feeds.length;
+  // 先试主选源；若主源抓取失败或当月无文章，依次尝试其余源；全失败才回退 null
+  const order = [primaryIdx, ...feeds.map((_, i) => i).filter((i) => i !== primaryIdx)];
+  for (const idx of order) {
+    const feed = feeds[idx];
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 12000);
+      const res = await fetch(feed.url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (bedtime-story-bot)' },
+        signal: ctrl.signal
+      });
+      clearTimeout(timer);
+      if (!res.ok) continue;
+      const xml = await res.text();
+      const ref = new Date();
+      let items = parseRss(xml).filter((it) => inCurrentMonth(it.pubDate, ref));
+      if (items.length === 0) items = parseRss(xml); // 当月无则回退全部
+      if (items.length === 0) continue;
+      const pick = items[hashDate('sci' + weekIdx + lang + feed.source) % items.length];
+      return { title: pick.title, summary: pick.description, url: pick.link, source: feed.source };
+    } catch (e) {
+      continue; // 该源失败，尝试下一个源
+    }
   }
+  return null; // 所有源均失败 → 上层回退到 AI 自拟主题，保证每天都有科学故事
 }
 
 // 每周随机一天（确定性，云端/本地一致，绝不重复）
@@ -457,10 +472,10 @@ function scienceFallbackTopic(dateStr, lang) {
 function buildScienceChinesePrompt(article, ageInfo, dateStr) {
   const ageStyle = AGE_STYLE_CN[ageInfo.group];
   const seed = article
-    ? `本月《环球科学》真实科普报道：《${article.title}》。报道摘要：${article.summary}`
+    ? `本月《${article.source}》真实科普报道：《${article.title}》。报道摘要：${article.summary}`
     : `一个科普主题：「${scienceFallbackTopic(dateStr, 'zh')}」`;
   const hint = article
-    ? '（灵感真实来自《环球科学》，请保留其中的科学内核，但用孩子能懂的温柔语言重述，不要照抄专业术语）'
+    ? `（灵感真实来自《${article.source}》，请保留其中的科学内核，但用孩子能懂的温柔语言重述，不要照抄专业术语）`
     : '（未能抓取到当期杂志内容，请围绕这个科普主题创作）';
   return `写一个适合儿童的中文睡前科学故事，语言温和易懂，阅读时长约 3-5 分钟。${hint}
 
@@ -497,10 +512,10 @@ ${CN_STYLES_EXTRA}
 function buildScienceEnglishPrompt(article, ageInfo, dateStr) {
   const ageStyle = AGE_STYLE_EN[ageInfo.group];
   const seed = article
-    ? `A real popular-science article from this month's Scientific American: "${article.title}". Summary: ${article.summary}`
+    ? `A real popular-science article from this month's ${article.source}: "${article.title}". Summary: ${article.summary}`
     : `a science topic: "${scienceFallbackTopic(dateStr, 'en')}"`;
   const hint = article
-    ? "(Inspired by real Scientific American content — keep the genuine science kernel but retell it in gentle, child-friendly language; don't copy jargon.)"
+    ? `(Inspired by real ${article.source} content — keep the genuine science kernel but retell it in gentle, child-friendly language; don't copy jargon.)`
     : '(Could not fetch the magazine; please write about this science topic.)';
   return `Write an English children's bedtime science story (original, not a translation), reading time about 3-5 minutes. ${hint}
 
