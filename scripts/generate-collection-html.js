@@ -61,7 +61,7 @@ function shortDate(dateStr) {
 
 // Get language label
 function langLabel(lang) {
-  return lang === 'en' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDE8\uD83C\uDDE9 \u4E2D\u6587';
+  return lang === 'en' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDE8\uD83C\uDDF3 \u4E2D\u6587';
 }
 
 // Build TOC entries
