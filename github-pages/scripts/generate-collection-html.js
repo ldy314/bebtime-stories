@@ -16,6 +16,13 @@ const OUTPUT_PATH = path.join(ROOT_DIR, 'collection.html');
 // Read stories.json
 const stories = JSON.parse(fs.readFileSync(STORIES_PATH, 'utf8'));
 
+// Split daily stories vs 黑猫当当 series
+const daily = stories.filter(s => !s.series);
+const series = stories.filter(s => s.series === 'dangdang');
+
+// 去掉标题里可能带的前缀「第N集 ·」，避免与生成器添加的序号重复
+const cleanTitle = t => String(t).replace(/^第\d+集\s*[·・\-]?\s*/, '');
+
 // HTML escape helper
 function esc(s) {
   return String(s)
@@ -54,17 +61,17 @@ function shortDate(dateStr) {
 
 // Get language label
 function langLabel(lang) {
-  return lang === 'en' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDE8\uD83C\uDDE9 \u4E2D\u6587';
+  return lang === 'en' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDE8\uD83C\uDDF3 \u4E2D\u6587';
 }
 
 // Build TOC entries
-const tocEntries = stories.map((s, i) => {
+const tocEntries = daily.map((s, i) => {
   const num = String(i + 1).padStart(2, '0');
   return `      <li><a href="#story-${i+1}"><span class="toc-num">${num}</span> ${esc(s.title)} <span class="toc-date">${shortDate(s.date)}</span></a></li>`;
 }).join('\n');
 
 // Build story cards
-const storyCards = stories.map((s, i) => {
+const storyCards = daily.map((s, i) => {
   const moralText = s.moral || '';
   const moralTitle = s.language === 'en' ? 'Story Lesson' : '\u6545\u4E8B\u5C0F\u8BED';
   const moralIcon = '\u2728';
@@ -93,6 +100,64 @@ ${bodyToHtml(s.content, i === 0)}
   <div class="story-back"><a href="#">\u2191 \u56DE\u5230\u76EE\u5F55</a></div>
 </div>`;
 }).join('\n\n');
+
+// Series section (黑猫当当历险记)
+const seriesTocEntries = series.map((s, i) => {
+  const num = String(i + 1).padStart(2, '0');
+  const ep = (s.episode != null) ? `第${s.episode}集 · ` : '';
+  return `      <li><a href="#series-${i+1}"><span class="toc-num">${num}</span> ${ep}${esc(cleanTitle(s.title))} <span class="toc-date">${shortDate(s.date)}</span></a></li>`;
+}).join('\n');
+
+const seriesCards = series.map((s, i) => {
+  const ep = (s.episode != null) ? `第${s.episode}集` : '';
+  const epBadge = ep ? `<span class="story-lang-badge" style="color:#6b4ea0;font-weight:600;margin-top:2px;">🐱 ${ep} · 黑猫当当历险记</span>` : '';
+  return `<!-- ===== 黑猫当当历险记 Story ${i+1} ===== -->
+<div class="story-card" id="series-${i+1}">
+  <div class="moon">🐱</div>
+  <div class="stars">✦ ✦ ✦</div>
+  <div class="story-date">${esc(s.date)}</div>
+  <div class="story-title">${esc(cleanTitle(s.title))}</div>
+  ${epBadge}
+  <div class="story-divider">— ✿ —</div>
+
+  <div class="story-body">
+${bodyToHtml(s.content, i === 0)}
+  </div>
+
+  <div class="moral">
+    <div class="moral-title">✨ 故事小语</div>
+    <div class="moral-text">
+      ${moralToHtml(s.moral || '')}
+    </div>
+  </div>
+
+  <div class="story-back"><a href="#">↑ 回到目录</a></div>
+</div>`;
+}).join('\n\n');
+
+let seriesBlock = '';
+if (series.length) {
+  seriesBlock = `
+<!-- ===== 黑猫当当历险记 系列 ===== -->
+<div class="cover">
+  <div class="cover-moon">🐱</div>
+  <div class="cover-stars">✦ ✦ ✦</div>
+  <div class="cover-emoji">🐱</div>
+  <div class="series-section-title">🐱 黑猫当当历险记 · 每周系列</div>
+  <p class="series-section-note">每周六更新一集，不占用每日故事名额。点开听听调皮小黑猫当当的冒险吧～</p>
+  <h1>黑猫当当历险记</h1>
+  <div class="subtitle">每周一集 · 温暖连载</div>
+  <p class="intro">一只调皮的小黑猫当当，和姐姐白猫小不点、哥哥狸花猫八百，在爸爸妈妈的家里上演一集又一集温柔又好玩的冒险。每集都悄悄告诉孩子：要听爸爸妈妈的话。</p>
+  <div class="toc">
+    <div class="toc-title">📖 系列目录</div>
+    <ul class="toc-list">
+${seriesTocEntries}
+    </ul>
+  </div>
+</div>
+
+${seriesCards}`;
+}
 
 // Full HTML
 const html = `<!DOCTYPE html>
@@ -290,6 +355,20 @@ const html = `<!DOCTYPE html>
   .style-intro b { color: #e8963b; }
   .style-intro .si-note { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #e8dcc4; font-size: 14px; color: #7a6550; font-style: italic; text-align: center; }
   @media (max-width: 600px) { .style-intro { padding: 32px 24px; } .style-intro p, .style-intro li { font-size: 14px; } }
+
+  /* ===== 系列分区标题 ===== */
+  .series-section-title {
+    max-width: 680px; width: 100%; margin: 0 auto 16px;
+    text-align: center;
+    font-size: 26px; font-weight: 700; letter-spacing: 3px;
+    color: #6b4ea0;
+    padding: 18px 0;
+  }
+  .series-section-note {
+    max-width: 680px; width: 100%; margin: 0 auto 32px;
+    text-align: center; font-size: 14px; line-height: 1.8;
+    color: #8a7ba8;
+  }
 </style>
 </head>
 <body>
@@ -310,17 +389,21 @@ const html = `<!DOCTYPE html>
   </p>
   <div class="stats">
     <div class="stat">
-      <div class="stat-num">${stories.length}</div>
+      <div class="stat-num">${daily.length}</div>
       <div class="stat-label">\u7BC7\u6545\u4E8B</div>
     </div>
     <div class="stat">
-      <div class="stat-num">${stories.filter(s => s.language === 'zh').length}</div>
+      <div class="stat-num">${daily.filter(s => s.language === 'zh').length}</div>
       <div class="stat-label">\u4E2D\u6587</div>
     </div>
     <div class="stat">
-      <div class="stat-num">${stories.filter(s => s.language === 'en').length}</div>
+      <div class="stat-num">${daily.filter(s => s.language === 'en').length}</div>
       <div class="stat-label">English</div>
-    </div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">${series.length}</div>
+    <div class="stat-label">系列集数</div>
+  </div>
   </div>
 
   <div class="toc">
@@ -349,6 +432,8 @@ ${tocEntries}
   <p>\u4E2D\u6587\u6545\u4E8B\u878D\u5408\u5B59\u656C\u4FEE\u3001\u51B0\u6CE2\u3001\u91D1\u6CE2\u3001\u5F20\u79CB\u751F\u3001\u90D1\u6E0A\u6D01\u3001\u6C64\u7D20\u5170\u7B49\u5927\u5E08\u7684\u6E29\u67D4\u7B14\u89E6\uFF1B\u82F1\u6587\u6545\u4E8B\u5E26\u7740 Dr. Seuss \u7684\u97F5\u5F8B\u3001McCloskey \u7684\u81EA\u7136\u3001Dahl \u7684\u5E7D\u9ED8\u4E0E Sesame Street \u7684\u6696\u610F\u3002\u6BCF\u5929\u4E2D\u82F1\u5404\u4E00\u7BC7\uFF0C\u966A\u5B9D\u5B9D\u7528\u4E24\u79CD\u8BED\u8A00\u8BF4\u665A\u5B89\u3002</p>
   <p class="si-note">\u6BCF\u4E00\u7BC7\u90FD\u6807\u6CE8\u4E86\u9002\u5408\u7684\u5E74\u9F84\u6BB5\u3002\u613F\u8FD9\u4E9B\u6E29\u67D4\u7684\u58F0\u97F3\uFF0C\u6210\u4E3A\u5B9D\u5B9D\u6765\u5230\u4E16\u754C\u524D\uFF0C\u6700\u65E9\u542C\u5230\u7684\u7231\u3002</p>
 </div>
+
+${seriesBlock}
 
 ${storyCards}
 

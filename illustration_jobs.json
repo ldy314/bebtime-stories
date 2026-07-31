@@ -1,0 +1,386 @@
+{
+  "out_dir": "D:\\code test\\睡前故事\\插图",
+  "note": "本清单由 generate_illustrations.py 生成；done=true 表示插图已存在，可跳过。",
+  "jobs": [
+    {
+      "title": "小星星的暖暖",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "jimmy",
+      "style_name": "几米（Jimmy Liao）梦境水彩",
+      "prompt": "画面主题：小星星的暖暖。在一个很远很远的地方，有一片安静的山谷。山谷里有一条浅浅的小溪，溪水叮叮咚咚，像在唱一首永远唱不完的歌...。几米（Jimmy Liao）风格：梦境般的水彩质感，柔和晕染，细线条勾勒；小小角色置身辽阔安静的氛围空间里，温柔治愈，带着淡淡的思念与诗意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\小星星的暖暖.png",
+      "done": true
+    },
+    {
+      "title": "小种子的春天",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "jimmy",
+      "style_name": "几米（Jimmy Liao）梦境水彩",
+      "prompt": "画面主题：小种子的春天。在春天刚刚到来的时候，一颗小小的种子落在了柔软湿润的泥土里。她圆圆滚滚的，裹着一层浅褐色的外衣，安安静静地睡着了...。几米（Jimmy Liao）风格：梦境般的水彩质感，柔和晕染，细线条勾勒；小小角色置身辽阔安静的氛围空间里，温柔治愈，带着淡淡的思念与诗意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\小种子的春天.png",
+      "done": true
+    },
+    {
+      "title": "小星星的礼物",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "miyanishi",
+      "style_name": "宫西达也 大胆可爱",
+      "prompt": "画面主题：小星星的礼物。在蓝蓝的天空尽头，住着一颗小小的星星。她没有别的星星那么大，也没有别的星星那么亮，但她有一颗特别温柔的心...。宫西达也（Tatsuya Miyanishi）风格：大胆可爱的圆润造型，饱满粗放的线条，暖红橙主调，童趣温馨，角色表情生动憨厚，画面充满被爱包围的暖意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\小星星的礼物.png",
+      "done": true
+    },
+    {
+      "title": "雨滴在云里等（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "potter",
+      "style_name": "欧美经典绘本（Beatrix Potter）温馨细腻",
+      "prompt": "画面主题：雨滴在云里等（胎教期）。云妈妈的口袋里，住着一滴小小的雨。她圆圆的，透明的，还没去过地面，也没闻过泥土的味道...。欧美经典绘本（Beatrix Potter / 彼得兔）风格：细腻写实的暖色描绘，柔和米色与大地色交织，复古治愈，细节丰富如旧时光里的插画，恬静温柔。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\雨滴在云里等（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Pond Sleeps Too (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "nagata",
+      "style_name": "长新太 / 佐野洋子 轻柔诗意",
+      "prompt": "画面主题：The Pond Sleeps Too (Prenatal)。The pond goes shhh-shhh when the sun goes down. The cattails。长新太 / 佐野洋子风格：轻柔诗意，淡彩与大量留白，温暖中带一点俏皮的荒诞感，构图舒缓，笔触松弛，像一首温柔的睡前童谣。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Pond Sleeps Too (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "月光写的一封信（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "carle",
+      "style_name": "艾瑞克·卡尔（Eric Carle）拼贴活泼",
+      "prompt": "画面主题：月光写的一封信（胎教期）。月亮给一栋小房子写了一封信。信很短，只有一句话：嘘，我在。风当邮差，把信从天上送下来...。艾瑞克·卡尔（Eric Carle）风格：手工拼贴质感，鲜艳的暖色块（橙、暖黄、珊瑚红、暖绿），纸张肌理明显，活泼童真，充满发现的惊喜。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\月光写的一封信（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Hush-Hush Tree (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "goto",
+      "style_name": "五味太郎 极简暖色",
+      "prompt": "画面主题：The Hush-Hush Tree (Prenatal)。Deep in the hush of the Whispering Wood, where the moss grow。五味太郎风格：极简明快的造型，平涂暖色块，童稚线条，干净幽默，信息清晰，留白充足，像孩子信手画出的温暖小世界。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Hush-Hush Tree (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "风知道你的名字（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "briony",
+      "style_name": "Briony May Smith 温暖童话水彩",
+      "prompt": "画面主题：风知道你的名字（胎教期）。风轻轻吹，草轻轻摇，月亮轻轻走过山岗。风从山岗上跑下来，路过一棵老槐树，路过一片芦苇荡，路过一栋亮着灯的小房子...。Briony May Smith 风格：细腻温暖的水彩，柔和光感与微妙纹理，常带一点童话与民间故事的魔法气息；角色置身开满花草的温柔自然里，暖金色夕照、柔润笔触，治愈又有故事感。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\风知道你的名字（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Old River Tells a Story (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "mccloskey",
+      "style_name": "Robert McCloskey 经典美式绘本",
+      "prompt": "画面主题：The Old River Tells a Story (Prenatal)。Well now, you listen here, and I'll tell you something about。Robert McCloskey（罗伯特·麦克洛斯基）风格：经典美式绘本，钢笔线条加柔和淡彩，朴素温润的乡村与生活气息，笔触沉稳可爱；暖褐、奶白与柔蓝交织的怀旧暖调，安静恬淡。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Old River Tells a Story (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "小闹钟学唱歌（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "seuss",
+      "style_name": "Dr. Seuss 俏皮奇想",
+      "prompt": "画面主题：小闹钟学唱歌（胎教期）。孩子们，你们知道吗？每个闹钟都会唱歌。可不是「叮铃铃」那种歌，是一种更轻、更慢的歌，是专门哄小宝宝睡觉的歌...。Dr. Seuss（苏斯博士）风格：俏皮夸张的线条与天马行空的奇想角色，活泼跳脱的构图与童趣想象力；以暖奶油底色搭配柔和的红、橘、暖黄，让画面既 playful 又温暖，适合睡前。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\小闹钟学唱歌（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Mama Robin's Counting Song (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "miyanishi",
+      "style_name": "宫西达也 大胆可爱",
+      "prompt": "画面主题：The Mama Robin's Counting Song (Prenatal)。In the old maple by the fence, there's a robin's nest. Mama 。宫西达也（Tatsuya Miyanishi）风格：大胆可爱的圆润造型，饱满粗放的线条，暖红橙主调，童趣温馨，角色表情生动憨厚，画面充满被爱包围的暖意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Mama Robin's Counting Song (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "云的口袋里装着梦（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "potter",
+      "style_name": "欧美经典绘本（Beatrix Potter）温馨细腻",
+      "prompt": "画面主题：云的口袋里装着梦（胎教期）。天上有一朵很软很软的云。它长得像一只懒洋洋的猫，整天在天空里慢慢地飘。云有一个口袋。口袋里装的不是雨，不是雪，是梦...。欧美经典绘本（Beatrix Potter / 彼得兔）风格：细腻写实的暖色描绘，柔和米色与大地色交织，复古治愈，细节丰富如旧时光里的插画，恬静温柔。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\云的口袋里装着梦（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Snuggle Bug Who Couldn't Sleep (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "nagata",
+      "style_name": "长新太 / 佐野洋子 轻柔诗意",
+      "prompt": "画面主题：The Snuggle Bug Who Couldn't Sleep (Prenatal)。In the crumbly-crumbly corner of the Snuggle-Bug Wood, where。长新太 / 佐野洋子风格：轻柔诗意，淡彩与大量留白，温暖中带一点俏皮的荒诞感，构图舒缓，笔触松弛，像一首温柔的睡前童谣。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Snuggle Bug Who Couldn't Sleep (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "梦还没来（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "carle",
+      "style_name": "艾瑞克·卡尔（Eric Carle）拼贴活泼",
+      "prompt": "画面主题：梦还没来（胎教期）。后来啊，有一只小猫，叫兜兜。兜兜有一个特别的本事——它能看见梦。人的梦，在人的头顶上飘着，五颜六色的。小孩的梦是粉的，大。艾瑞克·卡尔（Eric Carle）风格：手工拼贴质感，鲜艳的暖色块（橙、暖黄、珊瑚红、暖绿），纸张肌理明显，活泼童真，充满发现的惊喜。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\梦还没来（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Toymaker's Last Song (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "goto",
+      "style_name": "五味太郎 极简暖色",
+      "prompt": "画面主题：The Toymaker's Last Song (Prenatal)。There was once a toymaker who lived at the end of a lane tha。五味太郎风格：极简明快的造型，平涂暖色块，童稚线条，干净幽默，信息清晰，留白充足，像孩子信手画出的温暖小世界。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Toymaker's Last Song (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "啾啾的摇篮曲",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "briony",
+      "style_name": "Briony May Smith 温暖童话水彩",
+      "prompt": "画面主题：啾啾的摇篮曲。森林里住着一只很小很小的小鸟，她的名字叫啾啾。啾啾的个子只有一颗橡果那么大，羽毛是浅浅的鹅黄色，像一朵会飞的小迎春花..。Briony May Smith 风格：细腻温暖的水彩，柔和光感与微妙纹理，常带一点童话与民间故事的魔法气息；角色置身开满花草的温柔自然里，暖金色夕照、柔润笔触，治愈又有故事感。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\啾啾的摇篮曲.png",
+      "done": true
+    },
+    {
+      "title": "The Creek That Sang Itself to Sleep (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "mccloskey",
+      "style_name": "Robert McCloskey 经典美式绘本",
+      "prompt": "画面主题：The Creek That Sang Itself to Sleep (Prenatal)。Down in the hollow where the ferns grow tall, where the ston。Robert McCloskey（罗伯特·麦克洛斯基）风格：经典美式绘本，钢笔线条加柔和淡彩，朴素温润的乡村与生活气息，笔触沉稳可爱；暖褐、奶白与柔蓝交织的怀旧暖调，安静恬淡。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Creek That Sang Itself to Sleep (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "露珠邮递员（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "seuss",
+      "style_name": "Dr. Seuss 俏皮奇想",
+      "prompt": "画面主题：露珠邮递员（胎教期）。天还没亮透的时候，竹林里每一片叶子上都住着一个小小的露珠邮递员。他们背着亮晶晶的小包裹，排成细细的队伍，沿着叶脉往下滑。。Dr. Seuss（苏斯博士）风格：俏皮夸张的线条与天马行空的奇想角色，活泼跳脱的构图与童趣想象力；以暖奶油底色搭配柔和的红、橘、暖黄，让画面既 playful 又温暖，适合睡前。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\露珠邮递员（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Little Brook That Learned to Wait (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "miyanishi",
+      "style_name": "宫西达也 大胆可爱",
+      "prompt": "画面主题：The Little Brook That Learned to Wait (Prenatal)。Way up in the rolling hills, where the morning mist curled l。宫西达也（Tatsuya Miyanishi）风格：大胆可爱的圆润造型，饱满粗放的线条，暖红橙主调，童趣温馨，角色表情生动憨厚，画面充满被爱包围的暖意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Little Brook That Learned to Wait (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "月亮爷爷巡夜（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "potter",
+      "style_name": "欧美经典绘本（Beatrix Potter）温馨细腻",
+      "prompt": "画面主题：月亮爷爷巡夜（胎教期）。孩子们，你们知道吗？每天晚上，等你们都睡下了，月亮爷爷就要出来巡夜啦。他提着一盏银灯笼，慢悠悠地走过山岗，走过小河，走过。欧美经典绘本（Beatrix Potter / 彼得兔）风格：细腻写实的暖色描绘，柔和米色与大地色交织，复古治愈，细节丰富如旧时光里的插画，恬静温柔。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\月亮爷爷巡夜（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Robin Who Counted Stars (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "nagata",
+      "style_name": "长新太 / 佐野洋子 轻柔诗意",
+      "prompt": "画面主题：The Robin Who Counted Stars (Prenatal)。In the old maple tree by the stone wall, Mrs. Robin had a ne。长新太 / 佐野洋子风格：轻柔诗意，淡彩与大量留白，温暖中带一点俏皮的荒诞感，构图舒缓，笔触松弛，像一首温柔的睡前童谣。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Robin Who Counted Stars (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "月光小船（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "jimmy",
+      "style_name": "几米（Jimmy Liao）梦境水彩",
+      "prompt": "画面主题：月光小船（胎教期）。在银河的最深处，那里没有白天，只有温柔的夜晚。银河的水面上，漂着一艘小小的船——月光小船。。几米（Jimmy Liao）风格：梦境般的水彩质感，柔和晕染，细线条勾勒；小小角色置身辽阔安静的氛围空间里，温柔治愈，带着淡淡的思念与诗意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\月光小船（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Little Whispering Stream (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "carle",
+      "style_name": "艾瑞克·卡尔（Eric Carle）拼贴活泼",
+      "prompt": "画面主题：The Little Whispering Stream (Prenatal)。Deep in the quiet meadow, where the grass grows tall and the。艾瑞克·卡尔（Eric Carle）风格：手工拼贴质感，鲜艳的暖色块（橙、暖黄、珊瑚红、暖绿），纸张肌理明显，活泼童真，充满发现的惊喜。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Little Whispering Stream (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "给风系个铃铛（胎教期）",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "goto",
+      "style_name": "五味太郎 极简暖色",
+      "prompt": "画面主题：给风系个铃铛（胎教期）。傍晚的时候，妈妈坐在窗前，手里拿着一只小小的铃铛。铃铛是铜色的，只有一颗樱桃那么大，系着一根淡粉色的丝带。。五味太郎风格：极简明快的造型，平涂暖色块，童稚线条，干净幽默，信息清晰，留白充足，像孩子信手画出的温暖小世界。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\给风系个铃铛（胎教期）.png",
+      "done": true
+    },
+    {
+      "title": "The Owl Who Practiced Lullabies (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "briony",
+      "style_name": "Briony May Smith 温暖童话水彩",
+      "prompt": "画面主题：The Owl Who Practiced Lullabies (Prenatal)。In the old oak tree at the edge of the lane, there lived a s。Briony May Smith 风格：细腻温暖的水彩，柔和光感与微妙纹理，常带一点童话与民间故事的魔法气息；角色置身开满花草的温柔自然里，暖金色夕照、柔润笔触，治愈又有故事感。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Owl Who Practiced Lullabies (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "【胎教期】月亮妈妈的摇篮曲",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "mccloskey",
+      "style_name": "Robert McCloskey 经典美式绘本",
+      "prompt": "画面主题：【胎教期】月亮妈妈的摇篮曲。月亮妈妈轻轻哼着歌，把柔柔的光洒在大地上。宝宝在妈妈肚子里，听着、听着，就安静下来了。。Robert McCloskey（罗伯特·麦克洛斯基）风格：经典美式绘本，钢笔线条加柔和淡彩，朴素温润的乡村与生活气息，笔触沉稳可爱；暖褐、奶白与柔蓝交织的怀旧暖调，安静恬淡。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\【胎教期】月亮妈妈的摇篮曲.png",
+      "done": true
+    },
+    {
+      "title": "The Little Lantern's Journey (Prenatal)",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "seuss",
+      "style_name": "Dr. Seuss 俏皮奇想",
+      "prompt": "画面主题：The Little Lantern's Journey (Prenatal)。In a quiet little town where the moon rose like a golden bal。Dr. Seuss（苏斯博士）风格：俏皮夸张的线条与天马行空的奇想角色，活泼跳脱的构图与童趣想象力；以暖奶油底色搭配柔和的红、橘、暖黄，让画面既 playful 又温暖，适合睡前。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\The Little Lantern's Journey (Prenatal).png",
+      "done": true
+    },
+    {
+      "title": "🔬科学故事（胎教期）冰底下那条红色的小溪",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "miyanishi",
+      "style_name": "宫西达也 大胆可爱",
+      "prompt": "画面主题：🔬科学故事（胎教期）冰底下那条红色的小溪。在很远很远的南极，有一座巨大的冰川。冰川的伤口里，悄悄流出一条红色的小溪，它来自一个从没见过阳光的世界。。宫西达也（Tatsuya Miyanishi）风格：大胆可爱的圆润造型，饱满粗放的线条，暖红橙主调，童趣温馨，角色表情生动憨厚，画面充满被爱包围的暖意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\科学故事（胎教期）冰底下那条红色的小溪.png",
+      "done": true
+    },
+    {
+      "title": "🔬 Science Story (Prenatal) The Octopus with Eight Thinking Arms",
+      "language": "en",
+      "ageLabel": "Prenatal",
+      "style_key": "potter",
+      "style_name": "欧美经典绘本（Beatrix Potter）温馨细腻",
+      "prompt": "画面主题：🔬 Science Story (Prenatal) The Octopus with Eight Thinking Arms。Deep in the blue ocean lives a clever octopus with eight arm。欧美经典绘本（Beatrix Potter / 彼得兔）风格：细腻写实的暖色描绘，柔和米色与大地色交织，复古治愈，细节丰富如旧时光里的插画，恬静温柔。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\Science Story (Prenatal) The Octopus with Eight Thinking Arms.png",
+      "done": true
+    },
+    {
+      "title": "当当来我家",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "jimmy",
+      "style_name": "几米（Jimmy Liao）梦境水彩",
+      "prompt": "画面主题：当当来我家。爸爸抱回来一个毛茸茸的小黑团子，他一身乌黑发亮的短毛，胸口的毛里却悄悄藏着一小撮白毛。这就是当当——一只中华田园小黑猫，。几米（Jimmy Liao）风格：梦境般的水彩质感，柔和晕染，细线条勾勒；小小角色置身辽阔安静的氛围空间里，温柔治愈，带着淡淡的思念与诗意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\当当来我家.png",
+      "done": true
+    },
+    {
+      "title": "当当大战一只耳",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "nagata",
+      "style_name": "长新太 / 佐野洋子 轻柔诗意",
+      "prompt": "画面主题：当当大战一只耳。夜里，墙角传来窸窸窣窣的响声。一只灰溜溜的老鼠悄悄溜进了厨房，那是坏老鼠一只耳。。长新太 / 佐野洋子风格：轻柔诗意，淡彩与大量留白，温暖中带一点俏皮的荒诞感，构图舒缓，笔触松弛，像一首温柔的睡前童谣。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\当当大战一只耳.png",
+      "done": true
+    },
+    {
+      "title": "爬山看星星",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "carle",
+      "style_name": "艾瑞克·卡尔（Eric Carle）拼贴活泼",
+      "prompt": "画面主题：爬山看星星。星期六的早晨，爸爸妈妈把宝宝放进软软的背包，带三只猫坐车去了郊外的小山。当当扒着车窗，第一次看见真正的蝴蝶。。艾瑞克·卡尔（Eric Carle）风格：手工拼贴质感，鲜艳的暖色块（橙、暖黄、珊瑚红、暖绿），纸张肌理明显，活泼童真，充满发现的惊喜。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\爬山看星星.png",
+      "done": true
+    },
+    {
+      "title": "老钟楼的秘密",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "goto",
+      "style_name": "五味太郎 极简暖色",
+      "prompt": "画面主题：老钟楼的秘密。古镇的石板路被太阳晒得暖暖的。当当在一座老钟楼下，把一块刻着字的石碑当成了喵喵碑，还帮邻居老奶奶捡回了滚落的毛线球。。五味太郎风格：极简明快的造型，平涂暖色块，童稚线条，干净幽默，信息清晰，留白充足，像孩子信手画出的温暖小世界。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\老钟楼的秘密.png",
+      "done": true
+    },
+    {
+      "title": "龙宫的珍珠",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "briony",
+      "style_name": "Briony May Smith 温暖童话水彩",
+      "prompt": "画面主题：龙宫的珍珠。午后，当当趴在鱼缸边打了个哈欠，啪嗒——他梦见自己掉进了蓝幽幽的龙宫，遇见一条丢了珍珠的小龙。。Briony May Smith 风格：细腻温暖的水彩，柔和光感与微妙纹理，常带一点童话与民间故事的魔法气息；角色置身开满花草的温柔自然里，暖金色夕照、柔润笔触，治愈又有故事感。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\龙宫的珍珠.png",
+      "done": true
+    },
+    {
+      "title": "智斗格格巫",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "mccloskey",
+      "style_name": "Robert McCloskey 经典美式绘本",
+      "prompt": "画面主题：智斗格格巫。一个爱搞怪的卡通巫师格格巫，想用怪声音引走宝宝的笑声。三只猫开动脑筋，一家人合作，把宝宝稳稳护在了中间。。Robert McCloskey（罗伯特·麦克洛斯基）风格：经典美式绘本，钢笔线条加柔和淡彩，朴素温润的乡村与生活气息，笔触沉稳可爱；暖褐、奶白与柔蓝交织的怀旧暖调，安静恬淡。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\智斗格格巫.png",
+      "done": true
+    },
+    {
+      "title": "狸花阿姨来做客",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "miyanishi",
+      "style_name": "宫西达也 大胆可爱",
+      "prompt": "画面主题：狸花阿姨来做客。小区里的狸花阿姨来家里做客，偷瞄当当的小鱼干，却在家规面前乖乖坐好；夜里一只耳又来捣乱，狸花阿姨和当当一起把它请了出去。。宫西达也（Tatsuya Miyanishi）风格：大胆可爱的圆润造型，饱满粗放的线条，暖红橙主调，童趣温馨，角色表情生动憨厚，画面充满被爱包围的暖意。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\狸花阿姨来做客.png",
+      "done": false
+    },
+    {
+      "title": "南京紫金山·南南带队爬山",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "potter",
+      "style_name": "欧美经典绘本（Beatrix Potter）温馨细腻",
+      "prompt": "画面主题：南京紫金山·南南带队爬山。当当一家来到南京紫金山，野猪南南当起山地导游，带大家摘野酸枣、看山间风景；一只耳偷偷跟来想偷特产，被南南和当当一起找了回。欧美经典绘本（Beatrix Potter / 彼得兔）风格：细腻写实的暖色描绘，柔和米色与大地色交织，复古治愈，细节丰富如旧时光里的插画，恬静温柔。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\南京紫金山·南南带队爬山.png",
+      "done": false
+    },
+    {
+      "title": "茅山遇修猴子",
+      "language": "zh",
+      "ageLabel": "胎教期",
+      "style_key": "nagata",
+      "style_name": "长新太 / 佐野洋子 轻柔诗意",
+      "prompt": "画面主题：茅山遇修猴子。当当一家来到茅山，遇见披小道袍的修猴子。他用温和的小法术变出彩虹、让叶子飘飞，还逗得南南团团转；当当也学了一招轻轻飘叶的。长新太 / 佐野洋子风格：轻柔诗意，淡彩与大量留白，温暖中带一点俏皮的荒诞感，构图舒缓，笔触松弛，像一首温柔的睡前童谣。整体为儿童绘本插图质感，3:4 竖版构图，暖色调为主（暖黄、奶油、柔粉、蜜橘、淡金、暖米），治愈温暖，细腻笔触，留白呼吸感，非常适合睡前故事。",
+      "out_path": "D:\\code test\\睡前故事\\插图\\茅山遇修猴子.png",
+      "done": false
+    }
+  ]
+}
