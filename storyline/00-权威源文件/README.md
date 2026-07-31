@@ -8,7 +8,7 @@
 | 文件 | 性质 | 说明 |
 |------|------|------|
 | `series-dangdang-guide.md` | 系列圣经 | 角色/设定/家规/主线/主题/风格/生成机制，唯一创作事实来源 |
-| `dangdang-series-outline.md` | 剧情档案 | ep01–ep09 分集大纲 + 跨集伏笔 + 待生成参考 |
+| `dangdang-series-outline.md` | 剧情档案 | ep01–ep19 分集大纲 + 跨集伏笔 + 待生成参考 |
 | `dangdang-destinations.md` | 目的地背景库 | 16 个目的地「文化/民俗/美食/景点/自然景观」五维 + 月度微博 feed |
 | `dangdang-series-state.json` | 连续性状态 | episode/arc/continuity/linkages，自动生成读取 |
 | `stories.json` | 全部故事 | 38 篇（22 中文+13 英文+3? 实际含 9 篇系列），系列条目 `series=="dangdang"` |

@@ -359,7 +359,7 @@ ${storyCards}
 </html>`;
 
 // Write output
-fs.writeFileSync(path.join(__dirname, 'bedtime-story-collection.html'), html, 'utf8');
+fs.writeFileSync(path.join(__dirname, '..', 'bedtime-story-collection.html'), html, 'utf8');
 console.log('Generated bedtime-story-collection.html with', stories.length, 'stories');
 console.log('ZH stories:', stories.filter(s => s.language === 'zh').length);
 console.log('EN stories:', stories.filter(s => s.language === 'en').length);
