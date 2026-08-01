@@ -871,7 +871,9 @@
       "所以呀，当宝宝你在妈妈肚子里，被温暖的羊水轻轻抱着、还没见到外面的阳光时，你并不孤单。在地球的南极，在冰月亮的海洋里，也有许多看不见的小生命，正和你一样，安安静静地等待着，等待有一天，去看见这个大大的、温柔的世界。"
     ],
     "category": "science",
-    "source": "环球科学"
+    "source": "环球科学",
+    "series": "science",
+    "seriesTitle": "科学故事"
   },
   {
     "id": "2026-07-23-science-en",
@@ -891,7 +893,9 @@
       "And here is the loveliest part: scientists hope that by learning the octopus's quiet trick, one day they might help keep human brains healthy too. So the next time you float peacefully in the warm dark, before you have met the sun, remember the clever octopus — proof that even the smallest, hidden parts of us are busy, gently, keeping us safe and ready to wonder."
     ],
     "category": "science",
-    "source": "Scientific American"
+    "source": "Scientific American",
+    "series": "science",
+    "seriesTitle": "科学故事"
   },
   {
     "id": "dangdang-ep01-zh",
@@ -1426,7 +1430,9 @@
       "So sleep, little star, in your cozy nest. The world is full of wonders, and you are one of the best. Goodnight, goodnight, the moon is high. Dream of gentle sparks in the sky."
     ],
     "category": "science",
-    "source": "Scientific American"
+    "source": "Scientific American",
+    "series": "science",
+    "seriesTitle": "科学故事"
   },
   {
     "id": "2026-07-31-cn",
@@ -1477,7 +1483,9 @@
       "小星星打了个哈欠，它闭上眼睛，心里暖暖的。它想：原来，最亮的星星，不是抢来的，而是守护出来的。"
     ],
     "category": "science",
-    "source": "环球科学"
+    "source": "环球科学",
+    "series": "science",
+    "seriesTitle": "科学故事"
   },
   {
     "id": "2026-08-01-en",
