@@ -871,7 +871,9 @@
       "所以呀，当宝宝你在妈妈肚子里，被温暖的羊水轻轻抱着、还没见到外面的阳光时，你并不孤单。在地球的南极，在冰月亮的海洋里，也有许多看不见的小生命，正和你一样，安安静静地等待着，等待有一天，去看见这个大大的、温柔的世界。"
     ],
     "category": "science",
-    "source": "环球科学"
+    "source": "环球科学",
+    "series": "science",
+    "seriesTitle": "科学故事"
   },
   {
     "id": "2026-07-23-science-en",
@@ -891,7 +893,9 @@
       "And here is the loveliest part: scientists hope that by learning the octopus's quiet trick, one day they might help keep human brains healthy too. So the next time you float peacefully in the warm dark, before you have met the sun, remember the clever octopus — proof that even the smallest, hidden parts of us are busy, gently, keeping us safe and ready to wonder."
     ],
     "category": "science",
-    "source": "Scientific American"
+    "source": "Scientific American",
+    "series": "science",
+    "seriesTitle": "科学故事"
   },
   {
     "id": "dangdang-ep01-zh",
@@ -1083,10 +1087,10 @@
     "language": "zh",
     "ageGroup": "prenatal",
     "ageLabel": "胎教期",
-    "preview": "一家人去常州近郊的仙山茅山，山顶老桃树下遇见会温和小法术的修猴子：教当当让桃叶轻轻飘、和南南开玩笑、把格格巫看呆的彩虹；结尾修猴子丢下一句『老友粉在广西等你们』，为日后的广西之旅埋下伏笔。整篇是当当讲给肚里还没来的宝宝听的冒险。",
-    "moral": "奇妙的朋友要用温柔的方式相处；学到的本事要用来制造快乐，不用来捣乱。（这一程，当当都在跟肚里的小宝宝讲呢。）",
+    "preview": "一家人去常州近郊的仙山茅山，山顶老桃树下遇见会温和小法术的修猴子：教当当让桃叶轻轻飘、和南南开玩笑、把格格巫看呆的彩虹；结尾修猴子丢下一句「老友粉在广西等你们」，为日后的广西之旅埋下伏笔。整篇是当当讲给肚里还没来的宝宝听的冒险。",
+    "moral": "奇妙的朋友要用温柔的方式相处；学到的本事要用来制造快乐，不用来捣乱。（哥哥讲给弟弟听的故事，也是守护的一种方式。）",
     "content": [
-      "宝宝呀，你还住在妈妈肚子里，没来呢。这一周，咱们一家人去爬了茅山——那是离常州不远的一座仙山，道观藏在云雾里。",
+      "宝宝呀，今天哥哥当当给你讲个他去过的地方——茅山。你还没来的时候，咱们一家人去爬过茅山呢，那是离常州不远的一座仙山，道观藏在云雾里。",
       "山顶道观旁的老桃树下，坐着一位金红色的小猴子，身披迷你青色小道袍，腰间挂着装满鲜果的小布袋——他就是修猴子。别看他调皮，可是个会温和小法术的修道者。",
       "修猴子一见当当，眼睛亮了：小黑猫，来，我教你个好玩的！他掐了个诀，一片桃叶轻轻飘起来，在当当鼻尖打了个转，又稳稳落回手心。当当看得睁圆了金黄的眼睛，胸口那撮白毛都跟着翘了翘。修猴子说：这法术不伤人，只用来制造快乐。",
       "正说着，南南哼哧哼哧爬上山来，修猴子嘻嘻一笑，把南南的背包悄悄隐了身。南南急得满山找：我特产呢我特产呢！修猴子躲在树后偷笑，最后才把背包变回来，还附赠一颗鲜桃。南南佯装生气，实则乐呵呵：你这调皮猴子！",
@@ -1094,8 +1098,7 @@
       "忽然，远处的林子传来叽里咕噜的怪响——是格格巫！修猴子眉头一皱，掐诀喷出一小朵云，轻轻把格格巫的怪声音盖了过去；又变出一道小彩虹，横在格格巫面前。格格巫看呆了，忘了捣乱，尖帽子一歪坐下来看彩虹。",
       "修猴子还把一颗桃子塞给当当：常来玩，下次教你唤云朵。当当把这句话悄悄记在心里——真正的本事，不是用来吓人，而是用来让大家笑的。",
       "最妙的是，修猴子在桃树上晃着腿，远远丢下一句：老友粉在广西等你们哦！所以呀，等宝宝你来了，哥哥就带你去广西，看那位长鼻子的大象朋友。",
-      "夜里，三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，今天当当学了会飘叶子的小法术，等你来了，当当飘叶子给你看。",
-      "小不点用白毛蹭蹭当当：弟弟，你又交到奇妙的朋友啦。八百难得没躲，也挨过来，用壮实的身子挡在床角——守护队，连宝宝的空床也守得牢牢的。宝宝呀，山很高，朋友很多，往后的日子，还会有更多奇妙的朋友，等你，和当当，一起慢慢认识。"
+      "夜里，当当趴在宝宝的小床边，把这故事轻轻讲给你听。你咗咗嘴，好像也喜欢。小不点用白毛蹭蹭当当：弟弟，你又交到奇妙的朋友啦。八百难得没躲，也挨过来，用壮实的身子挡在床角。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，世界上有好多奇妙的朋友，等你来了，当当带你一个一个去认识。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
@@ -1103,31 +1106,6 @@
   },
   {
     "id": "dangdang-ep10-zh",
-    "date": "2026年7月31日 · 星期五",
-    "dateShort": "07/31",
-    "title": "茅山的小猴子（当当讲给宝宝听）",
-    "language": "zh",
-    "ageGroup": "prenatal",
-    "ageLabel": "胎教期",
-    "preview": "当当给小宝宝讲自己去茅山遇见修猴子的小故事——温和的小法术、和南南的玩笑、把格格巫看呆的彩虹；结尾带上修猴子那句『老友粉在广西等你们』，为下一集广西之旅埋好伏笔。",
-    "moral": "奇妙的朋友要用温柔的方式相处；学到的本事要用来制造快乐，不用来捣乱。（哥哥讲给弟弟听的故事，也是守护的一种方式。）",
-    "content": [
-      "宝宝呀，今天哥哥当当给你讲个他去过的地方——茅山。你还没来的时候，咱们一家人去爬过茅山呢。",
-      "山顶道观旁的老桃树下，坐着一位金红色的小猴子，身披迷你青色小道袍，腰间挂着装满鲜果的小布袋——他就是修猴子。别看他调皮，可是个会温和小法术的修道者。",
-      "修猴子一见当当，眼睛亮了：小黑猫，来，我教你个好玩的！他掐了个诀，一片桃叶轻轻飘起来，在当当鼻尖打了个转，又稳稳落回手心。当当看得睁圆了金黄的眼睛，胸口那撮白毛都跟着翘了翘。修猴子说：这法术不伤人，只用来制造快乐。",
-      "正说着，南南哼哧哼哧爬上山来，修猴子嘻嘻一笑，把南南的背包悄悄隐了身。南南急得满山找：我特产呢我特产呢！修猴子躲在树后偷笑，最后才把背包变回来，还附赠一颗鲜桃。南南佯装生气，实则乐呵呵：你这调皮猴子！",
-      "爸爸蹲下来，让当当也试试。当当学着修猴子的样子，用小爪子轻轻一托，一片落叶真的慢慢飘了起来——虽然只飘了半寸就掉下，但全家都鼓起掌来。修猴子挠挠头：不错不错，有悟性！小不点用白毛蹭了蹭当当：弟弟，你也会魔法啦。",
-      "忽然，远处的林子传来叽里咕噜的怪响——是格格巫！修猴子眉头一皱，掐诀喷出一小朵云，轻轻把格格巫的怪声音盖了过去；又变出一道小彩虹，横在格格巫面前。格格巫看呆了，忘了捣乱，尖帽子一歪坐下来看彩虹。",
-      "宝宝呀，那位奇妙的朋友修猴子，让当当懂了一件事：真正的本事，不是用来吓人，而是用来让大家笑的。修猴子还把一颗桃子塞给当当：常来玩，下次教你唤云朵。",
-      "最妙的是，修猴子在桃树上晃着腿，远远丢下一句：老友粉在广西等你们哦！所以呀，等你再长大一点点，哥哥就带你去广西，看那位长鼻子的大象朋友。",
-      "夜里，当当趴在你小床边，把这故事轻轻讲给你听。你咗咗嘴，好像也喜欢。当当咕噜咕噜：宝宝，世界上有好多奇妙的朋友，等你来了，我们都带你去认识。"
-    ],
-    "series": "dangdang",
-    "seriesTitle": "黑猫当当历险记",
-    "episode": 10
-  },
-  {
-    "id": "dangdang-ep11-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "广西遇老友粉",
@@ -1145,15 +1123,15 @@
       "中午，一家人吃广西的老友粉。热乎乎的汤，酸酸香香的，当当舔了一小口，耳朵抖了抖：好特别呀！老友粉从背包里掏出一块芒果干，塞给当当：带回去给宝宝尝尝。",
       "下山时，当当紧紧挨着爸爸的手。妈妈说过，外面的世界很大，要跟紧爸爸妈妈。当当现在懂了——走得再远，宝宝的样子就在心里。",
       "一只耳这次没跟来，老友粉说：这儿山高林密，小老鼠可不敢来。当当松了口气，趴在爸爸背包边（那里有宝宝的小桃木护身）。",
-      "夜里住吊脚楼。三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，广西的芒果可甜啦，等你来了，爸爸一定带你来。",
+      "夜里住吊脚楼。三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，广西的芒果可甜啦，等你来了，爸爸一定带你来。",
       "老友粉在远处甩了甩长鼻子，哞——地轻声应了一句。雨林的风，把这句问候，吹得好远好远。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 11
+    "episode": 10
   },
   {
-    "id": "dangdang-ep12-zh",
+    "id": "dangdang-ep11-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "西太湖荷叶漂流",
@@ -1176,10 +1154,10 @@
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 12
+    "episode": 11
   },
   {
-    "id": "dangdang-ep13-zh",
+    "id": "dangdang-ep12-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "小狗钱包回爸爸老家",
@@ -1202,10 +1180,10 @@
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 13
+    "episode": 12
   },
   {
-    "id": "dangdang-ep14-zh",
+    "id": "dangdang-ep13-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "卡莎的定远庙会",
@@ -1223,15 +1201,15 @@
       "妈妈在摊位前买了一小瓶小磨香油，笑着说：这是外婆家的味道。当当这才知道，妈妈原来也是从这样一个有灯笼、有炊烟的小镇出来的。",
       "一只耳这回没来——定远的巷子太绕，它怕迷路。当当松了口气，乖乖跟在妈妈手边，听卡莎讲每一块老砖的故事。",
       "傍晚，卡莎在屋顶上打了个滚，白毛沾了点夕阳的金。她甩甩尾巴：当当，记住老家，就记住了根。当当把这句话，轻轻贴进心里。",
-      "夜里住妈妈老家的老屋。三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，你妈妈的老家，有红灯笼，有糍粑香，还有卡莎这样飞檐走壁的朋友。",
+      "夜里住妈妈老家的老屋。三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，你妈妈的老家，有红灯笼，有糍粑香，还有卡莎这样飞檐走壁的朋友。",
       "窗外的定远安静下来，只有远处隐隐的狗吠，和妈妈轻轻哼起的家乡小调。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 14
+    "episode": 13
   },
   {
-    "id": "dangdang-ep15-zh",
+    "id": "dangdang-ep14-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "小狗芒果的摇滚连线",
@@ -1249,15 +1227,15 @@
       "芒果说：朋友不一定在身边，视频里也能一起唱歌、一起笑。当当把这句话记下来——原来『云』也能把好朋友连在一起。",
       "一只耳在墙角偷看，看见当当对着屏幕又唱又跳，觉得没意思，嗖地溜了。这回它没来捣乱，倒是省了事。",
       "唱累了，芒果在屏幕那头打了个哈欠：当当，下次我教你弹真的吉他！当当用爪子碰了碰屏幕，像在说再见。",
-      "夜里，三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，沈阳的雪好白，芒果的歌好吵好欢乐——等你来了，咱们也视频认识远方的朋友。",
+      "夜里，三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，沈阳的雪好白，芒果的歌好吵好欢乐——等你来了，咱们也视频认识远方的朋友。",
       "窗外的常州没有雪，可当当觉得，心里好像也落了小小的、快乐的雪花。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 15
+    "episode": 14
   },
   {
-    "id": "dangdang-ep16-zh",
+    "id": "dangdang-ep15-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "八百不挑食了",
@@ -1275,15 +1253,15 @@
       "忽然，墙角一闪——一只耳又来啦！它想偷笼屉里的小笼包。八百这回不躲了，鼻子一拱，『呼』地把一只耳拱出了厨房门，还用身子堵住门口，像ep06那样神气。",
       "一只耳举着小爪子：我就闻闻……八百哼了一声，从自己那份里推了一小块皮过去：吃这个，别动宝宝的。一只耳啃着，小眼睛又眨了眨——被温柔对待，真的比偷东西暖和。",
       "晚饭，全家人一起吃。八百把每样都尝了点，连萝卜干都嘎吱嘎吱嚼得欢。妈妈摸摸他的头：我们八百，真的长大了。",
-      "夜里，三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，哥哥八百从挑食小猫，变成勇敢又不挑嘴的大猫啦。",
+      "夜里，三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，哥哥八百从挑食小猫，变成勇敢又不挑嘴的大猫啦。",
       "宝宝呀，长大就是这样：一点点试，一点点勇敢，原来的害怕，就慢慢变成了喜欢。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 16
+    "episode": 15
   },
   {
-    "id": "dangdang-ep17-zh",
+    "id": "dangdang-ep16-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "格格巫的新伪装",
@@ -1297,19 +1275,19 @@
       "他戴上一顶圆圆的小帽子，背个快递包，在窗外尖着嗓子喊：送零食啦——送给宝宝的小笑声！他想把宝宝的笑声，骗进他的小布袋里。",
       "一只耳这回跟他搭了伙。小老鼠躲在格格巫背后，小声说：我帮你望风。两只反派，凑在了一起。",
       "当当第一个听见。他没有冲出去——他记着家规：不跟陌生人走。他挡在宝宝小床前，胸口白毛竖得直直的。",
-      "小不点钻进妈妈怀里，守着还没来的宝宝；八百用壮实身子堵住门口，像ep06、ep16那样。三只猫，又齐齐护成了一个圈。",
+      "小不点钻进妈妈怀里，守着还没来的宝宝；八百用壮实身子堵住门口，像ep06、ep15那样。三只猫，又齐齐护成了一个圈。",
       "格格巫晃着布袋：来嘛，跟我去看好玩的。当当喵呜一声：妈妈说，不跟不认识的人走！爸爸走过来，轻轻拉上窗帘：小朋友，送货请走正门哦。",
       "一只耳在旁边看看当当，又看看自己手里那块八百给的零食，忽然不想帮格格巫了。它悄悄退到洞边，吱吱两声，像是跟反派说了再见。",
       "格格巫的帽子一歪——他看见连一只耳都走了，自己孤零零的。爸爸递过一块小桃饼（就是宝宝那种桃木护身旁的甜点）：吃口正经的，别老想着骗笑声。格格巫愣了愣，啃了一口，尖帽子慢慢垂下来。",
       "这回，两条反派线并成了一条，又被轻轻地、温柔地请走了。当当明白：坏人不可怕，记住爸爸妈妈的话，家就稳稳的。",
-      "夜里，三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，不管谁来敲门，当当都守着你，不跟陌生人走。"
+      "夜里，三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，不管谁来敲门，当当都守着你，不跟陌生人走。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 17
+    "episode": 16
   },
   {
-    "id": "dangdang-ep18-zh",
+    "id": "dangdang-ep17-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "大金毛的楼上派对",
@@ -1327,15 +1305,15 @@
       "窗台上晒太阳，大金毛讲楼上的风景：哪只鸽子常来，哪朵云最好看。当当把胸口白毛贴着窗，金黄的眼睛映着夕阳，安安静静的。",
       "一只耳这回没敢上楼——它怕大金毛的大爪子。当当松了口气，安心做客。",
       "回家时，大金毛送到门口：常来玩呀。当当喵呜一声，蹭了蹭他那金灿灿的腿。这是当当第一次，自己去朋友家做客。",
-      "夜里，三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，楼上的金毛哥哥好温柔。以后你也认得他，他是咱家的好邻居。",
+      "夜里，三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，楼上的金毛哥哥好温柔。以后你也认得他，他是咱家的好邻居。",
       "楼上隐隐传来大金毛轻轻的呼噜，和楼下的当当，一上一下，像在合奏一首安眠的小曲。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 18
+    "episode": 17
   },
   {
-    "id": "dangdang-ep19-zh",
+    "id": "dangdang-ep18-zh",
     "date": "2026年7月31日 · 星期五",
     "dateShort": "07/31",
     "title": "当当的小法术升级",
@@ -1348,20 +1326,20 @@
       "宝宝呀，这一周，当当的小法术，升级啦！你还记得吗，在茅山，修猴子教过他『轻轻飘叶』——那时只能飘半寸就掉。",
       "修猴子从广西给当当打了个视频电话（老友粉帮他连的线）。他掐了个诀，一片桃叶慢慢飘起来：当当，再试试？",
       "当当学爸爸的样子，用小爪子轻轻一托——呼，叶子真的飘起来，飘了一尺高，才慢慢落下！全家都鼓起掌来，小不点蹭蹭他：弟弟，你会魔法啦。",
-      "当当想：这法术，要用来做什么呢？他跑到宝宝小床边，用爪子一托——一片小叶子，轻轻飘到宝宝鼻尖前，转了个圈，又落回手心。",
+      "当当想：这法术，要用来做什么呢？他跑到宝宝小床边，用爪子一托——一片小叶子，轻轻飘到宝宝的小床边，转了个圈，又落回手心。",
       "宝宝在梦里弯了弯小嘴角（虽然还没来，可好像听见了）。当当胸口白毛翘得高高的：宝宝，你看，当当会逗你笑啦！",
       "修猴子在屏幕那头挠挠头：不错不错，有悟性！记住哦，法术不伤人，只用来制造快乐。当当用力点头。",
       "一只耳在墙角看了一会儿，看见当当用叶子逗得宝宝笑，也悄悄咧了咧嘴——它好像，也开始喜欢看这个家暖暖的样子了。",
-      "夜里，三只猫守在宝宝的小床边（床还空着，等你来）。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，从守护『背包』到守护你，从飘半寸到飘一尺，当当一点点，在长大。",
+      "夜里，三只猫守在宝宝的小床边。当当把胸口白毛贴着宝宝的小床，咕噜咕噜：宝宝，从守护『背包』到守护你，从飘半寸到飘一尺，当当一点点，在长大。",
       "修猴子在远方甩了甩桃枝，老友粉甩了甩长鼻子，芒果在沈阳拨了下吉他——好多好朋友，都在不同的地方，轻轻想着这个小宝宝。",
       "宝宝呀，这一阶段的奇妙朋友，先讲到这儿。往后的日子，还有更多山水、更多温柔的相遇，等你，和当当，一起慢慢走。"
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 19
+    "episode": 18
   },
   {
-    "id": "dangdang-ep20-zh",
+    "id": "dangdang-ep19-zh",
     "date": "2026年8月1日 · 星期六",
     "dateShort": "08/01",
     "title": "屋檐下的小燕子",
@@ -1380,6 +1358,153 @@
     ],
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
-    "episode": 20
+    "episode": 19
+  },
+  {
+    "id": "2026-07-31-en",
+    "date": "2026年7月31日 · 星期五",
+    "dateShort": "07/31",
+    "title": "The Whale's Lullaby (Prenatal)",
+    "language": "en",
+    "ageGroup": "prenatal",
+    "ageLabel": "Prenatal",
+    "preview": "Deep in the blue, blue sea, where the coral glows like tiny stars, a great whale named Wally swam with a gentle hum. His song was soft as a feather, slow as a sleepy moon, and it carried all the way to a little shell.",
+    "moral": "Even the smallest and most distant listeners are wrapped in the love and guardianship of those who care for them.",
+    "content": [
+      "Deep in the blue, blue sea, where the coral glows like tiny stars, a great whale named Wally swam with a gentle hum. His song was soft as a feather, slow as a sleepy moon, and it carried all the way to a little shell.",
+      "Wally's hum went like this: Ooooh-ahhhh, ooooh-ahhhh, like a breeze through the seaweed, like a dream through the waves. And when he hummed, the tiny fish floated still, and the jellyfish pulsed in time, and the whole ocean seemed to sway, sway, sway.",
+      "One day, Wally noticed a tiny shell resting on a sandy bed, all alone and quiet. The shell shimmered faintly, like a pearl holding a heartbeat. Wally leaned close and whispered, \"Little shell, are you listening?\"",
+      "The shell gave a tiny shimmer, a little pulse of light. Wally smiled (as much as a whale can smile) and said, \"I will sing for you, little one. I will sing a song of waiting and of love.\"",
+      "So Wally began his lullaby. Ooooh-ahhhh, ooooh-ahhhh, slow and deep, like a rocking cradle. He sang of the moon that rises over the waves, and of the stars that blink like friendly eyes. He sang of the gentle currents that carry tiny eggs to safe, warm places.",
+      "The little shell shimmered brighter, and Wally felt a tiny vibration, like a tiny heartbeat echoing inside. He sang on, \"You are loved, little shell. You are safe, little shell. The ocean holds you, and I hold you in my song.\"",
+      "And as he sang, the sea grew calm, the waves smoothed like a silken blanket, and the moonlight spilled silver over the water. The tiny fish gathered in a circle, their scales twinkling like tiny candles, and they joined Wally's hum: Ooooh-ahhhh, ooooh-ahhhh.",
+      "The little shell pulsed in rhythm, and Wally knew that inside that shell, a tiny heart was listening, a tiny soul was dreaming. He sang until the stars began to yawn, and the moon tucked itself behind a pillow of clouds.",
+      "Then Wally gently nudged the shell with his great, soft nose, and said, \"Goodnight, little one. I will be here, always, humming this song. When you are ready, you will hear it in your dreams.\"",
+      "And the little shell glowed one last time, like a tiny goodnight kiss, and the ocean hummed along with Wally's lullaby, a soft, endless, loving hum: Ooooh-ahhhh, ooooh-ahhhh, ooooh-ahhhh...",
+      "So if you ever listen to the sea, and you hear a deep, gentle hum, know that it is Wally the whale, singing a song of love to a little shell—and to you. Sleep now, little one, wrapped in the ocean's song."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-07-31-science-en",
+    "date": "2026年7月31日 · 星期五",
+    "dateShort": "07/31",
+    "title": "🔬 Science Story (Prenatal): The Star That Fell Down",
+    "language": "en",
+    "ageGroup": "prenatal",
+    "ageLabel": "Prenatal",
+    "preview": "Close your eyes, little one, and listen to the hum of the world. A long, long time ago, a giant light came down to the earth—not to hurt, but to make something new.",
+    "moral": "In the very hot flash of an atomic bomb, a brand-new metal was made—a special mix that had never been seen before, like a secret treasure from the middle of a star.",
+    "content": [
+      "Close your eyes, little one, and listen to the hum of the world. Hmmmm, hmmmm, the earth hums a sleepy tune. A long, long time ago, in a city called Hiroshima, a giant light came down—whoosh!—not to hurt, but to make something new.",
+      "It was hotter than a thousand ovens, brighter than a million suns. Everything melted and swirled—metal, stone, sand—all dancing together in a fiery, twirling storm. And in that hot, hot dance, something strange began to grow.",
+      "Tinkle, tinkle, tiny pieces of metal woke up. They had never met each other before. Iron said, 'Hello!' Aluminum said, 'Hi!' And they held hands, tight, tight, tight, and made a brand-new pattern—a secret code only they could read.",
+      "It was like when you mix blue and yellow and get green—surprise! But this was harder, hotter, and took a very, very long time. The metal pieces forgot they were different. They became one—a shiny, new family, never seen before on Earth.",
+      "And now, that strange new metal sits in a museum, quiet as a sleeping cat. It whispers to the wind, 'I was born from fire, but now I rest in peace.' Hush, hush, the story is done.",
+      "So sleep, little star, in your cozy nest. The world is full of wonders, and you are one of the best. Goodnight, goodnight, the moon is high. Dream of gentle sparks in the sky."
+    ],
+    "category": "science",
+    "source": "Scientific American",
+    "series": "science",
+    "seriesTitle": "科学故事"
+  },
+  {
+    "id": "2026-07-31-cn",
+    "date": "2026年7月31日 · 星期五",
+    "dateShort": "07/31",
+    "title": "云朵上的小摇篮（胎教期）",
+    "language": "zh",
+    "ageGroup": "prenatal",
+    "ageLabel": "胎教期",
+    "preview": "月亮妈妈轻轻摇着云朵摇篮，里面躺着一颗亮晶晶的小星星。风儿哼着歌，云朵软绵绵，小星星在梦里笑出了声。",
+    "moral": "每个宝宝都是妈妈心里最亮的那颗星，被爱轻轻包裹着，安心地长大。",
+    "content": [
+      "月亮妈妈轻轻摇着云朵摇篮，里面躺着一颗亮晶晶的小星星。风儿哼着歌，云朵软绵绵，小星星在梦里笑出了声。",
+      "云朵摇篮晃啊晃，像小船在水上飘。小星星眨眨眼，看见一朵小花从云缝里探出头来。小花说：「你好呀，小星星，我是云朵上的花，专门来陪你睡觉的。」",
+      "小星星伸个懒腰，发现摇篮边坐着一个小精灵，拿着小勺子，轻轻搅动着月光。小精灵说：「我在做星星汤，加了甜甜的梦，喝一口，就能梦见最漂亮的地方。」",
+      "小星星喝了一小口，觉得全身暖洋洋的。忽然，他看见一朵云变成了一只小兔子，蹦蹦跳跳地过来，说：「来吧，我带你去看云朵上的城市！」",
+      "小星星骑在小兔子的背上，飞过一片片云海。云朵上的城市有棉花糖做的房子，有彩虹搭的桥，还有会唱歌的喷泉。喷泉里流出来的不是水，是亮晶晶的星星碎片。",
+      "「这是哪里呀？」小星星好奇地问。小兔子说：「这是云朵上的梦之城，每个宝宝睡着的时候，都会来这里玩耍。」",
+      "小星星玩着玩着，忽然听见远处传来好听的歌声。那是妈妈的声音，像春风一样温柔，轻轻唱着：「小星星，亮晶晶，妈妈怀里好安宁。」",
+      "小星星听了，心里暖暖的，他对小兔子说：「我想妈妈了，我要回我的小摇篮去。」",
+      "小兔子点点头，轻轻一蹦，就把他送回了云朵摇篮里。月亮妈妈还在那儿，用温柔的手轻轻拍着他的背。",
+      "小星星躺回摇篮里，闭上眼睛，听着妈妈的声音，慢慢进入了甜甜的梦乡。云朵摇篮还在晃啊晃，风儿还在哼着歌，一切都那么安静，那么美好。"
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-07-31-science-cn",
+    "date": "2026年7月31日 · 星期五",
+    "dateShort": "07/31",
+    "title": "🔬科学故事（胎教期）：小星星的心事",
+    "language": "zh",
+    "ageGroup": "prenatal",
+    "ageLabel": "胎教期",
+    "preview": "在遥远的天空上，有一颗小星星，它总是眨着眼睛，好奇地看着大地上的每一个角落。今晚，它看到了一个小秘密。",
+    "moral": "这个科学小知识告诉我们，有时候，人们会喜欢上已经有朋友的人，就像故事里的小星星一样，但真正的爱是尊重和守护，让每个人都能开心地闪耀。",
+    "content": [
+      "在遥远的天空上，有一颗小星星，它总是眨着眼睛，好奇地看着大地上的每一个角落。",
+      "有一天晚上，小星星听到了一阵轻轻的声音，像是风儿在唱歌，又像是花儿在低语。它低头一看，原来是小兔子和小松鼠在森林里的一棵老树下聊天。",
+      "小兔子说：'小松鼠，你知道吗？我每次看到你，心里就扑通扑通跳，像有一只小鹿在撞树。'",
+      "小松鼠听了，耳朵轻轻抖了抖，小声说：'我也是呀，可是……小狐狸好像也很喜欢你。'",
+      "小兔子说：'可是，小狐狸已经和小刺猬在一起了呀。'",
+      "小星星听着听着，忽然明白了什么。它想：原来，有时候，喜欢的人已经有了朋友，就好像一颗星星旁边已经有了另一颗星星。",
+      "小星星眨了眨眼，它看到小兔子和小松鼠虽然有点难过，但很快又开心地一起数起了星星。它们说：'没关系，我们还可以做好朋友，一起看月亮，一起吃胡萝卜。'",
+      "小星星觉得心里暖暖的，它轻轻说：'真好啊，他们懂得守护和尊重。'",
+      "这时，月亮婆婆听到了小星星的话，温柔地说：'小星星，你知道吗？在人类的世界里，也有这样的故事。有时候，人们会喜欢上已经有伴侣的人，这叫做'挖墙脚'。但是，真正有爱心的人，会选择祝福和守护，而不是去打扰别人的幸福。'",
+      "小星星点点头，它说：'我明白了，就像小兔子和小松鼠，他们选择了友情和守护，这样大家都很快乐。'",
+      "月亮婆婆笑了，她轻轻抚摸着云朵，说：'睡吧，小星星，带着这个温柔的秘密，做个好梦。'",
+      "小星星打了个哈欠，它闭上眼睛，心里暖暖的。它想：原来，最亮的星星，不是抢来的，而是守护出来的。"
+    ],
+    "category": "science",
+    "source": "环球科学",
+    "series": "science",
+    "seriesTitle": "科学故事"
+  },
+  {
+    "id": "2026-08-01-en",
+    "date": "2026年8月1日 · 星期六",
+    "dateShort": "08/01",
+    "title": "The Little Baker's First Loaf (Prenatal)",
+    "language": "en",
+    "ageGroup": "prenatal",
+    "ageLabel": "Prenatal",
+    "preview": "In a cozy little town, there lived a tiny baker named Bella, who woke up with the sun to make the very first loaf of bread. She hummed a soft, slow tune as she mixed the flour and water, just like her mama taught her.",
+    "moral": "Patience and love make everything turn out just right.",
+    "content": [
+      "In a cozy little town, there lived a tiny baker named Bella, who woke up with the sun to make the very first loaf of bread. She hummed a soft, slow tune as she mixed the flour and water, just like her mama taught her.",
+      "Slosh, slosh, went the water. Swish, swish, went the spoon. Bella stirred and stirred, until the dough was as smooth as a lullaby.",
+      "Then she sprinkled in a pinch of salt, a dash of sugar, and a secret whisper of love. Knead, knead, knead, she pressed and folded, and the dough seemed to sigh with happiness.",
+      "Now, the dough needed to rest. So Bella placed it in a warm spot by the window, and she waited. She watched the clouds drift by, and she listened to the breeze whistle, hoo-hoo, hoo-hoo, and she thought of all the little seeds waiting to grow.",
+      "After a long, patient wait, the dough began to rise. It puffed up, soft and round, like a sleepy bear waking from a nap. Bella clapped her hands, and oh, what a wonderful sight!",
+      "Then it was time for the oven. Bella slid the dough in with a gentle shove, and she sat down to wait some more. The kitchen filled with a warm, golden smell, and Bella's tummy rumbled, rumble-rumble, like a tiny drum.",
+      "Finally, the timer went ding! Bella opened the oven, and there it was—a beautiful, golden-brown loaf, steaming and singing a happy song. She pulled it out, let it cool on a rack, and then she cut a slice, just one, to taste.",
+      "The bread was soft and sweet, with a crunchy crust that crackled like autumn leaves. Bella smiled, and she knew that all the waiting and stirring and kneading had made something truly wonderful.",
+      "She wrapped the rest in a warm cloth and decided to share it with everyone in her little town. Because when you bake with patience and love, there's always enough to share.",
+      "And as the moon rose high, Bella tucked herself into bed, dreaming of flour clouds and doughy stars. Goodnight, little baker. Goodnight, little one. Sleep tight, and dream sweet."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-08-01-cn",
+    "date": "2026年8月1日 · 星期六",
+    "dateShort": "08/01",
+    "title": "月亮妈妈的小月饼（胎教期）",
+    "language": "zh",
+    "ageGroup": "prenatal",
+    "ageLabel": "胎教期",
+    "preview": "月亮妈妈在夜空中轻轻摇啊摇，手里捧着一块亮晶晶的小月饼。云朵宝宝们围过来，好奇地问：'月亮妈妈，你做的月饼是什么味道呀？'",
+    "moral": "爱和守护就像月光一样，温柔地包围着我们，等待新生命慢慢长大。",
+    "content": [
+      "月亮妈妈在夜空中轻轻摇啊摇，手里捧着一块亮晶晶的小月饼。云朵宝宝们围过来，好奇地问：'月亮妈妈，你做的月饼是什么味道呀？'",
+      "月亮妈妈笑眯眯地说：'这是用星星的甜和露珠的凉做的，还有一点点桂花的香。'她轻轻咬了一小口，'嗯——软软的，像妈妈的手。'",
+      "这时候，风宝宝呼呼地跑过来，卷起一片银光：'月亮妈妈，月亮妈妈，你的月饼里有没有藏着小秘密？'",
+      "'有呀，'月亮妈妈眨眨眼睛，'里面藏着一句悄悄话：宝贝，别急，慢慢长。'",
+      "她说着，把月饼掰成一小块一小块，撒向大地。那些碎屑变成了闪闪的月光，落在小床上、小窗边，还有妈妈轻轻哼歌的地方。",
+      "看，小宝宝在梦里翻了个身，好像听见了月亮妈妈的声音。月光轻轻拍着他，像摇篮一样晃啊晃。",
+      "月亮妈妈守了一整夜，直到天边露出淡淡的橘色。她悄悄收起剩下的月光，说：'明天，我再带新的月饼来。'",
+      "夜静悄悄的，只有心跳声和呼吸声，像在说：'慢慢来，我们在等你。'"
+    ],
+    "category": "regular"
   }
 ]

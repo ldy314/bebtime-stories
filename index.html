@@ -799,6 +799,9 @@ rt {
   </div>
 </details>
 
+<!-- ===== 错误浮层 (调试用，正常不显示) ===== -->
+<div id="errOverlay" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#fff3f3;color:#c0392b;font-size:12px;padding:10px 14px;max-height:40vh;overflow:auto;border-top:2px solid #e74c3c;white-space:pre-wrap;"></div>
+
 <!-- ===== Main List ===== -->
 <div class="main">
   <div id="storyList"></div>
@@ -882,6 +885,16 @@ rt {
 
 <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.26.0/dist/index.js"></script>
 <script>
+// ===== 全局错误捕获 (屏幕可见) =====
+function showErr(msg) {
+  const el = document.getElementById('errOverlay');
+  if (!el) return;
+  el.style.display = 'block';
+  el.textContent = '⚠️ ' + msg + '\n(若看到此信息，请截图反馈)';
+}
+window.addEventListener('error', e => showErr('JS错误: ' + (e.message || e.error)));
+window.addEventListener('unhandledrejection', e => showErr('Promise错误: ' + (e.reason && e.reason.message || e.reason)));
+
 // ===== Service Worker 注册 =====
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -936,10 +949,21 @@ function buildSearchIndex() {
   // 加载状态
   const container = document.getElementById('storyList');
   if (container) container.innerHTML = '<div class="loading"><div class="loading-spinner"></div><br>🌙 故事加载中...</div>';
-  
-  await Promise.all([loadStories(), loadStoryline()]);
-  window.STORYLINE_DATA = STORYLINE;
+
+  // 先加载故事(核心)，素材库失败不影响故事展示
+  try {
+    await loadStories();
+  } catch (e) {
+    showErr('故事加载失败: ' + e.message);
+  }
+  if (!STORIES || STORIES.length === 0) {
+    if (container) container.innerHTML = '<div class="loading">😕 故事加载失败，请刷新重试<br><small>若持续失败请检查网络</small></div>';
+    return;
+  }
   renderStoryList();
+
+  // 素材库后台加载(失败不阻塞)
+  loadStoryline().then(() => { window.STORYLINE_DATA = STORYLINE; });
 })();
 
 // ===== 渲染故事列表 =====
