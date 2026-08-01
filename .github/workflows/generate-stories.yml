@@ -28,6 +28,9 @@ jobs:
         working-directory: github-pages
         run: node scripts/generate-story.js
 
+      - name: CI Validation
+        run: node scripts/ci-validate.js
+
       - name: Sync root stories.json
         run: |
           cp github-pages/stories.json stories.json
