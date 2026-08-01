@@ -340,6 +340,7 @@ body {
   line-height: 2;
   color: var(--text);
   text-align: justify;
+  letter-spacing: 0.1em;
 }
 .reading-body p {
   margin-bottom: 16px;
@@ -390,7 +391,7 @@ rt {
 .reading-body.has-pinyin {
   font-size: 16px;
   line-height: 2.6;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
 }
 .reading-body.has-pinyin p {
   text-indent: 2em;
@@ -398,7 +399,7 @@ rt {
 .reading-moral-text.has-pinyin {
   font-size: 14px;
   line-height: 2.4;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.22em;
 }
 
 .reading-moral {
@@ -418,6 +419,7 @@ rt {
   font-size: 15px;
   line-height: 1.8;
   color: #7a6550;
+  letter-spacing: 0.1em;
 }
 
 .reading-footer {
@@ -878,7 +880,7 @@ rt {
   <div class="reading-header">
     <div class="back-btn" id="backBtn">←</div>
     <div class="reading-title-bar" id="readingTitleBar">睡前故事</div>
-    <div class="pinyin-toggle" id="pinyinToggle" title="拼音开关">拼音</div>
+    <div class="pinyin-toggle active" id="pinyinToggle" title="拼音开关">拼音</div>
   </div>
   <div class="reading-content" id="readingContent"></div>
 </div>
@@ -1032,10 +1034,13 @@ function openStory(id) {
   if (!story) return;
   document.getElementById('readingTitleBar').textContent = story.title;
   const el = document.getElementById('readingContent');
+  const pt = document.getElementById('pinyinToggle');
+  const ptActive = pt?.classList.contains('active');
+  const showPy = story.language === 'zh' && !!window.pinyinPro && !!ptActive;
+  const py = showPy ? 'has-pinyin' : '';
   const paras = Array.isArray(story.content)
-    ? story.content.map(p => '<p>' + esc(p) + '</p>').join('')
-    : '<p>' + esc(story.content) + '</p>';
-  const py = document.getElementById('pinyinToggle')?.classList.contains('active') ? 'has-pinyin' : '';
+    ? story.content.map(p => '<p>' + (showPy ? pinyinHtml(p) : esc(p)) + '</p>').join('')
+    : '<p>' + (showPy ? pinyinHtml(story.content) : esc(story.content)) + '</p>';
   el.innerHTML = '<div class="reading-date">' + esc(story.date || '') + '</div>'
     + '<div class="reading-title">' + esc(story.title) + '</div>'
     + '<div class="reading-badges"><span class="age-tag">' + esc(story.ageLabel || '') + '</span>'
@@ -1043,47 +1048,36 @@ function openStory(id) {
     + '<div class="reading-divider">✦ ✦ ✦</div>'
     + '<div class="reading-body lang-' + story.language + ' ' + py + '">' + paras + '</div>'
     + '<div class="reading-moral"><div class="reading-moral-title">📖 故事小语</div>'
-    + '<div class="reading-moral-text ' + py + '">' + esc(story.moral || '') + '</div></div>'
+    + '<div class="reading-moral-text ' + py + '">' + (showPy ? pinyinHtml(story.moral || '') : esc(story.moral || '')) + '</div></div>'
     + '<div class="reading-footer">🌛 晚安，做个好梦</div>';
   document.getElementById('readingPage').classList.add('active');
   window.scrollTo(0, 0);
-  if (py && window.pinyinPro) applyPinyin();
 }
 
-// ===== 拼音 =====
-function applyPinyin() {
-  const body = document.querySelector('.reading-body');
-  if (!body || !window.pinyinPro) return;
-  body.querySelectorAll('p').forEach(p => {
-    const text = p.textContent;
-    const py = window.pinyinPro.pinyin(text, { toneType: 'none', type: 'array' });
-    const chars = text.split('');
-    let html = '';
-    chars.forEach((c, i) => {
-      if (/[一-鿿]/.test(c)) html += '<ruby>' + c + '<rt>' + (py[i] || '') + '</rt></ruby>';
-      else html += c;
+// ===== 拼音 HTML（多音字准确 + 带声调）=====
+// 使用 pinyin-pro 的 html 模式 + 分词(segment) 自动逐字标注，多音字按上下文判定
+function pinyinHtml(text) {
+  if (!window.pinyinPro) return esc(text);
+  try {
+    return window.pinyinPro.pinyin(text, {
+      type: 'html',
+      toneType: 'symbol',
+      segment: true
     });
-    p.innerHTML = html;
-  });
+  } catch (e) {
+    return esc(text);
+  }
 }
 
 // ===== 事件绑定 =====
 document.addEventListener('DOMContentLoaded', () => {
-  // 拼音开关
+  // 拼音开关（点击即重渲染，根据开关状态决定是否注音）
   const pt = document.getElementById('pinyinToggle');
   pt?.addEventListener('click', () => {
     pt.classList.toggle('active');
-    const body = document.querySelector('.reading-body');
-    if (!body) return;
-    body.classList.toggle('has-pinyin', pt.classList.contains('active'));
-    const mt = document.querySelector('.reading-moral-text');
-    if (mt) mt.classList.toggle('has-pinyin', pt.classList.contains('active'));
-    if (pt.classList.contains('active')) applyPinyin();
-    else {
-      const title = document.getElementById('readingTitleBar').textContent;
-      const s = STORIES.find(x => x.title === title);
-      if (s) openStory(s.id);
-    }
+    const title = document.getElementById('readingTitleBar').textContent;
+    const s = STORIES.find(x => x.title === title);
+    if (s) openStory(s.id);
   });
 
   // 返回
