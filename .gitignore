@@ -1,26 +1,16 @@
-# Reasonix agent workspace
-.reasonix/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
 
-# 临时调试脚本（不提交）
-check.js
-check2.js
-check-embed.js
-check_arr.py
-check_stories.py
-debug.py
-find-end.js
-fix-and-sync.js
-fix_final.py
-fix_final2.py
-fix_final3.py
-fix_stories.py
-sync-embedded-stories.js
-sync-embedded.js
-sync.js
-v.js
-v2.js
-verify-final.js
-verify-html.js
-verify.js
-verify_final.py
-verify_result.py
+# Never commit environment files — they contain API keys
+.env
+.env.*
+.env.local
+.env.production
+
+# Never commit credentials
+credentials*
+secret*
+*.pem
+*.key
