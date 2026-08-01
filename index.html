@@ -393,16 +393,29 @@ body {
 }
 
 /* ===== Ruby Pinyin Annotations ===== */
-ruby { ruby-position: over; ruby-align: center; }
-rt {
-  font-size: 0.6em;
-  color: #c8923a;
-  letter-spacing: 0;
-  line-height: 1.1;
+ruby {
+  ruby-position: over;
+  ruby-align: center;
+  margin-right: 0.15em;
 }
-.reading-body.has-pinyin { letter-spacing: 0.3em; line-height: 2.6; }
+rt {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.2;
+  font-family: -apple-system, "PingFang SC", sans-serif;
+}
+.reading-body.has-pinyin {
+  font-size: 16px;
+  line-height: 2.6;
+  letter-spacing: 0.2em;
+}
 .reading-body.has-pinyin p { text-indent: 2em; }
-.reading-moral-text.has-pinyin { letter-spacing: 0.22em; line-height: 2.4; }
+.reading-moral-text.has-pinyin {
+  font-size: 14px;
+  line-height: 2.4;
+  letter-spacing: 0.15em;
+}
 
 .reading-footer {
   text-align: center;
@@ -529,7 +542,7 @@ rt {
   <div class="reading-header">
     <div class="back-btn" id="backBtn">←</div>
     <div class="reading-title-bar" id="readingTitleBar">睡前故事</div>
-    <div class="pinyin-toggle active" id="pinyinToggle" title="拼音开关">拼</div>
+    <div class="pinyin-toggle active" id="pinyinToggle" title="拼音开关">拼音</div>
   </div>
   <div class="reading-content" id="readingContent"></div>
 </div>
@@ -577,19 +590,39 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// ===== Pinyin: 逐字准确注音，多音字按上下文判定 (type:'all' + segment) =====
-// 注意：pinyin-pro v3.26 的 type:'html' 仅返回纯拼音，故手动构造 <ruby> 标签
-function pinyinHtml(text) {
+// ===== Pinyin: 整段传入，多音字按上下文准确注音 (type:'array' + 逐字缓冲) =====
+// 注意：pinyin-pro v3.26 的 type:'html' 仅返回纯拼音（会"只剩拼音"），绝不可改用；
+// type:'array' 不带 segment 时按字符返回拼音数组，逐字构造 <ruby> 既对齐又准确。
+function addPinyinToText(text) {
   if (!window.pinyinPro) return escapeHtml(text);
-  try {
-    const arr = window.pinyinPro.pinyin(text, { type: 'all', toneType: 'symbol', segment: true });
-    return arr.map(it => it.isZh
-      ? '<ruby>' + escapeHtml(it.origin) + '<rt>' + escapeHtml(it.pinyin) + '</rt></ruby>'
-      : escapeHtml(it.origin)
-    ).join('');
-  } catch (e) {
-    return escapeHtml(text);
+  let result = '';
+  let chineseBuffer = '';
+
+  const flushBuffer = () => {
+    if (chineseBuffer) {
+      // 整段传入，利用词语上下文判断多音字
+      const pinyinArray = window.pinyinPro.pinyin(chineseBuffer, {
+        toneType: 'symbol',
+        type: 'array'
+      });
+      for (let i = 0; i < chineseBuffer.length; i++) {
+        result += '<ruby>' + chineseBuffer[i] +
+          '<rt>' + (pinyinArray[i] || '') + '</rt></ruby>';
+      }
+      chineseBuffer = '';
+    }
+  };
+
+  for (const char of text) {
+    if (/[\u4e00-\u9fff]/.test(char)) {
+      chineseBuffer += char;
+    } else {
+      flushBuffer();
+      result += escapeHtml(char);
+    }
   }
+  flushBuffer();
+  return result;
 }
 
 // ===== Render Story List =====
@@ -661,7 +694,16 @@ function openStory(id) {
   const lang = s.language || 'zh';
   const langLabel = lang === 'zh' ? '中文' : 'English';
   const pt = document.getElementById('pinyinToggle');
-  const showPy = lang === 'zh' && pt && pt.classList.contains('active');
+  // 按年龄段自动开启拼音：胎教期/0-1/1-3 岁自动开；3-6/6+ 默认关；英文不显示按钮
+  const youngAgeGroups = ['prenatal', '0-1', '1-3'];
+  if (lang === 'en') {
+    pt.style.display = 'none';
+    pt.classList.remove('active');
+  } else {
+    pt.style.display = '';
+    pt.classList.toggle('active', youngAgeGroups.includes(s.ageGroup));
+  }
+  const showPy = lang === 'zh' && pt.classList.contains('active');
   const py = showPy ? 'has-pinyin' : '';
   currentOpenId = id;
   const langIcon = lang === 'zh' ? '🇨🇳' : '🇬🇧';
@@ -683,11 +725,11 @@ function openStory(id) {
     </div>
     <div class="reading-divider">— ✿ —</div>
     <div class="reading-body lang-${lang} ${py}">
-      ${s.content.map(p => `<p>${showPy ? pinyinHtml(p) : escapeHtml(p)}</p>`).join('')}
+      ${s.content.map(p => `<p>${showPy ? addPinyinToText(p) : escapeHtml(p)}</p>`).join('')}
     </div>
     <div class="reading-moral">
       <div class="reading-moral-title">${escapeHtml(moralTitle)}</div>
-      <div class="reading-moral-text ${py}">${showPy ? pinyinHtml(s.moral) : escapeHtml(s.moral)}</div>
+      <div class="reading-moral-text ${py}">${showPy ? addPinyinToText(s.moral) : escapeHtml(s.moral)}</div>
     </div>
     <div class="reading-footer">
       <span>🌙</span> ${escapeHtml(footerText)} <span>🌙</span>
