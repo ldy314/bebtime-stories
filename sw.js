@@ -55,9 +55,9 @@ self.addEventListener('fetch', event => {
   // 不拦截跨域 API (避免破坏第三方请求)
   if (url.hostname !== location.hostname) return;
 
-  // stories.json / storyline-data.json: StaleWhileRevalidate
+  // 数据文件: NetworkFirst (每次取最新，绝不返回陈旧缓存；内嵌优先下即便失败也不影响显示)
   if (url.pathname.endsWith('stories.json') || url.pathname.endsWith('storyline-data.json')) {
-    event.respondWith(staleWhileRevalidate(request, CACHE_NAME));
+    event.respondWith(networkFirst(request, CACHE_NAME));
     return;
   }
 
