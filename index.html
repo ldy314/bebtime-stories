@@ -236,6 +236,7 @@ body {
 .lang-tag.zh { background: #fef0e0; color: #d4881a; }
 .lang-tag.en { background: #e0eaf5; color: #5070a0; }
 .science-tag { background: #e3f3f0; color: #2a9d8f; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; }
+.science-source-tag { background: #eef6f2; color: #6a9c8f; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; }
 
 .moral-tag {
   font-size: 12px;
@@ -505,6 +506,7 @@ rt {
   <div class="tab" data-age="3-6">3-6岁</div>
   <div class="tab" data-age="6+">6岁以上</div>
   <div class="tab" data-series="dangdang">🐱 系列</div>
+  <div class="tab" data-series="science">🔬 科学</div>
 </div>
 
 <!-- ===== Style Intro ===== -->
@@ -633,6 +635,8 @@ function renderStoryList() {
   let filtered;
   if (currentSeriesFilter === 'dangdang') {
     filtered = stories.filter(s => s.series === 'dangdang');
+  } else if (currentSeriesFilter === 'science') {
+    filtered = stories.filter(s => s.series === 'science');
   } else {
     filtered = stories.filter(s => !s.series);
     // 年龄筛选
@@ -675,10 +679,10 @@ function renderStoryList() {
       </div>
       <div class="story-card-preview">${escapeHtml(s.preview)}</div>
       <div class="story-card-footer">
-        ${s.series ? `<span class="series-tag">🐱 ${escapeHtml(s.seriesTitle || '系列')}</span><span class="ep-tag">第${escapeHtml(String(s.episode))}集</span>` : ''}
+        ${s.series === 'dangdang' ? `<span class="series-tag">🐱 ${escapeHtml(s.seriesTitle || '黑猫当当历险记')}</span>${s.episode != null ? `<span class="ep-tag">第${escapeHtml(String(s.episode))}集</span>` : ''}` : ''}
+        ${s.series === 'science' ? `<span class="science-tag">🔬 ${escapeHtml(s.seriesTitle || '科学故事')}</span>${s.source ? `<span class="science-source-tag">${escapeHtml(s.source)}</span>` : ''}` : ''}
         <span class="age-tag">🍼 ${escapeHtml(s.ageLabel)}</span>
         <span class="lang-tag ${lang}">${langIcon} ${escapeHtml(langLabel)}</span>
-        ${s.category === 'science' ? `<span class="science-tag">🔬 科学故事</span>` : ''}
         <span class="moral-tag">✨ ${escapeHtml(s.moral.substring(0, 30))}...</span>
       </div>
     </div>
@@ -720,7 +724,7 @@ function openStory(id) {
     <div class="reading-date">${escapeHtml(s.date)}</div>
     <h1 class="reading-title">🌛 ${escapeHtml(s.title)}</h1>
     <div class="reading-badges">
-      ${s.series ? `<span class="series-tag">🐱 ${escapeHtml(s.seriesTitle)}</span><span class="ep-tag">第${escapeHtml(String(s.episode))}集</span>` : `<span class="age-tag">🍼 ${escapeHtml(s.ageLabel)}</span>`}
+      ${s.series === 'dangdang' ? `<span class="series-tag">🐱 ${escapeHtml(s.seriesTitle || '黑猫当当历险记')}</span><span class="ep-tag">第${escapeHtml(String(s.episode))}集</span>` : (s.series === 'science' ? `<span class="science-tag">🔬 ${escapeHtml(s.seriesTitle || '科学故事')}</span>${s.source ? `<span class="science-source-tag">${escapeHtml(s.source)}</span>` : ''}` : `<span class="age-tag">🍼 ${escapeHtml(s.ageLabel)}</span>`)}
       <span class="lang-tag ${lang}">${langIcon} ${escapeHtml(langLabel)}</span>
     </div>
     <div class="reading-divider">— ✿ —</div>
