@@ -19,6 +19,7 @@ const stories = JSON.parse(fs.readFileSync(STORIES_PATH, 'utf8'));
 // Split daily stories vs 黑猫当当 series
 const daily = stories.filter(s => !s.series);
 const series = stories.filter(s => s.series === 'dangdang');
+const science = stories.filter(s => s.series === 'science');
 
 // 去掉标题里可能带的前缀「第N集 ·」，避免与生成器添加的序号重复
 const cleanTitle = t => String(t).replace(/^第\d+集\s*[·・\-]?\s*/, '');
@@ -83,7 +84,6 @@ const storyCards = daily.map((s, i) => {
   <div class="story-date">${esc(s.date)}</div>
   <div class="story-title">${esc(s.title)}</div>
   <div class="story-lang-badge">${langLabel(s.language)}</div>
-  ${s.category === 'science' ? `<div class="story-lang-badge" style="color:#2a9d8f;font-weight:600;margin-top:2px;">🔬 科学故事 · ${esc(s.source || '科学杂志')}</div>` : ''}
   <div class="story-divider">\u2014 \u273F \u2014</div>
 
   <div class="story-body">
@@ -157,6 +157,64 @@ ${seriesTocEntries}
 </div>
 
 ${seriesCards}`;
+}
+
+// Series section (科学故事 · 主题系列)
+const scienceTocEntries = science.map((s, i) => {
+  const num = String(i + 1).padStart(2, '0');
+  return `      <li><a href="#science-${i+1}"><span class="toc-num">${num}</span> ${esc(cleanTitle(s.title))} <span class="toc-date">${shortDate(s.date)}</span></a></li>`;
+}).join('\n');
+
+const scienceCards = science.map((s, i) => {
+  const src = s.source ? ` · ${s.source}` : '';
+  const badge = `<span class="story-lang-badge" style="color:#2a9d8f;font-weight:600;margin-top:2px;">🔬 科学故事${esc(src)}</span>`;
+  return `<!-- ===== 科学故事 Story ${i+1} ===== -->
+<div class="story-card" id="science-${i+1}">
+  <div class="moon">🔬</div>
+  <div class="stars">✦ ✦ ✦</div>
+  <div class="story-date">${esc(s.date)}</div>
+  <div class="story-title">${esc(cleanTitle(s.title))}</div>
+  ${badge}
+  <div class="story-divider">— ✿ —</div>
+
+  <div class="story-body">
+${bodyToHtml(s.content, i === 0)}
+  </div>
+
+  <div class="moral">
+    <div class="moral-title">✨ 故事小语</div>
+    <div class="moral-text">
+      ${moralToHtml(s.moral || '')}
+    </div>
+  </div>
+
+  <div class="story-back"><a href="#">↑ 回到目录</a></div>
+</div>`;
+}).join('\n\n');
+
+let scienceBlock = '';
+if (science.length) {
+  scienceBlock = `
+
+<!-- ===== 科学故事 系列 ===== -->
+<div class="cover">
+  <div class="cover-moon">🔬</div>
+  <div class="cover-stars">✦ ✦ ✦</div>
+  <div class="cover-emoji">🔬</div>
+  <div class="series-section-title">🔬 科学故事 · 主题系列</div>
+  <p class="series-section-note">用温柔的方式，给孩子讲讲这个奇妙世界的小秘密。每篇都来自真实的科学，陪宝宝慢慢认识自然与宇宙。</p>
+  <h1>科学故事</h1>
+  <div class="subtitle">温暖科普 · 胎教启蒙</div>
+  <p class="intro">在南极冰层下流淌的红色小溪、会自己发光的小生命、落在地球上的小星星……这些故事把真实的科学，变成轻轻飘进宝宝梦里的温柔话语。</p>
+  <div class="toc">
+    <div class="toc-title">📖 系列目录</div>
+    <ul class="toc-list">
+${scienceTocEntries}
+    </ul>
+  </div>
+</div>
+
+${scienceCards}`;
 }
 
 // Full HTML
@@ -401,7 +459,7 @@ const html = `<!DOCTYPE html>
       <div class="stat-label">English</div>
   </div>
   <div class="stat">
-    <div class="stat-num">${series.length}</div>
+    <div class="stat-num">${series.length + science.length}</div>
     <div class="stat-label">系列集数</div>
   </div>
   </div>
@@ -433,7 +491,7 @@ ${tocEntries}
   <p class="si-note">\u6BCF\u4E00\u7BC7\u90FD\u6807\u6CE8\u4E86\u9002\u5408\u7684\u5E74\u9F84\u6BB5\u3002\u613F\u8FD9\u4E9B\u6E29\u67D4\u7684\u58F0\u97F3\uFF0C\u6210\u4E3A\u5B9D\u5B9D\u6765\u5230\u4E16\u754C\u524D\uFF0C\u6700\u65E9\u542C\u5230\u7684\u7231\u3002</p>
 </div>
 
-${seriesBlock}
+${seriesBlock}${scienceBlock}
 
 ${storyCards}
 

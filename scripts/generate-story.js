@@ -202,7 +202,11 @@ function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
     content,
     category
   };
-  if (category === 'science' && raw.source) obj.source = raw.source;
+  if (category === 'science') {
+    obj.series = 'science';
+    obj.seriesTitle = '科学故事';
+    if (raw.source) obj.source = raw.source;
+  }
   return obj;
 }
 
