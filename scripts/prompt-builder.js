@@ -6,6 +6,12 @@
  * emotions, imagination, daily life, light adventure), expanded author styles,
  * and form-innovation guidance. Theme variety is enforced per-date so consecutive
  * days naturally get different themes.
+ *
+ * 2026-08-02: theme pool expanded with the 700-theme inspiration library
+ * (deepseek_提示2.md) — 20 broad categories (history, music/art, friendship,
+ * fantasy, city, animals, numbers, body, environment, festivals, travel, dreams,
+ * sports, language, tech, philosophy, family, natural wonders, adventure, love)
+ * plus a deterministic concrete "seed" library injected per-story for variety.
  */
 
 const CHILD_BIRTHDAY = '2026-09-22';
@@ -140,12 +146,154 @@ const THEME_POOL_EN = [
   }
 ];
 
+// ===== Expanded theme pool from the 700-theme inspiration library (deepseek_提示2.md) =====
+// 把「历史/传说、音乐/艺术、友情、幻想、城市、动物新篇、数字、身体、环保、节日、
+// 旅行、梦境、运动、语言、科技、哲学、家庭、自然奇观、冒险、爱」20 大类的灵感，
+// 全部并入题材池，大幅消除题材单调，并配合下面的「具体选题种子」给 AI 更落地的火花。
+const THEME_POOL_EXTRA_CN = [
+  { name: '历史与传说', desc: '穿越时空的温柔故事——长城的一块砖、丝绸之路上的小骆驼、金字塔的秘密通道、郑和的宝船、吴哥窟的树根精灵、复活节岛的石像。用孩子的眼睛看历史。' },
+  { name: '音乐与艺术', desc: '声音与色彩的故事——不会画圆的小画家、调色盘上的颜色吵架、会唱歌的贝壳、午夜的乐队、敦煌壁画的飞天、蒙娜丽莎的微笑。艺术启蒙，感受美。' },
+  { name: '友情与社交', desc: '朋友间的温暖——两棵树的约定、分一半的梨、共享的梦、会发光的友谊手环、借来的勇气、最安静的派对。学会相处与接纳。' },
+  { name: '幻想与魔法', desc: '奇幻新世界——能长成任何东西的种子、倒流的瀑布、月亮上的图书馆、会穿越墙壁的猫、十二点的南瓜车、影子剧团。' },
+  { name: '城市与建筑', desc: '钢筋水泥里的童话——摩天楼顶的花园、会讲故事的路灯、地下管道里的鲸鱼、地铁里的图书馆、桥下的音乐会、老邮筒里的蜗牛。' },
+  { name: '动物王国新篇', desc: '动物的奇思妙想——大象的幼儿园、会讲故事的老海龟、爱看书的猫头鹰、最矮的长颈鹿、有口吃的鹦鹉、北极熊的夏日烦恼。' },
+  { name: '数字与逻辑', desc: '数学小冒险——数字国的「0」国王、会算术的蚂蚁、斐波那契数列的向日葵、对称的小蝴蝶、黄金比例的螺旋、质数的孤独派对。' },
+  { name: '身体与健康', desc: '认识自己——心跳的鼓点、骨头的对话、血液的红细胞快递员、做梦时的大脑、脚丫的「地面读卡器」、眨眼的雨刮器。' },
+  { name: '环保与地球', desc: '守护家园——北极冰的求救、种树的小女孩、会说话的垃圾、城市里的「绿墙」、地球的生日愿望、鲸鱼的「碳汇」。' },
+  { name: '节日与庆典', desc: '特别的日子——春节「福」字倒贴、中秋的月饼思念、端午的粽子之争、七夕的喜鹊桥、世界读书日的书、母亲节的拥抱。' },
+  { name: '旅行与探索', desc: '世界那么大——火车窗外的画册、山巅的日出、海底两万里、热气球上看云海、古镇的巷子、水乡的摇橹船。' },
+  { name: '梦境与潜意识', desc: '梦里的奇妙事——可以预订的梦、梦里的飞行、梦里遇见已故的爷爷、清醒梦、把梦画下来、梦里的平行世界。' },
+  { name: '运动与挑战', desc: '动起来的故事——第一次学骑车、游泳的水朋友、篮球的空心入网、攀岩的三点固定、滑冰跌倒后站起来、射箭的专注。' },
+  { name: '语言与故事', desc: '文字的力量——不会写字的男孩用画讲故事、字典里的旅行、一句话的力量、睡前故事的温度、编故事的快乐、书签的视角。' },
+  { name: '科技与未来', desc: '明天的世界——机器人的情感芯片、3D打印的「妈妈」、太空电梯的旅行、会飞的汽车、未来的信、智能眼镜的翻译。' },
+  { name: '哲学与思考', desc: '小小思想家——「我是谁」、孤独的对面、「谢谢」的魔力、「对不起」的力量、空白的美、「希望」的颜色。' },
+  { name: '家庭新视角', desc: '家的故事——妈妈的口头禅、爸爸的鼾声、饭桌上的故事、晚安吻、外婆的手、回家的路。' },
+  { name: '自然奇观', desc: '地球的奇迹——极光的舞蹈、大峡谷的书、珊瑚礁的城市、撒哈拉的星空、地球的转动、贝加尔湖的透明。' },
+  { name: '冒险与勇气', desc: '探险之旅——森林深处的宝藏、独自过河、迷路后的冷静、山顶的信号、泥泞的路、悬崖跳伞。' },
+  { name: '爱与善良', desc: '温暖人心——流浪猫的新家、给老人的椅子、分享的午餐、雨中的伞、最后的晚安、帮妈妈捶背。' }
+];
+
+const THEME_POOL_EXTRA_EN = [
+  { name: 'History & legend', desc: 'Gentle time-travel tales — a brick in the Great Wall, the little camel on the Silk Road, the pyramids\' secret passage, Zheng He\'s little cabin boy, the tree-root elf of Angkor, the stone statues\' dream on Easter Island.' },
+  { name: 'Music & art', desc: 'Stories of sound and colour — the little painter who can\'t draw circles, colours quarrelling on the palette, the singing seashell, the midnight band, the flying apsaras of Dunhuang, Mona Lisa\'s new smile.' },
+  { name: 'Friendship & social', desc: 'Warmth between friends — the promise of two trees, half a pear, a shared dream, the glowing friendship bracelet, borrowed courage, the quietest party.' },
+  { name: 'Fantasy & magic', desc: 'A brand-new world — the seed that grows anything, the upside-down waterfall, the library on the moon, the cat that walks through walls, the pumpkin carriage at midnight, the shadow theatre.' },
+  { name: 'City & architecture', desc: 'Fairy tales in concrete — the garden atop the skyscraper, the streetlamp that tells stories, the whale in the sewer pipes, the library in the subway, the concert under the bridge, the snail in the old mailbox.' },
+  { name: 'Animal kingdom new', desc: 'Animals\' whimsy — the elephant\'s kindergarten, the old sea turtle who tells stories, the book-loving owl, the shortest giraffe, the stuttering parrot, the polar bear\'s summer worry.' },
+  { name: 'Numbers & logic', desc: 'Math little adventures — King Zero of Numberland, the ant that does arithmetic, Fibonacci\'s sunflower, the symmetrical little butterfly, the golden-ratio spiral, the lonely prime numbers.' },
+  { name: 'Body & health', desc: 'Getting to know yourself — the drumbeat of the heartbeat, the bones\' night talk, the red-blood-cell courier, the brain at dreamtime, the foot\'s ground reader, the blinking windshield wiper.' },
+  { name: 'Environment & earth', desc: 'Protecting home — the Arctic ice\'s SOS, the girl who planted a tree, the talking trash, the city\'s green wall, Earth\'s birthday wish, the whale\'s carbon sink.' },
+  { name: 'Festivals & celebrations', desc: 'Special days — the upside-down Fu character, the mooncake\'s longing, the sweet vs salty zongzi, the magpie bridge of Qixi, the book on World Book Day, Mother\'s Day hug.' },
+  { name: 'Travel & exploration', desc: 'The world is so big — the picture book outside the train window, sunrise from the summit, twenty thousand leagues under the sea, cloud sea from the hot-air balloon, the alleys of the old town, the rowing boat in the water town.' },
+  { name: 'Dreams & subconscious', desc: 'Wonders in dreams — ordering a dream, flying in a dream, meeting grandpa in a dream, lucid dreaming, painting the dream, the parallel world in dreams.' },
+  { name: 'Sports & challenges', desc: 'Stories in motion — first time riding a bike, the water friend in swimming, the swish of the basketball, climbing\'s three-point anchor, standing up after falling on ice, archery\'s focus.' },
+  { name: 'Language & story', desc: 'The power of words — the boy who can\'t write tells stories by drawing, a journey inside the dictionary, the power of one sentence, the warmth of a bedtime story, the joy of making up stories, the bookmark\'s viewpoint.' },
+  { name: 'Tech & future', desc: 'Tomorrow\'s world — the robot\'s feeling chip, the 3D-printed "mom", the space-elevator trip, the flying car, a letter from the future, smart glasses that translate.' },
+  { name: 'Philosophy & thinking', desc: 'Little thinkers — "who am I", the opposite of loneliness, the magic of "thank you", the power of "sorry", the beauty of blankness, the colour of hope.' },
+  { name: 'Family new perspective', desc: 'Stories of home — Mom\'s catchphrase, Dad\'s snoring, stories at the dinner table, the goodnight kiss, Grandma\'s hands, the way home.' },
+  { name: 'Natural wonders', desc: 'Earth\'s miracles — the dance of the aurora, the Grand Canyon\'s book, the coral reef city, the Sahara\'s starry sky, Earth\'s rotation, Lake Baikal\'s clarity.' },
+  { name: 'Adventure & courage', desc: 'Journeys of adventure — treasure deep in the forest, crossing the river alone, calm after getting lost, the signal from the summit, the muddy road, cliff parachuting.' },
+  { name: 'Love & kindness', desc: 'Warming hearts — the stray cat\'s new home, the seat for the old lady, the shared lunch, the umbrella in the rain, the final goodnight, rubbing Mom\'s back.' }
+];
+
+const THEME_POOL_ALL_CN = [...THEME_POOL_CN, ...THEME_POOL_EXTRA_CN];
+const THEME_POOL_ALL_EN = [...THEME_POOL_EN, ...THEME_POOL_EXTRA_EN];
+
+// ===== Concrete "seed" library: specific inspiration titles (from deepseek_提示2.md) =====
+// pickTheme 给「大类方向」，下面这些具体选题给 AI 更落地的火花；每天确定性抽 4 个，避免相邻日重复。
+const CONCRETE_SEEDS_CN = [
+  '长城的一块砖的自述', '丝绸之路上的小骆驼', '金字塔的秘密通道', '郑和的宝船小水手', '吴哥窟的树根精灵', '复活节岛的石像梦',
+  '不会画圆的小画家', '调色盘上的颜色吵架了', '会唱歌的贝壳', '午夜的乐队', '蒙娜丽莎的微笑新解', '敦煌壁画的飞天',
+  '两棵树的约定', '分一半的梨', '共享的梦', '会发光的友谊手环', '借来的勇气', '最安静的派对',
+  '能长成任何东西的种子', '倒流的瀑布', '月亮上的图书馆', '会穿越墙壁的猫', '十二点的南瓜车', '影子剧团',
+  '摩天楼顶上的花园', '会讲故事的路灯', '地下管道里的鲸鱼', '地铁里的图书馆', '桥下的音乐会', '老邮筒里的蜗牛',
+  '大象的幼儿园', '会讲故事的老海龟', '爱看书的猫头鹰', '最矮的长颈鹿', '有口吃的鹦鹉', '北极熊的夏日烦恼',
+  '数字国的「0」国王', '会算术的蚂蚁', '斐波那契数列的向日葵', '对称的小蝴蝶', '黄金比例的螺旋', '质数的孤独派对',
+  '心跳的鼓点', '骨头的对话', '血液的红细胞快递员', '做梦时的大脑', '脚丫的「地面读卡器」', '眨眼的雨刮器',
+  '北极冰的求救', '种树的小女孩', '会说话的垃圾', '城市里的「绿墙」', '地球的「生日愿望」', '鲸鱼的「碳汇」',
+  '春节的「福」字倒贴', '中秋节的月饼思念', '端午节的粽子之争', '七夕的喜鹊桥', '世界读书日的书', '母亲节的拥抱',
+  '火车窗外的「画册」', '山巅的日出', '海底两万里', '热气球上看云海', '古镇的巷子', '水乡的摇橹船',
+  '可以「预订」的梦', '梦里的飞行', '梦里遇见已故的爷爷', '清醒梦', '把梦画下来', '梦里的「平行世界」',
+  '第一次学骑车', '游泳的「水朋友」', '篮球的「空心入网」', '攀岩的「三点固定」', '滑冰的「跌倒后站起来」', '射箭的「专注」',
+  '不会写字的男孩', '字典里的「旅行」', '一句话的力量', '睡前故事的温度', '编故事的快乐', '书签的视角',
+  '机器人的「情感芯片」', '3D打印的「妈妈」', '太空电梯的「旅行」', '会飞的汽车', '未来的信', '智能眼镜的「翻译」',
+  '「我是谁」', '「孤独」的对面', '「谢谢」的魔力', '「对不起」的力量', '「空白」的美', '「希望」的颜色',
+  '妈妈的口头禅', '爸爸的鼾声', '饭桌上的故事', '晚安吻', '外婆的「手」', '回家的路',
+  '极光的舞蹈', '大峡谷的「书」', '珊瑚礁的「城市」', '撒哈拉的「星空」', '地球的「自转」', '贝加尔湖的「透明」',
+  '森林深处的「宝藏」', '独自过河', '迷路后的「冷静」', '山顶的「信号」', '泥泞的「路」', '悬崖跳伞',
+  '流浪猫的「新家」', '给老人的「椅子」', '分享的「午餐」', '雨中的「伞」', '最后的「晚安」', '帮妈妈捶背'
+];
+
+const CONCRETE_SEEDS_EN = [
+  'A brick in the Great Wall', 'The little camel on the Silk Road', 'The secret passage of the pyramids', 'Zheng He\'s little cabin boy', 'The tree-root elf of Angkor', 'The stone statues\' dream on Easter Island',
+  'The little painter who can\'t draw circles', 'Colors quarrel on the palette', 'The singing seashell', 'The midnight band', 'Mona Lisa\'s new smile', 'The flying apsaras of Dunhuang',
+  'The promise of two trees', 'Half a pear', 'A shared dream', 'The glowing friendship bracelet', 'Borrowed courage', 'The quietest party',
+  'The seed that grows anything', 'The upside-down waterfall', 'The library on the moon', 'The cat that walks through walls', 'The pumpkin carriage at midnight', 'The shadow theatre',
+  'The garden atop the skyscraper', 'The streetlamp that tells stories', 'The whale in the sewer pipes', 'The library in the subway', 'The concert under the bridge', 'The snail in the old mailbox',
+  'The elephant\'s kindergarten', 'The old sea turtle who tells stories', 'The book-loving owl', 'The shortest giraffe', 'The stuttering parrot', 'The polar bear\'s summer worry',
+  'King Zero of Numberland', 'The ant that does arithmetic', 'Fibonacci\'s sunflower', 'The symmetrical little butterfly', 'The golden-ratio spiral', 'The lonely prime numbers',
+  'The drumbeat of the heartbeat', 'The bones\' night talk', 'The red-blood-cell courier', 'The brain at dreamtime', 'The foot\'s ground reader', 'The blinking windshield wiper',
+  'The Arctic ice\'s SOS', 'The girl who planted a tree', 'The talking trash', 'The city\'s green wall', 'Earth\'s birthday wish', 'The whale\'s carbon sink',
+  'The upside-down Fu character', 'The mooncake\'s longing', 'The sweet vs salty zongzi', 'The magpie bridge of Qixi', 'The book on World Book Day', 'Mother\'s Day hug',
+  'The picture book outside the train window', 'Sunrise from the summit', 'Twenty thousand leagues under the sea', 'Cloud sea from the hot-air balloon', 'The alleys of the old town', 'The rowing boat in the water town',
+  'Ordering a dream', 'Flying in a dream', 'Meeting grandpa in a dream', 'Lucid dreaming', 'Painting the dream', 'The parallel world in dreams',
+  'First time riding a bike', 'The water friend in swimming', 'The swish of the basketball', 'Climbing\'s three-point anchor', 'Standing up after falling on ice', 'Archery\'s focus',
+  'The boy who can\'t write', 'A journey inside the dictionary', 'The power of one sentence', 'The warmth of a bedtime story', 'The joy of making up stories', 'The bookmark\'s viewpoint',
+  'The robot\'s feeling chip', 'The 3D-printed "mom"', 'The space-elevator trip', 'The flying car', 'A letter from the future', 'Smart glasses that translate',
+  'Who am I', 'The opposite of loneliness', 'The magic of "thank you"', 'The power of "sorry"', 'The beauty of blankness', 'The colour of hope',
+  'Mom\'s catchphrase', 'Dad\'s snoring', 'Stories at the dinner table', 'The goodnight kiss', 'Grandma\'s hands', 'The way home',
+  'The dance of the aurora', 'The Grand Canyon\'s book', 'The coral reef city', 'The Sahara\'s starry sky', 'Earth\'s rotation', 'Lake Baikal\'s clarity',
+  'Treasure deep in the forest', 'Crossing the river alone', 'Calm after getting lost', 'The signal from the summit', 'The muddy road', 'Cliff parachuting',
+  'The stray cat\'s new home', 'The seat for the old lady', 'The shared lunch', 'The umbrella in the rain', 'The final goodnight',   'Rubbing Mom\'s back'
+];
+
+// Group the concrete seeds by their broad category so the chosen theme gets matching sparks.
+const SEED_GROUPS_CN = {};
+THEME_POOL_EXTRA_CN.forEach((t, i) => {
+  SEED_GROUPS_CN[t.name] = CONCRETE_SEEDS_CN.slice(i * 6, i * 6 + 6);
+});
+const SEED_GROUPS_EN = {};
+THEME_POOL_EXTRA_EN.forEach((t, i) => {
+  SEED_GROUPS_EN[t.name] = CONCRETE_SEEDS_EN.slice(i * 6, i * 6 + 6);
+});
+
+/**
+ * Pick the broad theme direction for a date (rotates across the full 26-theme pool).
+ */
 function pickTheme(dateStr, lang) {
-  const pool = lang === 'zh' ? THEME_POOL_CN : THEME_POOL_EN;
+  const pool = lang === 'zh' ? THEME_POOL_ALL_CN : THEME_POOL_ALL_EN;
   // Offset EN by half the pool so CN and EN differ on the same day.
   const offset = lang === 'en' ? Math.floor(pool.length / 2) : 0;
   const idx = (hashDate(dateStr) + offset) % pool.length;
   return pool[idx];
+}
+
+/**
+ * Deterministically pick concrete "seed" titles for a date. When the chosen theme is
+ * one of the 20 expanded categories, draw matching sparks from that category (so the
+ * inspiration reinforces the direction); otherwise draw 4 distinct seeds globally.
+ * Different dates => different sets, and never duplicates within a single day.
+ */
+function pickSeeds(dateStr, lang) {
+  const theme = pickTheme(dateStr, lang);
+  const groups = lang === 'zh' ? SEED_GROUPS_CN : SEED_GROUPS_EN;
+  const group = groups[theme.name];
+  if (group && group.length) {
+    const start = hashDate(dateStr + '-seed-' + lang) % group.length;
+    const out = [];
+    for (let i = 0; i < Math.min(4, group.length); i++) {
+      out.push(group[(start + i * 5) % group.length]);
+    }
+    return out;
+  }
+  // Fallback for the 6 original broad themes: 4 distinct global seeds.
+  const seeds = lang === 'zh' ? CONCRETE_SEEDS_CN : CONCRETE_SEEDS_EN;
+  const start = hashDate(dateStr + '-seed-' + lang) % seeds.length;
+  const out = [];
+  for (let i = 0; i < 4; i++) {
+    out.push(seeds[(start + i * 37) % seeds.length]);
+  }
+  return out;
 }
 
 // ===== Chinese author style descriptions (core 6) =====
@@ -294,6 +442,9 @@ function buildChinesePrompt(dateStr, ageInfo) {
 ${theme.desc}
 （请从上述题材中选出合适的方向发挥，并与当前年龄段匹配；保持多样性，避免连续多日同题材同风格。）
 
+**本篇灵感选题库（任选其一或受其启发展开，避免与已写过的故事重复）：**
+${pickSeeds(dateStr, 'zh').map(s => '- ' + s).join('\n')}
+
 请根据当前年龄段调整故事风格和内容深度。故事标题中注明适合的年龄段。
 
 **中文故事风格参考，融合以下大师的特色，加上你自己的创造力和想象力：**
@@ -337,6 +488,9 @@ Age stage style requirements: ${ageStyle}
 **Suggested theme direction for this story: "${theme.name}"**
 ${theme.desc}
 (Pick a direction from the theme above that fits the age stage; keep variety, avoid the same theme/styles on consecutive days.)
+
+**Inspiration seed library for this story (pick one or be inspired by it; avoid repeating stories already written):**
+${pickSeeds(dateStr, 'en').map(s => '- ' + s).join('\n')}
 
 Please adjust the story complexity based on the age stage.
 
