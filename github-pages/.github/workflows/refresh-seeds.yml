@@ -1,0 +1,24 @@
+name: Monthly Seed Refresh
+on:
+  schedule:
+    - cron: '0 10 1 * *'  # 每月1号 10:00 UTC = 18:00 北京时间
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Run seed refresh (batch-only mode)
+        run: node scripts/refresh-seeds.js --batch-only
+        continue-on-error: true
+      - name: Log refresh result
+        run: |
+          echo "Seed refresh completed at $(date)"
+          if [ -f scripts/seed-refresh-log.json ]; then
+            echo "Refresh log:"
+            cat scripts/seed-refresh-log.json
+          fi
