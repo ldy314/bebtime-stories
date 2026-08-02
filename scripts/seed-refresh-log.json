@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-08-02T02:42:26.781Z",
+    "mode": "--batch-only",
+    "results": [
+      {
+        "plan": "A",
+        "added": 0,
+        "note": "auto-unlocked at runtime"
+      }
+    ],
+    "totalAdded": 0
+  },
+  {
+    "timestamp": "2026-08-02T02:44:31.451Z",
+    "mode": "--batch-only",
+    "results": [
+      {
+        "plan": "A",
+        "added": 0,
+        "note": "auto-unlocked at runtime"
+      }
+    ],
+    "totalAdded": 0
+  },
+  {
+    "timestamp": "2026-08-02T02:50:52.607Z",
+    "mode": "--batch-only",
+    "results": [
+      {
+        "plan": "A",
+        "added": 0,
+        "note": "auto-unlocked at runtime"
+      }
+    ],
+    "totalAdded": 0
+  }
+]
