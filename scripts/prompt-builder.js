@@ -12,7 +12,12 @@
  * fantasy, city, animals, numbers, body, environment, festivals, travel, dreams,
  * sports, language, tech, philosophy, family, natural wonders, adventure, love)
  * plus a deterministic concrete "seed" library injected per-story for variety.
+ * 2026-08-02: added monthly seed batch unlock system (SEED_BATCHES + getUnlockedSeeds)
+ * — 12 months × 32 seeds, all 20 categories mixed each month.
  */
+
+const path = require('path');
+const fs = require('fs');
 
 const CHILD_BIRTHDAY = '2026-09-22';
 
@@ -257,6 +262,341 @@ THEME_POOL_EXTRA_EN.forEach((t, i) => {
   SEED_GROUPS_EN[t.name] = CONCRETE_SEEDS_EN.slice(i * 6, i * 6 + 6);
 });
 
+// ===== Monthly seed batch unlock system =====
+// 12 个月 × 32 种子，每月覆盖全部 20 大类（混合分配）
+const SEED_BATCHES = {
+  1: {
+    month: '2026-08',
+    label: '暑假·探索·家庭·梦想',
+    seeds: [
+      '古罗马的鸽子信使','冰岛的精灵石','吹口哨的风','午夜的乐队',
+      '彩虹桥上的相遇','秘密基地的钥匙','倒流的瀑布','声音的颜色',
+      '自来水管里的彩虹','电梯的冒险','海豚的超声波歌谣','会帮倒忙的豪猪',
+      '三角形的稳定故事','黄金比例的螺旋','骨头的对话','睡觉时的生长',
+      '会说话的垃圾','沙漠的绿色梦想','圣诞节的雪橇铃铛','复活节的彩蛋',
+      '帆船的环球梦','鲸鱼的脊背之旅','重复出现的梦','梦里的长途旅行',
+      '足球的最后一分钟','跆拳道的品势','第一个词','睡前故事的温度',
+      '虚拟现实的外婆','会飞的汽车','现在的长度','足够的标准'
+    ],
+    seedsEn: [
+      'Pigeon messenger in ancient Rome','Elf stone in Iceland','Whistling wind','The midnight band',
+      'Meeting on the rainbow bridge','Key to the secret base','The waterfall that flows upward','Color of sound',
+      'Rainbow in the water pipe','Adventure in the elevator','Dolphin song','The porcupine who always helps',
+      'Story of the triangle','Golden ratio spiral','Conversation of bones','Growing while sleeping',
+      'Talking trash','Desert green dream','Christmas sleigh bells','Easter eggs',
+      'Sailing ship round-the-world dream','Journey on the whales back','Recurring dreams','Long journeys in dreams',
+      'Last minute of a football match','Taekwondo patterns','The first word','Warmth of bedtime stories',
+      'Virtual reality grandmother','Flying cars','The length of now','The standard of enough'
+    ]
+  },
+  2: {
+    month: '2026-09',
+    label: '开学季·收获·感恩·自然',
+    seeds: [
+      '魔法铅笔盒','时间放慢的钟','打翻的牛奶','三厘米的勇气',
+      '家庭面团','雨的笑声','蜗牛的家族旅行','蚂蚁的城市规划',
+      '被遗忘的书','努力的原则','图书馆的幽灵','图书馆的晚上',
+      '作业本页码的议论','粉笔的旅行','第一张奖状','书包的周末',
+      '月亮的健身房','雪人的冰箱','种子的信任','耐心的种子',
+      '稻穗的低头','乘法的桃子','树的秘密语言','蘑菇的突然出现',
+      '叶子的指纹','会发光的石头','秋天的夏洛','蜘蛛网的露珠',
+      '了不起的小事','不会写的字','第一次举手','小蚂蚁的迷宫'
+    ],
+    seedsEn: [
+      'Magic pencil case','Clock that slows down','Spilled milk','Three centimeters of courage',
+      'Family dough','Laughter of rain','Snail family trip','Ant city planning',
+      'The forgotten book','Principle of effort','Library ghost','Library at night',
+      'Whispers of homework pages','Chalk journey','The first certificate','Weekend of the schoolbag',
+      'Moons gym','Snowmans refrigerator','Trust of a seed','Seeds of patience',
+      'Bow of the rice stalk','Peach of multiplication','Secret language of trees','Sudden appearance of mushrooms',
+      'Fingerprint of a leaf','Glowing stone','Charlottes autumn','Dewdrops on a spider web',
+      'Small great things','Words one cant write','First time raising a hand','Little ant maze'
+    ]
+  },
+  3: {
+    month: '2026-10',
+    label: '国庆·勇气·冒险·动物',
+    seeds: [
+      '月球上的兔子','火烈鸟的舞蹈','龙卷风的舞会','口袋里的怪兽',
+      '进入云朵的扶梯','城市先生和小镇先生','乌龟的恒心','一粒稻谷的故事',
+      '壁虎的约会','牵牛花的攀登','獾先生的礼物','每片秋叶的徽章',
+      '勇气是一片云','井底之蛙新传','小松鼠的宝藏','北风与太阳',
+      '彩虹尽头的金坛','礼让的三兄弟','鲸鱼与小鱼','蒲公英的远行',
+      '超级变色龙的隐身','夜晚是什么颜色','顽皮的影子','瓶子里的星空',
+      '爱心树','小鼹鼠的宇宙','月亮的温度','两只蜗牛的路',
+      '蜡笔大小的便利','小花猫的胡须','风到哪里去了','小不点的大海'
+    ],
+    seedsEn: [
+      'Rabbit on the moon','Dance of the flamingos','Tornado ball','Monster in the pocket',
+      'Escalator into the clouds','Mr City and Mr Town','Persistence of the turtle','Story of a single grain of rice',
+      'Geckos date','Morning glories climb','Mr Badgers gift','Badge of every autumn leaf',
+      'Courage is a cloud','The frog in the well revisited','Little squirrels treasure','The north wind and the sun',
+      'Gold at the end of the rainbow','Three brothers who yield','Whale and small fish','Dandelions journey',
+      'Super chameleons invisibility','What color is night','Naughty shadow','Starry sky in a bottle',
+      'The giving tree','Little moles universe','Temperature of the moon','Two snails road',
+      'Crayon-sized convenience','Kittens whiskers','Where did the wind go','Little ones big sea'
+    ]
+  },
+  4: {
+    month: '2026-11',
+    label: '冬季·温暖·成长·科技',
+    seeds: [
+      '智能手环的预言','小麻雀的围巾','青蛙与人鱼','枫树下的约会',
+      '星空的向往','石榴娃娃的问候','慈母手中线','收集声音的男孩',
+      '蒸汽的大壶','月亮丢了','生活就像一个苹果','生活需要哭泣',
+      '错位的照片','板凳·童年','换尾巴','小鼹鼠的火车',
+      '太阳是个魔术师','睡美人','老爷爷的梦境','一颗种子的信念',
+      '烟花的故事','时间消失了','懂得分享','勇气',
+      '十一月的秋天','许愿一千回','愿望迟早实现','小爱心',
+      '家庭团聚','蝴蝶的勇气','多彩的世界','奇妙的桥'
+    ],
+    seedsEn: [
+      'Smart bracelet prophecy','Little sparrows scarf','Frog and mermaid','Date under the maple tree',
+      'Longing for the starry sky','Pomegranate dolls greeting','Thread from a mothers hand','Boy who collects sounds',
+      'The steaming kettle','The moon is gone','Life is like an apple','Life needs tears',
+      'Misplaced photo','The bench of childhood','Swapping tails','Little moles train',
+      'The sun is a magician','Sleeping beauty','Old mans dream','A seeds belief',
+      'Story of fireworks','Time disappeared','Learning to share','Courage',
+      'Autumn in November','Wish a thousand times','Wishes come true','A little love',
+      'Family reunion','Butterflys courage','Colorful world','A wonderful bridge'
+    ]
+  },
+  5: {
+    month: '2026-12',
+    label: '年终·回顾·童年·幻想',
+    seeds: [
+      '梦里的白莲','梦游记','落叶的语言','蓝鲸的旅程',
+      '人鱼的奇遇记','消失的星光','勇敢机警','怕冷的雪人',
+      '城南旧事','寻找勇敢的小王子','小王子','诚实的小白兔',
+      '孔雀小明','小松鼠的学校生活','七色花','灰姑娘',
+      '小红帽','会飞的扫帚','会走路的字典','上学第一天',
+      '影子请假','烟花的告白','打翻的音乐盒','长颈鹿的围巾',
+      '糖葫芦不见了','云朵猫','带雨的云','两只小熊',
+      '铅笔盒里的对话','怕痒的月亮','花婆婆','奇妙的种子'
+    ],
+    seedsEn: [
+      'White lotus in the dream','Dream journey','Language of falling leaves','Blue whales journey',
+      'Mermaids adventure','Fading starlight','Brave and alert','Snowman who hates the cold',
+      'Old stories of the south city','Search for the brave little prince','The little prince','Honest little white rabbit',
+      'Peacock Xiaoming','Little squirrels school life','Seven-colored flower','Cinderella',
+      'Little red riding hood','Flying broom','Walking dictionary','First day of school',
+      'Shadow takes a day off','Confession of fireworks','Overturned music box','Giraffes scarf',
+      'Candy haws gone missing','Cloud cat','Rain-bearing cloud','Two little bears',
+      'Dialogue in the pencil case','Ticklish moon','Miss Rumphius','Wonderful seed'
+    ]
+  },
+  6: {
+    month: '2027-01',
+    label: '新年·希望·动物·冒险',
+    seeds: [
+      '第一场雪','小松鼠的新年愿望','兔年说兔','马路上的新朋友',
+      '和星星打电话','魔镜的冬天','树居小仙','用影子玩耍',
+      '小鱼的冬天','糖果屋历险记','小红鱼','猫钓鱼',
+      '小松鼠的礼物','雪花的白帽子','南飞的新旅','云朵棉花糖',
+      '小小运动员','勇敢地飞翔','善意是最响亮的','蝴蝶和小鸟',
+      '小红花的心愿','小猫咪的婚纱','春天在哪里','夜空中的星星',
+      '可爱的小动物','小脚印','美丽的太阳','今天穿什么',
+      '小帮手','赶海','平安归来','小鱼儿回家'
+    ],
+    seedsEn: [
+      'First snowfall','Little squirrels new year wish','Year of the rabbit','New friend on the road',
+      'Phone call with the stars','The magic mirrors winter','Tree-dwelling elf','Playing with shadows',
+      'Little fishs winter','Hansel and Gretel','The little red fish','Cat fishes',
+      'Little squirrels gift','Snowflakes white hat','Journey south','Cotton candy clouds',
+      'Little athlete','Flying bravely','Kindness is the loudest','Butterfly and bird',
+      'Little red flowers wish','Little cats wedding dress','Where is spring','Stars in the night sky',
+      'Cute little animals','Tiny footprints','Beautiful sun','What to wear today',
+      'Little helper','Tide picking','Safe return','Little fish goes home'
+    ]
+  },
+  7: {
+    month: '2027-02',
+    label: '春天·家庭·动物·想象',
+    seeds: [
+      '不再有条件的家','不再有家庭的岛','小阁楼的秘密','小徒弟',
+      '西瓜们的奉献','小橘灯','天黑前的歌剧','小星星的吻',
+      '猜不着的谜','麻雀的太阳','小老虎的花','小狐狸的创意',
+      '小企鹅的棉衣','报春的花','安静的雪','苹果姑娘',
+      '蚂蚁小时工','最诚实的话','小小的约定','勇敢的葵花',
+      '妈妈的唠叨','爱的声音','姥姥的澎湖湾','妈妈的晚安',
+      '妈妈是超人','童年旋涡','让路','热烘烘的太阳',
+      '温暖的围巾','我妈妈','外婆的牵手','妈妈和月亮'
+    ],
+    seedsEn: [
+      'Home without conditions','Island without a family','Secret of the attic','Little apprentice',
+      'Watermelons dedication','Little orange lamp','Opera before dark','Little stars kiss',
+      'Unsolvable riddle','Sparrows sun','Little tigers flower','Little foxs idea',
+      'Little penguins cotton-padded jacket','Harbinger flower','Quiet snow','Apple girl',
+      'Ant hour worker','Most honest words','Little promise','Brave sunflower',
+      'Mom nagging','Sound of love','Grandmas bay','Mom goodnight',
+      'Mom is a superhero','Childhood vortex','Giving way','Warm sun',
+      'Warm scarf','My mom','Grandmas hand','Mom and the moon'
+    ]
+  },
+  8: {
+    month: '2027-03',
+    label: '春天·自然·环保·勇气',
+    seeds: [
+      '地球的小主人','小小消费者','小怕','风中的树叶',
+      '想和圣诞树做朋友','小岛向导','快乐的勇敢','绿色的小主人',
+      '彩色的梦','冬天的第一场雪','划船龙的约定','清明的雨',
+      '蝌蚪变青蛙','燕子的信','杜鹃花的坚持','小蜜蜂的梦想',
+      '小燕子筑巢','小蜜蜂的蜜','小蜻蜓的翅膀','小蝴蝶的裙子',
+      '爱护小树苗','会走的衣柜','电的奥秘','垃圾分类员',
+      '洗菜水的旅行','塑料袋的再生','森林里的小法庭','地球的体温',
+      '纽扣云','会说话的电池','雨水收集器','小蚂蚁的地铁'
+    ],
+    seedsEn: [
+      'Little guardian of the earth','Little consumer','A little afraid','Leaves in the wind',
+      'Wants to be friends with the Christmas tree','Island guide','Joyful courage','Little guardian of green',
+      'Colorful dream','First snow of winter','Dragon boat promise','Qingming rain',
+      'Tadpole becomes a frog','Swallows letter','Rhododendrons persistence','Little bees dream',
+      'Little swallow builds a nest','Little bees honey','Little dragonflys wings','Little butterflys skirt',
+      'Protecting saplings','Walking wardrobe','Mystery of electricity','Waste sorting officer',
+      'Journey of dishwater','Plastic bag recycling','Little court in the forest','Earths temperature',
+      'Button cloud','Talking battery','Rain collector','Little ant subway'
+    ]
+  },
+  9: {
+    month: '2027-04',
+    label: '阅读月·童话·想象·友谊',
+    seeds: [
+      '书的精灵','小狗与"年"','日光的魔法','糖果小屋',
+      '幸福的王子','天鹅的羽毛','小不点','那个老故事',
+      '奔跑的羊皮纸','说话的书架','借故事的树','古诗词里的春天',
+      '唐诗里的小船','宋词里的月亮','元曲里的山水','诗经里的草',
+      '字的朋友','写故事的笔','会翻页的风','字典里的旅行',
+      '一句话的力量','不会写字的男孩','编故事的快乐','书签的视角',
+      '绘本里的秘密','读后感的小精灵','阅读的种子','故事的翅膀',
+      '夜读的萤火虫','一本书的旅行','被打断的故事','听故事的小熊'
+    ],
+    seedsEn: [
+      'Book elf','Puppy and the Nian','Magic of daylight','Candy cottage',
+      'Happy prince','Swans feather','Tiny one','That old story',
+      'Running parchment','Talking bookshelf','Tree that lends stories','Spring in classical poetry',
+      'Little boat in Tang poetry','Moon in Song poetry','Landscape in Yuan drama','Grass in the Book of Songs',
+      'Friend of words','Pen that writes stories','Wind that turns pages','Journey inside the dictionary',
+      'Power of one sentence','Boy who cant write','Joy of making up stories','Bookmarks perspective',
+      'Secret in picture books','Reading-elf','Seed of reading','Wings of story',
+      'Firefly reading at night','Journey of a book','Interrupted story','Little bear listening to stories'
+    ]
+  },
+  10: {
+    month: '2027-05',
+    label: '劳动·职业·运动·探索',
+    seeds: [
+      '面包师的酵母','园丁的时间','温柔版医生','第一个邮递员',
+      '小小消防员','会修钟的人','灯塔看守人','小小考古学家',
+      '第一次学骑车','游泳的水朋友','篮球的空心入网','攀岩的三点固定',
+      '滑冰跌倒后站起来','射箭的专注','足球的最后一分钟','跆拳道的品势',
+      '长城的砖','丝绸之路的骆驼','金字塔的秘密','郑和的宝船',
+      '吴哥窟的树根','复活节岛的石像','热气球看云海','帆船的环球梦',
+      '灯的信','小小科学家','超级变色龙的隐身','了不起的蚂蚁',
+      '公鸡的喔喔','顽皮的星星','谦虚的彩虹','丰富的友谊'
+    ],
+    seedsEn: [
+      'Bakers yeast','Gardeners time','Gentle doctor','The first postman',
+      'Little firefighter','Clock fixer','Lighthouse keeper','Little archaeologist',
+      'First time riding a bike','Water friend in swimming','Basketball swish','Climbing three-point anchor',
+      'Standing up after falling on ice','Archery focus','Last minute of football','Taekwondo patterns',
+      'A brick in the Great Wall','Camel on the Silk Road','Secret of the pyramids','Zheng Hes treasure ship',
+      'Tree roots of Angkor','Statues of Easter Island','Cloud sea from a hot-air balloon','Sailing ship round-the-world dream',
+      'Letter from a lamp','Little scientist','Super chameleons invisibility','Amazing ants',
+      'Roosters crow','Naughty star','Humble rainbow','Abundant friendship'
+    ]
+  },
+  11: {
+    month: '2027-06',
+    label: '夏天·海洋·星空·成长',
+    seeds: [
+      '神奇的材料','光的故事','小小数学家','大胆的科学实验',
+      '地球的故事','让地球更美好','星空的诗歌','小小机器人',
+      '小小发明家','太空快递','太阳系的旅行','月球的背面',
+      '水的故事','会飞的猫','会走路的树','会唱歌的珊瑚',
+      '小鱼的大海','海龟的旅程','鲸鱼的歌唱','海豚的超声波',
+      '彩色的海','海洋里的城堡','海底两万里','小贝壳的歌',
+      '会帮倒忙的小家伙','会飞的汽车','智能小管家','未来的学校',
+      '机器人的情感','天空的画','给星星打电话','数星星的孩子'
+    ],
+    seedsEn: [
+      'Amazing materials','Story of light','Little mathematician','Bold science experiment',
+      'Story of the earth','Making the earth better','Poetry of the stars','Little robot',
+      'Little inventor','Space delivery','Journey of the solar system','Far side of the moon',
+      'Story of water','Cat that flies','Walking tree','Singing coral',
+      'Little fishs big sea','Sea turtles journey','Song of the whale','Dolphin ultrasound',
+      'Colorful sea','Castle in the ocean','Twenty thousand leagues under the sea','Little shells song',
+      'Little helper who makes mistakes','Flying car','Smart little butler','School of the future',
+      'Robot feelings','Painting of the sky','Phone call to the stars','Child counting stars'
+    ]
+  },
+  12: {
+    month: '2027-07',
+    label: '暑假尾声·回顾·准备·新起点',
+    seeds: [
+      '飞翔的小飞机','月亮和星星','绿草','快乐成长',
+      '超级智慧','探索未知','阳光','温暖的旅程',
+      '萤火虫的森林','云朵上的城市','想飞的床','玩具夜谈',
+      '书架里的秘密','午夜的乐队','会唱歌的贝壳','调色盘吵架',
+      '落叶的信','蚂蚁搬家','蝴蝶蜕变','小种子的春天',
+      '冬至的饺子','夏至的蝉','春分的燕子','谷雨的茶',
+      '妈妈的声音','爸爸的力量','外婆的手','回家的路',
+      '晚安的故事','许愿的小星星','愿望成真','十二个月的礼物'
+    ],
+    seedsEn: [
+      'Flying little airplane','Moon and stars','Green grass','Happy growth',
+      'Super wisdom','Exploring the unknown','Sunshine','Warm journey',
+      'Forest of fireflies','City on the clouds','Bed that wants to fly','Toys night talk',
+      'Secret of the bookshelf','The midnight band','Singing seashell','Colors quarrel on the palette',
+      'Letter from a falling leaf','Ants moving','Butterfly metamorphosis','Spring of a little seed',
+      'Dumplings of winter solstice','Cicadas of summer solstice','Swallows of spring equinox','Tea of grain rain',
+      'Moms voice','Dads strength','Grandmas hands','The way home',
+      'Goodnight story','Wishing little star','Wishes come true','Gift of twelve months'
+    ]
+  }
+};
+
+/**
+ * Get the full seed list available for the current month,
+ * including: base CONCRETE_SEEDS + unlocked SEED_BATCHES + dynamic-seeds.json
+ */
+function getUnlockedSeeds(lang) {
+  const baseSeeds = lang === 'zh' ? [...CONCRETE_SEEDS_CN] : [...CONCRETE_SEEDS_EN];
+  const now = new Date();
+  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+
+  // Unlock SEED_BATCHES up to and including current month
+  for (const batch of Object.values(SEED_BATCHES)) {
+    if (batch.month <= currentMonth) {
+      const batchSeeds = lang === 'zh' ? batch.seeds : (batch.seedsEn || batch.seeds);
+      // Filter out external_ and ai_ prefixes (those are for dynamic-seeds.json only)
+      const validSeeds = batchSeeds.filter(s => !s.startsWith('external_') && !s.startsWith('ai_'));
+      baseSeeds.push(...validSeeds);
+    }
+  }
+
+  // Read dynamic-seeds.json for external + AI seeds
+  try {
+    const dynamicPath = path.join(__dirname, 'dynamic-seeds.json');
+    if (fs.existsSync(dynamicPath)) {
+      const dynamic = JSON.parse(fs.readFileSync(dynamicPath, 'utf-8'));
+      for (const month of Object.keys(dynamic)) {
+        if (month <= currentMonth && dynamic[month] && dynamic[month].seeds) {
+          const langSeeds = lang === 'zh'
+            ? (dynamic[month].seeds.zh || dynamic[month].seeds)
+            : (dynamic[month].seeds.en || dynamic[month].seeds);
+          if (Array.isArray(langSeeds)) {
+            baseSeeds.push(...langSeeds.filter(s => !s.startsWith('external_') && !s.startsWith('ai_')));
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Warning: Could not read dynamic-seeds.json:', e.message);
+  }
+
+  return baseSeeds;
+}
+
 /**
  * Pick the broad theme direction for a date (rotates across the full 26-theme pool).
  */
@@ -286,8 +626,8 @@ function pickSeeds(dateStr, lang) {
     }
     return out;
   }
-  // Fallback for the 6 original broad themes: 4 distinct global seeds.
-  const seeds = lang === 'zh' ? CONCRETE_SEEDS_CN : CONCRETE_SEEDS_EN;
+  // Fallback: 4 distinct seeds from the full unlocked pool (base + monthly batches + dynamic).
+  const seeds = getUnlockedSeeds(lang);
   const start = hashDate(dateStr + '-seed-' + lang) % seeds.length;
   const out = [];
   for (let i = 0; i < 4; i++) {
@@ -712,5 +1052,7 @@ module.exports = {
   isScienceDay,
   fetchScienceArticle,
   buildScienceChinesePrompt,
-  buildScienceEnglishPrompt
+  buildScienceEnglishPrompt,
+  getUnlockedSeeds,
+  SEED_BATCHES
 };
