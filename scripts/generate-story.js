@@ -222,6 +222,22 @@ async function main() {
   console.log('=== Bedtime Story Generator ===');
   console.log(`Beijing time: ${getBeijingDateStr()} ${new Date().toUTCString()}`);
 
+  // 每月 1 号自动运行种子刷新脚本（getUnlockedSeeds 自动解锁新批次）
+  const today = new Date();
+  if (today.getUTCDate() === 1) {
+    console.log('\n=== Monthly Seed Refresh (1st of month) ===');
+    try {
+      const { execSync } = require('child_process');
+      const nodeBin = process.execPath;
+      const refreshScript = path.join(__dirname, 'refresh-seeds.js');
+      execSync(`"${nodeBin}" "${refreshScript}" --batch-only`, { cwd: ROOT_DIR, stdio: 'inherit' });
+      console.log('Monthly seed refresh completed.');
+    } catch (err) {
+      console.warn('Warning: Monthly seed refresh failed (non-fatal):', err.message);
+    }
+    console.log('');
+  }
+
   // Read existing stories
   const stories = JSON.parse(fs.readFileSync(STORIES_PATH, 'utf8'));
   console.log(`Current stories: ${stories.length} (${stories.filter(s => s.language === 'zh').length} ZH, ${stories.filter(s => s.language === 'en').length} EN)`);
@@ -234,20 +250,16 @@ async function main() {
 
   const missingStories = [];
   for (const dateStr of datesToCheck) {
-    // 若该日期已有任意（手动或自动）故事，则整日跳过——不重复生成，
-    // 把当天的创作空间留给手动故事（手动与自动互不覆盖、互不重复）。
-    const dayHasAny = stories.some(s => s.id.startsWith(dateStr + '-'));
-    if (dayHasAny) {
-      console.log(`  skip ${dateStr}: day already has story(ies), leave room for manual creation`);
-      continue;
-    }
-    // 空白日：生成标准 中文+英文 每日对；科学日额外补 科学 中英。
-    missingStories.push({ dateStr, language: 'zh' });
-    missingStories.push({ dateStr, language: 'en' });
+    const hasCn = stories.some(s => s.id === `${dateStr}-cn`);
+    const hasEn = stories.some(s => s.id === `${dateStr}-en`);
+    if (!hasCn) missingStories.push({ dateStr, language: 'zh' });
+    if (!hasEn) missingStories.push({ dateStr, language: 'en' });
     // 每周随机一天：额外生成中英双语「科学故事」（确定性，云端/本地一致）
     if (isScienceDay(dateStr)) {
-      missingStories.push({ dateStr, language: 'zh', category: 'science' });
-      missingStories.push({ dateStr, language: 'en', category: 'science' });
+      const hasSciCn = stories.some(s => s.id === `${dateStr}-science-cn`);
+      const hasSciEn = stories.some(s => s.id === `${dateStr}-science-en`);
+      if (!hasSciCn) missingStories.push({ dateStr, language: 'zh', category: 'science' });
+      if (!hasSciEn) missingStories.push({ dateStr, language: 'en', category: 'science' });
     }
   }
 
@@ -282,7 +294,7 @@ async function main() {
           ? buildScienceChinesePrompt(article, ageInfo, dateStr)
           : buildScienceEnglishPrompt(article, ageInfo, dateStr);
         raw = await callAPIWithRetry(prompt, tag);
-        if (article && article.source) raw.source = article.source; // 标记来源杂志
+        raw.source = article ? article.source : (language === 'zh' ? '儿童科普常识' : "Children's science (general)"); // 标记来源（始终有值）
       } else {
         tag = `${dateStr}-${language}`;
         prompt = language === 'zh'
