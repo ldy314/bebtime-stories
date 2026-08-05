@@ -234,16 +234,20 @@ async function main() {
 
   const missingStories = [];
   for (const dateStr of datesToCheck) {
-    const hasCn = stories.some(s => s.id === `${dateStr}-cn`);
-    const hasEn = stories.some(s => s.id === `${dateStr}-en`);
-    if (!hasCn) missingStories.push({ dateStr, language: 'zh' });
-    if (!hasEn) missingStories.push({ dateStr, language: 'en' });
+    // 若该日期已有任意（手动或自动）故事，则整日跳过——不重复生成，
+    // 把当天的创作空间留给手动故事（手动与自动互不覆盖、互不重复）。
+    const dayHasAny = stories.some(s => s.id.startsWith(dateStr + '-'));
+    if (dayHasAny) {
+      console.log(`  skip ${dateStr}: day already has story(ies), leave room for manual creation`);
+      continue;
+    }
+    // 空白日：生成标准 中文+英文 每日对；科学日额外补 科学 中英。
+    missingStories.push({ dateStr, language: 'zh' });
+    missingStories.push({ dateStr, language: 'en' });
     // 每周随机一天：额外生成中英双语「科学故事」（确定性，云端/本地一致）
     if (isScienceDay(dateStr)) {
-      const hasSciCn = stories.some(s => s.id === `${dateStr}-science-cn`);
-      const hasSciEn = stories.some(s => s.id === `${dateStr}-science-en`);
-      if (!hasSciCn) missingStories.push({ dateStr, language: 'zh', category: 'science' });
-      if (!hasSciEn) missingStories.push({ dateStr, language: 'en', category: 'science' });
+      missingStories.push({ dateStr, language: 'zh', category: 'science' });
+      missingStories.push({ dateStr, language: 'en', category: 'science' });
     }
   }
 
