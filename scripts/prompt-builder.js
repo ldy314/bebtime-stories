@@ -175,7 +175,25 @@ const THEME_POOL_EXTRA_CN = [
   { name: '家庭新视角', desc: '家的故事——妈妈的口头禅、爸爸的鼾声、饭桌上的故事、晚安吻、外婆的手、回家的路。' },
   { name: '自然奇观', desc: '地球的奇迹——极光的舞蹈、大峡谷的书、珊瑚礁的城市、撒哈拉的星空、地球的转动、贝加尔湖的透明。' },
   { name: '冒险与勇气', desc: '探险之旅——森林深处的宝藏、独自过河、迷路后的冷静、山顶的信号、泥泞的路、悬崖跳伞。' },
-  { name: '爱与善良', desc: '温暖人心——流浪猫的新家、给老人的椅子、分享的午餐、雨中的伞、最后的晚安、帮妈妈捶背。' }
+  { name: '爱与善良', desc: '温暖人心——流浪猫的新家、给老人的椅子、分享的午餐、雨中的伞、最后的晚安、帮妈妈捶背。' },
+  '暖暖厨房里的小麦香',
+  '桂花糕的第一缕甜',
+  '会唱歌的瓷碗',
+  '调色盘上的旅行',
+  '蜡笔画出的彩虹路',
+  '风铃写给宝宝的信',
+  '小火车开往云朵站',
+  '会发光的路灯叔叔',
+  '外婆的针线筐里住着春天',
+  '小雨靴踩出的水花歌',
+  '会跳舞的影子朋友',
+  '暖水袋里的小太阳',
+  '图书馆角落的瞌睡猫',
+  '会算术的饼干',
+  '望远镜里的小星球',
+  '摇篮曲里的星星船',
+  '会讲故事的旧藤椅',
+  '窗台上的多肉小队'
 ];
 
 const THEME_POOL_EXTRA_EN = [
@@ -249,7 +267,25 @@ const CONCRETE_SEEDS_EN = [
   'Mom\'s catchphrase', 'Dad\'s snoring', 'Stories at the dinner table', 'The goodnight kiss', 'Grandma\'s hands', 'The way home',
   'The dance of the aurora', 'The Grand Canyon\'s book', 'The coral reef city', 'The Sahara\'s starry sky', 'Earth\'s rotation', 'Lake Baikal\'s clarity',
   'Treasure deep in the forest', 'Crossing the river alone', 'Calm after getting lost', 'The signal from the summit', 'The muddy road', 'Cliff parachuting',
-  'The stray cat\'s new home', 'The seat for the old lady', 'The shared lunch', 'The umbrella in the rain', 'The final goodnight',   'Rubbing Mom\'s back'
+  'The stray cat\'s new home', 'The seat for the old lady', 'The shared lunch', 'The umbrella in the rain', 'The final goodnight',   'Rubbing Mom\'s back',
+  'A little wheat aroma in the warm kitchen',
+  'the first sweetness of osmanthus cake',
+  'the singing porcelain bowl',
+  'a journey on the palette',
+  'the rainbow road drawn in crayon',
+  'the wind-chime’s letter to the baby',
+  'the little train to Cloud Station',
+  'the glowing streetlamp uncle',
+  'spring living in Grandma’s sewing basket',
+  'the water-splash song of little rain boots',
+  'the dancing shadow friend',
+  'a tiny sun in the warm water bottle',
+  'the dozing cat in the library corner',
+  'the arithmetic biscuit',
+  'a little planet in the telescope',
+  'the starry boat in the lullaby',
+  'the old rattan chair that tells stories',
+  'the succulent squad on the windowsill'
 ];
 
 // Group the concrete seeds by their broad category so the chosen theme gets matching sparks.
@@ -615,10 +651,51 @@ const PRENATAL_CAST = [
   { name: '小闹钟·叮当', en: 'Little Alarm Dingdang', type: '小闹钟', enType: 'little alarm clock', home: '窗台', enHome: 'the windowsill', personality: '爱学唱歌、准时不闹', enPersonality: 'loves to sing, gentle with time', catchphrase: '叮咚，该睡啦。', enCatchphrase: 'ding-dong, time to sleep.' }
 ];
 
-const PRENATAL_SCENES = ['海草森林', '月光海面', '云端棉田', '妈妈的花园', '星夜天台', '暖暖被窝'];
-const PRENATAL_SCENES_EN = ['seagrass forest', 'moonlit sea', 'cloud cotton field', 'Mama’s garden', 'starry rooftop', 'cozy bed'];
-const PRENATAL_IMAGERY = ['星星灯笼', '心跳小鼓', '梦的种子', '云朵口袋', '月光小船'];
-const PRENATAL_IMAGERY_EN = ['star lantern', 'heartbeat drum', 'dream seed', 'cloud pocket', 'moonlight boat'];
+const PRENATAL_SCENES = ['海草森林', '月光海面', '云端棉田', '妈妈的花园', '星夜天台', '暖暖被窝', '清晨的花瓣露台', '暖暖的厨房窗台', '雨后的小院', '麦浪里的石磨', '雪地小木屋', '森林溪边', '图书馆角落', '风铃走廊'];
+const PRENATAL_SCENES_EN = ['seagrass forest', 'moonlit sea', 'cloud cotton field', 'Mama’s garden', 'starry rooftop', 'cozy bed', 'dawn petal terrace', 'warm kitchen windowsill', 'courtyard after rain', 'stone mill in the wheat field', 'snowy cabin', 'forest streamside', 'library corner', 'wind-chime corridor'];
+const PRENATAL_IMAGERY = ['星星灯笼', '心跳小鼓', '梦的种子', '云朵口袋', '月光小船', '风的信笺', '彩虹小桥', '会发芽的雨滴', '会唱歌的鹅卵石', '面包的香气云', '小脚印地图', '温暖的毛线团'];
+const PRENATAL_IMAGERY_EN = ['star lantern', 'heartbeat drum', 'dream seed', 'cloud pocket', 'moonlight boat', 'wind’s letter', 'rainbow bridge', 'a sprouting raindrop', 'the singing pebble', 'the aroma cloud of bread', 'little-footprint map', 'a warm ball of yarn'];
+
+// ===== 胎教期「题材色调」轮换（让每日题材更多样，避免雷同） =====
+// 不替代常驻角色/情感锚点/安全边界，只是给本篇一个可侧重展开的题材方向。
+const PRENATAL_THEME_FLAVORS_CN = [
+  '声音与音乐：让故事充满温柔的声音——妈妈哼的歌、风铃轻响、小乐器叮咚、雨打叶片的节奏，用声音编织安全感。',
+  '颜色与画：用颜色讲故事——晚霞的橘、麦田的金、海的蓝，主角收集颜色做成给宝宝的礼物。',
+  '味道与温暖食物：温柔的食物气息——粥的甜香、苹果的脆、桂花的清甜，用味道传递爱意（绝不涉及螃蟹/大闸蟹）。',
+  '四季与天气：讲讲温柔的天气——春天的第一场细雨、夏夜的萤火、冬日的暖阳、秋风里打转的叶子。',
+  '动物朋友：主角遇见温柔的小动物——慢吞吞的小乌龟、爱打盹的猫、会唱歌的青蛙、绒毛蓬松的小羊。',
+  '小手小脚与身体：用身体感受世界——小脚丫踩在软软的地上、小手摸光滑温润的石头、舒舒服服打个哈欠。',
+  '家里的温暖物件：会发光的夜灯、软软的毛毯、滴答走的钟、窗台上的小盆栽，平凡物件里藏着爱。',
+  '光的游戏：光与影的温柔游戏——晨光、烛光、透过树叶洒下的光斑、墙上跳舞的小影子。',
+  '小小远行：一次轻轻的远行——顺着小溪飘、掠过金色田野、翻过温柔的小山，去看柔软的风景。',
+  '梦与想象：轻轻的想象——云朵变成小羊、星星排成笑脸、风把小小的愿望寄向远方。'
+];
+const PRENATAL_THEME_FLAVORS_EN = [
+  'Sound & music: fill the story with gentle sounds — mommy’s humming, a soft wind-chime, little instruments going ding, the rhythm of rain on leaves; weave safety through sound.',
+  'Colour & painting: tell the story with colour — the orange of dusk, the gold of wheat fields, the blue of the sea; the protagonist gathers colours into a gift for the baby.',
+  'Taste & warm food: tender food scents — the sweetness of congee, the crunch of an apple, the light fragrance of osmanthus; pass love through taste (never crabs / hairy crabs).',
+  'Seasons & weather: gentle weather — the first spring drizzle, summer-night fireflies, winter’s warm sun, an autumn leaf spinning in the wind.',
+  'Animal friends: the protagonist meets gentle little animals — a slow little turtle, a napping cat, a singing frog, a fluffy little lamb.',
+  'Little hands, little feet, the body: feel the world with the body — tiny feet on soft ground, a small hand on a smooth warm stone, a comfy yawn.',
+  'Cosy household objects: a glowing night-light, a soft blanket, a ticking clock, a little potted plant on the windowsill — love hidden in ordinary things.',
+  'Play of light: a gentle game of light and shadow — morning light, candlelight, dappled light through leaves, a little shadow dancing on the wall.',
+  'A tiny journey: a soft little trip — drift along the stream, skim the golden fields, over a gentle hill, to see soft scenery.',
+  'Dreams & imagination: a light imagination — clouds turning into little sheep, stars arranging into a smiling face, the wind mailing a tiny wish far away.'
+];
+
+function pickPrenatalFlavor(dateStr, lang) {
+  const pool = lang === 'zh' ? PRENATAL_THEME_FLAVORS_CN : PRENATAL_THEME_FLAVORS_EN;
+  const idx = hashDate(dateStr + '-flav-' + lang) % pool.length;
+  return pool[idx];
+}
+
+// 确定性轮换取 n 个元素的子集（不重复、按日期变化）
+function rotateList(arr, key, n) {
+  const start = hashDate(key) % arr.length;
+  const out = [];
+  for (let i = 0; i < n && i < arr.length; i++) out.push(arr[(start + i) % arr.length]);
+  return out;
+}
 
 const EMOTIONAL_ANCHORS = [
   '心跳/节拍：妈妈的心跳、血脉流动声、钟摆声（固定高光：让主角途经温暖水域或光晕，感知到「妈妈的心跳/微光」）。',
@@ -667,8 +744,9 @@ function pickProtagonist(dateStr, lang) {
 function buildPrenatalBlock(dateStr, lang) {
   const prot = pickProtagonist(dateStr, lang);
   if (lang === 'zh') {
-    const scenes = PRENATAL_SCENES.join('、');
-    const imagery = PRENATAL_IMAGERY.join('、');
+    const flavor = pickPrenatalFlavor(dateStr, 'zh');
+    const scenes = rotateList(PRENATAL_SCENES, dateStr + '-scn-zh', 3).join('、');
+    const imagery = rotateList(PRENATAL_IMAGERY, dateStr + '-img-zh', 3).join('、');
     const anchors = EMOTIONAL_ANCHORS.map((a, i) => (i + 1) + '. ' + a).join('  ');
     const safety = PRENATAL_SAFETY.join(' ');
     return `
@@ -677,13 +755,16 @@ function buildPrenatalBlock(dateStr, lang) {
 本篇优先小主角（以其设定为基准展开，保持性格与口头禅前后一致；可让它遇见材料库里的其他伙伴，形成温柔的连续感）：
 - ${prot.name}（${prot.type}｜home: ${prot.home}｜性格: ${prot.personality}｜口头禅: ${prot.catchphrase}）
 常驻材料库（可顺带出现，让世界更连贯）：场景如 ${scenes}；意象如 ${imagery}。已有故事的主人公就是最珍贵的素材，可在不同故事里让它们偶尔相遇。
+本篇题材色调（任选其一或自然融合，避免每天题材雷同）：
+${flavor}
 情感锚点（本篇必须自然嵌入至少 3 种，多选多益）：
 ${anchors}
 安全边界（绝对遵守）：${safety}
 故事骨架提示：微小主角 → 一个温柔的愿望 → 被水流/风/歌声轻轻托送（暗合羊水体验） → 遇见颜色/味道/温度/旋律的感官之美 → 途经温暖水域或光晕，感知到「妈妈的心跳」作为固定高光 → 用「小宝宝，你听到了吗？」式对话与肚里宝宝说话 → 以温柔守候收尾（结尾不必每次都是「晚安」：可按本篇情境用「等你准备好了，外面的世界有软软的风和圆圆的月亮等你」「早安，小宝宝，今天的世界亮晶晶的」或「晚安，小宝宝，月亮陪着你」等，自然选择）。`;
   }
-  const scenes = PRENATAL_SCENES_EN.join(', ');
-  const imagery = PRENATAL_IMAGERY_EN.join(', ');
+  const flavor = pickPrenatalFlavor(dateStr, 'en');
+  const scenes = rotateList(PRENATAL_SCENES_EN, dateStr + '-scn-en', 3).join(', ');
+  const imagery = rotateList(PRENATAL_IMAGERY_EN, dateStr + '-img-en', 3).join(', ');
   const anchors = EMOTIONAL_ANCHORS_EN.map((a, i) => (i + 1) + '. ' + a).join('  ');
   const safety = PRENATAL_SAFETY_EN.join(' ');
   return `
@@ -692,6 +773,8 @@ ${anchors}
 Preferred little protagonist for this story (base the story on this character, keep personality & catchphrase consistent; may meet other library friends for a gentle sense of continuity):
 - ${prot.name} (${prot.enType} | home: ${prot.enHome} | personality: ${prot.enPersonality} | catchphrase: ${prot.enCatchphrase})
 Resident material library (may appear alongside, to make the world coherent): scenes like ${scenes}; imagery like ${imagery}. Past story protagonists are precious material — let them occasionally meet across stories.
+Subject tone for this story (pick one or blend naturally, to avoid repetitive themes day after day):
+${flavor}
 Emotional anchors (embed at least 3 of these naturally; more is better):
 ${anchors}
 Safety boundaries (strictly obey): ${safety}
