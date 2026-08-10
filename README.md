@@ -15,7 +15,7 @@ github-bedtime-stories/
 ├── .github/workflows/
 │   └── generate-stories.yml    # GitHub Action (定时 + 手动触发)
 ├── scripts/
-│   ├── generate-story.js       # 故事生成脚本 (调用 DeepSeek API)
+│   ├── generate-story.js       # 故事生成脚本 (调用智谱 GLM-4V-Flash API)
 │   ├── prompt-builder.js       # 提示词构建 (含风格描述)
 │   └── generate-collection-html.js  # 合集HTML生成
 ├── index.html                  # H5 阅读器 (含 EMBEDDED_STORIES)
@@ -63,19 +63,19 @@ git push -u origin main
 3. 注意：`.github`、`.nojekyll`、`.gitignore` 是隐藏文件，需要勾选显示
 4. 点击 `Commit changes`
 
-### 第三步：获取 DeepSeek API Key
+### 第三步：获取智谱 API Key
 
-1. 打开 https://platform.deepseek.com 注册（支持手机号/邮箱）
+1. 打开 https://open.bigmodel.cn 注册（支持手机号/邮箱）
 2. 登录后进入 API Keys 页面
 3. 点击 `Create API Key`
-4. 复制生成的 key（格式：`sk-xxxxxxxx`）
-5. 新用户注册送免费 tokens，足够用一年
+4. 复制生成的 key（格式：`xxxxxxxx.xxxxxxxxxxxxx`）
+5. 新用户注册送免费 tokens，GLM-4V-Flash 模型免费
 
 ### 第四步：添加 API Key 到 GitHub Secrets
 
 1. 在 GitHub 仓库页面点击 `Settings` → `Secrets and variables` → `Actions`
 2. 点击 `New repository secret`
-3. Name 填 `DEEPSEEK_API_KEY`
+3. Name 填 `ZHIPU_API_KEY`
 4. Secret 粘贴你的 API Key
 5. 点击 `Add secret`
 
@@ -169,8 +169,8 @@ git push -u origin main
 
 ## 技术细节
 
-- **AI 模型**: DeepSeek (deepseek-chat)，OpenAI 兼容 API
-- **费用**: GitHub Actions/Pages 免费（public 仓库），DeepSeek 新用户免费额度约够用一年
+- **AI 模型**: 智谱 GLM-4V-Flash，OpenAI 兼容 API
+- **费用**: GitHub Actions/Pages 免费（public 仓库），GLM-4V-Flash 模型免费
 - **补跑机制**: 每次运行检查当天 + 最近 7 天，自动补生成遗漏的故事
 - **年龄段**: 根据孩子生日（2026-09-22）自动计算并调整故事风格
 - **风格**: 中文融合孙敬修/郑渊洁/冰波/张秋生/金波/汤素兰六位大师风格；英文融合 Dr. Seuss/芝麻街/Roald Dahl/Mark Twain/Robert McCloskey 五位大师风格

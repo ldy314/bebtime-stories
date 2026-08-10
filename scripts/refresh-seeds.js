@@ -248,9 +248,9 @@ async function planBFetchExternal() {
 async function planCAnalyzeRecentStories() {
   console.log('\n=== 方案C：AI分析近期故事 ===');
 
-  if (!process.env.DEEPSEEK_API_KEY) {
-    console.warn('  警告：DEEPSEEK_API_KEY 未设置，跳过方案C。');
-    return { plan: 'C', added: 0, error: 'DEEPSEEK_API_KEY not set' };
+  if (!process.env.ZHIPU_API_KEY) {
+    console.warn('  警告：ZHIPU_API_KEY 未设置，跳过方案C。');
+    return { plan: 'C', added: 0, error: 'ZHIPU_API_KEY not set' };
   }
 
   const stories = readJsonSafe(STORIES_PATH, []);
@@ -301,7 +301,7 @@ ${recentTitles.map(t => '- ' + t).join('\n')}
 
   try {
     const requestData = JSON.stringify({
-      model: 'deepseek-chat',
+      model: 'glm-4v-flash',
       messages: [
         {
           role: 'system',
@@ -316,12 +316,12 @@ ${recentTitles.map(t => '- ' + t).join('\n')}
 
     const apiResult = await new Promise((resolve, reject) => {
       const req = https.request({
-        hostname: 'api.deepseek.com',
-        path: '/v1/chat/completions',
+        hostname: 'open.bigmodel.cn',
+        path: '/api/paas/v4/chat/completions',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+          'Authorization': `Bearer ${process.env.ZHIPU_API_KEY}`,
           'Content-Length': Buffer.byteLength(requestData)
         }
       }, (res) => {
@@ -374,8 +374,8 @@ ${recentTitles.map(t => '- ' + t).join('\n')}
     dynamic[currentMonth].seeds.en = [...existingEn, ...finalEn];
 
     if (!dynamic[currentMonth].sources) dynamic[currentMonth].sources = [];
-    if (!dynamic[currentMonth].sources.includes('DeepSeek AI 分析')) {
-      dynamic[currentMonth].sources.push('DeepSeek AI 分析');
+    if (!dynamic[currentMonth].sources.includes('Zhipu AI 分析')) {
+      dynamic[currentMonth].sources.push('Zhipu AI 分析');
     }
     dynamic[currentMonth].updatedAt = new Date().toISOString();
 

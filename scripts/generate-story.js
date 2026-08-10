@@ -2,12 +2,12 @@
 /**
  * Bedtime Story Generator
  * 
- * Calls DeepSeek API to generate Chinese and English bedtime stories.
+ * Calls Zhipu (智谱) API to generate Chinese and English bedtime stories.
  * Checks for missing stories (today + last 7 days), generates them,
  * and updates stories.json, index.html (EMBEDDED_STORIES), and collection.html.
  * 
  * Environment variables:
- *   DEEPSEEK_API_KEY - API key for DeepSeek (required)
+ *   ZHIPU_API_KEY - API key for Zhipu/智谱 (required)
  * 
  * Usage:
  *   node scripts/generate-story.js
@@ -30,10 +30,10 @@ const {
 } = require('./prompt-builder');
 
 // ===== Configuration =====
-const API_KEY = process.env.DEEPSEEK_API_KEY;
-const API_HOST = 'api.deepseek.com';
-const API_PATH = '/v1/chat/completions';
-const MODEL = 'deepseek-chat';
+const API_KEY = process.env.ZHIPU_API_KEY;
+const API_HOST = 'open.bigmodel.cn';
+const API_PATH = '/api/paas/v4/chat/completions';
+const MODEL = 'glm-4v-flash';
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 5000;
 
@@ -58,7 +58,7 @@ function getBeijingDateStr(offsetDays = 0) {
 /**
  * Call DeepSeek API with a prompt and return parsed JSON
  */
-function callDeepSeekAPI(userPrompt) {
+function callZhipuAPI(userPrompt) {
   return new Promise((resolve, reject) => {
     const systemPrompt = 'You are a creative children\'s bedtime story writer. You write in both Chinese and English. You always respond with valid JSON when asked.';
 
@@ -120,7 +120,7 @@ async function callAPIWithRetry(prompt, label) {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       console.log(`  [${label}] Attempt ${attempt}/${MAX_RETRIES}...`);
-      const result = await callDeepSeekAPI(prompt);
+      const result = await callZhipuAPI(prompt);
       console.log(`  [${label}] Success!`);
       return result;
     } catch (err) {
@@ -214,7 +214,7 @@ function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
 
 async function main() {
   if (!API_KEY) {
-    console.error('ERROR: DEEPSEEK_API_KEY environment variable is not set.');
+    console.error('ERROR: ZHIPU_API_KEY environment variable is not set.');
     console.error('Please set it as a GitHub repository secret.');
     process.exit(1);
   }
