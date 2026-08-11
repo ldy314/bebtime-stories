@@ -70,7 +70,7 @@ function callZhipuAPI(userPrompt) {
       ],
       response_format: { type: 'json_object' },
       temperature: 0.85,
-      max_tokens: 4096
+      max_tokens: 1024
     });
 
     const options = {

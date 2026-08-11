@@ -311,7 +311,7 @@ ${recentTitles.map(t => '- ' + t).join('\n')}
       ],
       response_format: { type: 'json_object' },
       temperature: 0.9,
-      max_tokens: 2048
+      max_tokens: 1024
     });
 
     const apiResult = await new Promise((resolve, reject) => {
