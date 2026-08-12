@@ -373,6 +373,24 @@ Output strict JSON:
 }`;
 }
 
+// ===== 主题去重：查询最近 N 天已生成故事，生成规避提示 =====
+// 避免主题池按日期确定性选到与近期故事相同的主旨（如连续两天「摇篮曲」）。
+function buildAvoidThemeHint(stories, dateStr, language, days = 12) {
+  const langKey = language === 'zh' ? 'cn' : 'en';
+  // 收集 dateStr 之前 12 天内、同语言的每日故事（不含科学/系列）
+  const recent = stories
+    .filter(s => s.language === language && s.category !== 'science' && !s.series)
+    .filter(s => {
+      const m = String(s.id).match(/^(\d{4}-\d{2}-\d{2})-/);
+      return m && m[1] < dateStr && dateStr.slice(0, 10) !== m[1];
+    })
+    .sort((a, b) => String(b.id).localeCompare(String(a.id)))
+    .slice(0, days);
+  if (!recent.length) return '';
+  const lines = recent.map(s => `  - 《${s.title}》：${String(s.preview || '').slice(0, 40)}`);
+  return `\n\n**近期已写过的故事（请务必避免与它们主旨雷同：不要重复同主题、同套路、同主角模式、同结尾句式，尤其避免连续多日都写「摇篮曲/唱歌/星星守候/月光陪伴」等）**\n${lines.join('\n')}`;
+}
+
 // ===== Main =====
 
 async function main() {
@@ -461,9 +479,10 @@ async function main() {
       } else {
         tag = `${dateStr}-${language}`;
         // DeepSeek max_tokens 4096 足够一次生成完整故事，单次调用（不再分段续写）
+        const avoidHint = buildAvoidThemeHint(stories, dateStr, language);
         prompt = language === 'zh'
-          ? buildChinesePrompt(dateStr, ageInfo)
-          : buildEnglishPrompt(dateStr, ageInfo);
+          ? buildChinesePrompt(dateStr, ageInfo) + avoidHint
+          : buildEnglishPrompt(dateStr, ageInfo) + avoidHint;
         raw = await callAPIWithRetry(prompt, tag);
         // 代码级自检：中文去全历史重复段（兜底）；英文字符集小易误伤，仅靠 prompt 约束
         if (language === 'zh' && Array.isArray(raw.content)) {
