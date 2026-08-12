@@ -173,6 +173,7 @@ function cleanContinuationParagraphs(paras) {
     .replace(/^\s*(续写第?\s*\d+\s*段\s*[：:、.．]\s*)/, '')
     .replace(/^\s*(第\s*\d+\s*段\s*[：:、.．]\s*)/, '')
     .replace(/^\s*(段落\s*\d+\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*\[?\s*第\s*\d+\s*段\s*\]?\s*[：:、.．]?\s*/, '')   // [第1段] / 第1段 / [第1段]
     .replace(/^\s*(Continuation\s+paragraph\s*\d+\s*[:\-.]\s*)/i, '')
     .replace(/^\s*(Para(?:graph)?\s*\d+\s*[:\-.]\s*)/i, '')
     .replace(/^\s*(接着写[：:]?\s*|继续写[：:]?\s*|Next[:\-]?\s*|Continue[:\-]?\s*)/i, '')
@@ -268,8 +269,8 @@ function styleGaps(story, language) {
     if (!/(呼呼|哗啦|咕嘟|咚咚|扑通|叮咚|沙沙|滴答|摇啊摇|晃呀晃|飘呀飘|啾啾|蛐蛐|滴滴|嗒嗒|咕噜)/.test(text)) {
       gaps.push({ key: 'onomatopoeia', label: '故事缺少拟声词', fix: '在合适位置自然地加入 2-3 处拟声词（如呼呼、哗啦、咕嘟、咚咚、摇啊摇），让声音参与叙事' });
     }
-    if (!/心跳|咚咚|扑通/.test(text)) {
-      gaps.push({ key: 'heartbeat', label: '缺少「妈妈的心跳」高光', fix: '加入一处妈妈心跳高光：写「咚咚、咚咚，那是妈妈的心跳」并用「你听见了吗？」与肚里宝宝对话' });
+    if (!/(心跳|咚咚|扑通|哼歌|哼着|怀抱|搂|月光|月亮|爸爸的笑|笑声明|被窝|裹着|摇篮|星光)/.test(text)) {
+      gaps.push({ key: 'highlight', label: '缺少「温柔高光」意象', fix: '加入一处温柔高光（按情境任选：妈妈的心跳咚咚 / 妈妈的哼歌 / 温暖的怀抱 / 月光守候 / 爸爸的笑声 / 软软被窝 / 星光摇篮），并用「你听见了吗？」或「小宝宝，你感觉到了吗？」与肚里宝宝对话' });
     }
     if (!/肚子里|还没出生|肚里|还没来/.test(text)) {
       gaps.push({ key: 'unborn', label: '缺少未出生宝宝视角', fix: '把「还在肚子里的小宝宝」作为倾听者，用「小宝宝，你听到了吗？」式对话呼应' });
@@ -281,8 +282,8 @@ function styleGaps(story, language) {
     if (!/(whoosh|patter|gurgle|thump|tweet|swish|drip|rustle|huff|plop|splash|tinkle)/i.test(text)) {
       gaps.push({ key: 'onomatopoeia', label: 'missing onomatopoeia', fix: 'naturally weave in 2-3 onomatopoeia words (whoosh, patter, gurgle, thump, swish, drip)' });
     }
-    if (!/(heartbeat|thump|drum)/i.test(text)) {
-      gaps.push({ key: 'heartbeat', label: 'missing "mother\'s heartbeat" highlight', fix: 'add a mother-heartbeat highlight: "thump, thump, that is Mama\'s heartbeat" and speak to the baby with "little one, can you hear it?"' });
+    if (!/(heartbeat|thump|humming|hummed|embrace|arms|moonlight|moon|laugh|blanket|wrap|wrapped|cradle|stars)/i.test(text)) {
+      gaps.push({ key: 'highlight', label: 'missing "gentle highlight" imagery', fix: 'add ONE gentle highlight fitting the story (mother\'s heartbeat thump-thump / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a soft blanket / a cradle of stars) and speak to the baby with "can you hear it?" or "little one, can you feel it?"' });
     }
     if (!/(in mama'?s belly|unborn|not yet born|little one|tiny one)/i.test(text)) {
       gaps.push({ key: 'unborn', label: 'missing unborn-baby perspective', fix: 'address the baby in Mama\'s belly directly with "little one, can you hear?" style lines' });

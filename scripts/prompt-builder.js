@@ -669,7 +669,7 @@ const PRENATAL_STYLE_EXAMPLE_ZH = `
 **从范例中必须提炼并落实的胎教笔感**：
 1. 拟声词自然贯穿（呼呼/哗啦哗啦/咕嘟咕嘟/咚咚/摇啊摇/晃呀晃……），不是偶尔点缀，而是让声音参与叙事；
 2. 用具体的感官比喻（风是尾巴、雨是水花、倒影像星星、心跳像拍水声）；
-3. 妈妈的心跳是固定高光，直接写「咚咚、咚咚」，并用「你听见了吗？」对肚里宝宝说话；
+3. 情感高光是多样化的（妈妈心跳 / 哼歌 / 怀抱 / 月光 / 爸爸笑声 / 被窝 / 星光摇篮，按日期轮换，不必每次都是心跳），直接写出那个意象，并用「你听见了吗？」或「小宝宝，你感觉到了吗？」对肚里宝宝说话；
 4. 把「还在肚子里的小宝宝」作为倾听者贯穿全文，结尾以温柔守候收束。`;
 const PRENATAL_STYLE_EXAMPLE_EN = `
 **Prenatal style example (mirror its feel; do NOT copy the topic or wording):**
@@ -682,7 +682,7 @@ Typhoon White Dolphin still swims on in the sky, but our little home is always d
 **Prenatal touches you MUST extract and apply from this example**:
 1. Onomatopoeia woven naturally through the story (whoosh-whoosh / patter / gurgle / thump-thump / sway, sway...), letting sound take part in the telling;
 2. Concrete sensory metaphors (wind as tail, rain as spray, reflections as stars, heartbeat as waves tapping the boat);
-3. Mama's heartbeat as the fixed highlight, written as "thump, thump", speaking to the baby in the belly with "can you hear it?";
+3. The emotional highlight is varied (mother's heartbeat / humming / embrace / moonlight / daddy's laugh / blanket / cradle of stars, rotating daily — not always the heartbeat); write that imagery directly and speak to the baby with "can you hear it?" or "little one, can you feel it?";
 4. The unborn baby as the listener throughout, ending with tender waiting.`;
 
 // ===== 胎教期「题材色调」轮换（让每日题材更多样，避免雷同） =====
@@ -726,8 +726,33 @@ function rotateList(arr, key, n) {
   return out;
 }
 
+// 「温柔高光」池：胎教故事的情感锚点不固定为妈妈心跳，按日期确定性轮换，让每篇都有不同的安全感意象。
+const PRENATAL_HIGHLIGHTS_CN = [
+  '妈妈的心跳：主角途经温暖水域或光晕，听见「咚咚、咚咚」的妈妈心跳，用「你听见了吗？」与肚里宝宝说话',
+  '妈妈的哼歌：一阵温柔的哼歌声像云朵被子，把主角轻轻裹住，哼歌里藏着摇篮曲的节拍',
+  '温暖的怀抱：一圈暖暖的光像张开的怀抱，主角被稳稳托住，感觉像躺在软软的小窝里',
+  '月光守候：圆圆的月亮像一盏小夜灯，安安静静陪着主角和肚里宝宝，把影子照得软软的',
+  '爸爸的笑声：远远传来爸爸低沉温柔的笑声，像春天的雷声一样让人安心',
+  '被窝的暖意：一床云朵一样软的小被子盖过来，把主角裹成一个小小的、暖暖的茧',
+  '星光摇篮：星星们手拉手围成小小的摇篮，轻轻摇着主角，像在哼一首没有词的歌'
+];
+const PRENATAL_HIGHLIGHTS_EN = [
+  "mother's heartbeat: the protagonist passes warm waters or a glow and hears a soft \"thump, thump\" — Mama's heartbeat — and speaks to the baby with \"can you hear it?\"",
+  'a gentle humming: a soft hum wraps the protagonist like a cloud blanket, carrying the rhythm of a lullaby',
+  'a warm embrace: a ring of warm light like open arms holds the protagonist steady, as if in a soft little nest',
+  'moonlight watching: a round moon like a little night-light quietly keeps the protagonist and the baby company, softening every shadow',
+  "daddy's laugh: a low, gentle laugh drifts from far away, reassuring like spring thunder",
+  'the warmth of a blanket: a cloud-soft little blanket tucks over the protagonist, wrapping them in a small, warm cocoon',
+  'a cradle of stars: stars hold hands into a tiny cradle and rock the protagonist gently, like humming a wordless song'
+];
+
+function pickPrenatalHighlight(dateStr, lang) {
+  const pool = lang === 'zh' ? PRENATAL_HIGHLIGHTS_CN : PRENATAL_HIGHLIGHTS_EN;
+  return pool[hashDate(dateStr + '-hl-' + lang) % pool.length];
+}
+
 const EMOTIONAL_ANCHORS = [
-  '心跳/节拍：妈妈的心跳、血脉流动声、钟摆声（固定高光：让主角途经温暖水域或光晕，感知到「妈妈的心跳/微光」）。',
+  '高光意象（按日期轮换，见骨架提示）：妈妈的心跳 / 妈妈哼歌 / 温暖怀抱 / 月光守候 / 爸爸笑声 / 被窝暖意 / 星光摇篮。',
   '包裹/承载：柔软云墙、气泡、被水流/风轻轻托着、温暖的被窝——暗合羊水里的被包裹感。',
   '光与希望：微光、星光、萤火、黎明的金边。',
   '温度与触觉：手掌温度、温牛奶热气、阳光暖照、软软的毛茸茸。',
@@ -737,7 +762,7 @@ const EMOTIONAL_ANCHORS = [
 ];
 
 const EMOTIONAL_ANCHORS_EN = [
-  'Heartbeat / rhythm: mother’s heartbeat, blood flow, a ticking clock (fixed high point: let the protagonist sense mother’s heartbeat or a glow).',
+  'Highlight imagery (rotates daily, see skeleton hint): mother\'s heartbeat / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a warm blanket / a cradle of stars.',
   'Wrapping / carrying: soft cloud walls, bubbles, being held by water or wind, a warm duvet — echoing the womb’s embrace.',
   'Light & hope: a glimmer, starlight, fireflies, the golden edge of dawn.',
   'Temperature & touch: the warmth of a palm, steam from warm milk, sunny warmth, soft fur.',
@@ -750,7 +775,7 @@ const PRENATAL_SAFETY = [
   '禁止任何危险、冲突、跌落、破碎、黑暗吞噬、分离、追赶情节。',
   '禁止否定式安慰（如「不要怕」「别哭」），只用正向温柔的安抚。',
   '禁止角色有不幸经历或负面性格；世界必须全然的善意与安全。',
-  '胎教期故事讲给肚里尚未出生的宝宝听：绝不可把宝宝写成已经出生；结尾多以「等你准备好了」「安心长大就好」等温柔守候收束；可让主角途经温暖水域/光晕，感知到「妈妈的心跳」作为固定的情感高光。',
+  '胎教期故事讲给肚里尚未出生的宝宝听：绝不可把宝宝写成已经出生；结尾多以「等你准备好了」「安心长大就好」等温柔守候收束；可让主角途经温暖水域/光晕，以「妈妈的心跳 / 妈妈哼歌 / 温暖怀抱 / 月光守候 / 爸爸笑声 / 被窝暖意 / 星光摇篮」中任一种作为本篇的情感高光（按日期轮换，不必每次都是心跳）。',
   '项目硬约束：禁止出现螃蟹 / 大闸蟹 / 任何蟹类角色、食物或情节（含长荡湖等以蟹为卖点的内容）。',
   '不使用中文弯引号「"」，用「」或单引号。'
 ];
@@ -759,7 +784,7 @@ const PRENATAL_SAFETY_EN = [
   'No danger, conflict, falling, breaking, dark engulfing, separation, or chasing.',
   'No negative comfort (e.g. "don’t be afraid", "don’t cry"); only gentle positive reassurance.',
   'No unfortunate backstories or negative traits; the world must be wholly kind and safe.',
-  'Prenatal stories are told to the unborn baby still in mommy’s tummy: never write the baby as already born; end with tender waiting like "when you are ready" / "just grow safe and sound"; let the protagonist sense "mother’s heartbeat" as the fixed emotional high point.',
+  'Prenatal stories are told to the unborn baby still in mommy’s tummy: never write the baby as already born; end with tender waiting like "when you are ready" / "just grow safe and sound"; let the protagonist pass warm waters or a glow and use ONE of these as the story\'s emotional highlight (rotates daily, not always the heartbeat): mother\'s heartbeat / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a warm blanket / a cradle of stars.',
   'Hard project rule: never include crabs / hairy crabs / any crab character, food, or plot (including places marketed for crabs).',
   'Do not use Chinese curly quotes ""; use 「」 or straight single quotes.'
 ];
@@ -789,7 +814,7 @@ ${flavor}
 情感锚点（本篇必须自然嵌入至少 3 种，多选多益）：
 ${anchors}
 安全边界（绝对遵守）：${safety}
-故事骨架提示：微小主角 → 一个温柔的愿望 → 被水流/风/歌声轻轻托送（暗合羊水体验） → 遇见颜色/味道/温度/旋律的感官之美 → 途经温暖水域或光晕，感知到「妈妈的心跳」作为固定高光 → 用「小宝宝，你听到了吗？」式对话与肚里宝宝说话 → 以温柔守候收尾（结尾不必每次都是「晚安」：可按本篇情境用「等你准备好了，外面的世界有软软的风和圆圆的月亮等你」「早安，小宝宝，今天的世界亮晶晶的」或「晚安，小宝宝，月亮陪着你」等，自然选择）。`;
+故事骨架提示：微小主角 → 一个温柔的愿望 → 被水流/风/歌声轻轻托送（暗合羊水体验） → 遇见颜色/味道/温度/旋律的感官之美 → 途经温暖水域或光晕，以「${pickPrenatalHighlight(dateStr, 'zh')}」作为本篇的情感高光（每天轮换，不必每次都是妈妈心跳） → 用「小宝宝，你听到了吗？」式对话与肚里宝宝说话 → 以温柔守候收尾（结尾不必每次都是「晚安」：可按本篇情境用「等你准备好了，外面的世界有软软的风和圆圆的月亮等你」「早安，小宝宝，今天的世界亮晶晶的」或「晚安，小宝宝，月亮陪着你」等，自然选择）。`;
   }
   const flavor = pickPrenatalFlavor(dateStr, 'en');
   const scenes = rotateList(PRENATAL_SCENES_EN, dateStr + '-scn-en', 3).join(', ');
@@ -807,7 +832,7 @@ ${flavor}
 Emotional anchors (embed at least 3 of these naturally; more is better):
 ${anchors}
 Safety boundaries (strictly obey): ${safety}
-Skeleton hint: tiny protagonist → a gentle wish → carried softly by water/wind/song (echoing the womb) → sensory beauty of colour/taste/temperature/melody → passing warm waters or a glow, sensing "mother’s heartbeat" as the fixed high point → talk to the unborn baby with "little one, can you hear?" → end with tender waiting (not always "good night": per this story's occasion, use "when you are ready, the soft wind and round moon will be waiting", "good morning, little one, the world is sparkly today", or "good night, little one, the moon is with you" — choose naturally).`;
+Skeleton hint: tiny protagonist → a gentle wish → carried softly by water/wind/song (echoing the womb) → sensory beauty of colour/taste/temperature/melody → passing warm waters or a glow, use "${pickPrenatalHighlight(dateStr, 'en')}" as this story's emotional highlight (rotates daily, not always the heartbeat) → talk to the unborn baby with "little one, can you hear?" → end with tender waiting (not always "good night": per this story's occasion, use "when you are ready, the soft wind and round moon will be waiting", "good morning, little one, the world is sparkly today", or "good night, little one, the moon is with you" — choose naturally).`;
 }
 
 function pickTheme(dateStr, lang) {
