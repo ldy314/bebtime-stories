@@ -181,6 +181,37 @@ function cleanContinuationParagraphs(paras) {
 }
 
 /**
+ * Character-level Jaccard similarity between two strings (0..1)
+ */
+function charJaccard(a, b) {
+  const clean = s => new Set(String(s).replace(/[，。！？、：；\s]/g, '').split(''));
+  const sa = clean(a), sb = clean(b);
+  if (!sa.size || !sb.size) return 0;
+  let inter = 0;
+  sa.forEach(c => { if (sb.has(c)) inter++; });
+  return inter / (new Set([...sa, ...sb]).size);
+}
+
+/**
+ * Deduplicate near-identical paragraphs (code-level safety net).
+ * Compares each paragraph against ALL previously kept paragraphs; if char-level
+ * Jaccard similarity with ANY previous paragraph > 0.6, drop it. Catches both
+ * adjacent and alternating (A-B-A-C-A) loop patterns.
+ */
+function dedupeAdjacentParagraphs(paras) {
+  const out = [];
+  for (const p of paras || []) {
+    const dup = out.find(prev => charJaccard(prev, p) > 0.6);
+    if (dup) {
+      console.log(`  [dedupe] 移除与前面某段重复的段落 (sim=${charJaccard(dup, p).toFixed(2)}): ${String(p).slice(0, 30)}...`);
+      continue;
+    }
+    out.push(p);
+  }
+  return out;
+}
+
+/**
  * Validate and build a story object
  */
 function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
@@ -327,7 +358,10 @@ async function main() {
         const contContent = Array.isArray(contRaw.content)
           ? cleanContinuationParagraphs(contRaw.content)
           : [];
-        raw = { ...firstRaw, content: [...(Array.isArray(firstRaw.content) ? firstRaw.content : []), ...contContent] };
+        let merged = [...(Array.isArray(firstRaw.content) ? firstRaw.content : []), ...contContent];
+        // 代码级自检：去相邻重复段（兜底，避免续写循环复读）
+        merged = dedupeAdjacentParagraphs(merged);
+        raw = { ...firstRaw, content: merged };
       }
 
       const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');

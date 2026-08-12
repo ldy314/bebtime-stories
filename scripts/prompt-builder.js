@@ -1321,6 +1321,113 @@ Return ONLY the following JSON object (no title/preview/moral, only the continua
 }`;
 }
 
+// ===== 生成后审核与修复（self-refine）=====
+// 智谱 GLM-4V-Flash 的 max_tokens 限制只作用于输出；输入可传完整故事。
+// 流程：先让模型以"儿童睡前故事编辑"身份审核全文（找衔接/重复/可读性/风格问题），
+// 再针对每个有问题的段落，携上下文 + 审核意见逐段重写。修复是逐段的，输出在 1024 内。
+
+function buildReviewPrompt(language, ageInfo, title, content) {
+  const paras = (content || []).map((p, i) => `[第${i + 1}段] ${p}`).join('\n');
+  if (language === 'zh') {
+    return `你是一位严格的儿童睡前故事编辑。请审核下面的${ageInfo.labelCn}睡前故事，找出【真实存在】的影响可读性的问题，不要为了挑问题而挑问题。
+
+**故事标题**：${title}
+
+**故事全文（段落带序号）：**
+${paras}
+
+**审核维度：**
+1. 剧情连贯性：段落之间衔接是否自然？有没有剧情断裂、跳跃、或"原地打转"（重复推进同一件事）？
+2. 重复问题：有没有重复的句子、段落模式、套路化表述？（例如多段都在表达同一个意思）
+3. 语言可读性：是否适合家长朗读（句子节奏、停顿）？有没有生硬、书面化、拗口的句子？
+4. 风格一致性：语言风格是否前后统一？
+5. 结尾质量：结局是否自然收尾、呼应主题？
+6. 年龄段适配：是否符合${ageInfo.labelCn}风格（温柔、缓慢、拟声词、等待/爱/守护）？
+
+**输出格式（严格 JSON，不要其他文字）：**
+{
+  "overall": "总体评价（1-2句）",
+  "issues": [
+    {"paraIndex": 段序号(数字,从1开始), "problem": "具体问题", "suggestion": "具体修改建议"},
+    {"paraIndex": 段序号, "problem": "具体问题", "suggestion": "具体修改建议"}
+  ]
+}
+如果某段没有问题，不要列入 issues。只列出确有问题的段落。`; 
+  }
+  return `You are a strict children's bedtime story editor. Review the ${ageInfo.labelEn} bedtime story below and find REAL readability problems — do not invent problems for the sake of it.
+
+**Story title**: ${title}
+
+**Full story (paragraphs numbered):**
+${paras}
+
+**Review dimensions:**
+1. Plot coherence: are transitions between paragraphs natural? Any broken jumps, or "spinning in place" (repeatedly advancing the same beat)?
+2. Repetition: any repeated sentences, paragraph patterns, or formulaic phrasing?
+3. Readability: suitable for a parent to read aloud (rhythm, pauses)? Any stiff, bookish, or awkward sentences?
+4. Style consistency: is the language style consistent throughout?
+5. Ending quality: does it end naturally and tie back to the theme?
+6. Age fit: does it match ${ageInfo.labelEn} style (gentle, slow, onomatopoeia, waiting/love/guardianship)?
+
+**Output (strict JSON, nothing else):**
+{
+  "overall": "Overall assessment (1-2 sentences)",
+  "issues": [
+    {"paraIndex": paragraph number (1-based), "problem": "specific problem", "suggestion": "specific fix suggestion"},
+    {"paraIndex": paragraph number, "problem": "specific problem", "suggestion": "specific fix suggestion"}
+  ]
+}
+Only list paragraphs that actually have problems.`;
+}
+
+function buildFixPrompt(language, ageInfo, title, content, paraIndex, problem, suggestion) {
+  const prev = paraIndex > 1 ? content[paraIndex - 2] : '';
+  const curr = content[paraIndex - 1] || '';
+  const next = paraIndex < content.length ? content[paraIndex] : '';
+  if (language === 'zh') {
+    return `你是一位儿童睡前故事编辑。请根据审核意见，重写下面这一段落（只重写这一段落，保持主旨不变）。
+
+**故事标题**：${title}
+**年龄段**：${ageInfo.labelCn}
+
+**上下文：**
+${prev ? `前一段：${prev}` : '（这是第一段）'}
+【需修改的段落】${curr}
+${next ? `后一段：${next}` : '（这是最后一段）'}
+
+**审核发现的问题**：${problem}
+**修改建议**：${suggestion}
+
+**要求：**
+- 只输出重写后的这一段落正文，不要任何前缀/标记/序号。
+- 段落长度 80-120 字（英文 80-120 字符），与前文衔接自然、风格一致。
+- 使用「」或单引号，不要中文弯引号。
+- 保持${ageInfo.labelCn}风格。
+
+输出严格 JSON：{"content": "重写后的段落正文"}`;
+  }
+  return `You are a children's bedtime story editor. Rewrite ONLY the paragraph below, keeping its theme unchanged.
+
+**Story title**: ${title}
+**Age stage**: ${ageInfo.labelEn}
+
+**Context:**
+${prev ? `Previous paragraph: ${prev}` : '(This is the first paragraph)'}
+【Paragraph to fix】${curr}
+${next ? `Next paragraph: ${next}` : '(This is the last paragraph)'}
+
+**Problem found**: ${problem}
+**Fix suggestion**: ${suggestion}
+
+**Requirements:**
+- Output ONLY the rewritten paragraph text, no prefixes/labels/numbers.
+- Length 80-120 characters, smooth transition with neighbors, consistent style.
+- Use straight quotes or curly-free text; avoid breaking JSON.
+- Keep the ${ageInfo.labelEn} style.
+
+Output strict JSON: {"content": "rewritten paragraph text"}`;
+}
+
 module.exports = {
   getAgeInfo,
   getChineseWeekday,
@@ -1329,6 +1436,8 @@ module.exports = {
   buildChinesePrompt,
   buildEnglishPrompt,
   buildContinuationPrompt,
+  buildReviewPrompt,
+  buildFixPrompt,
   isScienceDay,
   fetchScienceArticle,
   buildScienceChinesePrompt,
