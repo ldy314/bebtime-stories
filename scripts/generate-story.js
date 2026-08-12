@@ -258,6 +258,120 @@ function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
   return obj;
 }
 
+// ===== 胎教期风格自检与定向修复（"最终组合"的 AI 修复层） =====
+// 生成后检测胎教故事是否具备关键风格要素（拟声词/妈妈心跳/对肚里宝宝说话/无弯引号），
+// 缺失项调用 buildFixPrompt 携全文上下文定向补写，最多补 2 轮、每轮只补缺失项。
+function styleGaps(story, language) {
+  const text = (story.content || []).join(' ');
+  const gaps = [];
+  if (language === 'zh') {
+    if (!/(呼呼|哗啦|咕嘟|咚咚|扑通|叮咚|沙沙|滴答|摇啊摇|晃呀晃|飘呀飘|啾啾|蛐蛐|滴滴|嗒嗒|咕噜)/.test(text)) {
+      gaps.push({ key: 'onomatopoeia', label: '故事缺少拟声词', fix: '在合适位置自然地加入 2-3 处拟声词（如呼呼、哗啦、咕嘟、咚咚、摇啊摇），让声音参与叙事' });
+    }
+    if (!/心跳|咚咚|扑通/.test(text)) {
+      gaps.push({ key: 'heartbeat', label: '缺少「妈妈的心跳」高光', fix: '加入一处妈妈心跳高光：写「咚咚、咚咚，那是妈妈的心跳」并用「你听见了吗？」与肚里宝宝对话' });
+    }
+    if (!/肚子里|还没出生|肚里|还没来/.test(text)) {
+      gaps.push({ key: 'unborn', label: '缺少未出生宝宝视角', fix: '把「还在肚子里的小宝宝」作为倾听者，用「小宝宝，你听到了吗？」式对话呼应' });
+    }
+    if (/[\u201c\u201d]/.test(JSON.stringify(story))) {
+      gaps.push({ key: 'curlyquote', label: '存在中文弯引号""', fix: '把所有中文弯引号替换为「」或单引号' });
+    }
+  } else {
+    if (!/(whoosh|patter|gurgle|thump|tweet|swish|drip|rustle|huff|plop|splash|tinkle)/i.test(text)) {
+      gaps.push({ key: 'onomatopoeia', label: 'missing onomatopoeia', fix: 'naturally weave in 2-3 onomatopoeia words (whoosh, patter, gurgle, thump, swish, drip)' });
+    }
+    if (!/(heartbeat|thump|drum)/i.test(text)) {
+      gaps.push({ key: 'heartbeat', label: 'missing "mother\'s heartbeat" highlight', fix: 'add a mother-heartbeat highlight: "thump, thump, that is Mama\'s heartbeat" and speak to the baby with "little one, can you hear it?"' });
+    }
+    if (!/(in mama'?s belly|unborn|not yet born|little one|tiny one)/i.test(text)) {
+      gaps.push({ key: 'unborn', label: 'missing unborn-baby perspective', fix: 'address the baby in Mama\'s belly directly with "little one, can you hear?" style lines' });
+    }
+  }
+  return gaps;
+}
+
+async function ensurePrenatalStyle(story, ageInfo, dateStr, tag) {
+  if (story.ageGroup !== 'prenatal') return story;
+  const lang = story.language;
+  for (let round = 1; round <= 2; round++) {
+    const gaps = styleGaps(story, lang);
+    if (gaps.length === 0) break;
+    console.log(`  [style] ${tag} 第${round}轮修复 ${gaps.length} 项: ${gaps.map(g => g.label).join(' / ')}`);
+    // 一次调用让模型按所有缺口补写：传全文 + 缺口清单，返回修正后的完整 content
+    const fixPrompt = buildStyleFixPrompt(lang, ageInfo, story, gaps);
+    try {
+      const fixed = await callAPIWithRetry(fixPrompt, tag + '-style' + round);
+      const newContent = Array.isArray(fixed.content)
+        ? cleanContinuationParagraphs(fixed.content)
+        : [];
+      if (newContent.length >= story.content.length) {
+        story.content = newContent;
+        story.preview = sanitizeText(fixed.preview || story.preview);
+        story.moral = sanitizeText(fixed.moral || story.moral);
+        if (fixed.title) story.title = sanitizeText(fixed.title);
+        console.log(`  [style] ${tag} 第${round}轮修复完成 (${newContent.length} 段)`);
+      } else {
+        console.log(`  [style] ${tag} 修复返回段数不足(${newContent.length}<${story.content.length})，保留原文`);
+        break;
+      }
+    } catch (e) {
+      console.error(`  [style] ${tag} 修复失败: ${e.message}`);
+      break;
+    }
+  }
+  return story;
+}
+
+// 风格修复 prompt：携全文 + 缺口清单，返回补全后的完整故事（分段落）
+function buildStyleFixPrompt(language, ageInfo, story, gaps) {
+  const paras = (story.content || []).map((p, i) => `[第${i + 1}段] ${p}`).join('\n');
+  if (language === 'zh') {
+    return `你是一位儿童睡前故事编辑。下面是${ageInfo.labelCn}故事《${story.title}》，请在【不改变主旨、不删减段落、不重写无关内容】的前提下，针对以下缺口做最小修改（在合适的段落中自然融入），并输出修补后的完整段落数组。
+
+**当前故事全文（段落带序号）：**
+${paras}
+
+**需要修补的缺口：**
+${gaps.map(g => '- ' + g.label + '：' + g.fix).join('\n')}
+
+**要求：**
+- 在保持情节与风格一致的前提下自然修补；不要为了补而破坏节奏。
+- 弯引号缺口：把中文弯引号全部换成「」或单引号。
+- 每个段落保持 80-120 字左右；段落数不变。
+- 不得使用中文弯引号""，用「」或单引号。
+- 保持${ageInfo.labelCn}风格：温柔、缓慢、拟声词、等待/爱/守护。
+
+输出严格 JSON：
+{
+  "title": "故事标题",
+  "preview": "前两句预览",
+  "moral": "故事寓意",
+  "content": ["第1段...", "第2段...", "第3段..."]
+}`;
+  }
+  return `You are a children's bedtime story editor. The ${ageInfo.labelEn} story "${story.title}" below needs MINIMAL targeted fixes for the gaps listed (weave them naturally into suitable paragraphs; do NOT change the plot, do NOT delete paragraphs, do NOT rewrite unrelated content). Output the full corrected paragraph array.
+
+**Current full story (paragraphs numbered):**
+${paras}
+
+**Gaps to fix:**
+${gaps.map(g => '- ' + g.label + ': ' + g.fix).join('\n')}
+
+**Requirements:**
+- Weave fixes in naturally while keeping plot and style consistent.
+- Keep each paragraph ~80-120 characters; keep the same paragraph count.
+- Keep ${ageInfo.labelEn} style: gentle, slow, onomatopoeia, waiting/love/guardianship.
+
+Output strict JSON:
+{
+  "title": "story title",
+  "preview": "first two sentences",
+  "moral": "the lesson",
+  "content": ["paragraph 1...", "paragraph 2...", "paragraph 3..."]
+}`;
+}
+
 // ===== Main =====
 
 async function main() {
@@ -352,7 +466,7 @@ async function main() {
 
         // 第二段：续写后半部分并收尾，拼接成完整故事
         const contRaw = await callAPIWithRetry(
-          buildContinuationPrompt(language, ageInfo, firstRaw.title, firstRaw.content),
+          buildContinuationPrompt(language, ageInfo, firstRaw.title, firstRaw.content, dateStr),
           tag + '-part2'
         );
         const contContent = Array.isArray(contRaw.content)
@@ -365,6 +479,11 @@ async function main() {
       }
 
       const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');
+
+      // 胎教期风格自检 + AI 定向修复（拟声词/妈妈心跳/未出生视角/弯引号）
+      if (story.ageGroup === 'prenatal') {
+        await ensurePrenatalStyle(story, ageInfo, dateStr, tag);
+      }
 
       // Validate required fields
       if (!story.title || !story.content || story.content.length === 0) {

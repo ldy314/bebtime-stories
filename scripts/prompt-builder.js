@@ -656,6 +656,35 @@ const PRENATAL_SCENES_EN = ['seagrass forest', 'moonlit sea', 'cloud cotton fiel
 const PRENATAL_IMAGERY = ['星星灯笼', '心跳小鼓', '梦的种子', '云朵口袋', '月光小船', '风的信笺', '彩虹小桥', '会发芽的雨滴', '会唱歌的鹅卵石', '面包的香气云', '小脚印地图', '温暖的毛线团'];
 const PRENATAL_IMAGERY_EN = ['star lantern', 'heartbeat drum', 'dream seed', 'cloud pocket', 'moonlight boat', 'wind’s letter', 'rainbow bridge', 'a sprouting raindrop', 'the singing pebble', 'the aroma cloud of bread', 'little-footprint map', 'a warm ball of yarn'];
 
+// 胎教期风格范例（中文）：以《白海豚台风的小船》为参照，展示"诗意拟声 + 感官意象 + 妈妈心跳高光 + 对肚里宝宝说话 + 温柔收尾"的具体落地形态。
+// 目的是给模型一个可对照的 concrete example，避免只有抽象要求导致输出平淡。
+const PRENATAL_STYLE_EXAMPLE_ZH = `
+**胎教期风格范例（请参照其笔感，但不要照抄题材与文字）：**
+《白海豚台风的小船》：
+台风白海豚要来啦！它从很远很远的大海那边，呼呼地游了过来。风是它的尾巴，哗啦哗啦的雨，是它溅起的水花。
+爸爸开着小车出门，车轮下面咕嘟咕嘟冒着小水花，小车好像变成了一艘圆圆的小船，在白海豚带来的水世界里，轻轻摇啊摇。
+红绿灯的倒影在水洼里晃呀晃，像一串温柔的星星。小船慢慢划过街道，遇见的小树、小房子都朝它轻轻点头。白海豚在天上远远地望着，好像在说：慢慢开，不要急。
+不一会儿，小船稳稳停在家的门口。妈妈张开温暖的怀抱，把你——还在肚子里的小宝宝——轻轻护住。你听见了吗？咚咚、咚咚，那是妈妈的心跳，像小船靠岸时，轻轻拍着水面的声音。
+台风白海豚还在天上游呀游，可我们的小家，永远是干干爽爽、暖暖和和的小港湾。晚安，我的小船长。
+**从范例中必须提炼并落实的胎教笔感**：
+1. 拟声词自然贯穿（呼呼/哗啦哗啦/咕嘟咕嘟/咚咚/摇啊摇/晃呀晃……），不是偶尔点缀，而是让声音参与叙事；
+2. 用具体的感官比喻（风是尾巴、雨是水花、倒影像星星、心跳像拍水声）；
+3. 妈妈的心跳是固定高光，直接写「咚咚、咚咚」，并用「你听见了吗？」对肚里宝宝说话；
+4. 把「还在肚子里的小宝宝」作为倾听者贯穿全文，结尾以温柔守候收束。`;
+const PRENATAL_STYLE_EXAMPLE_EN = `
+**Prenatal style example (mirror its feel; do NOT copy the topic or wording):**
+"The White Dolphin Typhoon's Little Boat":
+Typhoon White Dolphin is coming! It swam all the way from the far, far sea, whoosh-whoosh. The wind is its tail; the pattering rain is the spray it kicks up.
+Daddy drove the little car out, gurgle-gurgle bubbles under the wheels, and the car became a round little boat, swaying gently in White Dolphin's watery world.
+Traffic-light reflections wobbled in the puddles like a string of gentle stars. The little boat-boat glided past the streets, and the trees and little houses nodded softly. White Dolphin watched from the sky, as if saying: go slowly, no hurry.
+Soon the little boat-boat stopped at home. Mama opened her warm arms and gently held you — the little one still in her belly. Can you hear it? Thump, thump, that is Mama's heartbeat, like the boat gently tapping the water as it docks.
+Typhoon White Dolphin still swims on in the sky, but our little home is always dry, warm, and safe. Good night, my little captain.
+**Prenatal touches you MUST extract and apply from this example**:
+1. Onomatopoeia woven naturally through the story (whoosh-whoosh / patter / gurgle / thump-thump / sway, sway...), letting sound take part in the telling;
+2. Concrete sensory metaphors (wind as tail, rain as spray, reflections as stars, heartbeat as waves tapping the boat);
+3. Mama's heartbeat as the fixed highlight, written as "thump, thump", speaking to the baby in the belly with "can you hear it?";
+4. The unborn baby as the listener throughout, ending with tender waiting.`;
+
 // ===== 胎教期「题材色调」轮换（让每日题材更多样，避免雷同） =====
 // 不替代常驻角色/情感锚点/安全边界，只是给本篇一个可侧重展开的题材方向。
 const PRENATAL_THEME_FLAVORS_CN = [
@@ -977,6 +1006,7 @@ function buildChinesePrompt(dateStr, ageInfo) {
   const theme = pickTheme(dateStr, 'zh');
   const prenatalBlock = ageInfo.group === 'prenatal' ? buildPrenatalBlock(dateStr, 'zh') : '';
   const occasion = pickOccasion(dateStr, 'zh');
+  const styleExample = ageInfo.group === 'prenatal' ? PRENATAL_STYLE_EXAMPLE_ZH : '';
   return `写一个适合儿童的中文睡前故事，语言温和易懂，阅读时长约 3-5 分钟。故事需有完整情节，结尾附上简短寓意。
 
 当前年龄段：${ageInfo.labelCn}
@@ -996,6 +1026,8 @@ ${pickSeeds(dateStr, 'zh').map(s => '- ' + s).join('\n')}
 **中文故事风格参考，融合以下大师的特色，加上你自己的创造力和想象力：**
 ${CN_STYLES}
 ${CN_STYLES_EXTRA}
+
+${styleExample}
 
 **综合风格要求：**
 - 所有风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
@@ -1029,6 +1061,7 @@ function buildEnglishPrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_EN[ageInfo.group];
   const theme = pickTheme(dateStr, 'en');
   const prenatalBlock = ageInfo.group === 'prenatal' ? buildPrenatalBlock(dateStr, 'en') : '';
+  const styleExample = ageInfo.group === 'prenatal' ? PRENATAL_STYLE_EXAMPLE_EN : '';
   const occasion = pickOccasion(dateStr, 'en');
   return `Write an English children's bedtime story (not a translation, an original new story), reading time about 3-5 minutes.
 
@@ -1043,6 +1076,8 @@ ${theme.desc}
 ${pickSeeds(dateStr, 'en').map(s => '- ' + s).join('\n')}
 
 **Occasion for this story (daily stories need not all be "good night" — vary by occasion): "${occasion.key}" — ${occasion.hint}. End the story to match the occasion; don't default to "good night" every time.**
+
+${styleExample}
 
 Please adjust the story complexity based on the age stage.
 
@@ -1272,8 +1307,9 @@ Return a JSON object:
 //   第二段 buildContinuationPrompt 把已有标题/段落作为上下文，要求续写剩余段落并收尾。
 // 生成器把两段的 content 拼接成完整故事，长度可恢复至接近原 DeepSeek 4096 时代的水平。
 
-function buildContinuationPrompt(language, ageInfo, existingTitle, existingContent) {
+function buildContinuationPrompt(language, ageInfo, existingTitle, existingContent, dateStr) {
   const existing = (existingContent || []).join('\n');
+  const pd = dateStr || new Date().toISOString().slice(0, 10);
   if (language === 'zh') {
     return `你正在续写一篇儿童睡前故事，请接着下面的内容继续写下去（不是重复，不是改写，是从当前情节自然延续）。
 
@@ -1288,7 +1324,7 @@ ${existing}
 - 与前文语言风格、叙事语气、拟声词风格保持一致，衔接流畅自然。
 - **不得重复、复述或改写前文任何句子**，尤其不要重复前文已经出现过的段落结尾句（如「它知道自己已经完成了祝福」「回到了家」等收束句）；若前文已出现类似收尾，请从那里继续向前推进新情节，而不是原地重复。
 - 保持当前年龄段（${ageInfo.labelCn}）的风格要求：${AGE_STYLE_CN[ageInfo.group]}。
-${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'zh') : ''}
+${ageInfo.group === 'prenatal' ? buildPrenatalBlock(pd, 'zh') : ''}
 - 所有文本不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
 - content 是段落数组，每个元素是一个自然段。
 - **续写段落本身必须是完整的故事正文，禁止在段落开头添加任何标记、序号或前缀（如"续写第1段：""第1段：""接着写："等），直接写故事内容本身。**
@@ -1311,7 +1347,7 @@ ${existing}
 - Keep the same language style, tone, and onomatopoeia as the first half; transitions must be smooth.
 - **Do NOT repeat, rephrase, or rewrite ANY sentence from the first half**, especially avoid repeating closing-type sentences that already appeared (e.g. "it knew it had finished the gift", "back home"); if the first half already has such a wrap-up, push the plot FORWARD from there instead of repeating it in place.
 - Keep the current age stage style (${ageInfo.labelEn}): ${AGE_STYLE_EN[ageInfo.group]}.
-${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'en') : ''}
+${ageInfo.group === 'prenatal' ? buildPrenatalBlock(pd, 'en') : ''}
 - content is an array of paragraphs, each element is one natural paragraph.
 - **Each continuation paragraph must be pure story text — do NOT add any label, number, or prefix at the start (such as "Continuation paragraph 1:", "Para 1:", "Next:") — write the story content directly.**
 
