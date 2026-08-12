@@ -165,6 +165,22 @@ function sanitizeText(text) {
 }
 
 /**
+ * Clean continuation paragraphs: strip any "续写第N段"/"Continuation paragraph N:"/numbered prefixes
+ * that the model may add, so the story body stays clean.
+ */
+function cleanContinuationParagraphs(paras) {
+  return (paras || []).map(p => String(p)
+    .replace(/^\s*(续写第?\s*\d+\s*段\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(第\s*\d+\s*段\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(段落\s*\d+\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(Continuation\s+paragraph\s*\d+\s*[:\-.]\s*)/i, '')
+    .replace(/^\s*(Para(?:graph)?\s*\d+\s*[:\-.]\s*)/i, '')
+    .replace(/^\s*(接着写[：:]?\s*|继续写[：:]?\s*|Next[:\-]?\s*|Continue[:\-]?\s*)/i, '')
+    .trim()
+  ).filter(p => p && p.trim());
+}
+
+/**
  * Validate and build a story object
  */
 function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
@@ -309,7 +325,7 @@ async function main() {
           tag + '-part2'
         );
         const contContent = Array.isArray(contRaw.content)
-          ? contRaw.content.map(p => sanitizeText(String(p)))
+          ? cleanContinuationParagraphs(contRaw.content)
           : [];
         raw = { ...firstRaw, content: [...(Array.isArray(firstRaw.content) ? firstRaw.content : []), ...contContent] };
       }

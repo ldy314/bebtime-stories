@@ -1291,10 +1291,11 @@ ${existing}
 ${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'zh') : ''}
 - 所有文本不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
 - content 是段落数组，每个元素是一个自然段。
+- **续写段落本身必须是完整的故事正文，禁止在段落开头添加任何标记、序号或前缀（如"续写第1段：""第1段：""接着写："等），直接写故事内容本身。**
 
 请只返回以下 JSON 对象（不要返回 title/preview/moral，只返回续写段落）：
 {
-  "content": ["续写第1段...", "续写第2段...", "续写第3段..."]
+  "content": ["直接写第一段的正文内容...", "直接写第二段的正文内容...", "直接写第三段的正文内容..."]
 }`;
   }
   return `You are continuing a children's bedtime story. Continue naturally from where the existing text ends (do NOT repeat, rewrite, or summarize what was already written).
@@ -1312,10 +1313,11 @@ ${existing}
 - Keep the current age stage style (${ageInfo.labelEn}): ${AGE_STYLE_EN[ageInfo.group]}.
 ${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'en') : ''}
 - content is an array of paragraphs, each element is one natural paragraph.
+- **Each continuation paragraph must be pure story text — do NOT add any label, number, or prefix at the start (such as "Continuation paragraph 1:", "Para 1:", "Next:") — write the story content directly.**
 
 Return ONLY the following JSON object (no title/preview/moral, only the continuation paragraphs):
 {
-  "content": ["Continuation paragraph 1...", "Continuation paragraph 2...", "Continuation paragraph 3..."]
+  "content": ["First continuation paragraph text...", "Second continuation paragraph text...", "Third continuation paragraph text..."]
 }`;
 }
 
