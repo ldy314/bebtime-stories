@@ -2,12 +2,12 @@
 /**
  * Bedtime Story Generator
  * 
- * Calls Zhipu (智谱) API to generate Chinese and English bedtime stories.
+ * Calls DeepSeek API to generate Chinese and English bedtime stories.
  * Checks for missing stories (today + last 7 days), generates them,
  * and updates stories.json, index.html (EMBEDDED_STORIES), and collection.html.
  * 
  * Environment variables:
- *   ZHIPU_API_KEY - API key for Zhipu/智谱 (required)
+ *   DEEPSEEK_API_KEY - API key for DeepSeek (required)
  * 
  * Usage:
  *   node scripts/generate-story.js
@@ -31,10 +31,10 @@ const {
 } = require('./prompt-builder');
 
 // ===== Configuration =====
-const API_KEY = process.env.ZHIPU_API_KEY;
-const API_HOST = 'open.bigmodel.cn';
-const API_PATH = '/api/paas/v4/chat/completions';
-const MODEL = 'glm-4v-flash';
+const API_KEY = process.env.DEEPSEEK_API_KEY;
+const API_HOST = 'api.deepseek.com';
+const API_PATH = '/v1/chat/completions';
+const MODEL = 'deepseek-chat';
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 5000;
 
@@ -71,7 +71,7 @@ function callZhipuAPI(userPrompt) {
       ],
       response_format: { type: 'json_object' },
       temperature: 0.85,
-      max_tokens: 1024
+      max_tokens: 4096
     });
 
     const options = {
@@ -377,7 +377,7 @@ Output strict JSON:
 
 async function main() {
   if (!API_KEY) {
-    console.error('ERROR: ZHIPU_API_KEY environment variable is not set.');
+    console.error('ERROR: DEEPSEEK_API_KEY environment variable is not set.');
     console.error('Please set it as a GitHub repository secret.');
     process.exit(1);
   }
@@ -460,25 +460,15 @@ async function main() {
         raw.source = article ? article.source : (language === 'zh' ? '儿童科普常识' : "Children's science (general)"); // 标记来源（始终有值）
       } else {
         tag = `${dateStr}-${language}`;
-        const halfPrompt = language === 'zh'
-          ? buildChinesePrompt(dateStr, ageInfo) + '\n\n**重要：本次只写故事前半部分（4-6 段，每段 80-120 字）。必须停在一个让人好奇的悬念或正在进行的情节处，绝不要写出结局、收束、总结或祝福类句子（如"它完成了心愿""故事到此结束"）。让故事停留在"接下来会发生什么"的悬念上。**'
-          : buildEnglishPrompt(dateStr, ageInfo) + '\n\n**IMPORTANT: For this request, write ONLY the first half of the story (4-6 paragraphs, each 80-120 characters). You MUST stop at a suspenseful moment or an ongoing plot point — do NOT write any ending, wrap-up, summary, or blessing sentences (e.g. "he completed his wish", "the end"). Leave the story hanging on "what happens next?".**';
-        const firstRaw = await callAPIWithRetry(halfPrompt, tag + '-part1');
-
-        // 第二段：续写后半部分并收尾，拼接成完整故事
-        const contRaw = await callAPIWithRetry(
-          buildContinuationPrompt(language, ageInfo, firstRaw.title, firstRaw.content, dateStr),
-          tag + '-part2'
-        );
-        const contContent = Array.isArray(contRaw.content)
-          ? cleanContinuationParagraphs(contRaw.content)
-          : [];
-        let merged = [...(Array.isArray(firstRaw.content) ? firstRaw.content : []), ...contContent];
-        // 代码级自检：中文去全历史重复段（兜底，避免续写循环复读）；英文字符集小易误伤，仅靠 prompt 约束
-        if (language === 'zh') {
-          merged = dedupeAdjacentParagraphs(merged);
+        // DeepSeek max_tokens 4096 足够一次生成完整故事，单次调用（不再分段续写）
+        prompt = language === 'zh'
+          ? buildChinesePrompt(dateStr, ageInfo)
+          : buildEnglishPrompt(dateStr, ageInfo);
+        raw = await callAPIWithRetry(prompt, tag);
+        // 代码级自检：中文去全历史重复段（兜底）；英文字符集小易误伤，仅靠 prompt 约束
+        if (language === 'zh' && Array.isArray(raw.content)) {
+          raw = { ...raw, content: dedupeAdjacentParagraphs(raw.content) };
         }
-        raw = { ...firstRaw, content: merged };
       }
 
       const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');

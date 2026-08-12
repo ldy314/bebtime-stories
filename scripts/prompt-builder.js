@@ -1426,7 +1426,7 @@ Return ONLY the following JSON object (no title/preview/moral, only the continua
 }
 
 // ===== 生成后审核与修复（self-refine）=====
-// 智谱 GLM-4V-Flash 的 max_tokens 限制只作用于输出；输入可传完整故事。
+// 审核/修复 prompt 构造器（可复用；当前流程以确定性代码兜底为主）。
 // 流程：先让模型以"儿童睡前故事编辑"身份审核全文（找衔接/重复/可读性/风格问题），
 // 再针对每个有问题的段落，携上下文 + 审核意见逐段重写。修复是逐段的，输出在 1024 内。
 

@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate stories
         env:
-          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: node scripts/generate-story.js
 
       - name: Commit and push changes

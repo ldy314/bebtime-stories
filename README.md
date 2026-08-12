@@ -63,19 +63,19 @@ git push -u origin main
 3. 注意：`.github`、`.nojekyll`、`.gitignore` 是隐藏文件，需要勾选显示
 4. 点击 `Commit changes`
 
-### 第三步：获取智谱 API Key
+### 第三步：获取 DeepSeek API Key
 
-1. 打开 https://open.bigmodel.cn 注册（支持手机号/邮箱）
+1. 打开 https://platform.deepseek.com 注册
 2. 登录后进入 API Keys 页面
 3. 点击 `Create API Key`
-4. 复制生成的 key（格式：`xxxxxxxx.xxxxxxxxxxxxx`）
-5. 新用户注册送免费 tokens，GLM-4V-Flash 模型免费
+4. 复制生成的 key（格式：`sk-...`）
+5. 新用户注册送免费 tokens
 
 ### 第四步：添加 API Key 到 GitHub Secrets
 
 1. 在 GitHub 仓库页面点击 `Settings` → `Secrets and variables` → `Actions`
 2. 点击 `New repository secret`
-3. Name 填 `ZHIPU_API_KEY`
+3. Name 填 `DEEPSEEK_API_KEY`
 4. Secret 粘贴你的 API Key
 5. 点击 `Add secret`
 

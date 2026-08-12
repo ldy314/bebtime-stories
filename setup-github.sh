@@ -55,21 +55,21 @@ echo "Repository created: https://github.com/$USERNAME/$REPO_NAME"
 
 # Set up Zhipu API key secret
 echo ""
-echo "=== Zhipu API Key ==="
-echo "To generate stories, you need a Zhipu (智谱) API key."
-echo "Get one free at: https://open.bigmodel.cn"
+echo "=== DeepSeek API Key ==="
+echo "To generate stories, you need a DeepSeek API key."
+echo "Get one at: https://platform.deepseek.com"
 echo ""
-read -p "Do you have a Zhipu API key? (y/n): " HAS_KEY
+read -p "Do you have a DeepSeek API key? (y/n): " HAS_KEY
 
 if [[ "$HAS_KEY" == "y" || "$HAS_KEY" == "Y" ]]; then
   read -s -p "Paste your API key: " API_KEY
   echo ""
-  echo "Setting ZHIPU_API_KEY secret..."
-  echo "$API_KEY" | gh secret set ZHIPU_API_KEY --repo "$USERNAME/$REPO_NAME"
+  echo "Setting DEEPSEEK_API_KEY secret..."
+  echo "$API_KEY" | gh secret set DEEPSEEK_API_KEY --repo "$USERNAME/$REPO_NAME"
   echo "Secret set successfully!"
 else
   echo "Skipping secret setup. You can set it later:"
-  echo "  echo 'YOUR_KEY' | gh secret set ZHIPU_API_KEY --repo $USERNAME/$REPO_NAME"
+  echo "  echo 'YOUR_KEY' | gh secret set DEEPSEEK_API_KEY --repo $USERNAME/$REPO_NAME"
 fi
 
 # Enable GitHub Pages
