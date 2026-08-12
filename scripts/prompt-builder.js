@@ -751,6 +751,47 @@ function pickPrenatalHighlight(dateStr, lang) {
   return pool[hashDate(dateStr + '-hl-' + lang) % pool.length];
 }
 
+// ===== 拟声词库（按场景分类，按日期轮换，让拟声更多样）=====
+// 每天从不同场景各取 2-3 个，避免故事里总是同一批拟声词。
+const ONO_CN = {
+  wind: ['呼呼', '沙沙', '嗖嗖', '簌簌', '呜呜', '哗啦哗啦'],
+  water: ['咕嘟咕嘟', '哗啦哗啦', '滴答滴答', '叮咚叮咚', '汩汩', '啪嗒啪嗒'],
+  rain: ['淅淅沥沥', '噼里啪啦', '滴滴答答', '沙沙沙', '嗒嗒嗒'],
+  animal: ['啾啾', '叽叽喳喳', '蛐蛐蛐蛐', '嗡嗡', '喵喵', '汪汪', '咕咕'],
+  motion: ['摇啊摇', '晃呀晃', '扑棱扑棱', '吧嗒吧嗒', '扑通扑通', '咯噔咯噔'],
+  music: ['叮咚', '叮铃铃', '咚咚', '啦啦啦', '嘀嘀嗒', '叮叮当'],
+  soft: ['窸窸窣窣', '呼噜呼噜', '沙沙响', '轻轻响', '软软地响', '悄悄响'],
+  heart: ['咚咚', '扑通', '怦怦', '咚哒', '怦咚', '噗通']
+};
+const ONO_EN = {
+  wind: ['whoosh', 'swish', 'rustle', 'hush', 'sigh'],
+  water: ['gurgle', 'splash', 'plip-plop', 'bubble', 'drip'],
+  rain: ['pitter-patter', 'drip-drop', 'tick-tack', 'spatter'],
+  animal: ['tweet', 'chirp', 'cricket-cricket', 'buzz', 'purr', 'meow', 'ruff'],
+  motion: ['sway-sway', 'wiggle', 'flutter', 'pat-pat', 'thump', 'pitter'],
+  music: ['ding-dong', 'la-la-la', 'tinkle', 'dum-dum', 'ta-da'],
+  soft: ['hush', 'whisper', 'fizz', 'softly', 'nuzzle'],
+  heart: ['thump-thump', 'lub-dub', 'beet-beet', 'boom-boom']
+};
+
+function pickOnomatopoeia(dateStr, lang, n = 3) {
+  const pool = lang === 'zh' ? ONO_CN : ONO_EN;
+  const cats = Object.keys(pool);
+  const out = [];
+  // 按日期确定性打乱类目顺序，取 n 个类目，每类取 1 个；全局去重（跨类目不重复）
+  const start = hashDate(dateStr + '-ono-' + lang) % cats.length;
+  for (let i = 0; i < cats.length && out.length < n; i++) {
+    const cat = cats[(start + i) % cats.length];
+    const words = pool[cat];
+    const offset = Math.floor(hashDate(dateStr + '-ono-' + lang) / (i + 1)) % words.length;
+    for (let k = 0; k < words.length; k++) {
+      const w = words[(offset + k) % words.length];
+      if (!out.includes(w)) { out.push(w); break; }
+    }
+  }
+  return out;
+}
+
 const EMOTIONAL_ANCHORS = [
   '高光意象（按日期轮换，见骨架提示）：妈妈的心跳 / 妈妈哼歌 / 温暖怀抱 / 月光守候 / 爸爸笑声 / 被窝暖意 / 星光摇篮。',
   '包裹/承载：柔软云墙、气泡、被水流/风轻轻托着、温暖的被窝——暗合羊水里的被包裹感。',
@@ -813,6 +854,7 @@ function buildPrenatalBlock(dateStr, lang) {
 ${flavor}
 情感锚点（本篇必须自然嵌入至少 3 种，多选多益）：
 ${anchors}
+本篇拟声词库（按场景分类、每日轮换，请从中自然选用 3-5 个融入叙事，让声音参与故事，不要只用一个重复到底）：${pickOnomatopoeia(dateStr, 'zh').join('、')}，也可按故事场景自由补充同类拟声（如水流声、风声、动物声、脚步摇动声、心跳声）。
 安全边界（绝对遵守）：${safety}
 故事骨架提示：微小主角 → 一个温柔的愿望 → 被水流/风/歌声轻轻托送（暗合羊水体验） → 遇见颜色/味道/温度/旋律的感官之美 → 途经温暖水域或光晕，以「${pickPrenatalHighlight(dateStr, 'zh')}」作为本篇的情感高光（每天轮换，不必每次都是妈妈心跳） → 用「小宝宝，你听到了吗？」式对话与肚里宝宝说话 → 以温柔守候收尾（结尾不必每次都是「晚安」：可按本篇情境用「等你准备好了，外面的世界有软软的风和圆圆的月亮等你」「早安，小宝宝，今天的世界亮晶晶的」或「晚安，小宝宝，月亮陪着你」等，自然选择）。`;
   }
@@ -831,6 +873,7 @@ Subject tone for this story (pick one or blend naturally, to avoid repetitive th
 ${flavor}
 Emotional anchors (embed at least 3 of these naturally; more is better):
 ${anchors}
+Onomatopoeia library for this story (categorized & rotating daily — pick 3-5 and weave them into the telling so sound takes part; do not reuse just one): ${pickOnomatopoeia(dateStr, 'en').join(', ')}; feel free to add similar sounds matching the scene (water, wind, animals, motion, music, heartbeat).
 Safety boundaries (strictly obey): ${safety}
 Skeleton hint: tiny protagonist → a gentle wish → carried softly by water/wind/song (echoing the womb) → sensory beauty of colour/taste/temperature/melody → passing warm waters or a glow, use "${pickPrenatalHighlight(dateStr, 'en')}" as this story's emotional highlight (rotates daily, not always the heartbeat) → talk to the unborn baby with "little one, can you hear?" → end with tender waiting (not always "good night": per this story's occasion, use "when you are ready, the soft wind and round moon will be waiting", "good morning, little one, the world is sparkly today", or "good night, little one, the moon is with you" — choose naturally).`;
 }
