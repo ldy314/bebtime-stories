@@ -473,8 +473,10 @@ async function main() {
           ? cleanContinuationParagraphs(contRaw.content)
           : [];
         let merged = [...(Array.isArray(firstRaw.content) ? firstRaw.content : []), ...contContent];
-        // 代码级自检：去相邻重复段（兜底，避免续写循环复读）
-        merged = dedupeAdjacentParagraphs(merged);
+        // 代码级自检：中文去全历史重复段（兜底，避免续写循环复读）；英文字符集小易误伤，仅靠 prompt 约束
+        if (language === 'zh') {
+          merged = dedupeAdjacentParagraphs(merged);
+        }
         raw = { ...firstRaw, content: merged };
       }
 
