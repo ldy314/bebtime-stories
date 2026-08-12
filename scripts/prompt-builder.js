@@ -1283,9 +1283,10 @@ function buildContinuationPrompt(language, ageInfo, existingTitle, existingConte
 ${existing}
 
 **续写要求：**
-- 继续写 4-6 个自然段，每段 80-120 字，从已有情节自然发展，直到完整结局；最后一段要温柔收尾、点题，并与情境呼应（不一定以「晚安」结尾）。
+- 前文可能已写到某个阶段（如主角暂时完成了某件事），但故事还没有真正结束。请【继续发展新的情节】（新场景/新事件/新的小冲突或新发现），让故事再往前推进，最终温柔收尾、点题，并与情境呼应（不一定以「晚安」结尾）。
+- 继续写 4-6 个自然段，每段 80-120 字，从已有情节自然发展，直到完整结局；最后一段要温柔收尾、点题。
 - 与前文语言风格、叙事语气、拟声词风格保持一致，衔接流畅自然。
-- 不得重复、复述或改写前文已经写过的内容。
+- **不得重复、复述或改写前文任何句子**，尤其不要重复前文已经出现过的段落结尾句（如「它知道自己已经完成了祝福」「回到了家」等收束句）；若前文已出现类似收尾，请从那里继续向前推进新情节，而不是原地重复。
 - 保持当前年龄段（${ageInfo.labelCn}）的风格要求：${AGE_STYLE_CN[ageInfo.group]}。
 ${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'zh') : ''}
 - 所有文本不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
@@ -1304,9 +1305,10 @@ ${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().sli
 ${existing}
 
 **Continuation requirements:**
-- Write 4-6 more paragraphs, each 80-120 characters, that flow naturally from the existing plot to a complete ending; the final paragraph should end warmly, tie back to the theme, and match the occasion (not necessarily "good night").
+- The first half may have reached a stage where the protagonist finished something, but the story is NOT over yet. Please 【develop NEW plot】(new scenes/events/small conflicts or discoveries) to push the story forward, then end warmly, tie back to the theme, and match the occasion (not necessarily "good night").
+- Write 4-6 more paragraphs, each 80-120 characters, flowing naturally from the existing plot to a complete ending.
 - Keep the same language style, tone, and onomatopoeia as the first half; transitions must be smooth.
-- Do NOT repeat or rephrase content already written above.
+- **Do NOT repeat, rephrase, or rewrite ANY sentence from the first half**, especially avoid repeating closing-type sentences that already appeared (e.g. "it knew it had finished the gift", "back home"); if the first half already has such a wrap-up, push the plot FORWARD from there instead of repeating it in place.
 - Keep the current age stage style (${ageInfo.labelEn}): ${AGE_STYLE_EN[ageInfo.group]}.
 ${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'en') : ''}
 - content is an array of paragraphs, each element is one natural paragraph.

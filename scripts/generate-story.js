@@ -299,8 +299,8 @@ async function main() {
       } else {
         tag = `${dateStr}-${language}`;
         const halfPrompt = language === 'zh'
-          ? buildChinesePrompt(dateStr, ageInfo) + '\n\n**注意：本次只生成故事的前半部分（开头+情节发展，写到故事高潮之前即可），不要写结局。要求 4-6 个自然段，每段 80-120 字。**'
-          : buildEnglishPrompt(dateStr, ageInfo) + '\n\n**NOTE: For this request, generate ONLY the first half of the story (opening + plot development, up to just before the climax). Do NOT write the ending yet. Write 4-6 paragraphs, each 80-120 characters. Do NOT write the ending yet.**';
+          ? buildChinesePrompt(dateStr, ageInfo) + '\n\n**重要：本次只写故事前半部分（4-6 段，每段 80-120 字）。必须停在一个让人好奇的悬念或正在进行的情节处，绝不要写出结局、收束、总结或祝福类句子（如"它完成了心愿""故事到此结束"）。让故事停留在"接下来会发生什么"的悬念上。**'
+          : buildEnglishPrompt(dateStr, ageInfo) + '\n\n**IMPORTANT: For this request, write ONLY the first half of the story (4-6 paragraphs, each 80-120 characters). You MUST stop at a suspenseful moment or an ongoing plot point — do NOT write any ending, wrap-up, summary, or blessing sentences (e.g. "he completed his wish", "the end"). Leave the story hanging on "what happens next?".**';
         const firstRaw = await callAPIWithRetry(halfPrompt, tag + '-part1');
 
         // 第二段：续写后半部分并收尾，拼接成完整故事
