@@ -23,6 +23,7 @@ const {
   formatDateShort,
   buildChinesePrompt,
   buildEnglishPrompt,
+  buildContinuationPrompt,
   isScienceDay,
   fetchScienceArticle,
   buildScienceChinesePrompt,
@@ -297,10 +298,20 @@ async function main() {
         raw.source = article ? article.source : (language === 'zh' ? '儿童科普常识' : "Children's science (general)"); // 标记来源（始终有值）
       } else {
         tag = `${dateStr}-${language}`;
-        prompt = language === 'zh'
-          ? buildChinesePrompt(dateStr, ageInfo)
-          : buildEnglishPrompt(dateStr, ageInfo);
-        raw = await callAPIWithRetry(prompt, tag);
+        const halfPrompt = language === 'zh'
+          ? buildChinesePrompt(dateStr, ageInfo) + '\n\n**注意：本次只生成故事的前半部分（开头+情节发展，写到故事高潮之前即可），不要写结局。要求 4-6 个自然段，每段 80-120 字。**'
+          : buildEnglishPrompt(dateStr, ageInfo) + '\n\n**NOTE: For this request, generate ONLY the first half of the story (opening + plot development, up to just before the climax). Do NOT write the ending yet. Write 4-6 paragraphs, each 80-120 characters. Do NOT write the ending yet.**';
+        const firstRaw = await callAPIWithRetry(halfPrompt, tag + '-part1');
+
+        // 第二段：续写后半部分并收尾，拼接成完整故事
+        const contRaw = await callAPIWithRetry(
+          buildContinuationPrompt(language, ageInfo, firstRaw.title, firstRaw.content),
+          tag + '-part2'
+        );
+        const contContent = Array.isArray(contRaw.content)
+          ? contRaw.content.map(p => sanitizeText(String(p)))
+          : [];
+        raw = { ...firstRaw, content: [...(Array.isArray(firstRaw.content) ? firstRaw.content : []), ...contContent] };
       }
 
       const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');

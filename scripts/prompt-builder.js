@@ -1266,6 +1266,57 @@ Return a JSON object:
 }`;
 }
 
+// ===== 分段续写（GLM-4V-Flash max_tokens 上限 1024）=====
+// 单次调用只能输出 ~1024 token，长故事分两段生成：
+//   第一段 build*Prompt 只要求输出前半部分（title/preview/moral + 前若干段，不写结局）；
+//   第二段 buildContinuationPrompt 把已有标题/段落作为上下文，要求续写剩余段落并收尾。
+// 生成器把两段的 content 拼接成完整故事，长度可恢复至接近原 DeepSeek 4096 时代的水平。
+
+function buildContinuationPrompt(language, ageInfo, existingTitle, existingContent) {
+  const existing = (existingContent || []).join('\n');
+  if (language === 'zh') {
+    return `你正在续写一篇儿童睡前故事，请接着下面的内容继续写下去（不是重复，不是改写，是从当前情节自然延续）。
+
+**故事标题**：${existingTitle}
+
+**已写好的前半部分段落：**
+${existing}
+
+**续写要求：**
+- 继续写 4-6 个自然段，每段 80-120 字，从已有情节自然发展，直到完整结局；最后一段要温柔收尾、点题，并与情境呼应（不一定以「晚安」结尾）。
+- 与前文语言风格、叙事语气、拟声词风格保持一致，衔接流畅自然。
+- 不得重复、复述或改写前文已经写过的内容。
+- 保持当前年龄段（${ageInfo.labelCn}）的风格要求：${AGE_STYLE_CN[ageInfo.group]}。
+${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'zh') : ''}
+- 所有文本不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
+- content 是段落数组，每个元素是一个自然段。
+
+请只返回以下 JSON 对象（不要返回 title/preview/moral，只返回续写段落）：
+{
+  "content": ["续写第1段...", "续写第2段...", "续写第3段..."]
+}`;
+  }
+  return `You are continuing a children's bedtime story. Continue naturally from where the existing text ends (do NOT repeat, rewrite, or summarize what was already written).
+
+**Story title**: ${existingTitle}
+
+**Existing paragraphs (first half):**
+${existing}
+
+**Continuation requirements:**
+- Write 4-6 more paragraphs, each 80-120 characters, that flow naturally from the existing plot to a complete ending; the final paragraph should end warmly, tie back to the theme, and match the occasion (not necessarily "good night").
+- Keep the same language style, tone, and onomatopoeia as the first half; transitions must be smooth.
+- Do NOT repeat or rephrase content already written above.
+- Keep the current age stage style (${ageInfo.labelEn}): ${AGE_STYLE_EN[ageInfo.group]}.
+${ageInfo.group === 'prenatal' ? buildPrenatalBlock(new Date().toISOString().slice(0,10), 'en') : ''}
+- content is an array of paragraphs, each element is one natural paragraph.
+
+Return ONLY the following JSON object (no title/preview/moral, only the continuation paragraphs):
+{
+  "content": ["Continuation paragraph 1...", "Continuation paragraph 2...", "Continuation paragraph 3..."]
+}`;
+}
+
 module.exports = {
   getAgeInfo,
   getChineseWeekday,
@@ -1273,6 +1324,7 @@ module.exports = {
   formatDateShort,
   buildChinesePrompt,
   buildEnglishPrompt,
+  buildContinuationPrompt,
   isScienceDay,
   fetchScienceArticle,
   buildScienceChinesePrompt,
