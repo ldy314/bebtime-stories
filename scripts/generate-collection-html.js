@@ -33,6 +33,7 @@ function esc(s) {
 }
 
 // Convert story body paragraphs to HTML
+// 中文段落：正文保留纯文本，由浏览器端 pinyin-pro 按需加注音（多音字按上下文准确）
 function bodyToHtml(body, isFirst) {
   let paras;
   if (Array.isArray(body)) {
@@ -224,6 +225,7 @@ const html = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>\u7761\u524D\u6545\u4E8B\u5408\u96C6 \xB7 \u661F\u5149\u4E0B\u7684\u6E29\u67D4</title>
+<script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.26.0/dist/index.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -232,6 +234,18 @@ const html = `<!DOCTYPE html>
     font-family: "PingFang SC", "Microsoft YaHei", "Noto Serif SC", serif;
     padding: 20px;
   }
+
+  /* ===== Pinyin toggle (collection) ===== */
+  .py-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 999;
+    background: #6b4ea0; color: #fff; border: none; border-radius: 999px;
+    padding: 10px 18px; font-size: 14px; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.35); font-family: inherit;
+    transition: background .2s;
+  }
+  .py-toggle.off { background: #8a7ba8; }
+  .story-body ruby { ruby-position: over; ruby-align: center; }
+  .story-body rt { font-size: .72em; color: #9a7bd0; letter-spacing: 0; }
 
   /* ===== Cover ===== */
   .cover {
@@ -431,6 +445,8 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
 
+<button class="py-toggle" id="pyToggle" onclick="togglePinyin()">\u62FC\u97F3\u5F00\u542F</button>
+
 <!-- ===== Cover ===== -->
 <div class="cover">
   <div class="cover-moon">\uD83C\uDF19</div>
@@ -500,6 +516,91 @@ ${storyCards}
   \uD83C\uDF19 \u661F\u5149\u4E0B\u7684\u6E29\u67D4 \xB7 \u7761\u524D\u6545\u4E8B\u5408\u96C6 \xB7 \u6BCF\u65E5\u66F4\u65B0\u4E2D \uD83C\uDF19<br>
   <span style="font-size:11px;opacity:0.6">\u6700\u540E\u66F4\u65B0\uFF1A${new Date().toISOString()}</span>
 </div>
+
+<script>
+// ===== Pinyin (collection): 与 H5 阅读器一致，type:'array' + 逐字 <ruby> =====
+// 注意：pinyin-pro v3.26 的 type:'html' 只返回纯拼音，绝不可用；必须 type:'array'。
+var pyOn = true;
+var pyStore = {}; // story-body 元素 -> 原始 HTML（用于关闭时还原）
+
+function escHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function addPinyinToText(text) {
+  if (!window.pinyinPro) return escHtml(text);
+  var result = '', buf = '';
+  var flush = function () {
+    if (!buf) return;
+    var arr = window.pinyinPro.pinyin(buf, { toneType: 'symbol', type: 'array' });
+    for (var i = 0; i < buf.length; i++) {
+      result += '<ruby>' + buf[i] + '<rt>' + (arr[i] || '') + '</rt></ruby>';
+    }
+    buf = '';
+  };
+  for (var j = 0; j < text.length; j++) {
+    var ch = text[j];
+    if (/[\u4e00-\u9fff]/.test(ch)) { buf += ch; }
+    else { flush(); result += escHtml(ch); }
+  }
+  flush();
+  return result;
+}
+
+function applyPinyin(container) {
+  var paras = container.querySelectorAll('.story-body p');
+  for (var i = 0; i < paras.length; i++) {
+    var p = paras[i];
+    if (!/[\u4e00-\u9fff]/.test(p.textContent)) continue; // 英文段跳过
+    if (!pyStore[p.id]) pyStore[p.id] = p.innerHTML;     // 记住原始 HTML
+    p.innerHTML = addPinyinToText(p.textContent);
+  }
+  var morals = container.querySelectorAll('.moral-text');
+  for (var k = 0; k < morals.length; k++) {
+    var m = morals[k];
+    if (!/[\u4e00-\u9fff]/.test(m.textContent)) continue;
+    if (!pyStore[m.id]) pyStore[m.id] = m.innerHTML;
+    m.innerHTML = addPinyinToText(m.textContent);
+  }
+}
+
+function removePinyin(container) {
+  var paras = container.querySelectorAll('.story-body p');
+  for (var i = 0; i < paras.length; i++) {
+    var p = paras[i];
+    if (pyStore[p.id]) p.innerHTML = pyStore[p.id];
+  }
+  var morals = container.querySelectorAll('.moral-text');
+  for (var k = 0; k < morals.length; k++) {
+    var m = morals[k];
+    if (pyStore[m.id]) m.innerHTML = pyStore[m.id];
+  }
+}
+
+function togglePinyin() {
+  var btn = document.getElementById('pyToggle');
+  pyOn = !pyOn;
+  if (pyOn) {
+    btn.textContent = '\u62FC\u97F3\u5F00\u542F'; btn.classList.remove('off');
+    document.querySelectorAll('.story-card').forEach(applyPinyin);
+  } else {
+    btn.textContent = '\u62FC\u97F3\u5173\u95ED'; btn.classList.add('off');
+    document.querySelectorAll('.story-card').forEach(removePinyin);
+  }
+}
+
+// 默认开启拼音（中文故事）
+window.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.story-card').forEach(function (card) {
+    card.querySelectorAll('.story-body p').forEach(function (p, i) {
+      if (!p.id) p.id = 'py-p-' + Math.random().toString(36).slice(2, 8);
+      var m = card.querySelectorAll('.moral-text')[i];
+      if (m && !m.id) m.id = 'py-m-' + Math.random().toString(36).slice(2, 8);
+    });
+  });
+  togglePinyin();
+});
+</script>
 
 </body>
 </html>`;
