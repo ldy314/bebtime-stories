@@ -718,6 +718,39 @@ function pickPrenatalFlavor(dateStr, lang) {
   return pool[idx];
 }
 
+// ===== 每日指定作家风格（按日期确定性轮换，让每篇"文气"不同）=====
+// 主导风格 + 辅助风格成对给出，避免每日都是一种味道。
+const AUTHOR_STYLES_CN = [
+  { main: '孙敬修的温柔民间故事风', assist: '口语化亲切、拟声词丰富、节奏舒缓' },
+  { main: '郑渊洁的天马行空想象风', assist: '大胆设定、幽默反转、童心视角' },
+  { main: '冰波的诗意奇幻风', assist: '散文诗语言、通感意象、万物有灵' },
+  { main: '张秋生的小巴掌精炼风', assist: '短小精致、留白含蓄、画面干净' },
+  { main: '金波的抒情诗性风', assist: '优美韵律、细腻情感、自然诗意' },
+  { main: '汤素兰的呆萌幽默风', assist: '童趣诙谐、角色可爱、轻松温暖' },
+  { main: '绘本大师的安静画面风', assist: '留白、意境、像翻绘本一样安静' },
+  { main: '北欧童话的悠远想象风', assist: '辽阔意境、淡淡哲思、诗意悠长' },
+  { main: '日本童话的温柔物哀风', assist: '自然哲思、质朴深情、安静温暖' },
+  { main: '童谣民歌的韵律回环风', assist: '排比反复、朗朗上口、节奏如歌' },
+];
+const AUTHOR_STYLES_EN = [
+  { main: 'Dr. Seuss\'s rhythmic rhyme', assist: 'rhyme, repetition, catchy rhythm' },
+  { main: 'Sesame Street\'s warm dialogue', assist: 'character-driven, gentle humor, subtle lesson' },
+  { main: 'Roald Dahl\'s mischievous wit', assist: 'twists, sensory exaggeration, cheeky fun' },
+  { main: 'Mark Twain\'s riverbank storytelling', assist: 'conversational, rustic, adventurous' },
+  { main: 'Robert McCloskey\'s tender nature', assist: 'loving observation, small-town warmth' },
+  { main: 'Julia Donaldson\'s rhyming journey', assist: 'rhyme, repetition, quest structure' },
+  { main: 'Oliver Jeffers\'s quiet whimsy', assist: 'understated, gentle, visual wonder' },
+  { main: 'Mem Fox\'s cozy rhythm', assist: 'rhythmic, warm, soothing' },
+  { main: 'A.A. Milne\'s gentle classic', assist: 'soft humor, childhood innocence' },
+  { main: 'Beatrix Potter\'s cozy animals', assist: 'small animals, quaint, tender' },
+];
+
+function pickAuthorStyle(dateStr, lang) {
+  const pool = lang === 'zh' ? AUTHOR_STYLES_CN : AUTHOR_STYLES_EN;
+  const s = pool[hashDate(dateStr + '-author-' + lang) % pool.length];
+  return `${s.main}（辅以 ${s.assist}）`;
+}
+
 // 确定性轮换取 n 个元素的子集（不重复、按日期变化）
 function rotateList(arr, key, n) {
   const start = hashDate(key) % arr.length;
@@ -1098,7 +1131,8 @@ ${CN_STYLES_EXTRA}
 ${styleExample}
 
 **综合风格要求：**
-- 所有风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
+- **本篇指定作家风格（按日期轮换，务必以它为主导笔法，其他风格仅作点缀）**：${pickAuthorStyle(dateStr, 'zh')}。请在情节、语言节奏、句式上都朝这位作家的味道靠，让每篇故事的"文气"都不一样。
+- 所有风格要自然融合，不要生硬拼接。以指定风格为主导，其他风格为点缀。
 - 每篇故事可以侧重不同风格，保持多样性——这一篇偏孙敬修温柔民间故事风，下一篇偏郑渊洁天马行空想象风，再下一篇偏冰波诗意奇幻、张秋生小巴掌精炼、金波抒情诗性、汤素兰呆萌幽默，或上述扩展风格中的任意一种。
 - 场景可以有中国特色，也可以有奇幻世界，关键是要让孩子觉得"好听、想听、听不够"。
 - 适合朗读：句子有自然的停顿，家长读着顺口，孩子听着入耳。
@@ -1154,6 +1188,7 @@ ${EN_STYLES}
 ${EN_STYLES_EXTRA}
 
 **Overall style requirements:**
+- **Assigned author style for THIS story (rotates daily — make it the dominant voice, others only accent)**: ${pickAuthorStyle(dateStr, 'en')}. Lean into this author's voice in plot, rhythm, and sentence texture so each story reads differently.
 - All styles should blend naturally, not be awkwardly stitched together. One style can dominate while others accent.
 - Full of imaginative settings: singing trees, cloud-dwelling animals, color-eating monsters, flying libraries, talking rafts on the Mississippi, named duck families in a New England town, etc.
 - Suitable for reading aloud: sentence structures with natural pauses and breathing room for parents reading at bedtime.
