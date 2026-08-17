@@ -117,6 +117,29 @@ body {
 .lang-btn.active[data-lang="en"] { background: var(--lang-en); }
 .lang-btn.active[data-lang="all"] { background: var(--primary); }
 
+.month-switch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 14px 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.month-select {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+.month-select:focus { outline: none; border-color: var(--primary); }
+
 /* ===== Tabs ===== */
 .tabs {
   display: flex;
@@ -495,6 +518,10 @@ rt {
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
   </div>
+  <div class="month-switch" id="monthSwitch">
+    <select id="yearSelect" class="month-select" title="选择年份"></select>
+    <select id="monthSelect" class="month-select" title="选择月份"></select>
+  </div>
 </div>
 
 <!-- ===== Tabs ===== -->
@@ -560,12 +587,62 @@ let currentOpenId = null;
 let currentAgeFilter = 'all';
 let currentLangFilter = 'all';
 let currentSeriesFilter = 'all';
+let currentYearFilter = 'all';   // '2026' 或 'all'
+let currentMonthFilter = 'all';  // '08' 或 'all'
 let searchKeyword = '';
+
+// 从故事 id 或 date 字段提取年月
+// id 形如 '2026-08-14-cn'；当当系列 id 是 'dangdang-ep22-zh' 但 date 是 '2026年8月15日 · 星期六'
+function storyYearMonth(s) {
+  const m = (s.id || '').match(/^(\d{4})-(\d{2})-/);
+  if (m) return { y: m[1], m: m[2] };
+  const dm = String(s.date || '').match(/(\d{4})年(\d{1,2})月/);
+  if (dm) return { y: dm[1], m: String(parseInt(dm[2], 10)).padStart(2, '0') };
+  return { y: '', m: '' };
+}
+function storyMatchesMonth(s) {
+  if (currentYearFilter === 'all' && currentMonthFilter === 'all') return true;
+  const ym = storyYearMonth(s);
+  if (!ym.y) return false;
+  if (currentYearFilter !== 'all' && ym.y !== currentYearFilter) return false;
+  if (currentMonthFilter !== 'all' && ym.m !== currentMonthFilter) return false;
+  return true;
+}
+// 构建年/月下拉选项（从现有故事提取），默认定位当前年月
+function buildMonthOptions() {
+  const ySel = document.getElementById('yearSelect');
+  const mSel = document.getElementById('monthSelect');
+  if (!ySel || !mSel) return;
+  const ymSet = new Set();
+  stories.forEach(s => {
+    const ym = storyYearMonth(s);
+    if (ym.y) ymSet.add(ym.y + '-' + ym.m);
+  });
+  const items = [...ymSet].sort();
+  const years = [...new Set(items.map(x => x.slice(0, 4)))].sort();
+  // 年份选项
+  ySel.innerHTML = '<option value="all">全部年份</option>' +
+    years.map(y => `<option value="${y}">${y}年</option>`).join('');
+  // 当前年月份
+  const selYear = currentYearFilter === 'all' ? years[years.length - 1] : currentYearFilter;
+  const months = items.filter(x => x.startsWith(selYear + '-')).map(x => x.slice(5));
+  mSel.innerHTML = '<option value="all">全部月份</option>' +
+    months.map(m => `<option value="${m}">${parseInt(m, 10)}月</option>`).join('');
+  ySel.value = currentYearFilter;
+  mSel.value = currentMonthFilter;
+}
+// 默认当前年月（本地时间）
+function defaultToCurrentMonth() {
+  const now = new Date();
+  currentYearFilter = String(now.getFullYear());
+  currentMonthFilter = String(now.getMonth() + 1).padStart(2, '0');
+}
 
 // ===== Load stories from JSON =====
 async function loadStories() {
   // 先用内嵌数据渲染
   stories = EMBEDDED_STORIES;
+  buildMonthOptions();
   renderStoryList();
   
   // 再尝试从 stories.json 加载最新数据（如果成功则更新）
@@ -576,6 +653,7 @@ async function loadStories() {
       const freshData = await resp.json();
       if (freshData && freshData.length > 0) {
         stories = freshData;
+        buildMonthOptions();
         renderStoryList();
       }
     }
@@ -647,6 +725,10 @@ function renderStoryList() {
     if (currentLangFilter !== 'all') {
       filtered = filtered.filter(s => (s.language || 'zh') === currentLangFilter);
     }
+  }
+  // 年/月筛选（所有类型都按日期过滤）
+  if (currentYearFilter !== 'all' || currentMonthFilter !== 'all') {
+    filtered = filtered.filter(storyMatchesMonth);
   }
 
   // 搜索
@@ -795,7 +877,20 @@ document.getElementById('searchInput').addEventListener('input', (e) => {
   renderStoryList();
 });
 
+// 年/月筛选
+document.getElementById('yearSelect').addEventListener('change', (e) => {
+  currentYearFilter = e.target.value;
+  // 切换年份后，重建月份选项并保持当前月（若该年无此月则回退 all）
+  buildMonthOptions();
+  renderStoryList();
+});
+document.getElementById('monthSelect').addEventListener('change', (e) => {
+  currentMonthFilter = e.target.value;
+  renderStoryList();
+});
+
 // ===== Init =====
+defaultToCurrentMonth();
 loadStories();
 
 // ===== 下拉刷新（手机端） =====
