@@ -135,6 +135,24 @@
 126. [9月6日 — Bear Safe and the Four Good Nights (Prenatal)](#9月6日--Bear Safe and the Four Good Nights (Prenatal))
 127. [9月7日 — 小熊安安的软软一天（胎教期）](#9月7日--小熊安安的软软一天（胎教期）)
 128. [9月7日 — Moon Mama's Lullaby Choir (Prenatal)](#9月7日--Moon Mama's Lullaby Choir (Prenatal))
+129. [9月8日 — 小种子芽芽的甜香探险（胎教期）](#9月8日--小种子芽芽的甜香探险（胎教期）)
+130. [9月8日 — Dew-Drop's Game of Light (Prenatal)](#9月8日--Dew-Drop's Game of Light (Prenatal))
+131. [🔬 9月9日 — 🔬科学故事（胎教期）：彩虹是怎么画出来的](#🔬 9月9日--🔬科学故事（胎教期）：彩虹是怎么画出来的)
+132. [9月9日 — 露珠邮递员露露的小脚丫历险（胎教期）](#9月9日--露珠邮递员露露的小脚丫历险（胎教期）)
+133. [9月9日 — Warm-Warm the Star's Sound Collection (Prenatal)](#9月9日--Warm-Warm the Star's Sound Collection (Prenatal))
+134. [🔬 9月9日 — 🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree](#🔬 9月9日--🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree)
+135. [🔬 9月10日 — 🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干](#🔬 9月10日--🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干)
+136. [9月10日 — 小鸟啾啾和四季的悄悄话（胎教期）](#9月10日--小鸟啾啾和四季的悄悄话（胎教期）)
+137. [9月10日 — Dodo and the Little Journey Home (Prenatal)](#9月10日--Dodo and the Little Journey Home (Prenatal))
+138. [🔬 9月10日 — 🔬 Science Story (Prenatal): Why Stars Twinkle](#🔬 9月10日--🔬 Science Story (Prenatal): Why Stars Twinkle)
+139. [9月11日 — 月亮妈妈听见的世界（胎教期）](#9月11日--月亮妈妈听见的世界（胎教期）)
+140. [9月11日 — Ding-Dong and the Comfy Walk (Prenatal)](#9月11日--Ding-Dong and the Comfy Walk (Prenatal))
+141. [9月12日 — 小闹钟叮当和四季的小探险（胎教期）](#9月12日--小闹钟叮当和四季的小探险（胎教期）)
+142. [9月12日 — Sprout's Tiny Hilltop Adventure (Prenatal)](#9月12日--Sprout's Tiny Hilltop Adventure (Prenatal))
+143. [9月13日 — 小星星暖暖的歌声邮局（胎教期）](#9月13日--小星星暖暖的歌声邮局（胎教期）)
+144. [9月13日 — Conch's Slow Afternoon (Prenatal)](#9月13日--Conch's Slow Afternoon (Prenatal))
+145. [9月14日 — 小海螺小旋旋的数星夜（胎教期）](#9月14日--小海螺小旋旋的数星夜（胎教期）)
+146. [9月14日 — Little Chirp's Starry Good Night (Prenatal)](#9月14日--Little Chirp's Starry Good Night (Prenatal))
 
 ---
 
@@ -3630,6 +3648,384 @@ Little one, when you are ready, you will find the world is a choir, and every vo
 
 ---
 
+## 9月8日 — 小种子芽芽的甜香探险（胎教期）
+
+**2026年9月8日 · 星期二**
+
+小种子芽芽住在妈妈的花园里，每天看着太阳升起来。这天早上，一阵香喷喷的风吹过，把芽芽整个托了起来。「咦，这是什么味道？」芽芽深深吸了一口气——甜甜的、暖暖的，像有谁在说悄悄话。小宝宝，你闻到过这样的味道吗？那可能是厨房在冒热气呢。
+
+原来，是风先生来送信了。它驮着厨房里的甜香，一路飘过窗台、飘过晾衣绳，来到花园：「这是妈妈煮的桂花粥的香气，我帮你捎了一路。」芽芽跟着风先生，飘呀飘，飘到厨房窗台上。
+
+厨房里，锅盖咕嘟咕嘟地掀开一角，白白的米粥冒着软软的泡泡。桂花像小小的金色蝴蝶，在粥里打着转。风先生轻轻一吹，香气就叮咚叮咚地飞出来，绕着小种子跳舞。「原来妈妈的味道是这个样子的呀。」芽芽看得眼睛亮晶晶的。
+
+芽芽又跟着风先生飘到了客厅，看见妈妈的桌上放着一个红红的苹果。苹果脆生生的，亮晶晶的，风先生绕着它转了一圈，香气就变得又清爽又甜。芽芽凑近闻了闻，痒得打了个小小的喷嚏：「阿嚏！这个味道好调皮。」
+
+傍晚，风先生要带着香气回厨房去了。它问芽芽：「你喜欢这些味道吗？」芽芽点点头：「喜欢！原来花园外面的世界，藏着这么多甜香的味道。」风先生笑着说：「等小宝宝准备好了，这些味道都会等着它：粥是暖的，苹果是脆的，桂花是甜的。」
+
+晚上，芽芽回到花园里，把一床云朵一样软的小被子盖在身上，裹成一个小小的、暖暖的茧。它闻着窗缝里飘来的最后一缕甜香，心想：原来爱，是可以闻得到的味道。
+
+小宝宝，等你准备好了，也会有香香的风来接你：那是妈妈煮的粥、切的水果、还有全家人为你准备好的温柔。它们都有翅膀，会一直飞到你的小鼻尖前。现在，安心在妈妈怀里长大，等闻到了，就是我们要见面的时候啦。
+**寓意：** 味道是有翅膀的信使，能带着爱从厨房飞到花园，再从花园飘进心里。
+
+---
+
+## 9月8日 — Dew-Drop's Game of Light (Prenatal)
+
+**2026年9月8日 · 星期二**
+
+Dew-Drop the little postman frog lived in a tulip cup at the edge of the garden. Every morning, when the sun sent its first golden ray, Dew-Drop would bounce up and catch it. "Aha!" it said. "Time to deliver the light!"
+
+Off it went, tick-tack, tick-tack, hopping over the wet grass. It knocked on the pond's door: "Good morning, pond! Here is a shining coin of sunlight for your water." And the pond blinked, and a little light danced on its face.
+
+Then Dew-Drop hopped to the fence, where a bee was stretching its wings. "Buzz," hummed the bee. "Good morning!" said Dew-Drop, and it pinned a small sunbeam to the fence post. The bee stood in the warm spot and buzzed a happy little tune.
+
+But the best delivery was the shadow game. Dew-Drop held up a leaf, and the light made a little shadow on the wall — a wiggly, dancing shape. "See?" laughed Dew-Drop. "The light can dance too!" The shadow wiggled, and the light shook, and they played chase round and round.
+
+At the end of the morning, Dew-Drop found the last, softest ray of light and tucked it into its pocket. "This one," it said, "is for the little baby in Mommy's tummy. When the baby opens its eyes, it will see the light dancing on the wall — and it will know the world is full of games."
+
+That night, a cloud-soft little blanket of warmth tucked over the tulip cup, wrapping Dew-Drop in a small, warm cocoon. "Thump," went Dew-Drop's happy heart. "Tomorrow I will deliver the light all over again."
+
+Little one, while you grow safe and sound, the sun is getting ready to play with you: it will dance on your wall, sparkle on the water, and warm your little nose. And everyone who loves you will be there to catch it with you. Good night, little one — the light is waiting.
+**寓意：** Light is a game of shadow and shine, and every little creature gets to play.
+
+---
+
+## 🔬 9月9日 — 🔬科学故事（胎教期）：彩虹是怎么画出来的
+
+**2026年9月9日 · 星期三**
+
+夏天的雨说走就走。雨点噼里啪啦地敲了一会儿窗户，忽然停住了。小宝宝，你闻到空气里那股清清爽爽的味道了吗？那是雨洗过的味道。就在这时，天边悄悄架起了一座弯弯的七彩桥——红橙黄绿蓝靛紫，一层一层，亮晶晶的。
+
+云朵上，一滴小水珠探出脑袋，看见了自己身上披着七彩的光：「咦，我是透明的呀，怎么穿着彩色的衣服？」它问旁边的水珠伙伴：「你会发光吗？」「我也会！」「我也会！」雨后的水珠们一个个都亮了起来，像一串串彩色的小铃铛。
+
+小水珠们一起问太阳：「太阳公公，这美丽的颜色，是你给我们的吗？」太阳笑呵呵地说：「光呀，是我的孩子。它穿过你们的时候，被你们轻轻一折，就折出了七种颜色。」
+
+「原来是我们把阳光折成彩虹的呀！」水珠们兴奋地排成一排。太阳说：「对啦。阳光跑进你们圆圆的肚子里，在里面转个弯，再跑出来，就变成了红橙黄绿蓝靛紫。你们就像一排小小的、会分光的棱镜。」
+
+小水珠们又发现一个秘密：要看到彩虹，得背着太阳看。太阳在前，它们在中间，彩虹就出现在后面。「就像照镜子一样，」一颗老水珠说，「太阳的光照过来，我们折一折，把彩虹送进看的人眼睛里。」
+
+彩虹慢慢地淡了，水珠们一个个回到土里、回到云里。但它们记住了：原来美丽的彩虹，是阳光和水珠一起画的画。谁也没有颜料，只是光在透明的身体里转了一个弯。
+
+小宝宝，等你准备好了，雨过天晴的时候，你也抬头找找那座七彩桥吧。它告诉你一个科学小知识：雨后的空气里有许多小水珠，阳光穿过水珠时会被折射和反射，白白的阳光就被分开成红橙黄绿蓝靛紫七种颜色——这就是彩虹。现在，安心长大，等天晴。
+**寓意：** 雨后的空气里有许多小水珠，阳光穿过水珠时会被折射和反射，白白的阳光就被分开成红橙黄绿蓝靛紫七种颜色，这就成了彩虹。
+
+---
+
+## 9月9日 — 露珠邮递员露露的小脚丫历险（胎教期）
+
+**2026年9月9日 · 星期三**
+
+露珠邮递员露露住在河边的芦苇叶上，每天清晨都要送信。平时它总是轻轻一蹬，飞过水面，把信送到对岸。可是这天早上，露露忽然想：「我从来都是飞过去的，还没用脚走过路呢。」于是它收起翅膀，用软软的小脚丫，踏上了草地。
+
+第一步踩下去，咦，草地软软的、毛茸茸的，像踩在一床绿毯子上。露露低头看了看自己的小脚丫：「原来草地是这种感觉呀，比我想象的还要软。」它又走了一步，草丛里窸窸窣窣地响，像在说悄悄话。
+
+露露走到一块圆石头前。它蹲下来，把小手掌贴上去——石头凉凉的、滑滑的，像月光洗过一样。露露贴着感受了好一会儿：「原来石头在夜里偷偷凉了一晚上，现在还在梦里没醒呢。」
+
+露露继续走，走到一丛花旁边。它伸出小脚丫，轻轻碰了碰花瓣。花瓣柔柔的，颤了颤，一粒露珠从花瓣上滚下来，咚哒一声，掉进泥土里，消失不见了。「它回家啦，」露露轻声说，「露珠本来就该回到土里，去叫醒花的根。」
+
+对岸的收信人等了很久，看见露露慢悠悠地走过来，笑着说：「露露，你今天怎么不飞啦？」露露认真地回答：「因为我想用脚感受一下这条路。飞过去太快了，走过来的话，每一步都能遇见一个不一样的世界。」
+
+送完信，露露坐在芦苇叶上，把脚丫晃进河水里。水凉凉的，一圈一圈地荡开。这时夜幕落下来，星星们手拉手围成小小的摇篮，轻轻摇着露露，像在哼一首没有词的歌。露露闭上眼睛，舒舒服服地打了个哈欠。
+
+小宝宝，等你准备好了，你也可以用你的小脚丫去走世界：草地上软软的，石头凉凉的，花瓣柔柔的。每一步，世界都会送给你一个小小的惊喜。现在，先在妈妈怀里，把脚丫伸得远远的，安心长大。
+**寓意：** 慢慢走，用身体去感受，每一步都藏着世界送给你的小惊喜。
+
+---
+
+## 9月9日 — Warm-Warm the Star's Sound Collection (Prenatal)
+
+**2026年9月9日 · 星期三**
+
+Warm-Warm the little star lived high in the night sky, round and bright, and it loved to blink. "I am with you," it would say, winking at whoever looked up. One evening, Warm-Warm decided: "I will collect the sounds of the sleeping world and put them all in a lullaby."
+
+Down it floated, splash, splash, over the night pond. A frog on a lily pad went cricket-cricket, soft and slow. "That is a good sound," said Warm-Warm, and it tucked the cricket-cricket into its little pocket of light.
+
+It floated to the garden, where the rain was falling, pitter-patter, pitter-patter, on the leaves. "Aha," said Warm-Warm, "rain on leaves is the best drum in the world." And it scooped up the pitter-patter and put it in the pocket too.
+
+Then Warm-Warm floated to the sleeping house. From the window came a low, gentle hum — Mommy humming a song to the little baby in her tummy. Warm-Warm listened with all its light. "That," it said softly, "is the most beautiful sound of all. It is love, wearing a song."
+
+Back in the sky, Warm-Warm emptied its pocket. Out came the cricket-cricket, the pitter-patter, and the humming — and together they wove into a soft lullaby that wrapped around the whole night. "Little one," sang Warm-Warm, "can you hear the world humming? It is humming just for you."
+
+Warm-Warm blinked once, twice, three times — a cradle of stars in the dark — and smiled. "Sleep safe," it said. "Tomorrow night I will collect new sounds, and I will keep them all for you."
+
+Little one, the night is full of sounds that love you: the cricket's song, the rain on leaves, and Mommy's humming — the warmest lullaby of all. Grow safe and sound, little one. The world is humming you to sleep.
+**寓意：** Every gentle sound of the night is a small lullaby the world hums for you.
+
+---
+
+## 🔬 9月9日 — 🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree
+
+**2026年9月9日 · 星期三**
+
+Deep in the warm soil, a tiny seed lay sleeping. It was small as a freckle, but inside it, a whole future tree was folded up tight, waiting. "When will I wake up?" the seed asked the soil. "Soon," whispered the soil. "First, drink a little water."
+
+A soft rain fell, and the seed drank and drank. Sigh went the seed as it swelled, round and full. "Oh," it said, "I feel bigger!" Inside it, something was stirring — the little sprout, the little root, waking up at last.
+
+Crack! The seed's coat opened, and out pushed a tiny root. "Down I go," said the root, "into the soil, to hold on and find water." Down, down it reached, steady and strong, like a tiny anchor in the dark.
+
+Then up pushed the sprout, green and eager. "Up I go," said the sprout, "toward the light!" The soil said, "Drink more water, sprout." The sun said, "Here is warm light for you." The sprout drank and stretched, and pushed up, up, up, out of the soil into the air. Whoosh — it had never felt the sky before.
+
+Day after day, the sprout drank sunlight and water and soil-food, and it grew. Leaves unfolded, one, two, three, holding out their little hands to the sun. Roots grew deeper. "I am a little tree now," said the sprout, "and I am still growing."
+
+Season after season, the little tree grew taller and taller, until one day a bird perched on its highest branch and sang. "Hello, big tree!" sang the bird. The tree shook its leaves and smiled. "Hello, little bird," it said. "A long time ago, I was just a tiny seed — small as a freckle, with a whole tree folded up inside me."
+
+Little one in Mommy's tummy, you are like that tiny seed: small and warm, with a whole wonderful future folded up inside you. While you grow safe and sound, you are drinking your own kind of sunlight and love. When you are ready, you will reach out into the world and grow, just like the seed becomes a tree. Grow safe and sound, little one.
+**寓意：** Inside every seed is a folded-up plant waiting to grow: it drinks water, sends roots down and a sprout up, and grows taller with sunlight, water, and soil.
+
+---
+
+## 🔬 9月10日 — 🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干
+
+**2026年9月10日 · 星期四**
+
+院子里，风把一块饼干吹落在地上。饼干香香的，圆圆的，比一只小蚂蚁的身体大了好多好多倍。一只小蚂蚁爬过来，围着饼干走了一圈，又爬上去闻了闻。「好香呀，」它说，「可是这么重，我一只搬不动呀。」小宝宝，你猜，它会怎么办？
+
+小蚂蚁没有发愁，它转身爬回家，在洞口转了一个小圈，又转了一个小圈，还用触角轻轻碰了碰伙伴们的触角。「有饼干！有饼干！跟我来！」它用触角传递消息，像一个传令兵。小宝宝，蚂蚁不会说话，它们用触角碰一碰，就能把话传到很远。
+
+消息像水波一样传开了。不一会儿，一只、两只、三只……好多好多蚂蚁排着队，跟着第一只小蚂蚁爬过来。它们爬过小石子，爬过草叶，像一条细细的黑绳子，一直连到饼干那里。
+
+蚂蚁们围住饼干，商量起来：「这边有人抬啦！这边也来几只！」它们一只挨着一只，把饼干围成一个圈。「一、二、三，起！」大家一起用力，饼干晃晃悠悠地离开了地面。「动了！动了！」蚂蚁们开心地喊。
+
+原来，蚂蚁是大力士——它们能搬动比自己身体重很多倍的东西；更重要的是，它们会合作。一只蚂蚁搬不动，就叫来一大群，你抬一点，我抬一点，齐心协力，再大的饼干也能搬回家。它们排着队，顶着饼干，像一支小小的队伍，一步一步往家走。
+
+傍晚，饼干被搬进了蚂蚁的家，大家围着它，吃得香喷喷的。小宝宝，你知道吗？蚂蚁小小的，却有大大的力气，还有更了不起的本领——一起想办法。这个科学小知识是：蚂蚁能搬动比自己大很多的东西，一靠力气大，二靠合作抬。
+
+小宝宝，等你准备好了，你也可以像小蚂蚁一样：小小的身体里藏着大大的力气，遇到难事的时候，还记得叫上伙伴们一起想办法。现在，先在妈妈怀里安心长大，等你有自己的小伙伴了，你们可以一起做很多了不起的事。
+**寓意：** 蚂蚁能搬动比自己大很多的东西，一是因为它们的力气特别大，二是因为它们会合作：一只搬不动，就叫来一大群，齐心协力一起抬。
+
+---
+
+## 9月10日 — 小鸟啾啾和四季的悄悄话（胎教期）
+
+**2026年9月10日 · 星期四**
+
+小鸟啾啾住在屋檐下。有一天它想：四季到底是什么样子的呢？啾啾找了一片大叶子，卷成一个小盒子，放在窗台上：「我要把四季的温柔，一样一样请进来做客。」小宝宝，你见过四季吗？它们会一个接一个，来看你哦。
+
+春天先来了。细雨滴答滴答地落在盒子里，聚成一小汪亮晶晶的水。「谢谢你，春雨，」啾啾说，「你是四季里最温柔的客人。」春雨在盒子里荡了荡，像在鞠躬，然后化成一颗会发芽的小水滴，被啾啾种进花园里。
+
+夏天的夜晚，一只小萤火虫提着灯笼飞过来，在盒子边停了一下。「你也来做客吗？」啾啾问。萤火虫把一盏小小的光轻轻放进盒子：「这是夏夜的光，留给你。」盒子一下子亮起来，像装了一颗小星星。
+
+秋天，一片金黄的叶子打着转儿，落在盒子旁边。风呜呜地吹着，叶子沙沙地响。「这是秋天写给你的信，」风说。啾啾把叶子放回盒子里，叶子上有阳光留下的金色印记，像一颗小小的印章。
+
+冬天，太阳变得懒洋洋的，把温温暖暖的光铺在屋檐上。啾啾把盒子举起来，让阳光装进盒子里：「冬天的太阳最温柔，它不多话，只是暖着。」盒子里，春雨的水珠、夏夜的光、秋天的叶子和冬日的暖，挤在一起，安安静静地闪着。
+
+晚上，啾啾把盒子盖好，放在窝边。妈妈的哼歌声像云朵被子一样飘过来，轻轻裹住啾啾，里面藏着摇篮曲的节拍。「小宝宝，」啾啾轻轻说，「我把四季的礼物都收集好了，等你准备好了，我一样一样讲给你听。」
+
+小宝宝，四季已经在排队等你了：春天的雨会滴答，夏天的萤火会发光，秋天的叶子会打转，冬天的太阳会暖着你。它们都是温柔的朋友，会陪着你长大。现在，先安心在妈妈怀里，等四季来敲门。
+**寓意：** 四季的温柔会排队来看你，只要慢慢等，每个季节都有自己的礼物。
+
+---
+
+## 9月10日 — Dodo and the Little Journey Home (Prenatal)
+
+**2026年9月10日 · 星期四**
+
+Dodo the little cloud spirit woke in the cloud cotton field and said, "Float, float, home at last." But this morning it added, "Today, I will take a tiny journey — just a small one — and I will carry a little piece of home with me."
+
+So Dodo tucked a soft white cloud-puff under its wing and drifted down. "First," said Dodo, "the stream." The water went tinkle, tinkle over the stones, and a fish poked up its head. "Good morning, little cloud," said the fish. "Where are you floating?" "Just a little way," said Dodo, "and then home."
+
+Dodo drifted over the golden fields, where the wheat went rustle, rustle in the wind. "The fields are whispering," smiled Dodo. "They are whispering about the seeds sleeping in the ground."
+
+Then Dodo floated up a gentle hill, pat-pat, pat-pat, puffing softly. At the top, a little bird was waiting. "I have been watching you," it sang. "You are carrying something soft." "It is a piece of my home," said Dodo. "So I never feel lost, no matter how far I float."
+
+The bird nodded. "Then I will give you a song to carry home." And it sang a tiny tune, so light and warm it felt like a hug. Dodo tucked the song into its wing, next to the cloud-puff. "Now I have two pieces of love," it said.
+
+When the sun began to lean down, Dodo floated home to the cloud cotton field. "Float, float, home at last," it sang, and it spread out its cloud-puff bed and lay the little song beside it. "A ring of warm light like open arms held me steady today," Dodo smiled. "The world is kind."
+
+Little one in Mommy's tummy, while you grow safe and sound, you are on your own gentle journey — carried by warm waters, wrapped in love. However far the world takes you, a little piece of home will always float with you: a heartbeat, a hum, a warm embrace. Float, float, little one — home is always near.
+**寓意：** However far you float, a little piece of home always floats with you.
+
+---
+
+## 🔬 9月10日 — 🔬 Science Story (Prenatal): Why Stars Twinkle
+
+**2026年9月10日 · 星期四**
+
+High in the night sky, the stars looked down at the earth and wondered. "Sister star," said one, "why do we twinkle? I feel still, but you keep blinking at me." "I am not blinking!" said the other star. "I am perfectly still. What makes me look like I am winking?"
+
+Down they sent their light, all the way to the earth, to ask the air. The air was busy — it was moving and drifting, warm air rising, cool air sinking, swaying this way and that. "Ah," said the air, "the secret is me."
+
+"When your light travels through me," said the air, "I am never perfectly still. Your light bends around my moving pockets — this way, then that way, then back again. By the time it reaches a child's eye on earth, it has taken a wiggly path. And a wiggly path looks like a twinkle!"
+
+The stars thought about this. "So when we look steady and calm," said one, "the earth sees us winking because the air is always moving between us." The air laughed. "Exactly. You are like a lamp through rippling water — the water moves, and the light dances."
+
+"But some of our light gets here very bright," said the other star. "Yes," said the air, "because it traveled through clean, calm air. And when I am very steady and still, your light arrives straight and strong, and you look like a steady, glowing pearl."
+
+The stars looked down at the sleeping world and shone softly. "Then let us twinkle tonight," they said, "because it makes the children smile to see us wink. And now we know the truth: we are still, but the air loves to dance."
+
+Little one in Mommy's tummy, when you look up at the stars one day, remember the little science fact: stars seem to twinkle because their light travels through Earth's air, which is always moving; the shifting air bends the light this way and that, so it reaches us in little flickers. The stars are steady and calm — it is the air that dances. Grow safe and sound, little one, under the twinkling sky.
+**寓意：** Stars seem to twinkle because their light travels through Earth's air, which is always moving; the shifting air bends the light this way and that, so it reaches us in little flickers.
+
+---
+
+## 9月11日 — 月亮妈妈听见的世界（胎教期）
+
+**2026年9月11日 · 星期五**
+
+月亮妈妈住在夜空里，每天晚上都安安静静地亮着。有一晚，它忽然想：「我天天看着大地，还没好好听过大地呢。」于是它闭上圆圆的眼睛，竖起了耳朵。小宝宝，你也安静下来，和月亮妈妈一起听一听吧。
+
+月亮妈妈先听见了风声。风从山坡上扑通一下滚下来，又沿着河面簌簌地滑过去，最后钻进树林里，沙沙沙地翻着每一片叶子。「原来风是这样走路的，」月亮妈妈想，「它一边走，一边给每一片叶子唱不同的歌。」
+
+月亮妈妈又听见了水声。小河汩汩地流着，一会儿撞在石头上，哗啦一下笑出声；一会儿又钻进芦苇丛，咕噜咕噜地打几个转。「水的声音是活泼的，」月亮妈妈听着，「像一群不知疲倦的小朋友。」
+
+它还听见了远处村庄的钟声，当当当，慢慢地在夜里荡开，一圈一圈，越荡越远。「钟声是有脚的，」月亮妈妈想，「它走到哪里，哪里就变得安静又安心。」
+
+夜深了，声音慢慢安静下来。风歇了，水睡了，钟声也回家去了。月亮妈妈静静地听——咦，安静也有声音？那是轻轻的、软软的呼吸声，一呼一吸，像大地在打盹。「这是夜晚最温柔的歌呀，」月亮妈妈轻声说。
+
+忽然，它听见一个更小的声音：一扇窗里，传来妈妈的哼歌声，轻轻的，像云朵被子一样，裹住了一个安睡的小摇篮。月亮妈妈的心一下子软了：「这才是今晚最好听的声音。那是爱，在用声音说话。」
+
+月亮妈妈把这一夜的歌都收进心里，想着：小宝宝，等你准备好了，世界会为你唱很多歌——风会唱，水会唱，钟声会唱，妈妈的哼歌也会唱。现在，你就在这歌声里安心长大。晚安，小宝宝。
+**寓意：** 世界的声音像一首大合唱，只要安静地听，就能听见每一样东西的歌声。
+
+---
+
+## 9月11日 — Ding-Dong and the Comfy Walk (Prenatal)
+
+**2026年9月11日 · 星期五**
+
+Ding-Dong the little alarm clock lived on the windowsill, but it had never walked anywhere. So this morning it said, "Today I will take a walk, and I will feel the world with my feet." And off it went, tick-tack, tick-tack, out the window and down to the garden.
+
+The first step was wonderful. "Oh!" said Ding-Dong. "The grass is so soft and springy! It feels like a tiny green carpet." It stood very still, feeling the grass tickle its feet, and a little purr rose in its heart. Purr, purr, purr.
+
+Ding-Dong walked to a big warm stone that the sun had been warming all morning. It put its hand flat on the stone. "Oh," it said, "the stone is smooth and warm, like a friend's hand. It has been holding the sun's warmth for me."
+
+Then Ding-Dong walked to the flower bed, where pitter went the dew, dropping one soft bead at a time. Ding-Dong held out its hand, and a dew drop landed in it — cool and round and bright. "A little glass ball," Ding-Dong said, "from the morning."
+
+By the fence, a bird called softly, and Ding-Dong stopped to listen. "Hello, clock," sang the bird. "Why do you walk so slowly?" "Because," said Ding-Dong, "when I walk slowly, I can feel everything: the grass, the stone, the dew. And everything feels like it is glad I came."
+
+The sun leaned low, and Ding-Dong walked home, tick-tack, tick-tack, feeling warm inside. It climbed back onto the windowsill and looked at its little feet, dusty and happy. "What a comfy walk," it said. "I felt the whole world today."
+
+Little one in Mommy's tummy, when you are ready, the world will be soft under your feet and warm under your hands. Take your time. Walk slowly, feel everything, and know that every little thing is glad you came. Grow safe and sound, little one — the world is waiting to be felt.
+**寓意：** A quiet walk that feels everything is a walk of the heart.
+
+---
+
+## 9月12日 — 小闹钟叮当和四季的小探险（胎教期）
+
+**2026年9月12日 · 星期六**
+
+小闹钟叮当住在窗台上，天天忙着叫人起床。这天它忽然想：「我天天报时间，可四季的秘密，我还没看过呢。」它把响铃收好，变成一个安静的小探险家，出发了。小宝宝，四季也在等你，它们各有各的小秘密哦。
+
+叮当先遇见春天。春天是淋着小雨来的，淅淅沥沥，像在窗玻璃上画画。叮当趴在窗台上看：雨点画了一道弯弯的线，又画了一个小小的点。「春天在教雨点写字呢，」叮当惊奇地想，「原来下雨是春天在上课。」
+
+夏天来了，把太阳晒得热热的。叮当走到树荫下，听见蝉在枝头嗡嗡地唱。风呼呼地吹过来，树叶沙沙响，像在给蝉打拍子。「原来夏天是一支合唱团，」叮当竖起耳朵，「蝉领唱，风伴奏，树叶打拍子。」
+
+秋天一来，树叶就变了颜色，金黄金黄的，扑通扑通地落下来，在风里打着转儿。叮当接住一片叶子，叶子是干干的、脆脆的，像一封写满金色字迹的信。「这是秋天写给你的信，」风悄悄说，「上面写着：果子熟了，该收获啦。」
+
+冬天最安静。太阳懒洋洋的，把暖光照在窗台上。叮当坐在光里，发现冬天其实有声音——雪落下来是簌簌的，远远的钟声是当当的，暖炉的火苗是呼呼的。「原来冬天不是安静，」叮当想，「是它把声音都收进暖光里了。」
+
+走完四季，叮当回到窗台上。月亮升起来，圆圆的，像一盏小夜灯，安安静静地陪着它，把影子照得软软的。叮当把四季的秘密一样一样收进心里，轻轻对肚里的小宝宝说：「等你准备好了，我带你去看四季：春天看雨写字，夏天听蝉唱歌，秋天收金色的信，冬天晒暖暖的太阳。」
+
+小宝宝，四季都在等你这个小探险家。它们会一个接一个地来，带着雨、带着蝉鸣、带着金叶子、带着暖太阳。现在，先在妈妈怀里安心长大，等准备好了，四季就带你去探险。晚安，小宝宝。
+**寓意：** 每个季节都是一个小探险，耐心看，慢慢听，四季就会把秘密悄悄告诉你。
+
+---
+
+## 9月12日 — Sprout's Tiny Hilltop Adventure (Prenatal)
+
+**2026年9月12日 · 星期六**
+
+Sprout the little seed lived in Mama's garden, and it always said, "Just a little longer." But one morning it added: "Just a little longer... before I go on a tiny adventure." The warm breeze heard, and it said, "Come, Sprout. I will carry you over the hill and bring you home before the sun gets tall."
+
+Splash! The breeze set Sprout down by the stream. "Oh!" said Sprout. "The water is so clear I can see the pebbles smiling at the bottom." A fish poked its head up and winked: "Good morning, little seed. Are you traveling?" "Just a tiny way," said Sprout, "and then home."
+
+Pitter-patter went the breeze over the meadow, and the grass bowed as it passed. "The grass is saying hello," said Sprout. "Hello, grass! I am Sprout, and I am on a tiny adventure." The grass bowed again, and a hundred little flowers nodded their heads.
+
+Cricket-cricket went the song of a field cricket, soft and sleepy, as Sprout floated up the gentle hill. At the top, Sprout looked out. "Oh!" it said, and its little heart went thump, thump. "The world is so big and so gentle. I can see the garden, and the stream, and the whole soft morning."
+
+"And there is home," said the breeze, "right where we left it." The garden looked small and cozy from the hilltop, with Mama's flowers waving. Sprout felt a warm glow, like a tiny hug. "The world is wonderful," it said, "but home is the most wonderful of all."
+
+The breeze carried Sprout back and tucked it into its warm little bed. "Thank you," said Sprout. "Now I know what is over the hill. Just a little longer, and I will grow up tall enough to see it every day."
+
+Little one in Mommy's tummy, you are on a tiny adventure too — the softest journey of all, carried by warm waters. One day you will open your eyes to a world that is big and gentle, and you will find that home is the most wonderful thing in it. Grow safe and sound, little one. The whole world is over the hill, waiting for you.
+**寓意：** The whole world can be seen on a tiny journey — and it is lovelier when you come home.
+
+---
+
+## 9月13日 — 小星星暖暖的歌声邮局（胎教期）
+
+**2026年9月13日 · 星期日**
+
+小星星暖暖住在大山外的夜空里，每天晚上它都会听见各种声音：风铃的叮咚、河水的哗啦、还有谁家窗户里飘出来的轻轻哼唱。暖暖想：「这些歌真好听，要是能寄给别人，让他们也听见，该多好呀。」于是它在云朵上开了一家小小的歌声邮局。
+
+第一天，暖暖收下了一朵云寄来的歌。那首歌软软地响着，像枕头一样松软。暖暖把歌装进一个云朵信封里，贴上星星邮票，问：「要寄给谁呀？」云朵说：「寄给山脚下那个总是不敢睡觉的小宝宝吧，让它睡得香香的。」
+
+暖暖抱着信封飞下山。风啦啦啦地追着它，把信送到了小宝宝的窗边。信轻轻落进窗里，歌声散开，像一群会发光的小枕头，把小宝宝的摇篮裹得暖暖的。暖暖听见小宝宝的呼吸声变得又慢又长，像小溪流一样安稳。
+
+第二天，暖暖收下了风寄来的一首歌。那首歌忽高忽低，像在山谷里玩滑滑梯。风说：「寄给夜路上赶路回家的爸爸吧，让他在月亮底下听着歌，脚步轻快一些。」暖暖把歌挂在爸爸走过的路口，歌声一响，爸爸的脚步真的变轻了，轻得像踩着云朵。
+
+第三天，暖暖收到了一首特别的歌——是妈妈轻轻哼的摇篮曲。暖暖问妈妈：「这首要寄给谁呢？」妈妈摸摸肚子，笑着说：「寄给我肚里的小宝宝吧。让它知道，妈妈一直在这里，用歌声陪着它。」暖暖小心翼翼地把摇篮曲装进最亮的信封，贴上最大的星星邮票。
+
+暖暖飞到妈妈的窗边，把信放进月光里。摇篮曲轻轻响起来，像一圈暖暖的光，稳稳托住妈妈的肚子。「小宝宝，」暖暖轻轻说，「你听见了吗？这是妈妈为你唱的歌。你就在歌声里长大吧。」
+
+小宝宝，世界上的歌很多，但最好听的，是妈妈为你哼的那一首。等你准备好了，风会为你送信，云会为你唱歌，星星会为你点亮邮局。现在，先安心在妈妈的歌声里长大。晚安，小宝宝。
+**寓意：** 歌声是世界上跑得最快的信，能带着心意，从一颗心跑到另一颗心里。
+
+---
+
+## 9月13日 — Conch's Slow Afternoon (Prenatal)
+
+**2026年9月13日 · 星期日**
+
+Little Conch lived in the deep-sea seagrass forest, quiet and gentle. "So that is how it is," it would murmur. One afternoon, Conch said, "Today I will not hurry anywhere. I will just feel the sea, very slowly."
+
+Conch let the soft sand settle under its shell. The sand was fine and silky, like the softest blanket, and it held Conch gently, the way a hand holds a sleepy friend. Swish went a wave overhead, and Conch felt the water stroke its shell. "So that is how waves say hello," it said.
+
+Bubble, bubble, went the tiny bubbles rising from the sand, tickling Conch's belly. "Oh!" laughed Conch, wiggling. "The sand is telling jokes." It stayed very still and felt each bubble pop against its shell, tiny and warm and full of laughter.
+
+The seagrass swayed around Conch, slow and sleepy, like dancers in a dream. Pitter-patter, pitter-patter went a little fish swimming by, patting the water with its tail. "Good afternoon," said Conch. "Are you slow too?" The fish swam a slow circle and winked.
+
+As the light turned gold and soft, Conch felt warm and quiet inside. "I have learned something," it said. "When I go fast, I see the sea. When I go slow, the sea feels me. And that is the softest thing of all."
+
+When night came, a ring of warm light like open arms held Conch steady, as if in a soft little nest, and the waves hummed a low, sleepy song. "Little one in Mommy's tummy," Conch whispered, "the sea is very slow and very gentle, just like your growing."
+
+Little one, growing safe and sound is a slow and gentle thing, like Conch's afternoon. Let yourself be held by warmth, be tickled by small bubbles, and be swayed by soft songs. When you are ready, the world will greet you slowly and gently, with open arms. Good night, little one.
+**寓意：** When you go slowly, the world gives you its softest gifts.
+
+---
+
+## 9月14日 — 小海螺小旋旋的数星夜（胎教期）
+
+**2026年9月14日 · 星期一**
+
+夜晚，小海螺小旋旋从海草森林里慢慢浮上海面。月光洒在海面上，像铺了一条银色的路。小旋旋把身体靠在一片浮叶上，抬头看天——哇，满天的星星，一颗一颗，亮晶晶的。小宝宝，你抬头看过星星吗？它们也在看你呢。
+
+小旋旋开始数星星。「一、二、三……」数着数着，海风软软地吹过来，把它的壳吹得摇啊摇，像躺在摇篮里。「不行不行，」小旋旋笑着说，「我一数就困，星星们会笑话我的。」
+
+它换了个方法：不数了，用心看。它看见有的星星挤在一起，像在说悄悄话；有的星星孤零零的，却把光照得特别亮。「原来每颗星星都有自己的位置，」小旋旋想，「不管挤在一起还是单独一颗，都在认认真真地亮着。」
+
+忽然，有一颗星星朝着小旋旋眨了眨眼睛，一下，两下，像在打招呼。小旋旋也使劲眨了眨眼——可它没有眼睛呀，只有两个小触角。小旋旋笑了：「我虽然没有眼睛，但我可以朝你点点头呀。」它轻轻点了点头，那颗星星又眨了眨，好像在说：我认识你。
+
+小旋旋心里暖暖的。它想：原来夜空里，真的会有一颗星星是专门为你亮的。它把身体缩回壳里一点，只留两只小触角在外面，听着海浪的摇篮曲，一下一下地打着拍子。摇啊摇，摇啊摇。
+
+远处，妈妈的声音随着晚风飘过来，轻轻的，像云朵被子一样，把整个海面都裹住了。小旋旋把妈妈的哼歌收进壳里，想着：「小宝宝，等你准备好了，也有这样一颗星星，专门为你亮着。它会陪着你看海，听歌，慢慢长大。」
+
+小宝宝，今晚的星星都亮着，像在排队等你。它们等你睁开眼睛，等你抬头看它们，等你说第一句：哇，好美。现在，先安心在妈妈的歌声里睡吧。晚安，小宝宝，星星们陪着你。
+**寓意：** 夜空里的每颗星星都在为某个人亮着，就像每个人都在为某个重要的人等着。
+
+---
+
+## 9月14日 — Little Chirp's Starry Good Night (Prenatal)
+
+**2026年9月14日 · 星期一**
+
+On a clear night, Little Chirp the bird sat on the roof and looked up. The stars were out — hundreds, thousands, twinkling like tiny bells that ring with light. "Good evening, stars," sang Little Chirp. "I will sing you a good-night song."
+
+Chirp sang softly, and the stars blinked in time, one-two, one-two, like a choir keeping the beat. Boom-boom went Chirp's little heart, happy and full. Rustle went the wind through the rooftop flowers, joining in with a whisper of a melody.
+
+Then, from a faraway hill, a star sang back. It was a low, gentle hum, like a mother's song carried across the whole night. Chirp stopped, amazed. "You sang back!" it whispered. The star blinked, and the hum came again, closer and softer. "So that is how it is," sang Chirp. "Every star is someone's good night."
+
+Chirp flew back to the eaves, where its little nest waited. Gurgle went the stream below, sweet and slow, and Chirp tucked itself in, one wing over its heart. "Little one in Mommy's tummy," it sang, "can you hear the night? The stream is gurgling, the wind is rustling, the stars are blinking — the whole world is singing you a good night."
+
+"And in a window, not far away, Mommy is humming," sang Chirp, "the warmest song of all. It is wrapped around you like a soft blanket, and it says: grow safe and sound."
+
+The stars kept blinking, one-two, one-two, until the sky turned soft with sleep. Chirp closed its eyes. "Good night, stars. Good night, stream. Good night, little one."
+
+Little one, the world is full of good-night songs: the stream, the wind, the stars, and Mommy's humming. They are all for you, wherever you are, wherever you grow. Sleep safe and sound. Good night, little one, good night.
+**寓意：** A good night is a song that connects every heart, near and far.
+
+---
+
 ## 🐱 黑猫当当历险记（系列连载）
 
 > 一只调皮的小黑猫当当，和姐姐白猫小不点、哥哥狸花猫八百，在爸爸妈妈的家里上演一集又一集温柔又好玩的冒险。每集都悄悄告诉孩子：要听爸爸妈妈的话。
@@ -3661,6 +4057,7 @@ Little one, when you are ready, you will find the world is a choir, and every vo
 23. [8月22日 — 红梅公园的银杏叶](#8月22日--红梅公园的银杏叶)
 24. [8月29日 — 青果巷的月亮井](#8月29日--青果巷的月亮井)
 25. [9月5日 — 中秋的桂花糖芋头](#9月5日--中秋的桂花糖芋头)
+26. [9月12日 — 中秋的月亮被风卷走了](#9月12日--中秋的月亮被风卷走了)
 
 ---
 
@@ -4234,3 +4631,24 @@ Little one, when you are ready, you will find the world is a choir, and every vo
 
 月光照进窗子，照在三只猫的桃木小挂饰上，也照在给宝宝准备的桃木人上。当当趴在宝宝的背包边，慢慢闭上眼睛。它想：中秋节最好的味道，不是糖，不是芋头，是一家人在一起，是分享给朋友的甜蜜，还有那个正在长大的、被全家人等着的小宝宝。咕噜咕噜，当当在桂花香里睡着了。
 **故事小语：** 一家人的团圆，加上把甜蜜分给朋友，就是最香的中秋味道。
+
+---
+
+## 9月12日 — 中秋的月亮被风卷走了
+
+**2026年9月12日 · 星期六** · 🐱 黑猫当当历险记
+
+中秋节的晚上，月亮又圆又亮，像一盏大灯笼挂在天上。妈妈在院子里摆好小桌，放上一碟圆圆的月饼：有豆沙的、五仁的，还有一只刻着小兔子图案的。「这是给全家人赏月吃的，」妈妈说，「大家都要尝尝。」当当围着桌子转了一圈，闻着月饼香，尾巴尖开心地晃来晃去。
+
+风忽然呼呼地吹过来，一下子把装月饼的小碟子卷了起来。碟子在空中打了个转，当的一声，落到了院子边那棵桂花树的树梢上，卡在枝丫间，晃来晃去。当当急得原地直蹦：「月饼飞走啦！月饼飞走啦！我要爬上去拿！」
+
+「当当，站住！」爸爸的声音从身后传来。当当刹住脚，回头看见爸爸和妈妈都蹲了下来。爸爸说：「月亮又圆又高，树梢又细又晃，爬上去太危险了。遇到事情，先喊爸爸妈妈，我们一起想办法，好吗？」当当乖乖地收回爪子：「好，我记住了。妈妈，爸爸，月饼被风吹到树上去啦。」
+
+「当当真棒，会喊大人帮忙了。」妈妈夸他。这时，楼上传来一阵轻轻的脚步声——大金毛哥哥摇着大尾巴下楼来：「我闻到月饼香啦，怎么跑到树上去了？」大金毛又高又稳，它踮起脚，用鼻子轻轻一够，就把碟子从树梢上够了下来，稳稳地放在地上，一个也没少。
+
+「谢谢大金毛哥哥！」当当围着碟子又蹦了一圈。忽然，它听见花丛边传来细细的窸窸窣窣声——一只耳探出半个脑袋，眼睛直勾勾地盯着月饼。「一只耳！你又想偷吃！」当当喊道。一只耳缩了缩脖子，想溜。狸花阿姨正好从墙头跳下来，慢悠悠地说：「小老鼠，中秋节是团圆的节日，偷来的月饼可不甜哦。要一起吃，就坐过来好好赏月。」
+
+一只耳想了想，脸红了，真的乖乖坐在桌角，分到一小块豆沙月饼，吃得吧唧吧唧，连说「好吃」。大家围坐在桂花树下，月光把影子照得软软的，谁也不急。当当把月亮的样子记在心上，轻轻把胸口白毛贴住妈妈的肚子：「小宝宝，你听见了吗？这是我们家的中秋节，月亮又圆又亮，月饼又甜又香，大家都在等你也一起过。」
+
+夜深了，风也温柔了。当当趴在宝宝背包边，看着天上的月亮，心想：中秋最好的事，不是追回月饼，是遇到事情有爸爸妈妈在，是朋友愿意帮忙，是月亮愿意安安静静陪着我们，等那个还没见面的小宝宝。咕噜咕噜，当当在月光下睡着了。
+**故事小语：** 遇到事情先喊爸爸妈妈，不自己乱爬乱够，才是中秋节里最要紧的聪明。
