@@ -123,36 +123,46 @@
 114. [9月1日 — 小海螺的软软上午（胎教期）](#9月1日--小海螺的软软上午（胎教期）)
 115. [9月1日 — Little Chirp's Bag of Sounds (Prenatal)](#9月1日--Little Chirp's Bag of Sounds (Prenatal))
 116. [🔬 9月1日 — 🔬 Science Story (Prenatal): Little Lantern's Light](#🔬 9月1日--🔬 Science Story (Prenatal): Little Lantern's Light)
-117. [9月2日 — 小鸟啾啾的轻轻远行（胎教期）](#9月2日--小鸟啾啾的轻轻远行（胎教期）)
-118. [9月2日 — Dodo the Cloud and the Four Seasons (Prenatal)](#9月2日--Dodo the Cloud and the Four Seasons (Prenatal))
-119. [9月3日 — 月亮妈妈的早安口袋（胎教期）](#9月3日--月亮妈妈的早安口袋（胎教期）)
-120. [9月3日 — Ding-Dong's Gentle Morning (Prenatal)](#9月3日--Ding-Dong's Gentle Morning (Prenatal))
-121. [9月4日 — 小闹钟叮当的一次早晨旅行（胎教期）](#9月4日--小闹钟叮当的一次早晨旅行（胎教期）)
-122. [9月4日 — Sprout the Seed's Morning Journey (Prenatal)](#9月4日--Sprout the Seed's Morning Journey (Prenatal))
-123. [9月5日 — 小星星暖暖的陪伴之夜（胎教期）](#9月5日--小星星暖暖的陪伴之夜（胎教期）)
-124. [9月5日 — Conch and the Sound of the Sea (Prenatal)](#9月5日--Conch and the Sound of the Sea (Prenatal))
-125. [9月6日 — 云朵精灵朵朵的月光远行（胎教期）](#9月6日--云朵精灵朵朵的月光远行（胎教期）)
-126. [9月6日 — Bear Safe and the Four Good Nights (Prenatal)](#9月6日--Bear Safe and the Four Good Nights (Prenatal))
-127. [9月7日 — 小熊安安的软软一天（胎教期）](#9月7日--小熊安安的软软一天（胎教期）)
-128. [9月7日 — Moon Mama's Lullaby Choir (Prenatal)](#9月7日--Moon Mama's Lullaby Choir (Prenatal))
-129. [9月8日 — 小种子芽芽的甜香探险（胎教期）](#9月8日--小种子芽芽的甜香探险（胎教期）)
-130. [9月8日 — Dew-Drop's Game of Light (Prenatal)](#9月8日--Dew-Drop's Game of Light (Prenatal))
-131. [🔬 9月9日 — 🔬科学故事（胎教期）：彩虹是怎么画出来的](#🔬 9月9日--🔬科学故事（胎教期）：彩虹是怎么画出来的)
-132. [9月9日 — 露珠邮递员露露的小脚丫历险（胎教期）](#9月9日--露珠邮递员露露的小脚丫历险（胎教期）)
-133. [9月9日 — Warm-Warm the Star's Sound Collection (Prenatal)](#9月9日--Warm-Warm the Star's Sound Collection (Prenatal))
-134. [🔬 9月9日 — 🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree](#🔬 9月9日--🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree)
-135. [🔬 9月10日 — 🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干](#🔬 9月10日--🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干)
-136. [9月10日 — 小鸟啾啾和四季的悄悄话（胎教期）](#9月10日--小鸟啾啾和四季的悄悄话（胎教期）)
-137. [9月10日 — Dodo and the Little Journey Home (Prenatal)](#9月10日--Dodo and the Little Journey Home (Prenatal))
-138. [🔬 9月10日 — 🔬 Science Story (Prenatal): Why Stars Twinkle](#🔬 9月10日--🔬 Science Story (Prenatal): Why Stars Twinkle)
-139. [9月11日 — 月亮妈妈听见的世界（胎教期）](#9月11日--月亮妈妈听见的世界（胎教期）)
-140. [9月11日 — Ding-Dong and the Comfy Walk (Prenatal)](#9月11日--Ding-Dong and the Comfy Walk (Prenatal))
-141. [9月12日 — 小闹钟叮当和四季的小探险（胎教期）](#9月12日--小闹钟叮当和四季的小探险（胎教期）)
-142. [9月12日 — Sprout's Tiny Hilltop Adventure (Prenatal)](#9月12日--Sprout's Tiny Hilltop Adventure (Prenatal))
-143. [9月13日 — 小星星暖暖的歌声邮局（胎教期）](#9月13日--小星星暖暖的歌声邮局（胎教期）)
-144. [9月13日 — Conch's Slow Afternoon (Prenatal)](#9月13日--Conch's Slow Afternoon (Prenatal))
-145. [9月14日 — 小海螺小旋旋的数星夜（胎教期）](#9月14日--小海螺小旋旋的数星夜（胎教期）)
-146. [9月14日 — Little Chirp's Starry Good Night (Prenatal)](#9月14日--Little Chirp's Starry Good Night (Prenatal))
+117. [🔬 9月2日 — 🔬科学故事（胎教期）：月亮婆婆的圆缺衣裳](#🔬 9月2日--🔬科学故事（胎教期）：月亮婆婆的圆缺衣裳)
+118. [9月2日 — 小鸟啾啾的轻轻远行（胎教期）](#9月2日--小鸟啾啾的轻轻远行（胎教期）)
+119. [9月2日 — Dodo the Cloud and the Four Seasons (Prenatal)](#9月2日--Dodo the Cloud and the Four Seasons (Prenatal))
+120. [🔬 9月2日 — 🔬 Science Story (Prenatal): Why the Moon Wears Different Coats](#🔬 9月2日--🔬 Science Story (Prenatal): Why the Moon Wears Different Coats)
+121. [🔬 9月3日 — 🔬科学故事（胎教期）：小毛毛虫的蝴蝶梦](#🔬 9月3日--🔬科学故事（胎教期）：小毛毛虫的蝴蝶梦)
+122. [9月3日 — 月亮妈妈的早安口袋（胎教期）](#9月3日--月亮妈妈的早安口袋（胎教期）)
+123. [9月3日 — Ding-Dong's Gentle Morning (Prenatal)](#9月3日--Ding-Dong's Gentle Morning (Prenatal))
+124. [🔬 9月3日 — 🔬 Science Story (Prenatal): How a Caterpillar Becomes a Butterfly](#🔬 9月3日--🔬 Science Story (Prenatal): How a Caterpillar Becomes a Butterfly)
+125. [🔬 9月4日 — 🔬科学故事（胎教期）：蜜蜂的圆圈舞](#🔬 9月4日--🔬科学故事（胎教期）：蜜蜂的圆圈舞)
+126. [9月4日 — 小闹钟叮当的一次早晨旅行（胎教期）](#9月4日--小闹钟叮当的一次早晨旅行（胎教期）)
+127. [9月4日 — Sprout the Seed's Morning Journey (Prenatal)](#9月4日--Sprout the Seed's Morning Journey (Prenatal))
+128. [🔬 9月4日 — 🔬 Science Story (Prenatal): The Bee's Waggly Dance](#🔬 9月4日--🔬 Science Story (Prenatal): The Bee's Waggly Dance)
+129. [🔬 9月5日 — 🔬科学故事（胎教期）：雪花的六瓣小衣裳](#🔬 9月5日--🔬科学故事（胎教期）：雪花的六瓣小衣裳)
+130. [9月5日 — 小星星暖暖的陪伴之夜（胎教期）](#9月5日--小星星暖暖的陪伴之夜（胎教期）)
+131. [9月5日 — Conch and the Sound of the Sea (Prenatal)](#9月5日--Conch and the Sound of the Sea (Prenatal))
+132. [🔬 9月5日 — 🔬 Science Story (Prenatal): Why Snowflakes Have Six Sides](#🔬 9月5日--🔬 Science Story (Prenatal): Why Snowflakes Have Six Sides)
+133. [🔬 9月6日 — 🔬科学故事（胎教期）：山谷里的回声](#🔬 9月6日--🔬科学故事（胎教期）：山谷里的回声)
+134. [9月6日 — 云朵精灵朵朵的月光远行（胎教期）](#9月6日--云朵精灵朵朵的月光远行（胎教期）)
+135. [9月6日 — Bear Safe and the Four Good Nights (Prenatal)](#9月6日--Bear Safe and the Four Good Nights (Prenatal))
+136. [🔬 9月6日 — 🔬 Science Story (Prenatal): The Echo That Comes Back](#🔬 9月6日--🔬 Science Story (Prenatal): The Echo That Comes Back)
+137. [9月7日 — 小熊安安的软软一天（胎教期）](#9月7日--小熊安安的软软一天（胎教期）)
+138. [9月7日 — Moon Mama's Lullaby Choir (Prenatal)](#9月7日--Moon Mama's Lullaby Choir (Prenatal))
+139. [9月8日 — 小种子芽芽的甜香探险（胎教期）](#9月8日--小种子芽芽的甜香探险（胎教期）)
+140. [9月8日 — Dew-Drop's Game of Light (Prenatal)](#9月8日--Dew-Drop's Game of Light (Prenatal))
+141. [🔬 9月9日 — 🔬科学故事（胎教期）：彩虹是怎么画出来的](#🔬 9月9日--🔬科学故事（胎教期）：彩虹是怎么画出来的)
+142. [9月9日 — 露珠邮递员露露的小脚丫历险（胎教期）](#9月9日--露珠邮递员露露的小脚丫历险（胎教期）)
+143. [9月9日 — Warm-Warm the Star's Sound Collection (Prenatal)](#9月9日--Warm-Warm the Star's Sound Collection (Prenatal))
+144. [🔬 9月9日 — 🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree](#🔬 9月9日--🔬 Science Story (Prenatal): How a Tiny Seed Becomes a Tree)
+145. [🔬 9月10日 — 🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干](#🔬 9月10日--🔬科学故事（胎教期）：小蚂蚁怎么搬动大饼干)
+146. [9月10日 — 小鸟啾啾和四季的悄悄话（胎教期）](#9月10日--小鸟啾啾和四季的悄悄话（胎教期）)
+147. [9月10日 — Dodo and the Little Journey Home (Prenatal)](#9月10日--Dodo and the Little Journey Home (Prenatal))
+148. [🔬 9月10日 — 🔬 Science Story (Prenatal): Why Stars Twinkle](#🔬 9月10日--🔬 Science Story (Prenatal): Why Stars Twinkle)
+149. [9月11日 — 月亮妈妈听见的世界（胎教期）](#9月11日--月亮妈妈听见的世界（胎教期）)
+150. [9月11日 — Ding-Dong and the Comfy Walk (Prenatal)](#9月11日--Ding-Dong and the Comfy Walk (Prenatal))
+151. [9月12日 — 小闹钟叮当和四季的小探险（胎教期）](#9月12日--小闹钟叮当和四季的小探险（胎教期）)
+152. [9月12日 — Sprout's Tiny Hilltop Adventure (Prenatal)](#9月12日--Sprout's Tiny Hilltop Adventure (Prenatal))
+153. [9月13日 — 小星星暖暖的歌声邮局（胎教期）](#9月13日--小星星暖暖的歌声邮局（胎教期）)
+154. [9月13日 — Conch's Slow Afternoon (Prenatal)](#9月13日--Conch's Slow Afternoon (Prenatal))
+155. [9月14日 — 小海螺小旋旋的数星夜（胎教期）](#9月14日--小海螺小旋旋的数星夜（胎教期）)
+156. [9月14日 — Little Chirp's Starry Good Night (Prenatal)](#9月14日--Little Chirp's Starry Good Night (Prenatal))
 
 ---
 
@@ -3396,6 +3406,23 @@ Little one, when you are ready, you will see fireflies on summer nights. Their l
 
 ---
 
+## 🔬 9月2日 — 🔬科学故事（胎教期）：月亮婆婆的圆缺衣裳
+
+**2026年9月2日 · 星期三**
+
+夜空中，月亮婆婆有时圆圆胖胖，像一块刚蒸好的米糕；有时又瘦成一条弯弯的小月牙，像谁咬了一口的芝麻饼。宝宝，你一定想知道：月亮怎么会一会儿胖、一会儿瘦呢？
+
+其实呀，月亮自己一直是圆圆的——它从来不会变胖，也不会变瘦。它是一颗安安静静的石头球，绕着地球慢慢转圈，一圈大约要一个月。真正变化的，是我们看到的「光亮」有多少。
+
+月亮自己不会发光，它只借着太阳的光。太阳把月亮照亮半边，就像一盏灯照着一个小皮球，球被照亮的那半边亮亮的，另一边黑黑的。月亮绕着地球走，有时候被照亮的那半边正好对着我们，我们便看到一轮圆圆满满的月亮；有时候它转过去一些，只把亮亮的一边露出一点点，我们看到的，就是细细的月牙。
+
+月亮转呀转，我们的眼睛看到的亮边就一点点变宽，从月牙变成半圆，再变成满月；然后又一点点变窄，变回月牙，最后藏进黑黑的夜。这叫月亮的「圆缺」，而圆圆的月亮，我们叫它「满月」。古人看见月牙弯弯，还会想起「小时不识月，呼作白玉盘」这样的诗句呢。
+
+所以呀，宝宝，月亮婆婆没有变胖也没有变瘦，她一直稳稳地守在夜空里，只是把亮亮的一面，轮流给你看。就像爸爸妈妈对你的爱，一直满着、圆着，只是有时候轻轻，有时候深深。等宝宝来到这个世界，我们一起抬头，数一数月亮今天胖了还是瘦了，好吗？
+**寓意：** 月亮本身一直是圆圆的球，不会变大变小；我们看到它「圆缺变化」，是因为它绕地球转的时候，被太阳照亮的那半边，有时正对着我们，有时只露出细细一条。
+
+---
+
 ## 9月2日 — 小鸟啾啾的轻轻远行（胎教期）
 
 **2026年9月2日 · 星期三**
@@ -3435,6 +3462,40 @@ When Dodo floated home that night, a ring of warm light like open arms held it s
 
 Little one, while you grow safe and sound in Mommy's tummy, the seasons are all getting ready for you: the spring rain, the summer sun, the autumn leaves, and the winter snow. And every one of them will hold you gently, the way everyone who loves you will. Just grow safe and sound.
 **寓意：** Every season holds its own gentle warmth, just like every hug from the people who love you.
+
+---
+
+## 🔬 9月2日 — 🔬 Science Story (Prenatal): Why the Moon Wears Different Coats
+
+**2026年9月2日 · 星期三**
+
+Some nights the Moon hangs high and round, soft and full as a dinner plate. Other nights it is only a thin silver smile, a little hook of light. Dear little one, why does the Moon keep changing its shape?
+
+Here is the gentle secret: the Moon never changes at all. It is always a round ball of quiet stone, circling the Earth on a long, slow path that takes about a month. What changes is how much of its brightness we can see.
+
+The Moon does not make its own light. It borrows light from the sun, like a ball standing beside a lamp: the lamp lights one half of the ball, and the other half stays dark. As the Moon circles the Earth, sometimes the bright half faces us fully, and we see a round full Moon. Sometimes it has turned, showing us only a sliver of its bright side — and we see a thin crescent.
+
+Slowly, night by night, the bright edge grows wider: crescent, half, full. Then it shrinks again, back to a sliver, until it hides in the dark. Scientists call this cycle the phases of the Moon, and it always runs in the same order, like a very slow, very patient clock in the sky.
+
+So you see, little one, the Moon never grows fat or thin. She stays whole and steady in the night, simply turning her bright side toward you and away, like a friend waving a lantern. And the love that waits for you here — like the Moon — is always round, always full, even when you can only see a thin silver smile.
+**寓意：** The Moon is always a full round ball; its changing shape is just the sunlit half turning toward or away from us as it circles the Earth, like a lamp lighting a ball from different sides.
+
+---
+
+## 🔬 9月3日 — 🔬科学故事（胎教期）：小毛毛虫的蝴蝶梦
+
+**2026年9月3日 · 星期四**
+
+在一片绿油油的叶子上，住着一条胖乎乎的小毛毛虫。它每天吃呀吃，喝呀喝，把肚子吃得圆滚滚，然后舒舒服服地睡一觉。宝宝，你猜，这样一条贪吃的小家伙，长大以后会变成什么呢？
+
+有一天，小毛毛虫不再吃了。它找到一个安静的角落，吐出细细的丝，把自己轻轻裹起来，变成一颗小小的茧，挂在枝头。茧里黑黑的、软软的，像一床小小的被子。它要在里面睡很久很久，做一场很长很长的梦。
+
+在茧里面，发生了一件大自然里最神奇的事：小毛毛虫的身体，会慢慢融化成稠稠的「营养汤」，翅膀的芽、触角的芽、六条细腿的芽，都从这锅营养汤里一点一点长出来。科学家把这个奇妙的变化叫做「变态发育」——先是一个样子，再换一个完全不同的样子，就好像它重新长了一次。
+
+过了很多天，茧轻轻裂开一条缝，一只湿漉漉的小蝴蝶钻了出来。它的翅膀皱皱的，软软的，它静静地趴着，等风把翅膀吹干、吹硬。然后，翅膀一扇，第一次飞了起来！它飞过叶子，飞过花丛，谁还记得，它曾经是那条胖胖的小毛毛虫呢？
+
+所以呀，宝宝，每一只美丽的蝴蝶，都曾是一条不起眼的毛毛虫，都在黑黑的茧里，安安静静地等过、长过。你也是这样：现在你住在妈妈肚子里，安安静静地长大，等有一天你准备好了，就会像小蝴蝶一样，张开翅膀，来到这个亮亮的世界。爸爸妈妈一直在等你，等你那个了不起的「蜕变」呀。
+**寓意：** 毛毛虫在蛹里把身体融化成「营养汤」，再一点点重新长成蝴蝶的翅膀、触角和身体；这个奇妙的过程叫「变态发育」，是大自然里一场安静而完整的蜕变。
 
 ---
 
@@ -3480,6 +3541,40 @@ Little one, while you grow safe and sound, the world is learning to be gentle ju
 
 ---
 
+## 🔬 9月3日 — 🔬 Science Story (Prenatal): How a Caterpillar Becomes a Butterfly
+
+**2026年9月3日 · 星期四**
+
+On a wide green leaf lives a plump little caterpillar. All day it munches, and naps, and munches again, until its belly is round as a berry. Little one, do you know what such a hungry little creature grows up to become?
+
+One day the caterpillar stops eating. It finds a quiet twig and spins soft silk around itself, wrapping up snug as a lullaby — a small cradle called a chrysalis, hanging gently in the breeze. Inside it is dark and soft, like a blanket. The caterpillar sleeps a very long, very deep dream.
+
+Inside the cradle, one of nature's most wonderful tricks happens: the caterpillar's body slowly melts into a rich, thick soup. Then, from this soup, new buds begin to grow — the shape of wings, the curl of feelers, six delicate legs. Scientists call this change metamorphosis: first one shape, then a completely different shape, as if the creature grew a second time.
+
+After many days, the chrysalis cracks open just a little, and a wet, crumpled butterfly climbs out. Its wings are soft and folded; it rests quietly, letting the breeze dry them and stiffen them. Then — one, two — the wings spread, and it flies for the very first time! Over leaves, over flowers. Who would guess it was ever that round little caterpillar?
+
+So you see, little one, every beautiful butterfly was once a plain caterpillar that waited patiently in the dark, growing all the while. And you are like that too: right now you rest warm inside your mother, growing quietly, day by day. When you are ready, you too will unfold like wings and come out into this bright world — where someone is already waiting, holding a smile just for you.
+**寓意：** Inside the chrysalis, the caterpillar's body turns into a rich soup, and from it a butterfly grows — wings, feelers, and all. Scientists call this amazing change metamorphosis: nature's quiet way of becoming anew.
+
+---
+
+## 🔬 9月4日 — 🔬科学故事（胎教期）：蜜蜂的圆圈舞
+
+**2026年9月4日 · 星期五**
+
+清晨的花田里，一只小蜜蜂发现了一大片甜甜的花蜜。它高兴极了，吸了一肚子，急急忙忙飞回蜂巢。回到家里，它没有大声喊叫——蜜蜂不会说话呀——它开始在蜂巢的门口，嗡嗡地跳起舞来。
+
+它先跳起一个圆圆的圈圈舞：转一圈，再转一圈，尾巴轻轻摇，像是蹦蹦跳跳地说「快来快来，花就在旁边」。蜜蜂伙伴们一看就懂了：跳舞的伙伴转圆圈，说明花蜜很近很近，就在蜂巢附近，大家快跟着它去采吧。
+
+如果花田很远，小蜜蜂就会跳另一种舞——摆尾舞。它沿着一条直线，走两步，摇一摇尾巴，再绕回另一头，画出一个「8」字形。摆动尾巴的方向，就是花田的方向：太阳在哪边，花田就在哪边；摆得越快，花田越近。蜜蜂们靠着这支舞，就能像看地图一样，找到那一片开满花的地方。
+
+科学家伯伯花了很久才看懂蜜蜂的舞。他们发现，蜜蜂小小的脑袋里，装着一把神奇的「太阳罗盘」，知道太阳在天空的位置，也知道怎么把方向告诉同伴。一位研究蜜蜂的科学家还因此得了大大的奖呢——他读懂了蜜蜂跳的舞。
+
+所以呀，宝宝，大自然是多么有趣：不会说话的小蜜蜂，用一支支圆圈舞和摆尾舞，就把「好消息」传遍了整个家。它们跳舞的样子，就像在说：好东西，要大家一起分享。等你来到这个世界，如果看到花丛里有蜜蜂转圈圈，你就知道——它们正在热热闹闹地分享甜蜜呢。
+**寓意：** 蜜蜂不会说话，靠跳舞传递信息：跳圆圈舞表示「花很近」，跳「8」字摆尾舞则表示方向和距离；舞蹈，是蜜蜂写给彼此的藏宝图。
+
+---
+
 ## 9月4日 — 小闹钟叮当的一次早晨旅行（胎教期）
 
 **2026年9月4日 · 星期五**
@@ -3519,6 +3614,40 @@ That evening, from far away came a low, gentle laugh — Daddy's laugh, warm and
 
 Little one, while you grow safe and sound, you are like Sprout in its warm bed: waiting, but not empty. The morning, the dew, the rabbit, the singing river, and the warmest laughs of the people who love you — they are all waiting for you too. Just a little longer, and the world will open for you like a flower.
 **寓意：** Patiently waiting, like a seed in spring, is how the loveliest things unfold.
+
+---
+
+## 🔬 9月4日 — 🔬 Science Story (Prenatal): The Bee's Waggly Dance
+
+**2026年9月4日 · 星期五**
+
+One fresh morning, a little worker bee finds a whole field of sweet flowers. She drinks her fill, then hurries home to the hive. Back in the warm darkness, she does not shout — bees cannot shout. Instead, she begins to dance on the honeycomb, buzzing and wiggling, as if to say: everyone, come see!
+
+First she dances a round dance: round and round she goes, then turns and circles back, waggling her tail as she spins. The other bees understand at once. A round dance means: the flowers are very near, right beside the hive — follow me, friends!
+
+If the flowers are far away, the little bee dances a different dance: the waggle dance. She runs along a straight line, waggles her tail, loops back around, and draws a figure eight. The direction of the waggle shows the way to the flowers — where the sun is, there the field lies. And the faster she waggles, the closer the treasure. To the bees, her dance is a map drawn in the dark.
+
+For many years, scientists puzzled over the bee dance. Then one careful scientist watched and measured, and finally understood the code: bees carry a tiny sun-compass in their heads, and their wiggles point the way home and back. He won a great prize for learning to read the bees' dance.
+
+So you see, little one, nature is full of clever wonders: a bee with no words shares her best news by dancing. Round and round she goes — good things are for sharing. And one day, when you walk past a garden full of buzzing bees, you will know: right now, someone is dancing out a happy secret about sweetness and home.
+**寓意：** Bees cannot talk, so they dance to share information: a round dance says the flowers are near, while a waggle dance tells direction and distance — dance is a bee's map and message.
+
+---
+
+## 🔬 9月5日 — 🔬科学故事（胎教期）：雪花的六瓣小衣裳
+
+**2026年9月5日 · 星期六**
+
+冬天到了，天上飘下亮晶晶的小雪花。宝宝如果将来用手心接住一朵，仔仔细细地看，会发现雪花虽然一片一片长得都不一样，却几乎都穿着「六瓣的小衣裳」——有的像六角的小星星，有的像六瓣的小花。这到底是为什么呢？
+
+秘密藏在雪花长出来的地方。雪花是在云朵里的一颗小小冰晶上开始长的。冰晶是由水分子手拉手排成的，而水分子手拉手的时候，天生就爱排成六个角的形状——就像六个小伙伴，手拉手围成一圈，正好是六边形。所以，每一片雪花的小骨架，从一开始就是六角形的。
+
+云朵里的水汽，一片一片围到这颗六角的小骨架上，有的地方长得多一点，有的地方少一点。风一吹，温度一变，它们就长出不同的花纹：有的伸出六根长长的胳膊，像星星；有的在中间开出小小的花心，像花朵。科学家把雪花放在放大镜下拍照，发现世界上几乎没有两片雪花长得一模一样——每一片，都是独一无二的小艺术品。
+
+有趣的是，如果天气暖一点，水汽贴在雪花上，会化掉棱角；如果天气冷一点，水汽又会在角上长出新枝。所以雪花的花纹，其实是云朵里温度和水汽的「日记」，每一片都记着它在云里旅行的故事。
+
+所以呀，宝宝，等将来冬天飘雪的时候，你可以和爸爸妈妈一起，伸出小手套，接住一片雪花，数一数它的小衣裳是不是六瓣的。每一片都不同，每一片都好看——就像你，也是这个世界上独一无二的宝贝，正等着在爱的雪花里，慢慢长大。
+**寓意：** 雪花几乎都是六角形的，因为冰晶里水分子手拉手的排列方式天然是六边形；水汽围着这颗六角的小骨架慢慢长大，就开出六瓣的花。而每朵雪花的图案，又是独一无二的。
 
 ---
 
@@ -3564,6 +3693,40 @@ Little one, when you are ready, the world will sound like the sea: full of hello
 
 ---
 
+## 🔬 9月5日 — 🔬 Science Story (Prenatal): Why Snowflakes Have Six Sides
+
+**2026年9月5日 · 星期六**
+
+In winter, bright little snowflakes drift down from the sky. If you ever catch one on your mitten and look very closely, you will see that snowflakes come in countless shapes — yet almost every one wears six little sides. Some look like six-pointed stars, some like tiny flowers. Where does the six come from?
+
+The secret begins where a snowflake is born. Every snowflake starts as a tiny speck of ice high inside a cloud. Ice is made of water molecules holding hands in a special pattern, and water molecules love to hold hands in sixes — like six small friends joining hands in a ring, making a hexagon. So from the very first moment, a snowflake's little skeleton is six-sided.
+
+Then water vapor in the cloud gathers around that six-sided skeleton, arm by arm. The wind blows, the temperature changes, and the crystal grows little branches in different places: six long arms reaching out like a star, or a tiny flower opening at the center. Scientists photograph snowflakes under magnifying lenses and find that almost no two snowflakes are exactly alike — each one is a tiny, one-of-a-kind work of art.
+
+Here is another wonder: if the air is a little warmer, the vapor melts the crystal's sharp edges; if it is colder, new branches sprout at the tips. So the shape of a snowflake is like a diary of its journey through the cloud — every branch records the temperature and moisture it met along the way.
+
+So, little one, one day when winter comes, you can hold out your mitten with Mama and Papa and catch a snowflake of your own. Count its six little sides, and know this: each flake is different, and each is beautiful. And so are you — the one and only you, growing safe and warm, waiting to drift gently into this world of ours.
+**寓意：** Almost all snowflakes are six-sided because water molecules lock together in six-sided patterns; water vapor builds around that six-pointed skeleton into delicate arms. And yet no two snowflakes are ever exactly alike.
+
+---
+
+## 🔬 9月6日 — 🔬科学故事（胎教期）：山谷里的回声
+
+**2026年9月6日 · 星期日**
+
+从前，有个小朋友来到大山脚下，冲着山谷喊了一声：「喂——」大山也回了一声：「喂——」小朋友又喊：「你好呀！」大山也说：「你好呀！」小朋友吓一跳，以为山谷里住着另一个爱学说话的小朋友。其实呀，那是他自己的声音，跑了一圈又回来了。
+
+声音是怎么跑回来的呢？我们说话、唱歌的时候，声带轻轻震动，让空气一挤一挤，像水波一样一圈圈传出去，这叫「声波」。声音跑得很快很快，一秒就能跑大约三百四十米——比飞机起飞时跑得还快。
+
+当声波跑呀跑，碰到又大又硬的东西，比如高高的山壁、厚厚的墙壁，就会被弹回来，像小皮球撞到墙又弹回手里一样。弹回来的声波传进我们耳朵，我们就听到了「回声」——也就是自己刚才喊的话，被大山送回来了。
+
+为什么回声总是晚一点到呢？因为声音跑一个来回，也要花时间呀。山壁越远，回声回来得越慢。科学家用这个道理，发明了「声呐」：船只在海底发出声音，听回声要多久才回来，就能算出海底有多深，还能找到鱼群、躲开暗礁呢。蝙蝠夜里飞，也是靠听回声来「看见」路的。
+
+所以呀，宝宝，大山会学我们说话，不是因为它调皮，而是因为声音被轻轻弹了回来——这是大自然送给我们的一个「声音游戏」。等你来到这个世界，如果对着山谷喊一声「你好」，记得竖起小耳朵，听一听大山是怎么回答你的。那一声回答里，藏着一个小小的科学秘密，也藏着一个大大的、温柔的世界。
+**寓意：** 声音遇到又大又硬的东西（如大山、墙壁）会被弹回来，传回我们耳朵里，这就是「回声」；声音跑得很快但需要时间，所以回声总比原声晚一点点到。
+
+---
+
 ## 9月6日 — 云朵精灵朵朵的月光远行（胎教期）
 
 **2026年9月6日 · 星期日**
@@ -3603,6 +3766,23 @@ Then Bear Safe padded home to its hollow and curled into a warm ball. "Huff... l
 
 Little one in Mommy's tummy, while you grow safe and sound, the world is giving you a good night too: the stream, the oak, the fireflies, the moon, and everyone who loves you. Sleep in a warm little nest of love. Huff... lu... good night, little one.
 **寓意：** A good night is love in its smallest, warmest form — and it comes back to you.
+
+---
+
+## 🔬 9月6日 — 🔬 Science Story (Prenatal): The Echo That Comes Back
+
+**2026年9月6日 · 星期日**
+
+Long ago, a child stood at the foot of a tall mountain and called out: hello! The mountain answered: hello! The child called again: who is there? And the mountain answered: who is there? The child looked around, surprised. But there was no one in the valley — it was the child's own voice, running out and running home again.
+
+Here is how it works. When we speak or sing, our throat makes the air squeeze and ripple, pushing outward in gentle waves, like ripples spreading on a pond. These are called sound waves, and they travel very fast — about 340 meters every second, faster than an airplane racing down the runway.
+
+When sound waves run into something big and hard — a cliff wall, a tall building, a quiet canyon — they bounce back, just like a rubber ball bouncing off a wall and back into your hand. The bouncing waves travel back to your ears, and that is the echo: your own words, sent home by the mountain.
+
+Why is the echo always a little late? Because sound takes time to make the round trip. The farther the wall, the slower the answer comes. Scientists turned this trick into a tool called sonar: ships send sound down into the sea, listen for the echo, and measure how deep the water is — and bats use echoes every night to see the dark with their ears.
+
+So, little one, the mountain does not copy us to be funny. It is simply nature's game of catch with our voices. One day, when you stand at the edge of a quiet valley and call out a cheerful hello, hold still and listen — the world will answer you, softly and a moment later, hiding a little scientific secret inside a big, kind world that is waiting to meet you.
+**寓意：** An echo is your voice bouncing back from a big, hard surface such as a cliff or a wall; sound travels fast but not instantly, so the echo always returns a little later than your call.
 
 ---
 
