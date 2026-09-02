@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-09-01T20:21:34.901Z",
+    "mode": "--batch-only",
+    "results": [
+      {
+        "plan": "A",
+        "added": 0,
+        "note": "auto-unlocked at runtime"
+      }
+    ],
+    "totalAdded": 0
+  }
+]
