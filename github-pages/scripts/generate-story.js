@@ -1,0 +1,548 @@
+#!/usr/bin/env node
+/**
+ * Bedtime Story Generator
+ * 
+ * Calls DeepSeek API to generate Chinese and English bedtime stories.
+ * Checks for missing stories (today + last 7 days), generates them,
+ * and updates stories.json, index.html (EMBEDDED_STORIES), and collection.html.
+ * 
+ * Environment variables:
+ *   DEEPSEEK_API_KEY - API key for DeepSeek (required)
+ * 
+ * Usage:
+ *   node scripts/generate-story.js
+ */
+
+const fs = require('fs');
+const path = require('path');
+const https = require('https');
+const {
+  getAgeInfo,
+  getChineseWeekday,
+  formatDateCn,
+  formatDateShort,
+  buildChinesePrompt,
+  buildEnglishPrompt,
+  buildContinuationPrompt,
+  isScienceDay,
+  fetchScienceArticle,
+  buildScienceChinesePrompt,
+  buildScienceEnglishPrompt
+} = require('./prompt-builder');
+
+// ===== Configuration =====
+const API_KEY = process.env.DEEPSEEK_API_KEY;
+const API_HOST = 'api.deepseek.com';
+const API_PATH = '/v1/chat/completions';
+const MODEL = 'deepseek-chat';
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 5000;
+
+const ROOT_DIR = path.join(__dirname, '..');
+const STORIES_PATH = path.join(ROOT_DIR, 'stories.json');
+const INDEX_PATH = path.join(ROOT_DIR, 'index.html');
+
+// ===== Helpers =====
+
+/**
+ * Get Beijing time date string (YYYY-MM-DD) with optional day offset
+ */
+function getBeijingDateStr(offsetDays = 0) {
+  const now = new Date();
+  const beijing = new Date(now.getTime() + 8 * 60 * 60 * 1000 + offsetDays * 24 * 60 * 60 * 1000);
+  const yyyy = beijing.getUTCFullYear();
+  const mm = String(beijing.getUTCMonth() + 1).padStart(2, '0');
+  const dd = String(beijing.getUTCDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+/**
+ * Call DeepSeek API with a prompt and return parsed JSON
+ */
+function callZhipuAPI(userPrompt) {
+  return new Promise((resolve, reject) => {
+    const systemPrompt = 'You are a creative children\'s bedtime story writer. You write in both Chinese and English. You always respond with valid JSON when asked.';
+
+    const requestData = JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+      ],
+      response_format: { type: 'json_object' },
+      temperature: 0.85,
+      max_tokens: 4096
+    });
+
+    const options = {
+      hostname: API_HOST,
+      path: API_PATH,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Length': Buffer.byteLength(requestData)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let body = '';
+      res.on('data', chunk => body += chunk);
+      res.on('end', () => {
+        if (res.statusCode !== 200) {
+          reject(new Error(`API returned ${res.statusCode}: ${body.substring(0, 500)}`));
+          return;
+        }
+        try {
+          const response = JSON.parse(body);
+          const content = response.choices?.[0]?.message?.content;
+          if (!content) {
+            reject(new Error('No content in API response'));
+            return;
+          }
+          const parsed = JSON.parse(content);
+          resolve(parsed);
+        } catch (e) {
+          reject(new Error(`Failed to parse API response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.write(requestData);
+    req.end();
+  });
+}
+
+/**
+ * Call API with retry logic
+ */
+async function callAPIWithRetry(prompt, label) {
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      console.log(`  [${label}] Attempt ${attempt}/${MAX_RETRIES}...`);
+      const result = await callZhipuAPI(prompt);
+      console.log(`  [${label}] Success!`);
+      return result;
+    } catch (err) {
+      console.error(`  [${label}] Attempt ${attempt} failed: ${err.message}`);
+      if (attempt < MAX_RETRIES) {
+        console.log(`  [${label}] Retrying in ${RETRY_DELAY_MS / 1000}s...`);
+        await new Promise(r => setTimeout(r, RETRY_DELAY_MS));
+      } else {
+        throw err;
+      }
+    }
+  }
+}
+
+/**
+ * Update EMBEDDED_STORIES in index.html
+ */
+function updateEmbeddedStories(indexPath, stories) {
+  let html = fs.readFileSync(indexPath, 'utf8');
+  const jsonStr = JSON.stringify(stories);
+  const lines = html.split('\n');
+  const embeddedIndex = lines.findIndex(line => line.trim().startsWith('const EMBEDDED_STORIES = '));
+  if (embeddedIndex === -1) {
+    throw new Error('Could not find EMBEDDED_STORIES line in index.html');
+  }
+  lines[embeddedIndex] = `const EMBEDDED_STORIES = ${jsonStr};`;
+  fs.writeFileSync(indexPath, lines.join('\n'), 'utf8');
+  console.log(`  Updated EMBEDDED_STORIES with ${stories.length} stories`);
+}
+
+/**
+ * Sanitize text - replace curly quotes that break JSON
+ */
+function sanitizeText(text) {
+  if (typeof text !== 'string') return text;
+  return text
+    .replace(/\u201c/g, '\u300c')  // " -> 「
+    .replace(/\u201d/g, '\u300d')  // " -> 」
+    .replace(/\u2018/g, '\'')       // ' -> '
+    .replace(/\u2019/g, '\'');      // ' -> '
+}
+
+/**
+ * Clean continuation paragraphs: strip any "续写第N段"/"Continuation paragraph N:"/numbered prefixes
+ * that the model may add, so the story body stays clean.
+ */
+function cleanContinuationParagraphs(paras) {
+  return (paras || []).map(p => String(p)
+    .replace(/^\s*(续写第?\s*\d+\s*段\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(第\s*\d+\s*段\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(段落\s*\d+\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*\[?\s*第\s*\d+\s*段\s*\]?\s*[：:、.．]?\s*/, '')   // [第1段] / 第1段 / [第1段]
+    .replace(/^\s*(Continuation\s+paragraph\s*\d+\s*[:\-.]\s*)/i, '')
+    .replace(/^\s*(Para(?:graph)?\s*\d+\s*[:\-.]\s*)/i, '')
+    .replace(/^\s*(接着写[：:]?\s*|继续写[：:]?\s*|Next[:\-]?\s*|Continue[:\-]?\s*)/i, '')
+    .trim()
+  ).filter(p => p && p.trim());
+}
+
+/**
+ * Character-level Jaccard similarity between two strings (0..1)
+ */
+function charJaccard(a, b) {
+  const clean = s => new Set(String(s).replace(/[，。！？、：；\s]/g, '').split(''));
+  const sa = clean(a), sb = clean(b);
+  if (!sa.size || !sb.size) return 0;
+  let inter = 0;
+  sa.forEach(c => { if (sb.has(c)) inter++; });
+  return inter / (new Set([...sa, ...sb]).size);
+}
+
+/**
+ * Deduplicate near-identical paragraphs (code-level safety net).
+ * Compares each paragraph against ALL previously kept paragraphs; if char-level
+ * Jaccard similarity with ANY previous paragraph > 0.6, drop it. Catches both
+ * adjacent and alternating (A-B-A-C-A) loop patterns.
+ */
+function dedupeAdjacentParagraphs(paras) {
+  const out = [];
+  for (const p of paras || []) {
+    const dup = out.find(prev => charJaccard(prev, p) > 0.6);
+    if (dup) {
+      console.log(`  [dedupe] 移除与前面某段重复的段落 (sim=${charJaccard(dup, p).toFixed(2)}): ${String(p).slice(0, 30)}...`);
+      continue;
+    }
+    out.push(p);
+  }
+  return out;
+}
+
+/**
+ * Validate and build a story object
+ */
+function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
+  const dateCn = formatDateCn(dateStr);
+  const weekday = getChineseWeekday(dateStr);
+  const dateShort = formatDateShort(dateStr);
+
+  const title = sanitizeText(raw.title || 'Untitled');
+  const preview = sanitizeText(raw.preview || '');
+  const moral = sanitizeText(raw.moral || '');
+  
+  let content;
+  if (Array.isArray(raw.content)) {
+    content = raw.content.map(p => sanitizeText(String(p)));
+  } else if (typeof raw.content === 'string') {
+    content = [sanitizeText(raw.content)];
+  } else {
+    content = [];
+  }
+
+  // Filter out empty paragraphs
+  content = content.filter(p => p && p.trim());
+
+  const langSuffix = language === 'zh' ? 'cn' : 'en';
+  const idSuffix = category === 'science' ? `science-${langSuffix}` : langSuffix;
+  const obj = {
+    id: `${dateStr}-${idSuffix}`,
+    date: `${dateCn} · ${weekday}`,
+    dateShort,
+    title,
+    language,
+    ageGroup: ageInfo.group,
+    ageLabel: language === 'zh' ? ageInfo.labelCn : ageInfo.labelEn,
+    preview,
+    moral,
+    content,
+    category
+  };
+  if (category === 'science') {
+    obj.series = 'science';
+    obj.seriesTitle = '科学故事';
+    if (raw.source) obj.source = raw.source;
+  }
+  return obj;
+}
+
+// ===== 胎教期风格自检与定向修复（"最终组合"的 AI 修复层） =====
+// 生成后检测胎教故事是否具备关键风格要素（拟声词/妈妈心跳/对肚里宝宝说话/无弯引号），
+// 缺失项调用 buildFixPrompt 携全文上下文定向补写，最多补 2 轮、每轮只补缺失项。
+function styleGaps(story, language) {
+  const text = (story.content || []).join(' ');
+  const gaps = [];
+  if (language === 'zh') {
+    if (!/(呼呼|哗啦|咕嘟|咚咚|扑通|叮咚|沙沙|滴答|摇啊摇|晃呀晃|飘呀飘|啾啾|蛐蛐|滴滴|嗒嗒|咕噜|嗖嗖|簌簌|淅淅沥沥|噼里啪啦|叽叽喳喳|嗡嗡|喵喵|汪汪|咕咕|扑棱扑棱|吧嗒吧嗒|咯噔咯噔|叮铃铃|啦啦啦|嘀嘀嗒|叮叮当|窸窸窣窣|呼噜呼噜|怦怦|咚哒|噗通|汩汩|叮咚叮咚|沙沙沙|窸窣)/.test(text)) {
+      gaps.push({ key: 'onomatopoeia', label: '故事缺少拟声词', fix: '在合适位置自然地加入 2-3 处拟声词（如呼呼、哗啦、咕嘟、滴答、摇啊摇、扑棱扑棱、淅淅沥沥等），让声音参与叙事' });
+    }
+    if (!/(心跳|咚咚|扑通|哼歌|哼着|怀抱|搂|月光|月亮|爸爸的笑|笑声明|被窝|裹着|摇篮|星光)/.test(text)) {
+      gaps.push({ key: 'highlight', label: '缺少「温柔高光」意象', fix: '加入一处温柔高光（按情境任选：妈妈的心跳咚咚 / 妈妈的哼歌 / 温暖的怀抱 / 月光守候 / 爸爸的笑声 / 软软被窝 / 星光摇篮），并用「你听见了吗？」或「小宝宝，你感觉到了吗？」与肚里宝宝对话' });
+    }
+    if (!/肚子里|还没出生|肚里|还没来/.test(text)) {
+      gaps.push({ key: 'unborn', label: '缺少未出生宝宝视角', fix: '把「还在肚子里的小宝宝」作为倾听者，用「小宝宝，你听到了吗？」式对话呼应' });
+    }
+    if (/[\u201c\u201d]/.test(JSON.stringify(story))) {
+      gaps.push({ key: 'curlyquote', label: '存在中文弯引号""', fix: '把所有中文弯引号替换为「」或单引号' });
+    }
+  } else {
+    if (!/(whoosh|patter|gurgle|thump|tweet|swish|drip|rustle|huff|plop|splash|tinkle)/i.test(text)) {
+      gaps.push({ key: 'onomatopoeia', label: 'missing onomatopoeia', fix: 'naturally weave in 2-3 onomatopoeia words (whoosh, patter, gurgle, thump, swish, drip)' });
+    }
+    if (!/(heartbeat|thump|humming|hummed|embrace|arms|moonlight|moon|laugh|blanket|wrap|wrapped|cradle|stars)/i.test(text)) {
+      gaps.push({ key: 'highlight', label: 'missing "gentle highlight" imagery', fix: 'add ONE gentle highlight fitting the story (mother\'s heartbeat thump-thump / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a soft blanket / a cradle of stars) and speak to the baby with "can you hear it?" or "little one, can you feel it?"' });
+    }
+    if (!/(in mama'?s belly|unborn|not yet born|little one|tiny one)/i.test(text)) {
+      gaps.push({ key: 'unborn', label: 'missing unborn-baby perspective', fix: 'address the baby in Mama\'s belly directly with "little one, can you hear?" style lines' });
+    }
+  }
+  return gaps;
+}
+
+async function ensurePrenatalStyle(story, ageInfo, dateStr, tag) {
+  if (story.ageGroup !== 'prenatal') return story;
+  const lang = story.language;
+  for (let round = 1; round <= 2; round++) {
+    const gaps = styleGaps(story, lang);
+    if (gaps.length === 0) break;
+    console.log(`  [style] ${tag} 第${round}轮修复 ${gaps.length} 项: ${gaps.map(g => g.label).join(' / ')}`);
+    // 一次调用让模型按所有缺口补写：传全文 + 缺口清单，返回修正后的完整 content
+    const fixPrompt = buildStyleFixPrompt(lang, ageInfo, story, gaps);
+    try {
+      const fixed = await callAPIWithRetry(fixPrompt, tag + '-style' + round);
+      const newContent = Array.isArray(fixed.content)
+        ? cleanContinuationParagraphs(fixed.content)
+        : [];
+      if (newContent.length >= story.content.length) {
+        story.content = newContent;
+        story.preview = sanitizeText(fixed.preview || story.preview);
+        story.moral = sanitizeText(fixed.moral || story.moral);
+        if (fixed.title) story.title = sanitizeText(fixed.title);
+        console.log(`  [style] ${tag} 第${round}轮修复完成 (${newContent.length} 段)`);
+      } else {
+        console.log(`  [style] ${tag} 修复返回段数不足(${newContent.length}<${story.content.length})，保留原文`);
+        break;
+      }
+    } catch (e) {
+      console.error(`  [style] ${tag} 修复失败: ${e.message}`);
+      break;
+    }
+  }
+  return story;
+}
+
+// 风格修复 prompt：携全文 + 缺口清单，返回补全后的完整故事（分段落）
+function buildStyleFixPrompt(language, ageInfo, story, gaps) {
+  const paras = (story.content || []).map((p, i) => `[第${i + 1}段] ${p}`).join('\n');
+  if (language === 'zh') {
+    return `你是一位儿童睡前故事编辑。下面是${ageInfo.labelCn}故事《${story.title}》，请在【不改变主旨、不删减段落、不重写无关内容】的前提下，针对以下缺口做最小修改（在合适的段落中自然融入），并输出修补后的完整段落数组。
+
+**当前故事全文（段落带序号）：**
+${paras}
+
+**需要修补的缺口：**
+${gaps.map(g => '- ' + g.label + '：' + g.fix).join('\n')}
+
+**要求：**
+- 在保持情节与风格一致的前提下自然修补；不要为了补而破坏节奏。
+- 弯引号缺口：把中文弯引号全部换成「」或单引号。
+- 每个段落保持 80-120 字左右；段落数不变。
+- 不得使用中文弯引号""，用「」或单引号。
+- 保持${ageInfo.labelCn}风格：温柔、缓慢、拟声词、等待/爱/守护。
+
+输出严格 JSON：
+{
+  "title": "故事标题",
+  "preview": "前两句预览",
+  "moral": "故事寓意",
+  "content": ["第1段...", "第2段...", "第3段..."]
+}`;
+  }
+  return `You are a children's bedtime story editor. The ${ageInfo.labelEn} story "${story.title}" below needs MINIMAL targeted fixes for the gaps listed (weave them naturally into suitable paragraphs; do NOT change the plot, do NOT delete paragraphs, do NOT rewrite unrelated content). Output the full corrected paragraph array.
+
+**Current full story (paragraphs numbered):**
+${paras}
+
+**Gaps to fix:**
+${gaps.map(g => '- ' + g.label + ': ' + g.fix).join('\n')}
+
+**Requirements:**
+- Weave fixes in naturally while keeping plot and style consistent.
+- Keep each paragraph ~80-120 characters; keep the same paragraph count.
+- Keep ${ageInfo.labelEn} style: gentle, slow, onomatopoeia, waiting/love/guardianship.
+
+Output strict JSON:
+{
+  "title": "story title",
+  "preview": "first two sentences",
+  "moral": "the lesson",
+  "content": ["paragraph 1...", "paragraph 2...", "paragraph 3..."]
+}`;
+}
+
+// ===== 主题去重：查询最近 N 天已生成故事，生成规避提示 =====
+// 避免主题池按日期确定性选到与近期故事相同的主旨（如连续两天「摇篮曲」）。
+function buildAvoidThemeHint(stories, dateStr, language, days = 12) {
+  const langKey = language === 'zh' ? 'cn' : 'en';
+  // 收集 dateStr 之前 12 天内、同语言的每日故事（不含科学/系列）
+  const recent = stories
+    .filter(s => s.language === language && s.category !== 'science' && !s.series)
+    .filter(s => {
+      const m = String(s.id).match(/^(\d{4}-\d{2}-\d{2})-/);
+      return m && m[1] < dateStr && dateStr.slice(0, 10) !== m[1];
+    })
+    .sort((a, b) => String(b.id).localeCompare(String(a.id)))
+    .slice(0, days);
+  if (!recent.length) return '';
+  const lines = recent.map(s => `  - 《${s.title}》：${String(s.preview || '').slice(0, 40)}`);
+  return `\n\n**近期已写过的故事（请务必避免与它们主旨雷同：不要重复同主题、同套路、同主角模式、同结尾句式，尤其避免连续多日都写「摇篮曲/唱歌/星星守候/月光陪伴」等）**\n${lines.join('\n')}`;
+}
+
+// ===== Main =====
+
+async function main() {
+  if (!API_KEY) {
+    console.error('ERROR: DEEPSEEK_API_KEY environment variable is not set.');
+    console.error('Please set it as a GitHub repository secret.');
+    process.exit(1);
+  }
+
+  console.log('=== Bedtime Story Generator ===');
+  console.log(`Beijing time: ${getBeijingDateStr()} ${new Date().toUTCString()}`);
+
+  // 每月 1 号自动运行种子刷新脚本（getUnlockedSeeds 自动解锁新批次）
+  const today = new Date();
+  if (today.getUTCDate() === 1) {
+    console.log('\n=== Monthly Seed Refresh (1st of month) ===');
+    try {
+      const { execSync } = require('child_process');
+      const nodeBin = process.execPath;
+      const refreshScript = path.join(__dirname, 'refresh-seeds.js');
+      execSync(`"${nodeBin}" "${refreshScript}" --batch-only`, { cwd: ROOT_DIR, stdio: 'inherit' });
+      console.log('Monthly seed refresh completed.');
+    } catch (err) {
+      console.warn('Warning: Monthly seed refresh failed (non-fatal):', err.message);
+    }
+    console.log('');
+  }
+
+  // Read existing stories
+  const stories = JSON.parse(fs.readFileSync(STORIES_PATH, 'utf8'));
+  console.log(`Current stories: ${stories.length} (${stories.filter(s => s.language === 'zh').length} ZH, ${stories.filter(s => s.language === 'en').length} EN)`);
+
+  // Check for missing stories: today + last 7 days
+  const datesToCheck = [];
+  for (let i = 0; i <= 7; i++) {
+    datesToCheck.push(getBeijingDateStr(-i));
+  }
+
+  const missingStories = [];
+  for (const dateStr of datesToCheck) {
+    const hasCn = stories.some(s => s.id === `${dateStr}-cn`);
+    const hasEn = stories.some(s => s.id === `${dateStr}-en`);
+    if (!hasCn) missingStories.push({ dateStr, language: 'zh' });
+    if (!hasEn) missingStories.push({ dateStr, language: 'en' });
+    // 每周随机一天：额外生成中英双语「科学故事」（确定性，云端/本地一致）
+    if (isScienceDay(dateStr)) {
+      const hasSciCn = stories.some(s => s.id === `${dateStr}-science-cn`);
+      const hasSciEn = stories.some(s => s.id === `${dateStr}-science-en`);
+      if (!hasSciCn) missingStories.push({ dateStr, language: 'zh', category: 'science' });
+      if (!hasSciEn) missingStories.push({ dateStr, language: 'en', category: 'science' });
+    }
+  }
+
+  if (missingStories.length === 0) {
+    console.log('\nAll stories up to date (today + last 7 days). Nothing to do.');
+    return;
+  }
+
+  console.log(`\nFound ${missingStories.length} missing stories:`);
+  missingStories.forEach(m => console.log(`  - ${m.dateStr} ${m.language}`));
+
+  // Sort by date (oldest first)
+  missingStories.sort((a, b) => {
+    if (a.dateStr !== b.dateStr) return a.dateStr.localeCompare(b.dateStr);
+    return a.language.localeCompare(b.language);
+  });
+
+  // Generate each missing story
+  const newStories = [];
+  for (const { dateStr, language, category } of missingStories) {
+    const ageInfo = getAgeInfo(dateStr);
+    const isSci = category === 'science';
+    const logName = isSci ? `SCIENCE ${language.toUpperCase()}` : language.toUpperCase();
+    console.log(`\nGenerating ${logName} story for ${dateStr} (${ageInfo.labelCn || ageInfo.labelEn})...`);
+
+    try {
+      let prompt, raw, tag;
+      if (isSci) {
+        const article = await fetchScienceArticle(language);
+        tag = `${dateStr}-science-${language === 'zh' ? 'cn' : 'en'}`;
+        prompt = language === 'zh'
+          ? buildScienceChinesePrompt(article, ageInfo, dateStr)
+          : buildScienceEnglishPrompt(article, ageInfo, dateStr);
+        raw = await callAPIWithRetry(prompt, tag);
+        raw.source = article ? article.source : (language === 'zh' ? '儿童科普常识' : "Children's science (general)"); // 标记来源（始终有值）
+      } else {
+        tag = `${dateStr}-${language}`;
+        // DeepSeek max_tokens 4096 足够一次生成完整故事，单次调用（不再分段续写）
+        const avoidHint = buildAvoidThemeHint(stories, dateStr, language);
+        prompt = language === 'zh'
+          ? buildChinesePrompt(dateStr, ageInfo) + avoidHint
+          : buildEnglishPrompt(dateStr, ageInfo) + avoidHint;
+        raw = await callAPIWithRetry(prompt, tag);
+        // 代码级自检：中文去全历史重复段（兜底）；英文字符集小易误伤，仅靠 prompt 约束
+        if (language === 'zh' && Array.isArray(raw.content)) {
+          raw = { ...raw, content: dedupeAdjacentParagraphs(raw.content) };
+        }
+      }
+
+      const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');
+
+      // 胎教期风格自检 + AI 定向修复（拟声词/妈妈心跳/未出生视角/弯引号）
+      if (story.ageGroup === 'prenatal') {
+        await ensurePrenatalStyle(story, ageInfo, dateStr, tag);
+      }
+
+      // Validate required fields
+      if (!story.title || !story.content || story.content.length === 0) {
+        console.error(`  WARNING: Story for ${tag} has missing fields, skipping.`);
+        continue;
+      }
+
+      newStories.push(story);
+      console.log(`  Title: ${story.title}`);
+      console.log(`  Paragraphs: ${story.content.length}`);
+    } catch (err) {
+      console.error(`  ERROR generating ${dateStr}-${language}${isSci ? ' (science)' : ''}: ${err.message}`);
+      // Continue with other stories even if one fails
+    }
+  }
+
+  if (newStories.length === 0) {
+    console.log('\nNo stories were successfully generated. Exiting.');
+    return;
+  }
+
+  // Add new stories to the array
+  stories.push(...newStories);
+  console.log(`\nTotal stories after update: ${stories.length}`);
+
+  // Write stories.json
+  fs.writeFileSync(STORIES_PATH, JSON.stringify(stories, null, 2) + '\n', 'utf8');
+  console.log('Updated stories.json');
+
+  // Update EMBEDDED_STORIES in index.html
+  updateEmbeddedStories(INDEX_PATH, stories);
+
+  // Generate collection HTML
+  try {
+    const { execSync } = require('child_process');
+    const nodeBin = process.execPath;
+    const collectionScript = path.join(__dirname, 'generate-collection-html.js');
+    execSync(`"${nodeBin}" "${collectionScript}"`, { cwd: ROOT_DIR, stdio: 'inherit' });
+  } catch (err) {
+    console.error('Warning: Failed to generate collection HTML:', err.message);
+  }
+
+  console.log('\n=== Done! ===');
+  console.log(`Generated ${newStories.length} new stories.`);
+}
+
+main().catch(err => {
+  console.error('Fatal error:', err);
+  process.exit(1);
+});

@@ -53,16 +53,16 @@ fi
 echo ""
 echo "Repository created: https://github.com/$USERNAME/$REPO_NAME"
 
-# Set up DeepSeek API key secret
+# Set up Zhipu API key secret
 echo ""
 echo "=== DeepSeek API Key ==="
 echo "To generate stories, you need a DeepSeek API key."
-echo "Get one free at: https://platform.deepseek.com"
+echo "Get one at: https://platform.deepseek.com"
 echo ""
 read -p "Do you have a DeepSeek API key? (y/n): " HAS_KEY
 
 if [[ "$HAS_KEY" == "y" || "$HAS_KEY" == "Y" ]]; then
-  read -s -p "Paste your API key (sk-xxxx): " API_KEY
+  read -s -p "Paste your API key: " API_KEY
   echo ""
   echo "Setting DEEPSEEK_API_KEY secret..."
   echo "$API_KEY" | gh secret set DEEPSEEK_API_KEY --repo "$USERNAME/$REPO_NAME"

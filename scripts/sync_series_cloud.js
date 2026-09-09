@@ -17,9 +17,11 @@ const H5 = 'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app';
 const BACK = 'D:/code test/睡前故事';
 const ME = __dirname; // automation 文件夹
 
-function run(cmd) {
+// 网络类 git 命令加超时与低速中断，避免沙箱到 GitHub 网络不稳时无限挂起
+const NET = '-c http.lowSpeedLimit=1000 -c http.lowSpeedTime=20';
+function run(cmd, timeout) {
   try {
-    execSync(cmd, { cwd: REPO, stdio: 'inherit' });
+    execSync(cmd, { cwd: REPO, stdio: 'inherit', timeout: timeout || 0 });
     return true;
   } catch (e) {
     console.error('[warn]', cmd, 'failed:', e.message);
@@ -35,8 +37,8 @@ function cp(src, dst) {
   }
 }
 
-// 1. 快进拉取，避免分叉
-run('git pull --ff-only');
+// 1. 快进拉取，避免分叉（90s 超时，拉不动不影响后续本地镜像）
+run(`git ${NET} pull --ff-only`, 90000);
 
 // 2. 镜像 H5 真实数据 -> repo
 cp(path.join(H5, 'stories.json'), path.join(REPO, 'stories.json'));
@@ -65,5 +67,5 @@ if (fs.existsSync(mdSrc)) cp(mdSrc, path.join(BACK, 'bedtime-story-collection.md
 // 6. 提交推送
 run('git add -A');
 run('git commit -m "series: 黑猫当当历险记 update"');
-run('git push');
-console.log('SERIES_PUSHED');
+const pushed = run(`git ${NET} push`, 120000);
+console.log(pushed ? 'SERIES_PUSHED' : 'SERIES_PUSH_FAILED (本地与 D 盘已更新，可稍后重试)');

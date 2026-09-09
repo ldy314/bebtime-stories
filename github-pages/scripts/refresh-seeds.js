@@ -374,8 +374,8 @@ ${recentTitles.map(t => '- ' + t).join('\n')}
     dynamic[currentMonth].seeds.en = [...existingEn, ...finalEn];
 
     if (!dynamic[currentMonth].sources) dynamic[currentMonth].sources = [];
-    if (!dynamic[currentMonth].sources.includes('DeepSeek AI 分析')) {
-      dynamic[currentMonth].sources.push('DeepSeek AI 分析');
+    if (!dynamic[currentMonth].sources.includes('Zhipu AI 分析')) {
+      dynamic[currentMonth].sources.push('Zhipu AI 分析');
     }
     dynamic[currentMonth].updatedAt = new Date().toISOString();
 

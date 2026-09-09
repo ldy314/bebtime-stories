@@ -23,6 +23,7 @@ const {
   formatDateShort,
   buildChinesePrompt,
   buildEnglishPrompt,
+  buildContinuationPrompt,
   isScienceDay,
   fetchScienceArticle,
   buildScienceChinesePrompt,
@@ -58,7 +59,7 @@ function getBeijingDateStr(offsetDays = 0) {
 /**
  * Call DeepSeek API with a prompt and return parsed JSON
  */
-function callDeepSeekAPI(userPrompt) {
+function callZhipuAPI(userPrompt) {
   return new Promise((resolve, reject) => {
     const systemPrompt = 'You are a creative children\'s bedtime story writer. You write in both Chinese and English. You always respond with valid JSON when asked.';
 
@@ -120,7 +121,7 @@ async function callAPIWithRetry(prompt, label) {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       console.log(`  [${label}] Attempt ${attempt}/${MAX_RETRIES}...`);
-      const result = await callDeepSeekAPI(prompt);
+      const result = await callZhipuAPI(prompt);
       console.log(`  [${label}] Success!`);
       return result;
     } catch (err) {
@@ -161,6 +162,54 @@ function sanitizeText(text) {
     .replace(/\u201d/g, '\u300d')  // " -> 」
     .replace(/\u2018/g, '\'')       // ' -> '
     .replace(/\u2019/g, '\'');      // ' -> '
+}
+
+/**
+ * Clean continuation paragraphs: strip any "续写第N段"/"Continuation paragraph N:"/numbered prefixes
+ * that the model may add, so the story body stays clean.
+ */
+function cleanContinuationParagraphs(paras) {
+  return (paras || []).map(p => String(p)
+    .replace(/^\s*(续写第?\s*\d+\s*段\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(第\s*\d+\s*段\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*(段落\s*\d+\s*[：:、.．]\s*)/, '')
+    .replace(/^\s*\[?\s*第\s*\d+\s*段\s*\]?\s*[：:、.．]?\s*/, '')   // [第1段] / 第1段 / [第1段]
+    .replace(/^\s*(Continuation\s+paragraph\s*\d+\s*[:\-.]\s*)/i, '')
+    .replace(/^\s*(Para(?:graph)?\s*\d+\s*[:\-.]\s*)/i, '')
+    .replace(/^\s*(接着写[：:]?\s*|继续写[：:]?\s*|Next[:\-]?\s*|Continue[:\-]?\s*)/i, '')
+    .trim()
+  ).filter(p => p && p.trim());
+}
+
+/**
+ * Character-level Jaccard similarity between two strings (0..1)
+ */
+function charJaccard(a, b) {
+  const clean = s => new Set(String(s).replace(/[，。！？、：；\s]/g, '').split(''));
+  const sa = clean(a), sb = clean(b);
+  if (!sa.size || !sb.size) return 0;
+  let inter = 0;
+  sa.forEach(c => { if (sb.has(c)) inter++; });
+  return inter / (new Set([...sa, ...sb]).size);
+}
+
+/**
+ * Deduplicate near-identical paragraphs (code-level safety net).
+ * Compares each paragraph against ALL previously kept paragraphs; if char-level
+ * Jaccard similarity with ANY previous paragraph > 0.6, drop it. Catches both
+ * adjacent and alternating (A-B-A-C-A) loop patterns.
+ */
+function dedupeAdjacentParagraphs(paras) {
+  const out = [];
+  for (const p of paras || []) {
+    const dup = out.find(prev => charJaccard(prev, p) > 0.6);
+    if (dup) {
+      console.log(`  [dedupe] 移除与前面某段重复的段落 (sim=${charJaccard(dup, p).toFixed(2)}): ${String(p).slice(0, 30)}...`);
+      continue;
+    }
+    out.push(p);
+  }
+  return out;
 }
 
 /**
@@ -208,6 +257,120 @@ function buildStoryObj(raw, dateStr, language, ageInfo, category = 'regular') {
     if (raw.source) obj.source = raw.source;
   }
   return obj;
+}
+
+// ===== 胎教期风格自检与定向修复（"最终组合"的 AI 修复层） =====
+// 生成后检测胎教故事是否具备关键风格要素（拟声词/妈妈心跳/对肚里宝宝说话/无弯引号），
+// 缺失项调用 buildFixPrompt 携全文上下文定向补写，最多补 2 轮、每轮只补缺失项。
+function styleGaps(story, language) {
+  const text = (story.content || []).join(' ');
+  const gaps = [];
+  if (language === 'zh') {
+    if (!/(呼呼|哗啦|咕嘟|咚咚|扑通|叮咚|沙沙|滴答|摇啊摇|晃呀晃|飘呀飘|啾啾|蛐蛐|滴滴|嗒嗒|咕噜|嗖嗖|簌簌|淅淅沥沥|噼里啪啦|叽叽喳喳|嗡嗡|喵喵|汪汪|咕咕|扑棱扑棱|吧嗒吧嗒|咯噔咯噔|叮铃铃|啦啦啦|嘀嘀嗒|叮叮当|窸窸窣窣|呼噜呼噜|怦怦|咚哒|噗通|汩汩|叮咚叮咚|沙沙沙|窸窣)/.test(text)) {
+      gaps.push({ key: 'onomatopoeia', label: '故事缺少拟声词', fix: '在合适位置自然地加入 2-3 处拟声词（如呼呼、哗啦、咕嘟、滴答、摇啊摇、扑棱扑棱、淅淅沥沥等），让声音参与叙事' });
+    }
+    if (!/(心跳|咚咚|扑通|哼歌|哼着|怀抱|搂|月光|月亮|爸爸的笑|笑声明|被窝|裹着|摇篮|星光)/.test(text)) {
+      gaps.push({ key: 'highlight', label: '缺少「温柔高光」意象', fix: '加入一处温柔高光（按情境任选：妈妈的心跳咚咚 / 妈妈的哼歌 / 温暖的怀抱 / 月光守候 / 爸爸的笑声 / 软软被窝 / 星光摇篮），并用「你听见了吗？」或「小宝宝，你感觉到了吗？」与肚里宝宝对话' });
+    }
+    if (!/肚子里|还没出生|肚里|还没来/.test(text)) {
+      gaps.push({ key: 'unborn', label: '缺少未出生宝宝视角', fix: '把「还在肚子里的小宝宝」作为倾听者，用「小宝宝，你听到了吗？」式对话呼应' });
+    }
+    if (/[\u201c\u201d]/.test(JSON.stringify(story))) {
+      gaps.push({ key: 'curlyquote', label: '存在中文弯引号""', fix: '把所有中文弯引号替换为「」或单引号' });
+    }
+  } else {
+    if (!/(whoosh|patter|gurgle|thump|tweet|swish|drip|rustle|huff|plop|splash|tinkle)/i.test(text)) {
+      gaps.push({ key: 'onomatopoeia', label: 'missing onomatopoeia', fix: 'naturally weave in 2-3 onomatopoeia words (whoosh, patter, gurgle, thump, swish, drip)' });
+    }
+    if (!/(heartbeat|thump|humming|hummed|embrace|arms|moonlight|moon|laugh|blanket|wrap|wrapped|cradle|stars)/i.test(text)) {
+      gaps.push({ key: 'highlight', label: 'missing "gentle highlight" imagery', fix: 'add ONE gentle highlight fitting the story (mother\'s heartbeat thump-thump / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a soft blanket / a cradle of stars) and speak to the baby with "can you hear it?" or "little one, can you feel it?"' });
+    }
+    if (!/(in mama'?s belly|unborn|not yet born|little one|tiny one)/i.test(text)) {
+      gaps.push({ key: 'unborn', label: 'missing unborn-baby perspective', fix: 'address the baby in Mama\'s belly directly with "little one, can you hear?" style lines' });
+    }
+  }
+  return gaps;
+}
+
+async function ensurePrenatalStyle(story, ageInfo, dateStr, tag) {
+  if (story.ageGroup !== 'prenatal') return story;
+  const lang = story.language;
+  for (let round = 1; round <= 2; round++) {
+    const gaps = styleGaps(story, lang);
+    if (gaps.length === 0) break;
+    console.log(`  [style] ${tag} 第${round}轮修复 ${gaps.length} 项: ${gaps.map(g => g.label).join(' / ')}`);
+    // 一次调用让模型按所有缺口补写：传全文 + 缺口清单，返回修正后的完整 content
+    const fixPrompt = buildStyleFixPrompt(lang, ageInfo, story, gaps);
+    try {
+      const fixed = await callAPIWithRetry(fixPrompt, tag + '-style' + round);
+      const newContent = Array.isArray(fixed.content)
+        ? cleanContinuationParagraphs(fixed.content)
+        : [];
+      if (newContent.length >= story.content.length) {
+        story.content = newContent;
+        story.preview = sanitizeText(fixed.preview || story.preview);
+        story.moral = sanitizeText(fixed.moral || story.moral);
+        if (fixed.title) story.title = sanitizeText(fixed.title);
+        console.log(`  [style] ${tag} 第${round}轮修复完成 (${newContent.length} 段)`);
+      } else {
+        console.log(`  [style] ${tag} 修复返回段数不足(${newContent.length}<${story.content.length})，保留原文`);
+        break;
+      }
+    } catch (e) {
+      console.error(`  [style] ${tag} 修复失败: ${e.message}`);
+      break;
+    }
+  }
+  return story;
+}
+
+// 风格修复 prompt：携全文 + 缺口清单，返回补全后的完整故事（分段落）
+function buildStyleFixPrompt(language, ageInfo, story, gaps) {
+  const paras = (story.content || []).map((p, i) => `[第${i + 1}段] ${p}`).join('\n');
+  if (language === 'zh') {
+    return `你是一位儿童睡前故事编辑。下面是${ageInfo.labelCn}故事《${story.title}》，请在【不改变主旨、不删减段落、不重写无关内容】的前提下，针对以下缺口做最小修改（在合适的段落中自然融入），并输出修补后的完整段落数组。
+
+**当前故事全文（段落带序号）：**
+${paras}
+
+**需要修补的缺口：**
+${gaps.map(g => '- ' + g.label + '：' + g.fix).join('\n')}
+
+**要求：**
+- 在保持情节与风格一致的前提下自然修补；不要为了补而破坏节奏。
+- 弯引号缺口：把中文弯引号全部换成「」或单引号。
+- 每个段落保持 80-120 字左右；段落数不变。
+- 不得使用中文弯引号""，用「」或单引号。
+- 保持${ageInfo.labelCn}风格：温柔、缓慢、拟声词、等待/爱/守护。
+
+输出严格 JSON：
+{
+  "title": "故事标题",
+  "preview": "前两句预览",
+  "moral": "故事寓意",
+  "content": ["第1段...", "第2段...", "第3段..."]
+}`;
+  }
+  return `You are a children's bedtime story editor. The ${ageInfo.labelEn} story "${story.title}" below needs MINIMAL targeted fixes for the gaps listed (weave them naturally into suitable paragraphs; do NOT change the plot, do NOT delete paragraphs, do NOT rewrite unrelated content). Output the full corrected paragraph array.
+
+**Current full story (paragraphs numbered):**
+${paras}
+
+**Gaps to fix:**
+${gaps.map(g => '- ' + g.label + ': ' + g.fix).join('\n')}
+
+**Requirements:**
+- Weave fixes in naturally while keeping plot and style consistent.
+- Keep each paragraph ~80-120 characters; keep the same paragraph count.
+- Keep ${ageInfo.labelEn} style: gentle, slow, onomatopoeia, waiting/love/guardianship.
+
+Output strict JSON:
+{
+  "title": "story title",
+  "preview": "first two sentences",
+  "moral": "the lesson",
+  "content": ["paragraph 1...", "paragraph 2...", "paragraph 3..."]
+}`;
 }
 
 // ===== Main =====
@@ -294,16 +457,26 @@ async function main() {
           ? buildScienceChinesePrompt(article, ageInfo, dateStr)
           : buildScienceEnglishPrompt(article, ageInfo, dateStr);
         raw = await callAPIWithRetry(prompt, tag);
-        if (article && article.source) raw.source = article.source; // 标记来源杂志
+        raw.source = article ? article.source : (language === 'zh' ? '儿童科普常识' : "Children's science (general)"); // 标记来源（始终有值）
       } else {
         tag = `${dateStr}-${language}`;
+        // DeepSeek max_tokens 4096 足够一次生成完整故事，单次调用（不再分段续写）
         prompt = language === 'zh'
           ? buildChinesePrompt(dateStr, ageInfo)
           : buildEnglishPrompt(dateStr, ageInfo);
         raw = await callAPIWithRetry(prompt, tag);
+        // 代码级自检：中文去全历史重复段（兜底）；英文字符集小易误伤，仅靠 prompt 约束
+        if (language === 'zh' && Array.isArray(raw.content)) {
+          raw = { ...raw, content: dedupeAdjacentParagraphs(raw.content) };
+        }
       }
 
       const story = buildStoryObj(raw, dateStr, language, ageInfo, category || 'regular');
+
+      // 胎教期风格自检 + AI 定向修复（拟声词/妈妈心跳/未出生视角/弯引号）
+      if (story.ageGroup === 'prenatal') {
+        await ensurePrenatalStyle(story, ageInfo, dateStr, tag);
+      }
 
       // Validate required fields
       if (!story.title || !story.content || story.content.length === 0) {

@@ -175,7 +175,25 @@ const THEME_POOL_EXTRA_CN = [
   { name: '家庭新视角', desc: '家的故事——妈妈的口头禅、爸爸的鼾声、饭桌上的故事、晚安吻、外婆的手、回家的路。' },
   { name: '自然奇观', desc: '地球的奇迹——极光的舞蹈、大峡谷的书、珊瑚礁的城市、撒哈拉的星空、地球的转动、贝加尔湖的透明。' },
   { name: '冒险与勇气', desc: '探险之旅——森林深处的宝藏、独自过河、迷路后的冷静、山顶的信号、泥泞的路、悬崖跳伞。' },
-  { name: '爱与善良', desc: '温暖人心——流浪猫的新家、给老人的椅子、分享的午餐、雨中的伞、最后的晚安、帮妈妈捶背。' }
+  { name: '爱与善良', desc: '温暖人心——流浪猫的新家、给老人的椅子、分享的午餐、雨中的伞、最后的晚安、帮妈妈捶背。' },
+  '暖暖厨房里的小麦香',
+  '桂花糕的第一缕甜',
+  '会唱歌的瓷碗',
+  '调色盘上的旅行',
+  '蜡笔画出的彩虹路',
+  '风铃写给宝宝的信',
+  '小火车开往云朵站',
+  '会发光的路灯叔叔',
+  '外婆的针线筐里住着春天',
+  '小雨靴踩出的水花歌',
+  '会跳舞的影子朋友',
+  '暖水袋里的小太阳',
+  '图书馆角落的瞌睡猫',
+  '会算术的饼干',
+  '望远镜里的小星球',
+  '摇篮曲里的星星船',
+  '会讲故事的旧藤椅',
+  '窗台上的多肉小队'
 ];
 
 const THEME_POOL_EXTRA_EN = [
@@ -249,7 +267,25 @@ const CONCRETE_SEEDS_EN = [
   'Mom\'s catchphrase', 'Dad\'s snoring', 'Stories at the dinner table', 'The goodnight kiss', 'Grandma\'s hands', 'The way home',
   'The dance of the aurora', 'The Grand Canyon\'s book', 'The coral reef city', 'The Sahara\'s starry sky', 'Earth\'s rotation', 'Lake Baikal\'s clarity',
   'Treasure deep in the forest', 'Crossing the river alone', 'Calm after getting lost', 'The signal from the summit', 'The muddy road', 'Cliff parachuting',
-  'The stray cat\'s new home', 'The seat for the old lady', 'The shared lunch', 'The umbrella in the rain', 'The final goodnight',   'Rubbing Mom\'s back'
+  'The stray cat\'s new home', 'The seat for the old lady', 'The shared lunch', 'The umbrella in the rain', 'The final goodnight',   'Rubbing Mom\'s back',
+  'A little wheat aroma in the warm kitchen',
+  'the first sweetness of osmanthus cake',
+  'the singing porcelain bowl',
+  'a journey on the palette',
+  'the rainbow road drawn in crayon',
+  'the wind-chime’s letter to the baby',
+  'the little train to Cloud Station',
+  'the glowing streetlamp uncle',
+  'spring living in Grandma’s sewing basket',
+  'the water-splash song of little rain boots',
+  'the dancing shadow friend',
+  'a tiny sun in the warm water bottle',
+  'the dozing cat in the library corner',
+  'the arithmetic biscuit',
+  'a little planet in the telescope',
+  'the starry boat in the lullaby',
+  'the old rattan chair that tells stories',
+  'the succulent squad on the windowsill'
 ];
 
 // Group the concrete seeds by their broad category so the chosen theme gets matching sparks.
@@ -600,12 +636,308 @@ function getUnlockedSeeds(lang) {
 /**
  * Pick the broad theme direction for a date (rotates across the full 26-theme pool).
  */
+// ===== 胎教期「故事孕育师」增强（参照 deepseek 故事生成思路优化指南.md） =====
+// 与「黑猫当当」系列素材库完全分开（黑猫当当是独立周更系列，不混入每日胎教故事）。
+// 仅作用于 prenatal 阶段（2026-09-22 之前）；不改动日期主题轮换、不引入蟹类、不把宝宝写成已出生、不用弯引号。
+const PRENATAL_CAST = [
+  { name: '小海螺·小旋旋', en: 'Little Conch Xuanxuan', type: '白海螺', enType: 'white conch', home: '深海海草森林', enHome: 'deep-sea seagrass forest', personality: '安静、温柔、充满好奇', enPersonality: 'quiet, gentle, full of curiosity', catchphrase: '原来是这样呀……', enCatchphrase: 'So that is how it is...' },
+  { name: '月亮妈妈', en: 'Moon Mama', type: '守护者', enType: 'guardian', home: '夜空', enHome: 'the night sky', personality: '温柔、守护、充满智慧', enPersonality: 'gentle, protective, full of wisdom', catchphrase: '安心睡吧，妈妈在呢。', enCatchphrase: 'Sleep safe, Mama is here.' },
+  { name: '小星星·暖暖', en: 'Little Star Nuannuan', type: '暖黄小星星', enType: 'warm-yellow little star', home: '夜空', enHome: 'the night sky', personality: '圆滚滚、爱眨眼睛、爱陪伴', enPersonality: 'round, blinking, loves to keep company', catchphrase: '我陪着你呀。', enCatchphrase: 'I am right here with you.' },
+  { name: '小熊·安安', en: 'Little Bear An’an', type: '小棕熊', enType: 'little brown bear', home: '森林树洞', enHome: 'a forest hollow', personality: '软软的、慢吞吞、有安全感', enPersonality: 'soft, slow, reassuring', catchphrase: '呼……噜……', enCatchphrase: 'huff... lu...' },
+  { name: '露珠邮递员·露露', en: 'Dew Postman Lulu', type: '小露珠', enType: 'little dewdrop', home: '清晨花瓣', enHome: 'a petal at dawn', personality: '活泼、爱问问题', enPersonality: 'lively, full of questions', catchphrase: '有信来啦！', enCatchphrase: 'A letter’s here!' },
+  { name: '云朵精灵·朵朵', en: 'Cloud Spirit Duoduo', type: '云端小精灵', enType: 'little cloud spirit', home: '云端棉田', enHome: 'the cloud cotton field', personality: '轻盈、爱照顾人', enPersonality: 'light, caring', catchphrase: '飘呀飘，到家啦。', enCatchphrase: 'Float, float, home at last.' },
+  { name: '小种子·芽芽', en: 'Little Seed Yaya', type: '小种子', enType: 'little seed', home: '妈妈的花园', enHome: 'Mama’s garden', personality: '耐心、满怀希望', enPersonality: 'patient, hopeful', catchphrase: '再等等，就快了。', enCatchphrase: 'Just a little longer.' },
+  { name: '小鸟·啾啾', en: 'Bird Jiujiu', type: '小鸟', enType: 'little bird', home: '屋檐', enHome: 'the eaves', personality: '会唱摇篮曲、温柔', enPersonality: 'sings lullabies, gentle', catchphrase: '啾啾，睡吧。', enCatchphrase: 'tweet, tweet, sleep now.' },
+  { name: '小闹钟·叮当', en: 'Little Alarm Dingdang', type: '小闹钟', enType: 'little alarm clock', home: '窗台', enHome: 'the windowsill', personality: '爱学唱歌、准时不闹', enPersonality: 'loves to sing, gentle with time', catchphrase: '叮咚，该睡啦。', enCatchphrase: 'ding-dong, time to sleep.' }
+];
+
+const PRENATAL_SCENES = ['海草森林', '月光海面', '云端棉田', '妈妈的花园', '星夜天台', '暖暖被窝', '清晨的花瓣露台', '暖暖的厨房窗台', '雨后的小院', '麦浪里的石磨', '雪地小木屋', '森林溪边', '图书馆角落', '风铃走廊'];
+const PRENATAL_SCENES_EN = ['seagrass forest', 'moonlit sea', 'cloud cotton field', 'Mama’s garden', 'starry rooftop', 'cozy bed', 'dawn petal terrace', 'warm kitchen windowsill', 'courtyard after rain', 'stone mill in the wheat field', 'snowy cabin', 'forest streamside', 'library corner', 'wind-chime corridor'];
+const PRENATAL_IMAGERY = ['星星灯笼', '心跳小鼓', '梦的种子', '云朵口袋', '月光小船', '风的信笺', '彩虹小桥', '会发芽的雨滴', '会唱歌的鹅卵石', '面包的香气云', '小脚印地图', '温暖的毛线团'];
+const PRENATAL_IMAGERY_EN = ['star lantern', 'heartbeat drum', 'dream seed', 'cloud pocket', 'moonlight boat', 'wind’s letter', 'rainbow bridge', 'a sprouting raindrop', 'the singing pebble', 'the aroma cloud of bread', 'little-footprint map', 'a warm ball of yarn'];
+
+// 胎教期风格范例（中文）：以《白海豚台风的小船》为参照，展示"诗意拟声 + 感官意象 + 妈妈心跳高光 + 对肚里宝宝说话 + 温柔收尾"的具体落地形态。
+// 目的是给模型一个可对照的 concrete example，避免只有抽象要求导致输出平淡。
+const PRENATAL_STYLE_EXAMPLE_ZH = `
+**胎教期风格范例（请参照其笔感，但不要照抄题材与文字）：**
+《白海豚台风的小船》：
+台风白海豚要来啦！它从很远很远的大海那边，呼呼地游了过来。风是它的尾巴，哗啦哗啦的雨，是它溅起的水花。
+爸爸开着小车出门，车轮下面咕嘟咕嘟冒着小水花，小车好像变成了一艘圆圆的小船，在白海豚带来的水世界里，轻轻摇啊摇。
+红绿灯的倒影在水洼里晃呀晃，像一串温柔的星星。小船慢慢划过街道，遇见的小树、小房子都朝它轻轻点头。白海豚在天上远远地望着，好像在说：慢慢开，不要急。
+不一会儿，小船稳稳停在家的门口。妈妈张开温暖的怀抱，把你——还在肚子里的小宝宝——轻轻护住。你听见了吗？咚咚、咚咚，那是妈妈的心跳，像小船靠岸时，轻轻拍着水面的声音。
+台风白海豚还在天上游呀游，可我们的小家，永远是干干爽爽、暖暖和和的小港湾。晚安，我的小船长。
+**从范例中必须提炼并落实的胎教笔感**：
+1. 拟声词自然贯穿（呼呼/哗啦哗啦/咕嘟咕嘟/咚咚/摇啊摇/晃呀晃……），不是偶尔点缀，而是让声音参与叙事；
+2. 用具体的感官比喻（风是尾巴、雨是水花、倒影像星星、心跳像拍水声）；
+3. 情感高光是多样化的（妈妈心跳 / 哼歌 / 怀抱 / 月光 / 爸爸笑声 / 被窝 / 星光摇篮，按日期轮换，不必每次都是心跳），直接写出那个意象，并用「你听见了吗？」或「小宝宝，你感觉到了吗？」对肚里宝宝说话；
+4. 把「还在肚子里的小宝宝」作为倾听者贯穿全文，结尾以温柔守候收束。`;
+const PRENATAL_STYLE_EXAMPLE_EN = `
+**Prenatal style example (mirror its feel; do NOT copy the topic or wording):**
+"The White Dolphin Typhoon's Little Boat":
+Typhoon White Dolphin is coming! It swam all the way from the far, far sea, whoosh-whoosh. The wind is its tail; the pattering rain is the spray it kicks up.
+Daddy drove the little car out, gurgle-gurgle bubbles under the wheels, and the car became a round little boat, swaying gently in White Dolphin's watery world.
+Traffic-light reflections wobbled in the puddles like a string of gentle stars. The little boat-boat glided past the streets, and the trees and little houses nodded softly. White Dolphin watched from the sky, as if saying: go slowly, no hurry.
+Soon the little boat-boat stopped at home. Mama opened her warm arms and gently held you — the little one still in her belly. Can you hear it? Thump, thump, that is Mama's heartbeat, like the boat gently tapping the water as it docks.
+Typhoon White Dolphin still swims on in the sky, but our little home is always dry, warm, and safe. Good night, my little captain.
+**Prenatal touches you MUST extract and apply from this example**:
+1. Onomatopoeia woven naturally through the story (whoosh-whoosh / patter / gurgle / thump-thump / sway, sway...), letting sound take part in the telling;
+2. Concrete sensory metaphors (wind as tail, rain as spray, reflections as stars, heartbeat as waves tapping the boat);
+3. The emotional highlight is varied (mother's heartbeat / humming / embrace / moonlight / daddy's laugh / blanket / cradle of stars, rotating daily — not always the heartbeat); write that imagery directly and speak to the baby with "can you hear it?" or "little one, can you feel it?";
+4. The unborn baby as the listener throughout, ending with tender waiting.`;
+
+// ===== 胎教期「题材色调」轮换（让每日题材更多样，避免雷同） =====
+// 不替代常驻角色/情感锚点/安全边界，只是给本篇一个可侧重展开的题材方向。
+const PRENATAL_THEME_FLAVORS_CN = [
+  '声音与音乐：让故事充满温柔的声音——妈妈哼的歌、风铃轻响、小乐器叮咚、雨打叶片的节奏，用声音编织安全感。',
+  '颜色与画：用颜色讲故事——晚霞的橘、麦田的金、海的蓝，主角收集颜色做成给宝宝的礼物。',
+  '味道与温暖食物：温柔的食物气息——粥的甜香、苹果的脆、桂花的清甜，用味道传递爱意（绝不涉及螃蟹/大闸蟹）。',
+  '四季与天气：讲讲温柔的天气——春天的第一场细雨、夏夜的萤火、冬日的暖阳、秋风里打转的叶子。',
+  '动物朋友：主角遇见温柔的小动物——慢吞吞的小乌龟、爱打盹的猫、会唱歌的青蛙、绒毛蓬松的小羊。',
+  '小手小脚与身体：用身体感受世界——小脚丫踩在软软的地上、小手摸光滑温润的石头、舒舒服服打个哈欠。',
+  '家里的温暖物件：会发光的夜灯、软软的毛毯、滴答走的钟、窗台上的小盆栽，平凡物件里藏着爱。',
+  '光的游戏：光与影的温柔游戏——晨光、烛光、透过树叶洒下的光斑、墙上跳舞的小影子。',
+  '小小远行：一次轻轻的远行——顺着小溪飘、掠过金色田野、翻过温柔的小山，去看柔软的风景。',
+  '梦与想象：轻轻的想象——云朵变成小羊、星星排成笑脸、风把小小的愿望寄向远方。'
+];
+const PRENATAL_THEME_FLAVORS_EN = [
+  'Sound & music: fill the story with gentle sounds — mommy’s humming, a soft wind-chime, little instruments going ding, the rhythm of rain on leaves; weave safety through sound.',
+  'Colour & painting: tell the story with colour — the orange of dusk, the gold of wheat fields, the blue of the sea; the protagonist gathers colours into a gift for the baby.',
+  'Taste & warm food: tender food scents — the sweetness of congee, the crunch of an apple, the light fragrance of osmanthus; pass love through taste (never crabs / hairy crabs).',
+  'Seasons & weather: gentle weather — the first spring drizzle, summer-night fireflies, winter’s warm sun, an autumn leaf spinning in the wind.',
+  'Animal friends: the protagonist meets gentle little animals — a slow little turtle, a napping cat, a singing frog, a fluffy little lamb.',
+  'Little hands, little feet, the body: feel the world with the body — tiny feet on soft ground, a small hand on a smooth warm stone, a comfy yawn.',
+  'Cosy household objects: a glowing night-light, a soft blanket, a ticking clock, a little potted plant on the windowsill — love hidden in ordinary things.',
+  'Play of light: a gentle game of light and shadow — morning light, candlelight, dappled light through leaves, a little shadow dancing on the wall.',
+  'A tiny journey: a soft little trip — drift along the stream, skim the golden fields, over a gentle hill, to see soft scenery.',
+  'Dreams & imagination: a light imagination — clouds turning into little sheep, stars arranging into a smiling face, the wind mailing a tiny wish far away.'
+];
+
+function pickPrenatalFlavor(dateStr, lang) {
+  const pool = lang === 'zh' ? PRENATAL_THEME_FLAVORS_CN : PRENATAL_THEME_FLAVORS_EN;
+  const idx = hashDate(dateStr + '-flav-' + lang) % pool.length;
+  return pool[idx];
+}
+
+// ===== 每日指定作家风格（按日期确定性轮换，让每篇"文气"不同）=====
+// 主导风格 + 辅助风格成对给出，避免每日都是一种味道。
+const AUTHOR_STYLES_CN = [
+  { main: '孙敬修的温柔民间故事风', assist: '口语化亲切、拟声词丰富、节奏舒缓' },
+  { main: '郑渊洁的天马行空想象风', assist: '大胆设定、幽默反转、童心视角' },
+  { main: '冰波的诗意奇幻风', assist: '散文诗语言、通感意象、万物有灵' },
+  { main: '张秋生的小巴掌精炼风', assist: '短小精致、留白含蓄、画面干净' },
+  { main: '金波的抒情诗性风', assist: '优美韵律、细腻情感、自然诗意' },
+  { main: '汤素兰的呆萌幽默风', assist: '童趣诙谐、角色可爱、轻松温暖' },
+  { main: '绘本大师的安静画面风', assist: '留白、意境、像翻绘本一样安静' },
+  { main: '北欧童话的悠远想象风', assist: '辽阔意境、淡淡哲思、诗意悠长' },
+  { main: '日本童话的温柔物哀风', assist: '自然哲思、质朴深情、安静温暖' },
+  { main: '童谣民歌的韵律回环风', assist: '排比反复、朗朗上口、节奏如歌' },
+];
+const AUTHOR_STYLES_EN = [
+  { main: 'Dr. Seuss\'s rhythmic rhyme', assist: 'rhyme, repetition, catchy rhythm' },
+  { main: 'Sesame Street\'s warm dialogue', assist: 'character-driven, gentle humor, subtle lesson' },
+  { main: 'Roald Dahl\'s mischievous wit', assist: 'twists, sensory exaggeration, cheeky fun' },
+  { main: 'Mark Twain\'s riverbank storytelling', assist: 'conversational, rustic, adventurous' },
+  { main: 'Robert McCloskey\'s tender nature', assist: 'loving observation, small-town warmth' },
+  { main: 'Julia Donaldson\'s rhyming journey', assist: 'rhyme, repetition, quest structure' },
+  { main: 'Oliver Jeffers\'s quiet whimsy', assist: 'understated, gentle, visual wonder' },
+  { main: 'Mem Fox\'s cozy rhythm', assist: 'rhythmic, warm, soothing' },
+  { main: 'A.A. Milne\'s gentle classic', assist: 'soft humor, childhood innocence' },
+  { main: 'Beatrix Potter\'s cozy animals', assist: 'small animals, quaint, tender' },
+];
+
+function pickAuthorStyle(dateStr, lang) {
+  const pool = lang === 'zh' ? AUTHOR_STYLES_CN : AUTHOR_STYLES_EN;
+  const s = pool[hashDate(dateStr + '-author-' + lang) % pool.length];
+  return `${s.main}（辅以 ${s.assist}）`;
+}
+
+// 确定性轮换取 n 个元素的子集（不重复、按日期变化）
+function rotateList(arr, key, n) {
+  const start = hashDate(key) % arr.length;
+  const out = [];
+  for (let i = 0; i < n && i < arr.length; i++) out.push(arr[(start + i) % arr.length]);
+  return out;
+}
+
+// 「温柔高光」池：胎教故事的情感锚点不固定为妈妈心跳，按日期确定性轮换，让每篇都有不同的安全感意象。
+const PRENATAL_HIGHLIGHTS_CN = [
+  '妈妈的心跳：主角途经温暖水域或光晕，听见「咚咚、咚咚」的妈妈心跳，用「你听见了吗？」与肚里宝宝说话',
+  '妈妈的哼歌：一阵温柔的哼歌声像云朵被子，把主角轻轻裹住，哼歌里藏着摇篮曲的节拍',
+  '温暖的怀抱：一圈暖暖的光像张开的怀抱，主角被稳稳托住，感觉像躺在软软的小窝里',
+  '月光守候：圆圆的月亮像一盏小夜灯，安安静静陪着主角和肚里宝宝，把影子照得软软的',
+  '爸爸的笑声：远远传来爸爸低沉温柔的笑声，像春天的雷声一样让人安心',
+  '被窝的暖意：一床云朵一样软的小被子盖过来，把主角裹成一个小小的、暖暖的茧',
+  '星光摇篮：星星们手拉手围成小小的摇篮，轻轻摇着主角，像在哼一首没有词的歌'
+];
+const PRENATAL_HIGHLIGHTS_EN = [
+  "mother's heartbeat: the protagonist passes warm waters or a glow and hears a soft \"thump, thump\" — Mama's heartbeat — and speaks to the baby with \"can you hear it?\"",
+  'a gentle humming: a soft hum wraps the protagonist like a cloud blanket, carrying the rhythm of a lullaby',
+  'a warm embrace: a ring of warm light like open arms holds the protagonist steady, as if in a soft little nest',
+  'moonlight watching: a round moon like a little night-light quietly keeps the protagonist and the baby company, softening every shadow',
+  "daddy's laugh: a low, gentle laugh drifts from far away, reassuring like spring thunder",
+  'the warmth of a blanket: a cloud-soft little blanket tucks over the protagonist, wrapping them in a small, warm cocoon',
+  'a cradle of stars: stars hold hands into a tiny cradle and rock the protagonist gently, like humming a wordless song'
+];
+
+function pickPrenatalHighlight(dateStr, lang) {
+  const pool = lang === 'zh' ? PRENATAL_HIGHLIGHTS_CN : PRENATAL_HIGHLIGHTS_EN;
+  return pool[hashDate(dateStr + '-hl-' + lang) % pool.length];
+}
+
+// ===== 拟声词库（按场景分类，按日期轮换，让拟声更多样）=====
+// 每天从不同场景各取 2-3 个，避免故事里总是同一批拟声词。
+const ONO_CN = {
+  wind: ['呼呼', '沙沙', '嗖嗖', '簌簌', '呜呜', '哗啦哗啦'],
+  water: ['咕嘟咕嘟', '哗啦哗啦', '滴答滴答', '叮咚叮咚', '汩汩', '啪嗒啪嗒'],
+  rain: ['淅淅沥沥', '噼里啪啦', '滴滴答答', '沙沙沙', '嗒嗒嗒'],
+  animal: ['啾啾', '叽叽喳喳', '蛐蛐蛐蛐', '嗡嗡', '喵喵', '汪汪', '咕咕'],
+  motion: ['摇啊摇', '晃呀晃', '扑棱扑棱', '吧嗒吧嗒', '扑通扑通', '咯噔咯噔'],
+  music: ['叮咚', '叮铃铃', '咚咚', '啦啦啦', '嘀嘀嗒', '叮叮当'],
+  soft: ['窸窸窣窣', '呼噜呼噜', '沙沙响', '轻轻响', '软软地响', '悄悄响'],
+  heart: ['咚咚', '扑通', '怦怦', '咚哒', '怦咚', '噗通']
+};
+const ONO_EN = {
+  wind: ['whoosh', 'swish', 'rustle', 'hush', 'sigh'],
+  water: ['gurgle', 'splash', 'plip-plop', 'bubble', 'drip'],
+  rain: ['pitter-patter', 'drip-drop', 'tick-tack', 'spatter'],
+  animal: ['tweet', 'chirp', 'cricket-cricket', 'buzz', 'purr', 'meow', 'ruff'],
+  motion: ['sway-sway', 'wiggle', 'flutter', 'pat-pat', 'thump', 'pitter'],
+  music: ['ding-dong', 'la-la-la', 'tinkle', 'dum-dum', 'ta-da'],
+  soft: ['hush', 'whisper', 'fizz', 'softly', 'nuzzle'],
+  heart: ['thump-thump', 'lub-dub', 'beet-beet', 'boom-boom']
+};
+
+function pickOnomatopoeia(dateStr, lang, n = 3) {
+  const pool = lang === 'zh' ? ONO_CN : ONO_EN;
+  const cats = Object.keys(pool);
+  const out = [];
+  // 按日期确定性打乱类目顺序，取 n 个类目，每类取 1 个；全局去重（跨类目不重复）
+  const start = hashDate(dateStr + '-ono-' + lang) % cats.length;
+  for (let i = 0; i < cats.length && out.length < n; i++) {
+    const cat = cats[(start + i) % cats.length];
+    const words = pool[cat];
+    const offset = Math.floor(hashDate(dateStr + '-ono-' + lang) / (i + 1)) % words.length;
+    for (let k = 0; k < words.length; k++) {
+      const w = words[(offset + k) % words.length];
+      if (!out.includes(w)) { out.push(w); break; }
+    }
+  }
+  return out;
+}
+
+const EMOTIONAL_ANCHORS = [
+  '高光意象（按日期轮换，见骨架提示）：妈妈的心跳 / 妈妈哼歌 / 温暖怀抱 / 月光守候 / 爸爸笑声 / 被窝暖意 / 星光摇篮。',
+  '包裹/承载：柔软云墙、气泡、被水流/风轻轻托着、温暖的被窝——暗合羊水里的被包裹感。',
+  '光与希望：微光、星光、萤火、黎明的金边。',
+  '温度与触觉：手掌温度、温牛奶热气、阳光暖照、软软的毛茸茸。',
+  '声音记忆：爸爸的笑声、妈妈的哼歌、门铃、拖鞋声。',
+  '成长意象：种子发芽、小脚印、房子变大、宝宝安心长大。',
+  '家庭连结：哥哥的画、奶奶的袜子、全家声景、妈妈的声音。'
+];
+
+const EMOTIONAL_ANCHORS_EN = [
+  'Highlight imagery (rotates daily, see skeleton hint): mother\'s heartbeat / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a warm blanket / a cradle of stars.',
+  'Wrapping / carrying: soft cloud walls, bubbles, being held by water or wind, a warm duvet — echoing the womb’s embrace.',
+  'Light & hope: a glimmer, starlight, fireflies, the golden edge of dawn.',
+  'Temperature & touch: the warmth of a palm, steam from warm milk, sunny warmth, soft fur.',
+  'Sound memory: dad’s laugh, mom’s humming, the doorbell, the sound of slippers.',
+  'Growth imagery: a seed sprouting, little footprints, a house growing, the baby growing safe and sound.',
+  'Family connection: big brother’s drawing, grandma’s socks, the whole family’s soundscape, mom’s voice.'
+];
+
+const PRENATAL_SAFETY = [
+  '禁止任何危险、冲突、跌落、破碎、黑暗吞噬、分离、追赶情节。',
+  '禁止否定式安慰（如「不要怕」「别哭」），只用正向温柔的安抚。',
+  '禁止角色有不幸经历或负面性格；世界必须全然的善意与安全。',
+  '胎教期故事讲给肚里尚未出生的宝宝听：绝不可把宝宝写成已经出生；结尾多以「等你准备好了」「安心长大就好」等温柔守候收束；可让主角途经温暖水域/光晕，以「妈妈的心跳 / 妈妈哼歌 / 温暖怀抱 / 月光守候 / 爸爸笑声 / 被窝暖意 / 星光摇篮」中任一种作为本篇的情感高光（按日期轮换，不必每次都是心跳）。',
+  '项目硬约束：禁止出现螃蟹 / 大闸蟹 / 任何蟹类角色、食物或情节（含长荡湖等以蟹为卖点的内容）。',
+  '不使用中文弯引号「"」，用「」或单引号。'
+];
+
+const PRENATAL_SAFETY_EN = [
+  'No danger, conflict, falling, breaking, dark engulfing, separation, or chasing.',
+  'No negative comfort (e.g. "don’t be afraid", "don’t cry"); only gentle positive reassurance.',
+  'No unfortunate backstories or negative traits; the world must be wholly kind and safe.',
+  'Prenatal stories are told to the unborn baby still in mommy’s tummy: never write the baby as already born; end with tender waiting like "when you are ready" / "just grow safe and sound"; let the protagonist pass warm waters or a glow and use ONE of these as the story\'s emotional highlight (rotates daily, not always the heartbeat): mother\'s heartbeat / mother humming / a warm embrace / moonlight watching / daddy\'s laugh / a warm blanket / a cradle of stars.',
+  'Hard project rule: never include crabs / hairy crabs / any crab character, food, or plot (including places marketed for crabs).',
+  'Do not use Chinese curly quotes ""; use 「」 or straight single quotes.'
+];
+
+function pickProtagonist(dateStr, lang) {
+  const offset = lang === 'en' ? Math.floor(PRENATAL_CAST.length / 2) : 0;
+  const idx = (hashDate(dateStr + '-prot-' + lang) + offset) % PRENATAL_CAST.length;
+  return PRENATAL_CAST[idx];
+}
+
+function buildPrenatalBlock(dateStr, lang) {
+  const prot = pickProtagonist(dateStr, lang);
+  if (lang === 'zh') {
+    const flavor = pickPrenatalFlavor(dateStr, 'zh');
+    const scenes = rotateList(PRENATAL_SCENES, dateStr + '-scn-zh', 3).join('、');
+    const imagery = rotateList(PRENATAL_IMAGERY, dateStr + '-img-zh', 3).join('、');
+    const anchors = EMOTIONAL_ANCHORS.map((a, i) => (i + 1) + '. ' + a).join('  ');
+    const safety = PRENATAL_SAFETY.join(' ');
+    return `
+
+**胎教期增强 · 「故事孕育师」方法（请在本篇落实）**
+本篇优先小主角（以其设定为基准展开，保持性格与口头禅前后一致；可让它遇见材料库里的其他伙伴，形成温柔的连续感）：
+- ${prot.name}（${prot.type}｜home: ${prot.home}｜性格: ${prot.personality}｜口头禅: ${prot.catchphrase}）
+常驻材料库（可顺带出现，让世界更连贯）：场景如 ${scenes}；意象如 ${imagery}。已有故事的主人公就是最珍贵的素材，可在不同故事里让它们偶尔相遇。
+本篇题材色调（任选其一或自然融合，避免每天题材雷同）：
+${flavor}
+情感锚点（本篇必须自然嵌入至少 3 种，多选多益）：
+${anchors}
+本篇拟声词库（按场景分类、每日轮换，请从中自然选用 3-5 个融入叙事，让声音参与故事，不要只用一个重复到底）：${pickOnomatopoeia(dateStr, 'zh').join('、')}，也可按故事场景自由补充同类拟声（如水流声、风声、动物声、脚步摇动声、心跳声）。
+安全边界（绝对遵守）：${safety}
+故事骨架提示：微小主角 → 一个温柔的愿望 → 被水流/风/歌声轻轻托送（暗合羊水体验） → 遇见颜色/味道/温度/旋律的感官之美 → 途经温暖水域或光晕，以「${pickPrenatalHighlight(dateStr, 'zh')}」作为本篇的情感高光（每天轮换，不必每次都是妈妈心跳） → 用「小宝宝，你听到了吗？」式对话与肚里宝宝说话 → 以温柔守候收尾（结尾不必每次都是「晚安」：可按本篇情境用「等你准备好了，外面的世界有软软的风和圆圆的月亮等你」「早安，小宝宝，今天的世界亮晶晶的」或「晚安，小宝宝，月亮陪着你」等，自然选择）。`;
+  }
+  const flavor = pickPrenatalFlavor(dateStr, 'en');
+  const scenes = rotateList(PRENATAL_SCENES_EN, dateStr + '-scn-en', 3).join(', ');
+  const imagery = rotateList(PRENATAL_IMAGERY_EN, dateStr + '-img-en', 3).join(', ');
+  const anchors = EMOTIONAL_ANCHORS_EN.map((a, i) => (i + 1) + '. ' + a).join('  ');
+  const safety = PRENATAL_SAFETY_EN.join(' ');
+  return `
+
+**Prenatal enhancement · "Story-Midwife" method (apply in this story)**
+Preferred little protagonist for this story (base the story on this character, keep personality & catchphrase consistent; may meet other library friends for a gentle sense of continuity):
+- ${prot.name} (${prot.enType} | home: ${prot.enHome} | personality: ${prot.enPersonality} | catchphrase: ${prot.enCatchphrase})
+Resident material library (may appear alongside, to make the world coherent): scenes like ${scenes}; imagery like ${imagery}. Past story protagonists are precious material — let them occasionally meet across stories.
+Subject tone for this story (pick one or blend naturally, to avoid repetitive themes day after day):
+${flavor}
+Emotional anchors (embed at least 3 of these naturally; more is better):
+${anchors}
+Onomatopoeia library for this story (categorized & rotating daily — pick 3-5 and weave them into the telling so sound takes part; do not reuse just one): ${pickOnomatopoeia(dateStr, 'en').join(', ')}; feel free to add similar sounds matching the scene (water, wind, animals, motion, music, heartbeat).
+Safety boundaries (strictly obey): ${safety}
+Skeleton hint: tiny protagonist → a gentle wish → carried softly by water/wind/song (echoing the womb) → sensory beauty of colour/taste/temperature/melody → passing warm waters or a glow, use "${pickPrenatalHighlight(dateStr, 'en')}" as this story's emotional highlight (rotates daily, not always the heartbeat) → talk to the unborn baby with "little one, can you hear?" → end with tender waiting (not always "good night": per this story's occasion, use "when you are ready, the soft wind and round moon will be waiting", "good morning, little one, the world is sparkly today", or "good night, little one, the moon is with you" — choose naturally).`;
+}
+
 function pickTheme(dateStr, lang) {
   const pool = lang === 'zh' ? THEME_POOL_ALL_CN : THEME_POOL_ALL_EN;
   // Offset EN by half the pool so CN and EN differ on the same day.
   const offset = lang === 'en' ? Math.floor(pool.length / 2) : 0;
   const idx = (hashDate(dateStr) + offset) % pool.length;
   return pool[idx];
+}
+
+// ===== 情境/场合轮换（让每日故事不局限于「晚安」哄睡） =====
+const OCCASIONS_CN = [
+  { key: '早安', hint: '以温柔的晨光与苏醒开场，结尾用「早安」式清晨问候收束' },
+  { key: '白天', hint: '以安静白天的探索与发现为主，结尾是小主角在暖阳里满足地舒口气' },
+  { key: '晚安', hint: '以哄睡摇篮与星光为主，结尾用「晚安」温柔道别' },
+  { key: '奇妙发现', hint: '以一次温柔的好奇探险为主，结尾停留在「原来世界这么奇妙」的惊喜' },
+  { key: '暖心陪伴', hint: '以好朋友/家人的陪伴为主，结尾是依依不舍又安心的「明天见」' }
+];
+const OCCASIONS_EN = [
+  { key: 'Good morning', hint: 'open with gentle dawn light; end with a "good morning" greeting' },
+  { key: 'Daytime', hint: 'a calm daytime discovery; end with the little hero breathing satisfied in warm sun' },
+  { key: 'Good night', hint: 'a lullaby under starlight; end with a tender "good night"' },
+  { key: 'Wonder', hint: 'a gentle curious adventure; end on the surprise "the world is so wonderful"' },
+  { key: 'Warm company', hint: 'companionship of a friend/family; end with a reluctant but safe "see you tomorrow"' }
+];
+function pickOccasion(dateStr, lang) {
+  const list = lang === 'zh' ? OCCASIONS_CN : OCCASIONS_EN;
+  const idx = hashDate(dateStr + '-occ-' + lang) % list.length;
+  return list[idx];
 }
 
 /**
@@ -773,6 +1105,9 @@ const EN_STYLES_EXTRA = `
 function buildChinesePrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_CN[ageInfo.group];
   const theme = pickTheme(dateStr, 'zh');
+  const prenatalBlock = ageInfo.group === 'prenatal' ? buildPrenatalBlock(dateStr, 'zh') : '';
+  const occasion = pickOccasion(dateStr, 'zh');
+  const styleExample = ageInfo.group === 'prenatal' ? PRENATAL_STYLE_EXAMPLE_ZH : '';
   return `写一个适合儿童的中文睡前故事，语言温和易懂，阅读时长约 3-5 分钟。故事需有完整情节，结尾附上简短寓意。
 
 当前年龄段：${ageInfo.labelCn}
@@ -785,19 +1120,26 @@ ${theme.desc}
 **本篇灵感选题库（任选其一或受其启发展开，避免与已写过的故事重复）：**
 ${pickSeeds(dateStr, 'zh').map(s => '- ' + s).join('\n')}
 
+**本篇情境/场合（每日故事不要局限于「晚安」哄睡，按情境自然变化）：「${occasion.key}」——${occasion.hint}。结尾请与情境呼应，不要千篇一律以「晚安」收束。**
+
 请根据当前年龄段调整故事风格和内容深度。故事标题中注明适合的年龄段。
 
 **中文故事风格参考，融合以下大师的特色，加上你自己的创造力和想象力：**
 ${CN_STYLES}
 ${CN_STYLES_EXTRA}
 
+${styleExample}
+
 **综合风格要求：**
-- 所有风格要自然融合，不要生硬拼接。可以以某一种或两种风格为主导，其他风格为点缀。
+- **本篇指定作家风格（按日期轮换，务必以它为主导笔法，其他风格仅作点缀）**：${pickAuthorStyle(dateStr, 'zh')}。请在情节、语言节奏、句式上都朝这位作家的味道靠，让每篇故事的"文气"都不一样。
+- 所有风格要自然融合，不要生硬拼接。以指定风格为主导，其他风格为点缀。
 - 每篇故事可以侧重不同风格，保持多样性——这一篇偏孙敬修温柔民间故事风，下一篇偏郑渊洁天马行空想象风，再下一篇偏冰波诗意奇幻、张秋生小巴掌精炼、金波抒情诗性、汤素兰呆萌幽默，或上述扩展风格中的任意一种。
 - 场景可以有中国特色，也可以有奇幻世界，关键是要让孩子觉得"好听、想听、听不够"。
 - 适合朗读：句子有自然的停顿，家长读着顺口，孩子听着入耳。
 - 不同年龄段可侧重不同作家风格：胎教期偏冰波/金波的诗意温柔，0-3岁偏张秋生/孙敬修的短小精炼，3-6岁偏汤素兰/郑渊洁的幽默想象与轻松冒险，6岁以上可完整融合多种风格。
 - 形式可创新：可加入互动式提问（"你猜接下来呢？"）、系列化固定小主角连载（如"小云朵朵"系列）、关键段落标注可吟唱旋律提示。大龄故事可尝试中英双语对照段落。
+
+${prenatalBlock}
 
 **重要格式要求：**
 - 所有文本内容不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
@@ -820,6 +1162,9 @@ ${CN_STYLES_EXTRA}
 function buildEnglishPrompt(dateStr, ageInfo) {
   const ageStyle = AGE_STYLE_EN[ageInfo.group];
   const theme = pickTheme(dateStr, 'en');
+  const prenatalBlock = ageInfo.group === 'prenatal' ? buildPrenatalBlock(dateStr, 'en') : '';
+  const styleExample = ageInfo.group === 'prenatal' ? PRENATAL_STYLE_EXAMPLE_EN : '';
+  const occasion = pickOccasion(dateStr, 'en');
   return `Write an English children's bedtime story (not a translation, an original new story), reading time about 3-5 minutes.
 
 Current age stage: ${ageInfo.labelEn}
@@ -832,6 +1177,10 @@ ${theme.desc}
 **Inspiration seed library for this story (pick one or be inspired by it; avoid repeating stories already written):**
 ${pickSeeds(dateStr, 'en').map(s => '- ' + s).join('\n')}
 
+**Occasion for this story (daily stories need not all be "good night" — vary by occasion): "${occasion.key}" — ${occasion.hint}. End the story to match the occasion; don't default to "good night" every time.**
+
+${styleExample}
+
 Please adjust the story complexity based on the age stage.
 
 **Style reference - fuse these masters' characteristics with your own creativity and imagination:**
@@ -839,11 +1188,14 @@ ${EN_STYLES}
 ${EN_STYLES_EXTRA}
 
 **Overall style requirements:**
+- **Assigned author style for THIS story (rotates daily — make it the dominant voice, others only accent)**: ${pickAuthorStyle(dateStr, 'en')}. Lean into this author's voice in plot, rhythm, and sentence texture so each story reads differently.
 - All styles should blend naturally, not be awkwardly stitched together. One style can dominate while others accent.
 - Full of imaginative settings: singing trees, cloud-dwelling animals, color-eating monsters, flying libraries, talking rafts on the Mississippi, named duck families in a New England town, etc.
 - Suitable for reading aloud: sentence structures with natural pauses and breathing room for parents reading at bedtime.
 - Each story can lean toward different styles for variety - one Dr. Seuss rhyme-heavy, next Twain adventure narration, next Dahl dark humor, next McCloskey warm small-town daily life, or any of the expanded styles above.
 - Form can innovate: interactive questions ("Can you guess what happens next?"), a serialized fixed little protagonist, or a hummable melody hint on key paragraphs.
+
+${prenatalBlock}
 
 **Important format requirements:**
 - content is an array of paragraphs, each element is a natural paragraph.
@@ -965,12 +1317,13 @@ function scienceFallbackTopic(dateStr, lang) {
 
 function buildScienceChinesePrompt(article, ageInfo, dateStr) {
   const ageStyle = AGE_STYLE_CN[ageInfo.group];
+  const prenatalBlock = ageInfo.group === 'prenatal' ? buildPrenatalBlock(dateStr, 'zh') : '';
   const seed = article
     ? `本月《${article.source}》真实科普报道：《${article.title}》。报道摘要：${article.summary}`
-    : `一个科普主题：「${scienceFallbackTopic(dateStr, 'zh')}」`;
+    : `一个科普主题：「${scienceFallbackTopic(dateStr, 'zh')}」（来源：儿童科普常识）`;
   const hint = article
     ? `（灵感真实来自《${article.source}》，请保留其中的科学内核，但用孩子能懂的温柔语言重述，不要照抄专业术语）`
-    : '（未能抓取到当期杂志内容，请围绕这个科普主题创作）';
+    : '（未能抓取到指定杂志内容，请基于公认的儿童科普常识，围绕上述科普主题创作，并在文末点明知识来自儿童科普常识，不得编造。）';
   return `写一个适合儿童的中文睡前科学故事，语言温和易懂，阅读时长约 3-5 分钟。${hint}
 
 当前年龄段：${ageInfo.labelCn}
@@ -982,11 +1335,15 @@ function buildScienceChinesePrompt(article, ageInfo, dateStr) {
 - 把真实科学内容改编成孩子爱听的故事，保留科学内核（如现象、原理的童趣化解释），但用拟声词、温柔节奏和"守护/好奇/惊喜"的情绪包装。
 - 适合胎教/哄睡朗读，句子有自然停顿，家长读着顺口。
 - 故事标题必须以「🔬科学故事」开头，并注明适合的年龄段。
-- 结尾用一两句话点出这个科学小知识，让孩子带着好奇入睡。
+- 本篇科普素材必须取自上方列出的指定来源（如《${article ? article.source : '儿童科普常识'}》），绝不可凭空编造科学结论；若取自杂志，请忠于其报道的科学内核。
+- 故事必须包含一段清楚、准确、适合该年龄段孩子理解的「科学知识讲解」（可由主角好奇提问「为什么会这样呢？」再自然解答），让孩子真的学到一点科学。
+- 结尾用一两句话点出这个科学小知识，让孩子带着好奇入睡；moral 必须是这条科学知识的准确、简洁小结，不得写「不知道」或含糊带过。
 
 中文故事风格参考（融合大师特色 + 你的创造力）：
 ${CN_STYLES}
 ${CN_STYLES_EXTRA}
+
+${prenatalBlock}
 
 重要格式要求：
 - 所有文本内容不得使用中文弯引号""，请使用「」或普通单引号'代替。
@@ -1005,12 +1362,13 @@ ${CN_STYLES_EXTRA}
 
 function buildScienceEnglishPrompt(article, ageInfo, dateStr) {
   const ageStyle = AGE_STYLE_EN[ageInfo.group];
+  const prenatalBlock = ageInfo.group === 'prenatal' ? buildPrenatalBlock(dateStr, 'en') : '';
   const seed = article
     ? `A real popular-science article from this month's ${article.source}: "${article.title}". Summary: ${article.summary}`
-    : `a science topic: "${scienceFallbackTopic(dateStr, 'en')}"`;
+    : `a science topic: "${scienceFallbackTopic(dateStr, 'en')}" (source: children's science general)`;
   const hint = article
     ? `(Inspired by real ${article.source} content — keep the genuine science kernel but retell it in gentle, child-friendly language; don't copy jargon.)`
-    : '(Could not fetch the magazine; please write about this science topic.)';
+    : "(Could not fetch the designated magazine; please base the story on widely accepted children's science facts for the topic above, note the source as general children's science, and do not invent.)";
   return `Write an English children's bedtime science story (original, not a translation), reading time about 3-5 minutes. ${hint}
 
 Current age stage: ${ageInfo.labelEn}
@@ -1022,11 +1380,15 @@ Requirements:
 - Adapt the real science into a story kids love: keep the science kernel but wrap it in onomatopoeia, a soft rhythm, and feelings of wonder, safety and curiosity.
 - Suitable for prenatal/soothing read-aloud; natural pauses; parent-friendly.
 - Title must start with "🔬 Science Story" and note the age range.
-- End with one or two lines revealing the little science fact, so the child falls asleep curious.
+- This story's science material MUST come from the designated source listed above (e.g. ${article ? article.source : "children's science general"}); never invent fake science. If from a magazine, stay true to its reported science kernel.
+- The story must contain a clear, accurate, age-appropriate "science explanation" (e.g. a character wonders "why does this happen?" then finds out), so the child truly learns something.
+- End with one or two lines revealing the little science fact, so the child falls asleep curious; moral must be the accurate, concise summary of that science fact — never "I don't know" or vague.
 
 Style reference (fuse these masters + your creativity):
 ${EN_STYLES}
 ${EN_STYLES_EXTRA}
+
+${prenatalBlock}
 
 Format requirements:
 - content is an array of paragraphs.
@@ -1042,6 +1404,169 @@ Return a JSON object:
 }`;
 }
 
+// ===== 分段续写（GLM-4V-Flash max_tokens 上限 1024）=====
+// 单次调用只能输出 ~1024 token，长故事分两段生成：
+//   第一段 build*Prompt 只要求输出前半部分（title/preview/moral + 前若干段，不写结局）；
+//   第二段 buildContinuationPrompt 把已有标题/段落作为上下文，要求续写剩余段落并收尾。
+// 生成器把两段的 content 拼接成完整故事，长度可恢复至接近原 DeepSeek 4096 时代的水平。
+
+function buildContinuationPrompt(language, ageInfo, existingTitle, existingContent, dateStr) {
+  const existing = (existingContent || []).join('\n');
+  const pd = dateStr || new Date().toISOString().slice(0, 10);
+  if (language === 'zh') {
+    return `你正在续写一篇儿童睡前故事，请接着下面的内容继续写下去（不是重复，不是改写，是从当前情节自然延续）。
+
+**故事标题**：${existingTitle}
+
+**已写好的前半部分段落：**
+${existing}
+
+**续写要求：**
+- 前文可能已写到某个阶段（如主角暂时完成了某件事），但故事还没有真正结束。请【继续发展新的情节】（新场景/新事件/新的小冲突或新发现），让故事再往前推进，最终温柔收尾、点题，并与情境呼应（不一定以「晚安」结尾）。
+- 继续写 4-6 个自然段，每段 80-120 字，从已有情节自然发展，直到完整结局；最后一段要温柔收尾、点题。
+- 与前文语言风格、叙事语气、拟声词风格保持一致，衔接流畅自然。
+- **不得重复、复述或改写前文任何句子**，尤其不要重复前文已经出现过的段落结尾句（如「它知道自己已经完成了祝福」「回到了家」等收束句）；若前文已出现类似收尾，请从那里继续向前推进新情节，而不是原地重复。
+- 保持当前年龄段（${ageInfo.labelCn}）的风格要求：${AGE_STYLE_CN[ageInfo.group]}。
+${ageInfo.group === 'prenatal' ? buildPrenatalBlock(pd, 'zh') : ''}
+- 所有文本不得使用中文弯引号""，请使用「」或普通单引号'代替，否则会导致JSON解析失败。
+- content 是段落数组，每个元素是一个自然段。
+- **续写段落本身必须是完整的故事正文，禁止在段落开头添加任何标记、序号或前缀（如"续写第1段：""第1段：""接着写："等），直接写故事内容本身。**
+
+请只返回以下 JSON 对象（不要返回 title/preview/moral，只返回续写段落）：
+{
+  "content": ["直接写第一段的正文内容...", "直接写第二段的正文内容...", "直接写第三段的正文内容..."]
+}`;
+  }
+  return `You are continuing a children's bedtime story. Continue naturally from where the existing text ends (do NOT repeat, rewrite, or summarize what was already written).
+
+**Story title**: ${existingTitle}
+
+**Existing paragraphs (first half):**
+${existing}
+
+**Continuation requirements:**
+- The first half may have reached a stage where the protagonist finished something, but the story is NOT over yet. Please 【develop NEW plot】(new scenes/events/small conflicts or discoveries) to push the story forward, then end warmly, tie back to the theme, and match the occasion (not necessarily "good night").
+- Write 4-6 more paragraphs, each 80-120 characters, flowing naturally from the existing plot to a complete ending.
+- Keep the same language style, tone, and onomatopoeia as the first half; transitions must be smooth.
+- **Do NOT repeat, rephrase, or rewrite ANY sentence from the first half**, especially avoid repeating closing-type sentences that already appeared (e.g. "it knew it had finished the gift", "back home"); if the first half already has such a wrap-up, push the plot FORWARD from there instead of repeating it in place.
+- Keep the current age stage style (${ageInfo.labelEn}): ${AGE_STYLE_EN[ageInfo.group]}.
+${ageInfo.group === 'prenatal' ? buildPrenatalBlock(pd, 'en') : ''}
+- content is an array of paragraphs, each element is one natural paragraph.
+- **Each continuation paragraph must be pure story text — do NOT add any label, number, or prefix at the start (such as "Continuation paragraph 1:", "Para 1:", "Next:") — write the story content directly.**
+
+Return ONLY the following JSON object (no title/preview/moral, only the continuation paragraphs):
+{
+  "content": ["First continuation paragraph text...", "Second continuation paragraph text...", "Third continuation paragraph text..."]
+}`;
+}
+
+// ===== 生成后审核与修复（self-refine）=====
+// 审核/修复 prompt 构造器（可复用；当前流程以确定性代码兜底为主）。
+// 流程：先让模型以"儿童睡前故事编辑"身份审核全文（找衔接/重复/可读性/风格问题），
+// 再针对每个有问题的段落，携上下文 + 审核意见逐段重写。修复是逐段的，输出在 1024 内。
+
+function buildReviewPrompt(language, ageInfo, title, content) {
+  const paras = (content || []).map((p, i) => `[第${i + 1}段] ${p}`).join('\n');
+  if (language === 'zh') {
+    return `你是一位严格的儿童睡前故事编辑。请审核下面的${ageInfo.labelCn}睡前故事，找出【真实存在】的影响可读性的问题，不要为了挑问题而挑问题。
+
+**故事标题**：${title}
+
+**故事全文（段落带序号）：**
+${paras}
+
+**审核维度：**
+1. 剧情连贯性：段落之间衔接是否自然？有没有剧情断裂、跳跃、或"原地打转"（重复推进同一件事）？
+2. 重复问题：有没有重复的句子、段落模式、套路化表述？（例如多段都在表达同一个意思）
+3. 语言可读性：是否适合家长朗读（句子节奏、停顿）？有没有生硬、书面化、拗口的句子？
+4. 风格一致性：语言风格是否前后统一？
+5. 结尾质量：结局是否自然收尾、呼应主题？
+6. 年龄段适配：是否符合${ageInfo.labelCn}风格（温柔、缓慢、拟声词、等待/爱/守护）？
+
+**输出格式（严格 JSON，不要其他文字）：**
+{
+  "overall": "总体评价（1-2句）",
+  "issues": [
+    {"paraIndex": 段序号(数字,从1开始), "problem": "具体问题", "suggestion": "具体修改建议"},
+    {"paraIndex": 段序号, "problem": "具体问题", "suggestion": "具体修改建议"}
+  ]
+}
+如果某段没有问题，不要列入 issues。只列出确有问题的段落。`; 
+  }
+  return `You are a strict children's bedtime story editor. Review the ${ageInfo.labelEn} bedtime story below and find REAL readability problems — do not invent problems for the sake of it.
+
+**Story title**: ${title}
+
+**Full story (paragraphs numbered):**
+${paras}
+
+**Review dimensions:**
+1. Plot coherence: are transitions between paragraphs natural? Any broken jumps, or "spinning in place" (repeatedly advancing the same beat)?
+2. Repetition: any repeated sentences, paragraph patterns, or formulaic phrasing?
+3. Readability: suitable for a parent to read aloud (rhythm, pauses)? Any stiff, bookish, or awkward sentences?
+4. Style consistency: is the language style consistent throughout?
+5. Ending quality: does it end naturally and tie back to the theme?
+6. Age fit: does it match ${ageInfo.labelEn} style (gentle, slow, onomatopoeia, waiting/love/guardianship)?
+
+**Output (strict JSON, nothing else):**
+{
+  "overall": "Overall assessment (1-2 sentences)",
+  "issues": [
+    {"paraIndex": paragraph number (1-based), "problem": "specific problem", "suggestion": "specific fix suggestion"},
+    {"paraIndex": paragraph number, "problem": "specific problem", "suggestion": "specific fix suggestion"}
+  ]
+}
+Only list paragraphs that actually have problems.`;
+}
+
+function buildFixPrompt(language, ageInfo, title, content, paraIndex, problem, suggestion) {
+  const prev = paraIndex > 1 ? content[paraIndex - 2] : '';
+  const curr = content[paraIndex - 1] || '';
+  const next = paraIndex < content.length ? content[paraIndex] : '';
+  if (language === 'zh') {
+    return `你是一位儿童睡前故事编辑。请根据审核意见，重写下面这一段落（只重写这一段落，保持主旨不变）。
+
+**故事标题**：${title}
+**年龄段**：${ageInfo.labelCn}
+
+**上下文：**
+${prev ? `前一段：${prev}` : '（这是第一段）'}
+【需修改的段落】${curr}
+${next ? `后一段：${next}` : '（这是最后一段）'}
+
+**审核发现的问题**：${problem}
+**修改建议**：${suggestion}
+
+**要求：**
+- 只输出重写后的这一段落正文，不要任何前缀/标记/序号。
+- 段落长度 80-120 字（英文 80-120 字符），与前文衔接自然、风格一致。
+- 使用「」或单引号，不要中文弯引号。
+- 保持${ageInfo.labelCn}风格。
+
+输出严格 JSON：{"content": "重写后的段落正文"}`;
+  }
+  return `You are a children's bedtime story editor. Rewrite ONLY the paragraph below, keeping its theme unchanged.
+
+**Story title**: ${title}
+**Age stage**: ${ageInfo.labelEn}
+
+**Context:**
+${prev ? `Previous paragraph: ${prev}` : '(This is the first paragraph)'}
+【Paragraph to fix】${curr}
+${next ? `Next paragraph: ${next}` : '(This is the last paragraph)'}
+
+**Problem found**: ${problem}
+**Fix suggestion**: ${suggestion}
+
+**Requirements:**
+- Output ONLY the rewritten paragraph text, no prefixes/labels/numbers.
+- Length 80-120 characters, smooth transition with neighbors, consistent style.
+- Use straight quotes or curly-free text; avoid breaking JSON.
+- Keep the ${ageInfo.labelEn} style.
+
+Output strict JSON: {"content": "rewritten paragraph text"}`;
+}
+
 module.exports = {
   getAgeInfo,
   getChineseWeekday,
@@ -1049,6 +1574,9 @@ module.exports = {
   formatDateShort,
   buildChinesePrompt,
   buildEnglishPrompt,
+  buildContinuationPrompt,
+  buildReviewPrompt,
+  buildFixPrompt,
   isScienceDay,
   fetchScienceArticle,
   buildScienceChinesePrompt,
