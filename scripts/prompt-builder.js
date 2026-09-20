@@ -19,7 +19,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const CHILD_BIRTHDAY = '2026-09-22';
+const CHILD_BIRTHDAY = '2026-09-15';
 
 /**
  * Calculate age group based on a given date
@@ -638,7 +638,7 @@ function getUnlockedSeeds(lang) {
  */
 // ===== 胎教期「故事孕育师」增强（参照 deepseek 故事生成思路优化指南.md） =====
 // 与「黑猫当当」系列素材库完全分开（黑猫当当是独立周更系列，不混入每日胎教故事）。
-// 仅作用于 prenatal 阶段（2026-09-22 之前）；不改动日期主题轮换、不引入蟹类、不把宝宝写成已出生、不用弯引号。
+// 仅作用于 prenatal 阶段（2026-09-15 之前）；不改动日期主题轮换、不引入蟹类、不把宝宝写成已出生、不用弯引号。
 const PRENATAL_CAST = [
   { name: '小海螺·小旋旋', en: 'Little Conch Xuanxuan', type: '白海螺', enType: 'white conch', home: '深海海草森林', enHome: 'deep-sea seagrass forest', personality: '安静、温柔、充满好奇', enPersonality: 'quiet, gentle, full of curiosity', catchphrase: '原来是这样呀……', enCatchphrase: 'So that is how it is...' },
   { name: '月亮妈妈', en: 'Moon Mama', type: '守护者', enType: 'guardian', home: '夜空', enHome: 'the night sky', personality: '温柔、守护、充满智慧', enPersonality: 'gentle, protective, full of wisdom', catchphrase: '安心睡吧，妈妈在呢。', enCatchphrase: 'Sleep safe, Mama is here.' },

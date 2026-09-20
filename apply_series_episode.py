@@ -21,7 +21,7 @@ from datetime import datetime, timedelta
 AUTO = r'C:/Users/Administrator/WorkBuddy/automation-2026-07-16-11-56-46'
 H5 = r'C:/Users/Administrator/WorkBuddy/Claw/bedtime-story-app'
 BACK = r'D:/code test/睡前故事'
-CHILD_BIRTHDAY = '2026-09-22'
+CHILD_BIRTHDAY = '2026-09-15'
 WEEKDAYS = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日']
 
 

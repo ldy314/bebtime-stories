@@ -172,5 +172,5 @@ git push -u origin main
 - **AI 模型**: 智谱 GLM-4V-Flash，OpenAI 兼容 API
 - **费用**: GitHub Actions/Pages 免费（public 仓库），GLM-4V-Flash 模型免费
 - **补跑机制**: 每次运行检查当天 + 最近 7 天，自动补生成遗漏的故事
-- **年龄段**: 根据孩子生日（2026-09-22）自动计算并调整故事风格
+- **年龄段**: 根据孩子生日（2026-09-15）自动计算并调整故事风格
 - **风格**: 中文融合孙敬修/郑渊洁/冰波/张秋生/金波/汤素兰六位大师风格；英文融合 Dr. Seuss/芝麻街/Roald Dahl/Mark Twain/Robert McCloskey 五位大师风格

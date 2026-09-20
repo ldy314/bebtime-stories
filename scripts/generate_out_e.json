@@ -1,0 +1,82 @@
+[
+ {
+  "id": "2026-09-30-cn",
+  "language": "zh",
+  "category": "regular",
+  "title": "桂花香里的秋天（0-1岁）",
+  "preview": "秋天的风一吹，整条街都变甜了。是谁在悄悄撒香水呀？",
+  "moral": "桂花的香味来自花瓣里的小小香气；秋天凉爽安静的空气，能把这份香味送得很远很远。",
+  "content": [
+   "秋天到了。风一吹，宝宝好像闻到一股甜甜的香味。",
+   "香味飘满了整条街。是谁在悄悄撒香水呀？",
+   "抬头找一找——是一树一树小小的、米粒一样的桂花，藏在绿叶中间，安静地开着。",
+   "花这么小，香味却这么大，这是为什么呢？",
+   "原来，桂花的花瓣里藏着许多小香口袋。它们会慢慢把一点点特别小、特别轻的香气，送到空气里。",
+   "风带着这些小香气到处旅行。飘到鼻子旁边，我们就闻到啦：啊，好香！",
+   "秋天的傍晚和夜里，空气常常稳稳的、凉凉的，风不乱跑。小香气就在空气里慢慢散开，能传到很远的地方。",
+   "所以很多人说，秋天的夜晚桂花最香。",
+   "宝宝，等桂花开了，爸爸妈妈抱着你去树下闻一闻，好吗？晚安，香香的小宝贝。"
+  ]
+ },
+ {
+  "id": "2026-09-30-en",
+  "language": "en",
+  "category": "regular",
+  "title": "Autumn's Sweet Smell (0-1 yr)",
+  "preview": "Autumn comes. The wind blows — and suddenly the whole street smells sweet. Who is wearing perfume?",
+  "moral": "Tiny flowers keep little pockets of scent inside their petals; on cool, still autumn evenings that scent drifts slowly and travels far.",
+  "content": [
+   "Autumn comes. The wind blows — and suddenly the whole street smells sweet.",
+   "Who is wearing perfume?",
+   "Look up. It is a tree full of tiny flowers, small as grains of rice, hiding among the green leaves.",
+   "How can such tiny flowers smell so strong?",
+   "Each little flower keeps tiny pockets of scent inside its petals.",
+   "Slowly, it lets those tiny bits of scent out into the air.",
+   "The wind carries them along. They drift, and drift — until they reach your nose. Sniff! How sweet.",
+   "On cool, still autumn evenings, the little scents spread out slowly, like ripples on a quiet pond, and travel far and wide.",
+   "That is why autumn evenings smell the sweetest, little one. Sleep well."
+  ]
+ },
+ {
+  "id": "2026-09-30-science-cn",
+  "language": "zh",
+  "category": "science",
+  "series": "science",
+  "source": "儿童科普常识",
+  "title": "🔬科学故事（0-1岁）：树叶为什么会变色",
+  "preview": "夏天的树叶绿绿的。到了秋天，它们一片一片黄了、红了。是谁给树叶换了新衣服？",
+  "moral": "叶子里本来就藏着黄色和橙色的色素，只是被绿色的叶绿素盖住了；秋天光照变短、天气变冷，叶绿素慢慢退去，黄色和橙色就露出来，有些叶子还会做出红色的色素。",
+  "content": [
+   "宝宝，看窗外的树。夏天的时候，它们的叶子绿绿的。",
+   "到了秋天，叶子一片一片黄了、红了。",
+   "是谁给树叶换了新衣服？",
+   "秘密藏在叶子里。叶子里有一种绿色的东西，叫「叶绿素」。它帮叶子抓住阳光，做出树要吃的饭。",
+   "夏天的叶绿素特别多，绿得把别的颜色都盖住了。",
+   "可叶子里面，本来就藏着黄色和橙色，一直安安静静地躲在下面。",
+   "秋天到了，白天变短，天气变凉。树要准备过冬了，就慢慢把叶绿素收起来。",
+   "绿色一退，黄色和橙色就露出来啦。有些树还会在叶子里做出新的红色，像一片一片小小的晚霞。",
+   "宝宝，那些金黄和火红，其实一直在叶子里等着呢。晚安，小宝贝。"
+  ]
+ },
+ {
+  "id": "2026-09-30-science-en",
+  "language": "en",
+  "category": "science",
+  "series": "science",
+  "source": "Children science common sense",
+  "title": "🔬 Science Story (0-1 yr): Why Leaves Change Colour",
+  "preview": "All summer the leaves were green. Then autumn comes, and they turn gold, orange and red. Who changed their clothes?",
+  "moral": "Yellow and orange were hidden in the leaf all along, under the green chlorophyll; when autumn's shorter, cooler days make the green fade, the other colours show, and some leaves make a new red.",
+  "content": [
+   "Look at the trees outside. All summer, their leaves were green.",
+   "Then autumn comes, and the leaves turn gold, and orange, and red.",
+   "Who changed their clothes?",
+   "The secret is inside the leaf. There is a green stuff called chlorophyll. It catches sunlight and makes food for the tree.",
+   "In summer there is so much green that it hides all the other colours.",
+   "But the yellow and the orange were in the leaf all along, quietly waiting underneath.",
+   "When autumn comes, the days grow short and cool. The tree gets ready for winter, and slowly puts the green away.",
+   "As the green fades, the yellow and orange come out. Some trees even make a brand-new red, like a little sunset on every branch.",
+   "Those colours were there the whole time, little one — just waiting for their turn. Sleep well."
+  ]
+ }
+]

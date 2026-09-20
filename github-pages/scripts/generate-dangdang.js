@@ -100,7 +100,7 @@ function sanitizeText(t) {
 }
 
 function getAgeInfo(dateStr) {
-  const b = new Date('2026-09-22T00:00:00+08:00');
+  const b = new Date('2026-09-15T00:00:00+08:00');
   const c = new Date(dateStr + 'T00:00:00+08:00');
   if (c < b) return { group: 'prenatal', label: '胎教期' };
   const diff = (c - b) / 86400000 / 365.25;
