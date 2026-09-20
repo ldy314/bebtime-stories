@@ -24,7 +24,7 @@
 - 误报/非缺陷：C2（EMBEDDED_STORIES 实际合法）、H3（已有 -1 抛错）、M3（单弯引号已处理）、H2/H4/M4/M5（非缺陷或增强项）。
 - github-pages 关键生成脚本（generate-story.js / generate-collection-html.js / prompt-builder.js）**已全程用 `__dirname` 相对路径**，无需改。
 
-## 时间线 / 宝宝出生硬约束（2026-07-31 用户明确，已按真实创作日重排）
+## 时间线 / 宝宝出生硬约束（2026-09-20 重大更新：宝宝实际出生日 = 2026-09-15）
 - **阶段由真实创作日决定**（用户原话：「故事要和目前宝宝所处的阶段一致；今天创作的所有故事都属于胎教期；9月22号之前创作的所有故事，无论多少，都属于胎教期」）。
 - 宝宝预产期 **2026-09-22**；凡在 2026-09-22 **之前创作**的故事一律 **胎教期**（讲给肚里还没来的宝宝听），**绝不在出生前把宝宝写成已出生**。
 - **当前全集状态**：ep01–ep19 均于 **2026-07-31** 一次性创作（早于预产期），故**全集 19 集全部胎教期**、日期统一标 2026-07-31；ep09=《茅山遇修猴子》（修猴子登场，胎教期），ep10=当当讲给肚里宝宝听的茅山复述，ep10–19 已去除「已出生宝宝」措辞。
@@ -66,3 +66,12 @@
 - 正确做法：手动/本地批量故事统一用**同日多篇扩展 id**：`YYYY-MM-DD-cn-2` / `-en-2` / `-cn-3` …（compute_unique_id 也会在 base 被占用时自动加 -2/-3，但直接指定更省事）。
 - push 前务必先 `git fetch origin` 看远端是否领先；若领先（自动化已 push 新故事），先 `git reset --hard origin/main` 对齐，再把本地 4 副本统一为该基线后再叠加本地故事，最后 commit+push，避免覆盖自动化产出。
 - 注入脚本模式（已验证）：`add_science_stories.py` / `add_local_ai_stories.py` 都是「读 4 副本 stories.json → 追加（按 id 去重）→ json.dump → 重写 index.html 的 EMBEDDED_STORIES 单行」；合集页用 `node scripts/generate-collection-html.js` 重生成后复制到其余 3 副本。
+
+## 出生日变更（2026-09-20 确立，覆盖此前预产期设定）
+- **宝宝实际出生日：2026-09-15**（原预产期 2026-09-22 作废）。`CHILD_BIRTHDAY`（prompt-builder.js / apply_series_episode.py / generate-dangdang.js，四副本共 10 处）已全部改为 2026-09-15。
+- **切分规则**：2026-09-14 及之前 = 胎教期；**2026-09-15 及之后 = 0-1 岁**（出生后口吻：极简短句、大量重复与拟声、感官启蒙/安全感/日常认知）。
+- **9/15–9/21 已发布的 28 篇已改写**为出生后口吻（素材 `scripts/rewrite_out_*.json`），dangdang-ep27 本就无胎教措辞故仅改标签。**再遇到「出生日变更」类需求，直接复用 `scripts/apply_birth_batch.py` 的「按 id 替换 + 追加」模式。**
+- **9/22–9/30 每日 4 篇（中/英日常 + 中/英科学）已补齐**（素材 `scripts/generate_out_*.json`），当当 ep28/ep29 跟进「宝宝出生」单元。当前 257 篇，0-1 岁共 67 篇。
+- **星期计算坑（已修）**：`datetime.weekday()` 是 Monday=0，配 `['星期日','星期一',...]` 会整体偏移 1 天（9/11–9/30 共 36 条已修正）。批量脚本务必用 `['星期一',...,'星期日']` 配 `weekday()`。
+- **AI 生成方式偏好**：外部 API（智谱 glm-4-flash）试跑质量不稳（整段复读、科学故事残句），用户明确「用 WorkBuddy 自带的 DeepSeek Flash」——即由对话模型本体直接创作。备用管线脚本 `scripts/ai-0-1-pipeline.js` 保留（复用云端 prompt-builder 构建 prompt，支持 generate / rewrite）。
+- **推送记录**：部署源 main = `945dff0`（github-bedtime-stories push，github-pages 随后 reset 对齐）；备份 master = `f0195ab`。
