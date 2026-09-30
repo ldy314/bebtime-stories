@@ -6137,5 +6137,58 @@
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
     "episode": 29
+  },
+  {
+    "id": "2026-10-01-en",
+    "date": "2026年10月1日 · 星期四",
+    "dateShort": "10/01",
+    "title": "Little Bear and the Sky River (0-1 yr)",
+    "language": "en",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1 yr",
+    "preview": "Little Bear steps outside and looks up. The sky is full of twinkly lights — oh, so many!",
+    "moral": "The world is full of gentle wonders, and the biggest wonder of all is being safe and warm at home.",
+    "content": [
+      "Little Bear steps outside. The night is soft. The grass is cool. The sky goes up, up, up.",
+      "Little Bear looks up. Oh! The sky is full of twinkly lights. Twinkle, twinkle, twinkle. So many!",
+      "\"Oh,\" says Little Bear. \"Oh, oh, oh.\"",
+      "Mama Bear comes out. \"That is the sky river,\" she says. \"It flows and flows, all night long.\"",
+      "\"Sky river,\" says Little Bear. \"Shhh, shhh.\"",
+      "The sky river glows. It glows like honey. It glows like milk. It glows like a soft, soft blanket.",
+      "Little Bear waves. \"Hello, sky river. Hello, twinkly lights.\"",
+      "The twinkly lights seem to wave back. Blink, blink, blink.",
+      "\"Are they far?\" asks Little Bear.",
+      "\"Very far,\" says Mama. \"But they can see you. And I can see you. And you are right here.\"",
+      "Little Bear yawns. A big, round yawn. \"Mama, I am sleepy.\"",
+      "\"Then let us go in,\" says Mama. \"The sky river will flow and flow. And you will sleep and sleep.\"",
+      "Inside, the lamp is warm. The blanket is soft. Little Bear curls up small.",
+      "\"Good night, sky river,\" whispers Little Bear. \"Good night, twinkly lights.\"",
+      "Blink, blink, blink goes the sky. Purr, purr, purr goes Little Bear.",
+      "Good night, Little Bear. Good night, sky river. Good night."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-10-01-cn",
+    "date": "2026年10月1日 · 星期四",
+    "dateShort": "10/01",
+    "title": "小树叶的摇篮（0-1岁）",
+    "language": "zh",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1岁",
+    "preview": "树上有一片小树叶，风一吹，它就摇啊摇。摇啊摇，像一个小摇篮。",
+    "moral": "小树叶摇啊摇，就像妈妈的怀抱。宝宝听着风声，安心地睡着了——大自然也在轻轻哄着你呢。",
+    "content": [
+      "树上有一片小树叶，绿绿的，圆圆的。",
+      "风来了，呼——呼——小树叶摇啊摇。摇啊摇，像一个小摇篮。",
+      "小鸟飞过来，啾啾，啾啾。小树叶摇啊摇，小鸟睡着了。",
+      "小蚂蚁爬上来，窸窸，窣窣。小树叶摇啊摇，小蚂蚁睡着了。",
+      "月亮升起来，圆圆的，亮亮的。月光洒下来，洒在小树叶上，像一层软软的被子。",
+      "小树叶还在摇啊摇。沙沙，沙沙。",
+      "风轻轻吹，树叶轻轻摇。摇啊摇，大家都睡着了。",
+      "宝宝也闭上眼睛吧。小树叶摇啊摇，摇啊摇——",
+      "晚安，小树叶。晚安，小宝宝。"
+    ],
+    "category": "regular"
   }
 ]
