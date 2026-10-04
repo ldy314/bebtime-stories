@@ -6450,5 +6450,61 @@
     "series": "science",
     "seriesTitle": "科学故事",
     "source": "环球科学"
+  },
+  {
+    "id": "2026-10-05-en",
+    "date": "2026年10月5日 · 星期一",
+    "dateShort": "10/05",
+    "title": "The Little Drummer's Happy Day (0-1 yr)",
+    "language": "en",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1 yr",
+    "preview": "In a sleepy little town with red lanterns, a little boy named Bo wakes up to a gentle drum. Tap-tap-tap! The drum calls him to a day of sunshine and smiles.",
+    "moral": "Small joys and family love make every day a happy celebration.",
+    "content": [
+      "In a sleepy little town, where red lanterns swing — swish, swish — and soft wind blows — whoosh, whoosh — there lives a little boy named Bo.",
+      "One morning, Bo wakes up. He hears a sound. Tap-tap-tap!",
+      "It is his little drum. His drum says, 'Tap-tap-tap! Come out and play!'",
+      "So Bo puts on his tiny shoes. Step, step, step. He opens the door. Creak!",
+      "Outside, the sun is warm. The sun says, 'Good morning, Bo! Mmm, warm.'",
+      "Bo sees a red lantern. The lantern sways. Swish, swish. 'Hello, red lantern!' says Bo.",
+      "Bo taps his drum. Tap-tap-tap! The lantern sways. Swish, swish. The wind blows. Whoosh, whoosh.",
+      "Bo walks down the lane. Clip-clop, clip-clop. He sees a little cat. The cat says, 'Meow.'",
+      "Bo taps his drum. Tap-tap-tap! The cat purrs. Purr, purr. 'Nice drum,' says the cat.",
+      "Bo walks to the square. He sees his friend Mei. Mei has a little bell. Ding-ding-ding!",
+      "'Hello, Bo!' says Mei. 'Hello, Mei!' says Bo. They tap and ding. Tap-tap, ding-ding!",
+      "They see a dragon puppet. The dragon is long and bright. It dances — wiggle, waggle, wiggle!",
+      "Bo taps. Tap-tap-tap! The dragon dances. Wiggle, waggle! Mei rings. Ding-ding-ding! The dragon dances. Wiggle, waggle!",
+      "The dragon says, 'Happy day! Happy day!' in a soft, rumbly voice. Rrrrumbly, rumbly!",
+      "Bo laughs. Ha-ha! Mei laughs. Hee-hee! The dragon laughs. Ha-ha-hee-hee!",
+      "Then Bo and Mei walk home. Clip-clop, clip-clop. The sun is high. The sun is warm. Mmm.",
+      "At home, Mama has dumplings. Round and white. Bo eats one. Yum, yum! Mei eats one. Yum, yum!",
+      "'Was it a good day?' asks Mama. 'Yes!' says Bo. 'Tap-tap-tap!' says the drum.",
+      "Bo sits in the warm sun. He hugs his drum. He breathes in. He breathes out. Haaa...",
+      "The sun says, 'Mmm, warm.' The drum says, 'Tap-tap-tap.' Bo's eyes close. He smiles. Happy day."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-10-05-cn",
+    "date": "2026年10月5日 · 星期一",
+    "dateShort": "10/05",
+    "title": "白天的小萤火虫（0-1岁·白天感官探索版）",
+    "language": "zh",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1岁",
+    "preview": "白天的草地上，有一只小萤火虫，它叫亮亮。亮亮想：白天，我的小灯笼亮不亮呀？",
+    "moral": "每个小宝贝都有自己的光，白天黑夜都一样亮。",
+    "content": [
+      "白天的草地上，绿绿的，暖暖的。有一只小萤火虫，它叫亮亮。",
+      "亮亮飞一飞，停一停。它想：白天，我的小灯笼亮不亮呀？",
+      "它飞到小蚂蚁身边，问：小蚂蚁，小蚂蚁，我的光，你看见了吗？小蚂蚁说：看见啦，看见啦，像一粒小露珠。",
+      "亮亮笑了。它飞过小草，小草摇一摇。它飞过小花，小花点点头。",
+      "它飞到小宝宝身边，轻轻落在小宝宝的手心上。小宝宝的手心，暖乎乎的。",
+      "亮亮说：白��，我的光也在。小宝宝，你的光，也在呀。",
+      "小宝宝摊开手，阳光跳进手心，亮亮的，暖暖的。",
+      "风轻轻吹，草轻轻摇。小宝宝在暖阳里，舒舒服服地，舒了一口气。"
+    ],
+    "category": "regular"
   }
 ]
