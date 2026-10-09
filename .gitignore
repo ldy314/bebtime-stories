@@ -14,3 +14,5 @@ credentials*
 secret*
 *.pem
 *.key
+# 插图 PNG 不入 git（2026-10-09：大文件导致 push 挂死）
+插图/

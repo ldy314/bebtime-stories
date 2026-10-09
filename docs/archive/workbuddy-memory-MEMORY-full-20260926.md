@@ -1,6 +1,3 @@
-> ⚠️ **本文件已被项目根 `MEMORY.md` 取代（2026-09-26），请勿读写本文件作为现状依据。**
-> 现行状态快照见 `../../MEMORY.md`；行为契约见 `../../AGENTS.md`。原文归档于 `../../docs/archive/workbuddy-memory-MEMORY-full-20260926.md`，本文件仅作历史留档。
-
 # MEMORY.md — 睡前故事项目长期记忆
 
 ## Git / GitHub 推送要点（2026-07-30 确认）

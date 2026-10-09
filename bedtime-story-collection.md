@@ -235,6 +235,94 @@
 226. [9月30日 — 桂花香里的秋天（0-1岁）](#9月30日--桂花香里的秋天（0-1岁）)
 227. [9月30日 — Autumn's Sweet Smell (0-1 yr)](#9月30日--Autumn's Sweet Smell (0-1 yr))
 228. [🔬 9月30日 — 🔬 Science Story (0-1 yr): Why Leaves Change Colour](#🔬 9月30日--🔬 Science Story (0-1 yr): Why Leaves Change Colour)
+229. [10月1日 — 小树叶的摇篮（0-1岁）](#10月1日--小树叶的摇篮（0-1岁）)
+230. [🔬 10月1日 — 🔬科学故事（0-1岁）：国旗为什么红红的](#🔬 10月1日--🔬科学故事（0-1岁）：国旗为什么红红的)
+231. [10月1日 — 红灯笼亮呀亮（0-1岁）](#10月1日--红灯笼亮呀亮（0-1岁）)
+232. [10月1日 — The Little Red Lantern (0-1 yr)](#10月1日--The Little Red Lantern (0-1 yr))
+233. [🔬 10月1日 — 🔬 Science Story (0-1 yr): Why Flags Are Red](#🔬 10月1日--🔬 Science Story (0-1 yr): Why Flags Are Red)
+234. [10月1日 — Little Bear and the Sky River (0-1 yr)](#10月1日--Little Bear and the Sky River (0-1 yr))
+235. [10月2日 — 小星星的悄悄话（0-1岁）](#10月2日--小星星的悄悄话（0-1岁）)
+236. [🔬 10月2日 — 🔬科学故事（0-1岁）：毛巾为什么会吸水](#🔬 10月2日--🔬科学故事（0-1岁）：毛巾为什么会吸水)
+237. [10月2日 — 小毛巾擦一擦（0-1岁）](#10月2日--小毛巾擦一擦（0-1岁）)
+238. [10月2日 — Soft Towel, Rub-a-Dub (0-1 yr)](#10月2日--Soft Towel, Rub-a-Dub (0-1 yr))
+239. [🔬 10月2日 — 🔬 Science Story (0-1 yr): How a Towel Drinks Water](#🔬 10月2日--🔬 Science Story (0-1 yr): How a Towel Drinks Water)
+240. [10月2日 — The Little Duck Who Found Her Way Home (0-1 yr)](#10月2日--The Little Duck Who Found Her Way Home (0-1 yr))
+241. [10月3日 — 尿布小超人大冒险（0-1岁·白天感官探索版）](#10月3日--尿布小超人大冒险（0-1岁·白天感官探索版）)
+242. [🔬 10月3日 — 🔬科学故事（0-1岁）：月亮为什么会变弯弯](#🔬 10月3日--🔬科学故事（0-1岁）：月亮为什么会变弯弯)
+243. [10月3日 — 月亮船摇啊摇（0-1岁）](#10月3日--月亮船摇啊摇（0-1岁）)
+244. [10月3日 — The Moon Boat Rocks (0-1 yr)](#10月3日--The Moon Boat Rocks (0-1 yr))
+245. [🔬 10月3日 — 🔬 Science Story (0-1 yr): Why the Moon Changes Shape](#🔬 10月3日--🔬 Science Story (0-1 yr): Why the Moon Changes Shape)
+246. [10月3日 — The Little Green Chair (0-1 yr)](#10月3日--The Little Green Chair (0-1 yr))
+247. [🔬 10月4日 — 🔬科学故事（0-1岁）：月亮婆婆的饭饭时间](#🔬 10月4日--🔬科学故事（0-1岁）：月亮婆婆的饭饭时间)
+248. [10月4日 — 两棵树的约定（0-1岁·白天感官探索版）](#10月4日--两棵树的约定（0-1岁·白天感官探索版）)
+249. [🔬 10月4日 — 🔬科学故事（0-1岁）：小脚丫为什么怕痒](#🔬 10月4日--🔬科学故事（0-1岁）：小脚丫为什么怕痒)
+250. [10月4日 — 小脚丫踩一踩（0-1岁）](#10月4日--小脚丫踩一踩（0-1岁）)
+251. [10月4日 — Tiptoe, Tiptoe, Little Feet (0-1 yr)](#10月4日--Tiptoe, Tiptoe, Little Feet (0-1 yr))
+252. [🔬 10月4日 — 🔬 Science Story (0-1 yr): Why Little Feet Are Ticklish](#🔬 10月4日--🔬 Science Story (0-1 yr): Why Little Feet Are Ticklish)
+253. [10月4日 — The Little Firefly's Brightest Light (0-1 yr)](#10月4日--The Little Firefly's Brightest Light (0-1 yr))
+254. [🔬 10月4日 — 🔬 Science Story (0-1 yr): The Warm, Warm Year](#🔬 10月4日--🔬 Science Story (0-1 yr): The Warm, Warm Year)
+255. [10月5日 — 白天的小萤火虫（0-1岁·白天感官探索版）](#10月5日--白天的小萤火虫（0-1岁·白天感官探索版）)
+256. [🔬 10月5日 — 🔬科学故事（0-1岁）：拨浪鼓为什么会响](#🔬 10月5日--🔬科学故事（0-1岁）：拨浪鼓为什么会响)
+257. [10月5日 — 拨浪鼓咚咚咚（0-1岁）](#10月5日--拨浪鼓咚咚咚（0-1岁）)
+258. [10月5日 — Knock-Knock, Little Rattle (0-1 yr)](#10月5日--Knock-Knock, Little Rattle (0-1 yr))
+259. [🔬 10月5日 — 🔬 Science Story (0-1 yr): Why the Rattle Sounds](#🔬 10月5日--🔬 Science Story (0-1 yr): Why the Rattle Sounds)
+260. [10月5日 — The Little Drummer's Happy Day (0-1 yr)](#10月5日--The Little Drummer's Happy Day (0-1 yr))
+261. [10月6日 — 早安，小公鸡（0-1岁·晨光感官版）](#10月6日--早安，小公鸡（0-1岁·晨光感官版）)
+262. [🔬 10月6日 — 🔬科学故事（0-1岁）：球为什么骨碌骨碌滚](#🔬 10月6日--🔬科学故事（0-1岁）：球为什么骨碌骨碌滚)
+263. [10月6日 — 小球球滚呀滚（0-1岁）](#10月6日--小球球滚呀滚（0-1岁）)
+264. [10月6日 — Round Ball Rolls (0-1 yr)](#10月6日--Round Ball Rolls (0-1 yr))
+265. [🔬 10月6日 — 🔬 Science Story (0-1 yr): Why Balls Roll So Far](#🔬 10月6日--🔬 Science Story (0-1 yr): Why Balls Roll So Far)
+266. [10月6日 — Good Morning, Little Monster (0-1 yr)](#10月6日--Good Morning, Little Monster (0-1 yr))
+267. [10月7日 — 会走路的小枕头（0-1岁·早安奇想版）](#10月7日--会走路的小枕头（0-1岁·早安奇想版）)
+268. [🔬 10月7日 — 🔬科学故事（0-1岁）：风是从哪里来的](#🔬 10月7日--🔬科学故事（0-1岁）：风是从哪里来的)
+269. [10月7日 — 风儿挠痒痒（0-1岁）](#10月7日--风儿挠痒痒（0-1岁）)
+270. [10月7日 — The Wind Tickle-Tickles (0-1 yr)](#10月7日--The Wind Tickle-Tickles (0-1 yr))
+271. [🔬 10月7日 — 🔬 Science Story (0-1 yr): Where the Wind Comes From](#🔬 10月7日--🔬 Science Story (0-1 yr): Where the Wind Comes From)
+272. [10月7日 — The Little Cloud That Wanted to See the Morning (0-1 yr)](#10月7日--The Little Cloud That Wanted to See the Morning (0-1 yr))
+273. [10月8日 — 小猫咪的胡须（0-1岁·想象与奇幻·暖心陪伴版）](#10月8日--小猫咪的胡须（0-1岁·想象与奇幻·暖心陪伴版）)
+274. [🔬 10月8日 — 🔬科学故事（0-1岁）：小露珠是哪里来的](#🔬 10月8日--🔬科学故事（0-1岁）：小露珠是哪里来的)
+275. [10月8日 — 寒露的小露珠（0-1岁）](#10月8日--寒露的小露珠（0-1岁）)
+276. [10月8日 — Little Dewdrops of Cold Dew (0-1 yr)](#10月8日--Little Dewdrops of Cold Dew (0-1 yr))
+277. [🔬 10月8日 — 🔬 Science Story (0-1 yr): Where Dewdrops Come From](#🔬 10月8日--🔬 Science Story (0-1 yr): Where Dewdrops Come From)
+278. [10月8日 — Little Baker, Big Bread (0–1 yr)](#10月8日--Little Baker, Big Bread (0–1 yr))
+279. [10月9日 — 爷爷的摇椅（0-1岁·生活与认知·暖心陪伴版）](#10月9日--爷爷的摇椅（0-1岁·生活与认知·暖心陪伴版）)
+280. [🔬 10月9日 — 🔬科学故事（0-1岁）：勺子碰碗为什么会叮叮响](#🔬 10月9日--🔬科学故事（0-1岁）：勺子碰碗为什么会叮叮响)
+281. [10月9日 — 小勺子碰一碰（0-1岁）](#10月9日--小勺子碰一碰（0-1岁）)
+282. [10月9日 — Ting, Ting, Little Spoon (0-1 yr)](#10月9日--Ting, Ting, Little Spoon (0-1 yr))
+283. [🔬 10月9日 — 🔬 Science Story (0-1 yr): Why the Spoon Goes Ting](#🔬 10月9日--🔬 Science Story (0-1 yr): Why the Spoon Goes Ting)
+284. [10月9日 — The Little Shadow Who Lost Its Girl (0–1 yr)](#10月9日--The Little Shadow Who Lost Its Girl (0–1 yr))
+285. [🔬 10月10日 — 🔬科学故事（0-1岁）：爸爸的胡子为什么扎扎的](#🔬 10月10日--🔬科学故事（0-1岁）：爸爸的胡子为什么扎扎的)
+286. [10月10日 — 爸爸的胡子扎扎的（0-1岁）](#10月10日--爸爸的胡子扎扎的（0-1岁）)
+287. [10月10日 — Daddy's Scratchy Kiss (0-1 yr)](#10月10日--Daddy's Scratchy Kiss (0-1 yr))
+288. [🔬 10月10日 — 🔬 Science Story (0-1 yr): Why Daddy's Beard Is Scratchy](#🔬 10月10日--🔬 Science Story (0-1 yr): Why Daddy's Beard Is Scratchy)
+289. [🔬 10月11日 — 🔬科学故事（0-1岁）：小袜子为什么暖暖的](#🔬 10月11日--🔬科学故事（0-1岁）：小袜子为什么暖暖的)
+290. [10月11日 — 小袜子找朋友（0-1岁）](#10月11日--小袜子找朋友（0-1岁）)
+291. [10月11日 — Where Is My Sock? (0-1 yr)](#10月11日--Where Is My Sock? (0-1 yr))
+292. [🔬 10月11日 — 🔬 Science Story (0-1 yr): Why Socks Keep Toes Warm](#🔬 10月11日--🔬 Science Story (0-1 yr): Why Socks Keep Toes Warm)
+293. [🔬 10月12日 — 🔬科学故事（0-1岁）：镜子为什么照得出宝宝](#🔬 10月12日--🔬科学故事（0-1岁）：镜子为什么照得出宝宝)
+294. [10月12日 — 镜子里的宝宝（0-1岁）](#10月12日--镜子里的宝宝（0-1岁）)
+295. [10月12日 — Hello, Mirror Baby (0-1 yr)](#10月12日--Hello, Mirror Baby (0-1 yr))
+296. [🔬 10月12日 — 🔬 Science Story (0-1 yr): Why Mirrors Show Baby](#🔬 10月12日--🔬 Science Story (0-1 yr): Why Mirrors Show Baby)
+297. [🔬 10月13日 — 🔬科学故事（0-1岁）：大树为什么秋天掉叶子](#🔬 10月13日--🔬科学故事（0-1岁）：大树为什么秋天掉叶子)
+298. [10月13日 — 大树叶子飘下来（0-1岁）](#10月13日--大树叶子飘下来（0-1岁）)
+299. [10月13日 — Leaves Fall, Fall, Fall (0-1 yr)](#10月13日--Leaves Fall, Fall, Fall (0-1 yr))
+300. [🔬 10月13日 — 🔬 Science Story (0-1 yr): Why Trees Drop Their Leaves](#🔬 10月13日--🔬 Science Story (0-1 yr): Why Trees Drop Their Leaves)
+301. [🔬 10月14日 — 🔬科学故事（0-1岁）：小黄鸭为什么浮在水上](#🔬 10月14日--🔬科学故事（0-1岁）：小黄鸭为什么浮在水上)
+302. [10月14日 — 小鸭子洗澡澡（0-1岁）](#10月14日--小鸭子洗澡澡（0-1岁）)
+303. [10月14日 — Splish Splash, Little Duck (0-1 yr)](#10月14日--Splish Splash, Little Duck (0-1 yr))
+304. [🔬 10月14日 — 🔬 Science Story (0-1 yr): Why the Rubber Duck Floats](#🔬 10月14日--🔬 Science Story (0-1 yr): Why the Rubber Duck Floats)
+305. [🔬 10月15日 — 🔬科学故事（0-1岁）：抱抱为什么让人安心](#🔬 10月15日--🔬科学故事（0-1岁）：抱抱为什么让人安心)
+306. [10月15日 — 抱抱是最暖和的（0-1岁）](#10月15日--抱抱是最暖和的（0-1岁）)
+307. [10月15日 — A Hug Is Warmest (0-1 yr)](#10月15日--A Hug Is Warmest (0-1 yr))
+308. [🔬 10月15日 — 🔬 Science Story (0-1 yr): Why Hugs Feel So Safe](#🔬 10月15日--🔬 Science Story (0-1 yr): Why Hugs Feel So Safe)
+309. [🔬 10月16日 — 🔬科学故事（0-1岁）：白天为什么看不见月亮](#🔬 10月16日--🔬科学故事（0-1岁）：白天为什么看不见月亮)
+310. [10月16日 — 晚安，小月亮（0-1岁）](#10月16日--晚安，小月亮（0-1岁）)
+311. [10月16日 — Good Night, Little Moon (0-1 yr)](#10月16日--Good Night, Little Moon (0-1 yr))
+312. [🔬 10月16日 — 🔬 Science Story (0-1 yr): Where Is the Moon in the Daytime?](#🔬 10月16日--🔬 Science Story (0-1 yr): Where Is the Moon in the Daytime?)
+313. [🔬 10月17日 — 🔬科学故事（0-1岁）：铃铛为什么会唱歌](#🔬 10月17日--🔬科学故事（0-1岁）：铃铛为什么会唱歌)
+314. [10月17日 — 小铃铛叮铃铃（0-1岁）](#10月17日--小铃铛叮铃铃（0-1岁）)
+315. [10月17日 — Ding-a-Ling, Little Bell (0-1 yr)](#10月17日--Ding-a-Ling, Little Bell (0-1 yr))
+316. [🔬 10月17日 — 🔬 Science Story (0-1 yr): How a Bell Sings](#🔬 10月17日--🔬 Science Story (0-1 yr): How a Bell Sings)
 
 ---
 
@@ -5986,6 +6074,2514 @@ Those colours were there the whole time, little one — just waiting for their t
 
 ---
 
+## 10月1日 — 小树叶的摇篮（0-1岁）
+
+**2026年10月1日 · 星期四**
+
+树上有一片小树叶，绿绿的，圆圆的。
+
+风来了，呼——呼——小树叶摇啊摇。摇啊摇，像一个小摇篮。
+
+小鸟飞过来，啾啾，啾啾。小树叶摇啊摇，小鸟睡着了。
+
+小蚂蚁爬上来，窸窸，窣窣。小树叶摇啊摇，小蚂蚁睡着了。
+
+月亮升起来，圆圆的，亮亮的。月光洒下来，洒在小树叶上，像一层软软的被子。
+
+小树叶还在摇啊摇。沙沙，沙沙。
+
+风轻轻吹，树叶轻轻摇。摇啊摇，大家都睡着了。
+
+宝宝也闭上眼睛吧。小树叶摇啊摇，摇啊摇——
+
+晚安，小树叶。晚安，小宝宝。
+**寓意：** 小树叶摇啊摇，就像妈妈的怀抱。宝宝听着风声，安心地睡着了——大自然也在轻轻哄着你呢。
+
+---
+
+## 🔬 10月1日 — 🔬科学故事（0-1岁）：国旗为什么红红的
+
+**2026年10月1日 · 星期三**
+
+过节啦，风里飘着红旗。
+
+红旗红红的，真好看。
+
+宝宝看，远远也看得见。
+
+这是为什么呀？
+
+因为红色最醒目呀。
+
+红色像火焰，像太阳。
+
+在绿绿的树前，看得见。
+
+在蓝蓝的天前，看得见。
+
+红色一飘，眼睛就找到啦。
+**寓意：** 红色非常醒目，隔着很远也看得清；所以旗帜多用红色，让人一眼就找到。
+
+---
+
+## 10月1日 — 红灯笼亮呀亮（0-1岁）
+
+**2026年10月1日 · 星期三**
+
+过节啦，过节啦！
+
+大门口，挂起了红灯笼。
+
+红灯笼，圆圆的，红红的。
+
+风儿吹，它就摇一摇。
+
+天黑了，它就亮呀亮。
+
+一闪，一闪，像在眨眼睛。
+
+宝宝看，宝宝笑。
+
+爸爸妈妈抱着宝宝。
+
+红灯笼，亮亮的。宝宝的家，暖暖的。
+**寓意：** 节日里有暖暖的红，有亮亮的灯，还有抱着你的人——这就是团圆的颜色。
+
+---
+
+## 10月1日 — The Little Red Lantern (0-1 yr)
+
+**2026年10月1日 · 星期三**
+
+Holiday time! Holiday time!
+
+A little lantern hangs by the door.
+
+It is round. It is red.
+
+The wind blows. It sways, sways, sways.
+
+Night comes. It glows, glows, glows.
+
+Blink. Blink. Like a sleepy eye.
+
+Baby looks. Baby smiles.
+
+Mommy and Daddy hold baby close.
+
+The lantern glows. Our home glows warmer.
+**寓意：** Holidays glow with warm red light — and with the arms that hold you tight.
+
+---
+
+## 🔬 10月1日 — 🔬 Science Story (0-1 yr): Why Flags Are Red
+
+**2026年10月1日 · 星期三**
+
+Holiday days! Flags fly in the wind.
+
+The flags are red. Bright, bright red.
+
+Baby sees them far, far away.
+
+Why is red so easy to see?
+
+Because red is a big, bold color.
+
+Red like fire. Red like the sun.
+
+In front of green trees — we see it.
+
+In front of blue sky — we see it.
+
+Red flies up, and eyes find it right away.
+**寓意：** Red is very easy to see, even from far away, so flags often wear red.
+
+---
+
+## 10月1日 — Little Bear and the Sky River (0-1 yr)
+
+**2026年10月1日 · 星期四**
+
+Little Bear steps outside. The night is soft. The grass is cool. The sky goes up, up, up.
+
+Little Bear looks up. Oh! The sky is full of twinkly lights. Twinkle, twinkle, twinkle. So many!
+
+"Oh," says Little Bear. "Oh, oh, oh."
+
+Mama Bear comes out. "That is the sky river," she says. "It flows and flows, all night long."
+
+"Sky river," says Little Bear. "Shhh, shhh."
+
+The sky river glows. It glows like honey. It glows like milk. It glows like a soft, soft blanket.
+
+Little Bear waves. "Hello, sky river. Hello, twinkly lights."
+
+The twinkly lights seem to wave back. Blink, blink, blink.
+
+"Are they far?" asks Little Bear.
+
+"Very far," says Mama. "But they can see you. And I can see you. And you are right here."
+
+Little Bear yawns. A big, round yawn. "Mama, I am sleepy."
+
+"Then let us go in," says Mama. "The sky river will flow and flow. And you will sleep and sleep."
+
+Inside, the lamp is warm. The blanket is soft. Little Bear curls up small.
+
+"Good night, sky river," whispers Little Bear. "Good night, twinkly lights."
+
+Blink, blink, blink goes the sky. Purr, purr, purr goes Little Bear.
+
+Good night, Little Bear. Good night, sky river. Good night.
+**寓意：** The world is full of gentle wonders, and the biggest wonder of all is being safe and warm at home.
+
+---
+
+## 10月2日 — 小星星的悄悄话（0-1岁）
+
+**2026年10月2日 · 星期五**
+
+天黑了，黑黑的，软软的。
+
+一颗小星星，从云朵后面探出头来。
+
+它眨呀眨，眨呀眨。
+
+沙沙，沙沙，风轻轻地吹。
+
+小星星说：「小宝宝，我来啦。」
+
+小星星挂在树梢上，亮晶晶。
+
+沙沙，沙沙，树叶摇一摇。
+
+小星星说：「你听，风在唱歌呢。」
+
+呼——呼——
+
+滴答，滴答，露珠落下来。
+
+小星星说：「你听，露珠在打鼓呢。」
+
+滴答，滴答。
+
+咕咕，咕咕，小鸽子回家了。
+
+小星星说：「你听，大家都睡了。」
+
+咕咕，咕咕。
+
+小星星挂在宝宝的小床边，亮晶晶。
+
+呼噜，呼噜，小熊在梦里打呼噜。
+
+小星星说：「你听，梦是暖暖的。」
+
+呼噜，呼噜。
+
+小宝宝眨了眨眼睛。
+
+眼睛变重了，像两片小花瓣。
+
+小星星也眨呀眨。
+
+月亮婆婆慢慢走过来，给小星星盖上云被子。
+
+云被子，白白的，软软的。
+
+月亮婆婆也给小宝宝盖好小被子。
+
+轻轻的，暖暖的。
+
+小星星说：「小宝宝，我陪着你。」
+
+「风陪着你，露珠陪着你，小鸽子陪着你。」
+
+「月亮婆婆陪着你，小熊在梦里陪着你。」
+
+「我也陪着你。」
+
+小宝宝闭上眼睛。
+
+小星星的光，一点一点，落进宝宝的梦里。
+
+梦里也有一颗小星星，亮晶晶。
+
+小星星轻轻说：
+
+「睡吧，睡吧，做个软软的好梦。」
+
+「晚安，小宝宝。晚安。」
+**寓意：** 夜晚不可怕，星星和月亮都在轻轻陪着你。闭上眼睛，做一个软软的梦吧。
+
+---
+
+## 🔬 10月2日 — 🔬科学故事（0-1岁）：毛巾为什么会吸水
+
+**2026年10月2日 · 星期四**
+
+小毛巾碰到水啦。
+
+咕嘟——水不见了。
+
+水去哪儿了呢？
+
+毛巾里藏着一个秘密。
+
+它有千千万万条小缝隙。
+
+细细的，弯弯的，像小吸管。
+
+水宝宝最会钻小缝隙啦。
+
+钻呀钻，存呀存。
+
+毛巾就变湿啦，就能帮宝宝擦干啦。
+**寓意：** 毛巾里有千千万万条细细的小缝隙，水顺着小缝隙钻进去、存起来，毛巾就变湿啦。
+
+---
+
+## 10月2日 — 小毛巾擦一擦（0-1岁）
+
+**2026年10月2日 · 星期四**
+
+洗完澡啦，宝宝香喷喷。
+
+小毛巾来了，软软的。
+
+轻轻擦，慢慢擦。
+
+擦擦小脸蛋——嘿嘿。
+
+擦擦小肚皮——咕噜咕噜。
+
+擦擦小胳膊——伸一伸。
+
+擦擦小脚丫——趾头动一动。
+
+擦好啦，暖乎乎。
+
+小毛巾软软的，宝宝香香的，妈妈的心也软软的。
+**寓意：** 洗澡和擦干是暖暖的日常仪式，被轻轻照顾的感觉，就是安全感。
+
+---
+
+## 10月2日 — Soft Towel, Rub-a-Dub (0-1 yr)
+
+**2026年10月2日 · 星期四**
+
+Bath is done. Baby smells sweet.
+
+Here comes the towel. Soft, so soft.
+
+Pat, pat. Dry, dry.
+
+Little cheeks — pat, pat. Hehe.
+
+Little tummy — round and warm.
+
+Little arms — stretch, stretch.
+
+Little toes — wiggle, wiggle.
+
+All dry now. Warm and cozy.
+
+Soft towel, sweet baby, Mommy's gentle heart.
+**寓意：** Bath time and gentle drying are warm little rituals that wrap baby in care.
+
+---
+
+## 🔬 10月2日 — 🔬 Science Story (0-1 yr): How a Towel Drinks Water
+
+**2026年10月2日 · 星期四**
+
+The towel touches the water.
+
+Glug! The water is gone.
+
+Where did it go?
+
+The towel hides a secret.
+
+Millions of tiny gaps inside.
+
+Thin, twisty, like little straws.
+
+Water loves to creep in.
+
+It creeps, it creeps, it stays.
+
+The towel gets wet — and dries baby dry.
+**寓意：** A towel hides millions of tiny gaps; water crawls into the gaps and stays there, so the towel gets wet and dries us.
+
+---
+
+## 10月2日 — The Little Duck Who Found Her Way Home (0-1 yr)
+
+**2026年10月2日 · 星期五**
+
+Mrs. Quack has five little ducklings. Five fluffy, waddly, yellow ducklings. Their names are Pip, Pop, Peep, Paddle, and Plum.
+
+Every evening, Mrs. Quack says, "Come, ducklings. Come to the warm nest." And all five ducklings go paddling home — piddle-paddle, piddle-paddle — up the quiet river.
+
+But one evening, the littlest duckling named Pip sees something shiny floating by. Round and bright. Bob, bob, bob.
+
+"Ooh," says Pip. "A shiny thing." And she paddles after it. Piddle-paddle. Piddle-paddle. Down the river, away from the nest.
+
+The shiny thing bobs around a bend. Pip paddles after it. Piddle-paddle. Piddle-paddle. The river grows darker. The trees grow taller. The sky grows purple.
+
+Pip looks back. No Mama. No Pop, no Peep, no Paddle, no Plum. Just Pip. All alone on the quiet, quiet river.
+
+"Quack?" says Pip. "Quack, quack?" Her voice sounds very small.
+
+She paddles to a mossy stone. On the stone sits a fat green frog. "Ribbit," says the frog. "Little duck, why do you look so sad?"
+
+"I cannot find my mama," says Pip.
+
+"Ribbit," says the frog. "Follow the river. The river always knows the way home. Ribbit, ribbit."
+
+So Pip paddles on. Piddle-paddle. Piddle-paddle. The river hums a quiet song. Shhh, shhh, shhh.
+
+She passes a tall grey heron standing still as a statue. "Little duck," says the heron, "the river runs home. Just keep going." So Pip keeps going. Piddle-paddle. Piddle-paddle.
+
+She passes a sleepy old turtle. "Slow and steady," says the turtle. "The river never hurries. And it always gets there."
+
+Pip paddles past the reeds. Swish, swish. She paddles past the lily pads. Plip, plop. She paddles past a family of mice who wave their tiny paws. Squeak, squeak!
+
+Then — through the tall reeds — Pip hears something. A soft, familiar sound. "Quack, quack! Quack, quack!"
+
+It is Mama! And Pop, and Peep, and Paddle, and Plum! All waiting at the bend of the river, calling and calling.
+
+"Mama!" says Pip. And she paddles fast. Piddle-paddle, piddle-paddle, piddle-paddle! Right into Mama's warm, feathery wings.
+
+"My little Pip," says Mama. "You wandered far. But the river brought you home."
+
+All five ducklings paddle back together. Piddle-paddle, piddle-paddle. Up the quiet river, under the purple sky.
+
+The warm nest is soft and dry. Five fluffy ducklings tuck their heads under Mama's wing. Pip's eyes grow heavy. Heavy... heavy...
+
+"Good night, Pip," whispers Mama. "Good night, little duckling. The river is quiet. The stars are bright. And you are home."
+
+Good night. Quack, quack. Good night.
+**寓意：** Even when you wander far from home, the way back is never truly lost — and someone who loves you is always near.
+
+---
+
+## 10月3日 — 尿布小超人大冒险（0-1岁·白天感官探索版）
+
+**2026年10月3日 · 星期六**
+
+今天天气真好，太阳暖暖的。宝宝光着小脚丫，在垫子上蹬呀蹬。突然，屁股下面传来一个声音：「嘿！我是尿布小超人！」
+
+尿布小超人软软的、白白的，身上有好多小云朵。他伸伸懒腰，说：「今天我们去冒险吧！第一站——小脚丫山！」
+
+吧嗒，吧嗒。宝宝的小脚丫动一动。尿布小超人就跟着晃一晃。「哎呀呀，山在动！山在动！真好玩！」
+
+第二站——小胖手洞洞。宝宝把手手伸一伸，抓一抓。尿布小超人喊：「哇，是五个小肉球！一、二、三、四、五。你好呀，小肉球！」
+
+咕噜，咕噜。宝宝翻了个身。尿布小超人在下面滚呀滚：「哈哈，天空转过来啦！地在上，天在下，真好玩！」
+
+噗——宝宝放了一个小屁屁。尿布小超人一下子鼓起来：「嗯哼！这是我的小喇叭！噗噗噗，滴滴答！」
+
+宝宝笑啦，咿咿呀呀。尿布小超人也笑啦，软软地贴着。窗外，一只小知了在叫：「知了——知了——」
+
+风轻轻吹过来，凉凉的，香香的，是院子里小桂花开了。尿布小超人闻一闻：「嗯，是甜的！是甜的！」
+
+宝宝又蹬蹬腿。吧嗒，吧嗒。尿布小超人跟着摇：「再来一次！再来一次！」
+
+玩了好久好久。宝宝的小手手慢慢停下来。小脚丫也慢慢停下来。尿布小超人打个哈欠：「呼——我也有点困啦。」
+
+太阳暖暖地照着垫子。宝宝舒舒服服地躺着，长长地舒了一口气：「呼——」
+
+尿布小超人轻轻说：「明天，我们还去小脚丫山，好吗？」
+
+宝宝眨眨眼，好像在说：好呀。然后，暖阳里，宝宝和尿布小超人一起，眯起了眼睛。
+**寓意：** 在宝宝的小小世界里，每一次翻身、每一次伸手、每一次「噗」的一声，都是一场了不起的大冒险。尿布小超人告诉我们：最开心的事，就藏在最平常的小事里。
+
+---
+
+## 🔬 10月3日 — 🔬科学故事（0-1岁）：月亮为什么会变弯弯
+
+**2026年10月3日 · 星期五**
+
+月亮圆圆的，像盘子。
+
+月亮弯弯的，像小船。
+
+月亮在变魔术吗？
+
+不是哦，是个光的小游戏。
+
+月亮自己不发光。
+
+是太阳把它照亮。
+
+月亮慢慢绕着地球转。
+
+照亮的地方，有时多，有时少。
+
+所以月亮圆了，又弯了；弯了，又圆了。
+**寓意：** 月亮绕着地球转，太阳照亮它的地方一直在变，我们看见亮的部分有时多、有时少，月亮就圆了又弯了。
+
+---
+
+## 10月3日 — 月亮船摇啊摇（0-1岁）
+
+**2026年10月3日 · 星期五**
+
+天上，弯弯的月亮。
+
+像一只小小的船。
+
+月亮船，摇啊摇。
+
+星星宝宝坐上来。
+
+摇啊摇，摇啊摇。
+
+星星宝宝眨眼睛。
+
+摇啊摇，摇啊摇。
+
+星星宝宝睡着了。
+
+月亮船轻轻摇，宝宝的摇篮轻轻摇。晚安，小宝宝。
+**寓意：** 弯弯的月亮像摇篮，摇着星星；爸爸妈妈的怀抱也是摇篮，摇着宝宝。
+
+---
+
+## 10月3日 — The Moon Boat Rocks (0-1 yr)
+
+**2026年10月3日 · 星期五**
+
+Up in the sky, a crescent moon.
+
+Like a little, little boat.
+
+The moon boat rocks and rocks.
+
+Star babies climb aboard.
+
+Rock, rock, rock.
+
+Star babies blink, blink.
+
+Rock, rock, rock.
+
+Star babies fall asleep.
+
+The moon boat rocks gently. Baby's cradle rocks gently. Good night, little baby.
+**寓意：** The moon rocks the stars; Mommy and Daddy's arms rock baby. Good night, little one.
+
+---
+
+## 🔬 10月3日 — 🔬 Science Story (0-1 yr): Why the Moon Changes Shape
+
+**2026年10月3日 · 星期五**
+
+The moon is round, like a plate.
+
+The moon is thin, like a boat.
+
+Is the moon doing magic?
+
+No, it is a game of light.
+
+The moon does not glow itself.
+
+The sun lights it up.
+
+The moon slowly circles the Earth.
+
+Sometimes we see more light, sometimes less.
+
+So the moon turns round, then thin; thin, then round.
+**寓意：** The moon circles the Earth while the sun lights it; the lit part we see grows and shrinks, so the moon turns round and thin.
+
+---
+
+## 10月3日 — The Little Green Chair (0-1 yr)
+
+**2026年10月3日 · 星期六**
+
+On a sunny porch sits one little green chair. It is small. It is quiet. It is waiting.
+
+Tip-tap. Tip-tap. Here comes Old Cat. Old Cat is gray and slow. Old Cat says, "Mew. Mew. My legs are tired."
+
+The little green chair says nothing. But it is soft. It is just the right size. Old Cat curls up. Purr-purr-purr.
+
+Tip-tap. Tip-tap. Here comes Little Bird. Little Bird is brown and round. Little Bird says, "Tweet. Tweet. My wings are tired."
+
+Old Cat opens one eye. Old Cat scoots over. There is still room. Little Bird hops up. Fluff-fluff. Tweet-tweet.
+
+Tip-tap. Tip-tap. Here comes Baby Bunny. Baby Bunny is white and small. Baby Bunny says, "Boing. Boing. My feet are tired."
+
+Old Cat scoots. Little Bird scoots. There is still room. Baby Bunny hops up. Snuggle-snuggle. Boing-boing.
+
+Now the little green chair is full. Cat. Bird. Bunny. Three warm friends, all together.
+
+The sun shines down. Warm. Warmer. Warmest. The little green chair holds them all. It does not mind. It likes it this way.
+
+The wind blows soft. Shhh-shhh. The leaves go hush-hush. Cat purrs. Bird chirps. Bunny breathes. In. Out. In. Out.
+
+And the little green chair? It is happy. A chair is for sitting. A chair is for sharing. A chair is for friends.
+
+So if you are tired, little one — if your legs are slow and your eyes are heavy — come sit. There is always room. The little green chair is waiting for you.
+
+Tip-tap. Tip-tap. Sit down. Snuggle in. The sun is warm. The day is kind. And you are home.
+**寓意：** Kindness is soft and simple — sharing what you have makes the whole day warm.
+
+---
+
+## 🔬 10月4日 — 🔬科学故事（0-1岁）：月亮婆婆的饭饭时间
+
+**2026年10月4日 · 星期日**
+
+咕噜咕噜，咕噜咕噜。小肚子饿了，小嘴巴张开了。
+
+月亮婆婆从窗外探出头，笑眯眯地说：宝宝，宝宝，我们吃饭饭啦。
+
+嗯哼，嗯哼，小碗端来了。啊呜，啊呜，第一口。
+
+吧嗒，吧嗒，第二口。咕咚，咕咚，第三口。
+
+小猫咪来了，喵——喵——它问：小宝宝，为什么太阳公公在的时候吃饭饭，月亮婆婆出来的时候也吃饭饭呀？
+
+月亮婆婆轻轻说：因为身体里有一个小闹钟，滴答，滴答。它喜欢白天吃，也喜欢晚上早点吃。
+
+小猫咪歪着头：那如果很晚很晚才吃第一口呢？
+
+月亮婆婆说：太晚啦，小闹钟会累。滴答滴答变成呼噜呼噜，身体就不舒服了。
+
+哦，原来是这样呀。小宝宝拍拍小肚子，嗯嗯，我们早早吃，身体好。
+
+吧嗒，吧嗒，小嘴巴慢慢嚼。咕咚，咕咚，小��子暖暖的。
+
+月亮婆婆轻轻唱：早一点吃，香香甜甜。早一点睡，安安稳稳。
+
+小猫咪打了一个哈欠，喵——小宝宝也打了一个哈欠，啊——
+
+呼噜，呼噜。小肚子饱饱的，小身体暖暖的，宝宝闭上眼睛，睡着了。
+
+晚安，小宝宝。晚安，月亮婆婆。晚安，小闹钟。滴答，滴答……
+**寓意：** 按时吃饭，早一点吃，身体棒棒。
+
+---
+
+## 10月4日 — 两棵树的约定（0-1岁·白天感官探索版）
+
+**2026年10月4日 · 星期日**
+
+小院子里有两棵树。一棵高高的，一棵矮矮的。高高的树叫大树，矮矮的树叫小树。
+
+白天，太阳暖暖地照下来。照在大树上，沙沙沙。照在小树上，沙沙沙。
+
+风来了，呼呼呼。大树的叶子摇一摇，哗啦哗啦。小树的叶子也摇一摇，哗啦哗啦。
+
+小鸟飞来了，叽叽喳喳。它先落在大树上，啾啾。又落在小树上，啾啾。
+
+大树说：小树，你听，小鸟在唱歌。小树说：大树，我听见啦，叽叽喳喳。
+
+一只小蚂蚁爬过来，嘿哟嘿哟。它爬过大树的根，又爬过小树的根。
+
+大树说：小蚂蚁，慢慢走。小树说：小蚂蚁，慢慢走。小蚂蚁挥挥触角，谢谢你们。
+
+阳光从叶子缝里漏下来，一点一点，像金色的小豆豆。大树身上有，小树身上也有。
+
+下雨了，滴答滴答。雨滴落在大树上，啪嗒。落在小树上，啪嗒。
+
+大树说：小树，你渴不渴？小树说：大树，我喝饱啦。
+
+雨停了，天晴了。彩虹挂在天上，弯弯的，像一座小桥。
+
+大树说：小树，你看，彩虹。小树说：大树，我看见了，弯弯的。
+
+白天慢慢过去，太阳要回家了。大树说：小树，明天见。小树说：大树，明天见。
+
+高高的树摇一摇，矮矮的树也摇一摇。沙沙沙，沙沙沙。小院子里，暖暖的，静静的。
+
+宝宝坐在垫子上，看看大树，看看小树，轻轻舒了一口气。啊——白天真好呀。
+**寓意：** 好朋友就像两棵树，你摇一摇，我也摇一摇，安安静静地陪着，就是最好的约定。
+
+---
+
+## 🔬 10月4日 — 🔬科学故事（0-1岁）：小脚丫为什么怕痒
+
+**2026年10月4日 · 星期六**
+
+挠挠小脚丫，咯咯咯。
+
+再挠一下，咯咯咯。
+
+小脚丫真怕痒呀。
+
+这是身体的小本领。
+
+脚底住着许多小哨兵。
+
+它们特别、特别灵敏。
+
+轻轻一碰，哨兵就喊：
+
+「有东西碰到我啦！」
+
+宝宝就笑啦。怕痒不是坏事，是身体在认真保护宝宝呢。
+**寓意：** 脚底的感觉特别灵敏，是身体的小警卫；轻轻一碰就报警，让宝宝知道「有东西碰到我啦」。
+
+---
+
+## 10月4日 — 小脚丫踩一踩（0-1岁）
+
+**2026年10月4日 · 星期六**
+
+宝宝的小脚丫，白白胖胖。
+
+小脚丫，踩一踩。
+
+踩到软垫子——软软的。
+
+踩到小毯子——毛毛的。
+
+踩到木地板——凉凉的、滑滑的。
+
+踩到妈妈的腿——暖暖的。
+
+小脚丫，好奇妙。
+
+软的、毛的、凉的、暖的。
+
+小脚丫踩一踩，宝宝咯咯笑。世界真有趣呀。
+**寓意：** 小脚丫是宝宝的第一个探险家，软的、毛的、凉的——每一样都值得轻轻踩一踩。
+
+---
+
+## 10月4日 — Tiptoe, Tiptoe, Little Feet (0-1 yr)
+
+**2026年10月4日 · 星期六**
+
+Baby's little feet, plump and white.
+
+Little feet, step, step.
+
+On the soft mat — squishy, squishy.
+
+On the blanket — fuzzy, fuzzy.
+
+On the wooden floor — cool and smooth.
+
+On Mommy's leg — warm, warm.
+
+Little feet feel so much.
+
+Soft, fuzzy, cool, and warm.
+
+Step, step, baby giggles. The world is so interesting.
+**寓意：** Little feet are baby's first explorers — soft, fuzzy, cool, and warm, every step is a discovery.
+
+---
+
+## 🔬 10月4日 — 🔬 Science Story (0-1 yr): Why Little Feet Are Ticklish
+
+**2026年10月4日 · 星期六**
+
+Tickle the little feet — giggle!
+
+Tickle again — giggle, giggle!
+
+Little feet are so ticklish.
+
+This is the body's clever trick.
+
+Many tiny sentries live in the soles.
+
+They are very, very sensitive.
+
+A light touch, and they call out:
+
+Something is touching me!
+
+Baby laughs. Being ticklish is the body carefully protecting baby.
+**寓意：** The soles are extra sensitive little guards; a light touch rings the alarm, telling baby something is there.
+
+---
+
+## 10月4日 — The Little Firefly's Brightest Light (0-1 yr)
+
+**2026年10月4日 · 星期日**
+
+The sun goes down. The sky turns soft and blue. Mama says, "Look, little one. The fireflies are waking up."
+
+One little firefly opens her eyes. She stretches her wings. Flutter, flutter, flutter. She looks at the dark, dark night. "Oh," she says. "It is so big. And I am so small."
+
+She tries to shine. Blink. Nothing. She tries again. Blink, blink. A tiny, tiny light. Just a dot. Just a speck. Just a little, little glow.
+
+"Is that all?" says the little firefly. "That is not very much."
+
+She flies past the pond. The frogs go ribbit, ribbit, ribbit. "Hello, little firefly!" they croak. "Your light is so pretty!"
+
+She flies past the tree. The owl goes hoo, hoo, hoo. "Hello, little firefly!" she hoots. "Your light is so bright!"
+
+She flies past the flowers. The crickets go chirp, chirp, chirp. "Hello, little firefly!" they sing. "Your light is so warm!"
+
+The little firefly smiles. "My light is small," she says. "But it is mine. And it is bright."
+
+Then she sees a little bug. The bug is lost. The bug is sad. "I cannot find my home," says the bug. "It is too dark."
+
+"Come with me," says the little firefly. "I will light the way."
+
+So the little firefly flies. Blink, blink, blink. The little bug follows. Step, step, step. Over the grass. Past the pond. Under the tree. Blink, blink, blink.
+
+And there is the bug's home! Warm and safe and cozy. "Thank you, little firefly!" says the bug. "Your light showed me the way."
+
+The little firefly flies home. She is tired. She is happy. She lands on a soft green leaf. The moon is up. The stars are out. The night is soft and warm.
+
+She blinks one more time. Blink. Then she closes her eyes. She breathes in. She breathes out. The warm summer night holds her close. Shhh. Shhh. Shhh. All is well.
+**寓意：** Even the smallest light can shine bright and help a friend.
+
+---
+
+## 🔬 10月4日 — 🔬 Science Story (0-1 yr): The Warm, Warm Year
+
+**2026年10月4日 · 星期日**
+
+The sun shone hot. The sun shone long. It made the whole year warm, warm, warm.
+
+In the big U.S. of A., the days were toasty. The nights were cozy. The whole year felt like one long summer hug.
+
+The little bird said, 'Tweet, tweet! It's warm!'
+
+The little frog said, 'Ribbit, ribbit! It's warm!'
+
+The little cricket said, 'Chirp, chirp! It's warm!'
+
+And the warm, warm sun smiled down on all of them.
+
+But one day, the little bird asked, 'Why is it so warm, Mama? Why, why, why?'
+
+Mama Bird said, 'Well, little one, the Earth is getting warmer. People are making too much smoke, and the smoke wraps around the Earth like a big, warm blanket.'
+
+'A blanket?' said the little bird. 'Like my cozy nest?'
+
+'A little like that,' said Mama Bird. 'But this blanket is too warm. It makes the whole year hot, hot, hot. And this year, it was the hottest ever in the U.S. of A.'
+
+The little bird thought. 'So the Earth needs to cool down?'
+
+'Yes,' said Mama Bird. 'And if we don't help, it will only get warmer and warmer.'
+
+So the little bird and the little frog and the little cricket all said, 'We can help! We can plant a tree! We can ride a bike! We can turn off the light!'
+
+And they did. And the sun shone warm, but not too warm. And the Earth smiled.
+
+So remember, little one: this year was record hot, and it can only get worse if we don't take care of our Earth.
+**寓意：** This year has been record hot in the U.S., and it can only get worse if we don't take care of our Earth.
+
+---
+
+## 10月5日 — 白天的小萤火虫（0-1岁·白天感官探索版）
+
+**2026年10月5日 · 星期一**
+
+白天的草地上，绿绿的，暖暖的。有一只小萤火虫，它叫亮亮。
+
+亮亮飞一飞，停一停。它想：白天，我的小灯笼亮不亮呀？
+
+它飞到小蚂蚁身边，问：小蚂蚁，小蚂蚁，我的光，你看见了吗？小蚂蚁说：看见啦，看见啦，像一粒小露珠。
+
+亮亮笑了。它飞过小草，小草摇一摇。它飞过小花，小花点点头。
+
+它飞到小宝宝身边，轻轻落在小宝宝的手心上。小宝宝的手心，暖乎乎的。
+
+亮亮说：白��，我的光也在。小宝宝，你的光，也在呀。
+
+小宝宝摊开手，阳光跳进手心，亮亮的，暖暖的。
+
+风轻轻吹，草轻轻摇。小宝宝在暖阳里，舒舒服服地，舒了一口气。
+**寓意：** 每个小宝贝都有自己的光，白天黑夜都一样亮。
+
+---
+
+## 🔬 10月5日 — 🔬科学故事（0-1岁）：拨浪鼓为什么会响
+
+**2026年10月5日 · 星期日**
+
+摇一摇，咚咚咚。
+
+里面有小鼓手吗？
+
+没有小鼓手哦。
+
+里面有两颗小珠子。
+
+小手一摇，珠子跳起来。
+
+啪嗒，撞到鼓面。
+
+鼓面抖呀抖，抖得飞快。
+
+空气也跟着一起抖。
+
+抖呀抖，钻进耳朵——就听到咚咚咚啦。声音呀，就是这样「抖」出来的。
+**寓意：** 声音是振动出来的：摇动时小珠子撞到鼓面，鼓面很快地抖动，空气也跟着抖，传到耳朵里就是咚咚声。
+
+---
+
+## 10月5日 — 拨浪鼓咚咚咚（0-1岁）
+
+**2026年10月5日 · 星期日**
+
+拨浪鼓，圆脸蛋。
+
+两条小辫子，摇来摇去。
+
+妈妈摇——咚咚咚。
+
+爸爸摇——咚咚咚。
+
+宝宝伸出手，握一握。
+
+宝宝摇一摇——咚咚咚！
+
+咦？声音跟上来啦！
+
+再摇一摇——咚咚咚！
+
+小手一摇，世界就唱歌。宝宝好开心呀。
+**寓意：** 自己摇，自己听——宝宝发现「我能让世界发出声音」，这是了不起的第一步。
+
+---
+
+## 10月5日 — Knock-Knock, Little Rattle (0-1 yr)
+
+**2026年10月5日 · 星期日**
+
+The rattle has a round face.
+
+Two little braids sway, sway.
+
+Mommy shakes it — knock-knock!
+
+Daddy shakes it — knock-knock!
+
+Baby reaches out and grips.
+
+Baby shakes — knock-knock!
+
+Oh! The sound followed!
+
+Shake again — knock-knock!
+
+A little hand shakes, and the world sings. Baby is so happy.
+**寓意：** Baby shakes and hears the sound follow — discovering that I can make the world sing is a wonderful first step.
+
+---
+
+## 🔬 10月5日 — 🔬 Science Story (0-1 yr): Why the Rattle Sounds
+
+**2026年10月5日 · 星期日**
+
+Shake it — knock-knock!
+
+Is a drummer hiding inside?
+
+No drummer inside.
+
+Just two little beads.
+
+A hand shakes, and the beads jump.
+
+Tap! They hit the drum face.
+
+The face quivers, fast, fast, fast.
+
+The air quivers along with it.
+
+The quivering creeps into ears — knock-knock! Sound is made of quivers.
+**寓意：** Sound comes from shaking: the little beads hit the drum face, it quivers fast, the air quivers too, and our ears hear knock-knock.
+
+---
+
+## 10月5日 — The Little Drummer's Happy Day (0-1 yr)
+
+**2026年10月5日 · 星期一**
+
+In a sleepy little town, where red lanterns swing — swish, swish — and soft wind blows — whoosh, whoosh — there lives a little boy named Bo.
+
+One morning, Bo wakes up. He hears a sound. Tap-tap-tap!
+
+It is his little drum. His drum says, 'Tap-tap-tap! Come out and play!'
+
+So Bo puts on his tiny shoes. Step, step, step. He opens the door. Creak!
+
+Outside, the sun is warm. The sun says, 'Good morning, Bo! Mmm, warm.'
+
+Bo sees a red lantern. The lantern sways. Swish, swish. 'Hello, red lantern!' says Bo.
+
+Bo taps his drum. Tap-tap-tap! The lantern sways. Swish, swish. The wind blows. Whoosh, whoosh.
+
+Bo walks down the lane. Clip-clop, clip-clop. He sees a little cat. The cat says, 'Meow.'
+
+Bo taps his drum. Tap-tap-tap! The cat purrs. Purr, purr. 'Nice drum,' says the cat.
+
+Bo walks to the square. He sees his friend Mei. Mei has a little bell. Ding-ding-ding!
+
+'Hello, Bo!' says Mei. 'Hello, Mei!' says Bo. They tap and ding. Tap-tap, ding-ding!
+
+They see a dragon puppet. The dragon is long and bright. It dances — wiggle, waggle, wiggle!
+
+Bo taps. Tap-tap-tap! The dragon dances. Wiggle, waggle! Mei rings. Ding-ding-ding! The dragon dances. Wiggle, waggle!
+
+The dragon says, 'Happy day! Happy day!' in a soft, rumbly voice. Rrrrumbly, rumbly!
+
+Bo laughs. Ha-ha! Mei laughs. Hee-hee! The dragon laughs. Ha-ha-hee-hee!
+
+Then Bo and Mei walk home. Clip-clop, clip-clop. The sun is high. The sun is warm. Mmm.
+
+At home, Mama has dumplings. Round and white. Bo eats one. Yum, yum! Mei eats one. Yum, yum!
+
+'Was it a good day?' asks Mama. 'Yes!' says Bo. 'Tap-tap-tap!' says the drum.
+
+Bo sits in the warm sun. He hugs his drum. He breathes in. He breathes out. Haaa...
+
+The sun says, 'Mmm, warm.' The drum says, 'Tap-tap-tap.' Bo's eyes close. He smiles. Happy day.
+**寓意：** Small joys and family love make every day a happy celebration.
+
+---
+
+## 10月6日 — 早安，小公鸡（0-1岁·晨光感官版）
+
+**2026年10月6日 · 星期二**
+
+天亮了，天亮了。
+
+东方有一点亮，像妈妈点了一盏小灯。
+
+小公鸡站在墙头上，抖抖红冠子，拍拍花翅膀。
+
+它伸伸脖子，张开小嘴：喔——喔——喔——
+
+「天亮啦，天亮啦，大家都起床啦！」
+
+你听，你听。
+
+滴答，滴答，是小露珠从叶子上滚下来。
+
+骨碌，骨碌，是小蜗牛背着小房子爬呀爬。
+
+扑棱，扑棱，是小麻雀从屋檐下飞出来。
+
+沙沙，沙沙，是风在给小树梳头发。
+
+小狗醒了，汪汪，汪汪。
+
+小猫醒了，喵呜，喵呜。
+
+小鸭子醒了，嘎嘎，嘎嘎。
+
+小牛醒了，哞——哞——
+
+大家一起说：早安，早安。
+
+小宝宝也醒了。
+
+小眼睛睁开了，亮亮的。
+
+小手手伸一伸，软软的。
+
+小脚丫蹬一蹬，胖乎乎的。
+
+小嘴巴笑一笑，红扑扑的。
+
+太阳从东边爬上来，爬呀爬呀，爬到窗台上。
+
+阳光暖暖的，像妈妈的手，摸摸宝宝的小脸。
+
+风轻轻的，像妈妈的呼吸，吹吹宝宝的小耳朵。
+
+小公鸡又叫了一声：喔——喔——喔——
+
+「早安呀，小宝宝！」
+
+宝宝，你也来试试——
+
+伸伸小手，蹬蹬小脚，笑一个。
+
+早安，小公鸡。
+
+早安，小太阳。
+
+早安，小宝宝。
+**寓意：** 新的一天开始了，太阳暖暖的，风轻轻的，大家都在慢慢地醒过来。宝宝，早安呀。
+
+---
+
+## 🔬 10月6日 — 🔬科学故事（0-1岁）：球为什么骨碌骨碌滚
+
+**2026年10月6日 · 星期一**
+
+方积木，推一推，停了。
+
+圆皮球，推一推，滚好远。
+
+为什么呀？
+
+摸摸皮球——圆圆的，鼓鼓的。
+
+皮球只用一个小点碰地面。
+
+小点碰地，阻力小小。
+
+方积木用整条边贴着地。
+
+边贴地，阻力大大的。
+
+所以圆球骨碌骨碌，滚呀滚，滚好远好远。
+**寓意：** 圆形的东西只用一个小点碰地面，摩擦小，所以轻轻一推就能滚很远；方形用整条边贴地，很快就停。
+
+---
+
+## 10月6日 — 小球球滚呀滚（0-1岁）
+
+**2026年10月6日 · 星期一**
+
+红皮球，圆滚滚。
+
+轻轻一推，滚呀滚。
+
+滚到东，咕噜咕噜。
+
+滚到西，咕噜咕噜。
+
+宝宝的眼睛，跟着走。
+
+宝宝的小手，张开了。
+
+球球滚过来，滚过来……
+
+抱住啦！红皮球到怀里啦。
+
+小球球滚呀滚，宝宝一天天长大啦。
+**寓意：** 眼睛追着球走，小手等着球来——追视和抓握，都是宝宝在悄悄长大。
+
+---
+
+## 10月6日 — Round Ball Rolls (0-1 yr)
+
+**2026年10月6日 · 星期一**
+
+The red ball, round and plump.
+
+A gentle push — it rolls, it rolls.
+
+Rolling east — rumble, rumble.
+
+Rolling west — rumble, rumble.
+
+Baby's eyes follow along.
+
+Baby's little hands open wide.
+
+The ball rolls closer, closer…
+
+Caught it! The red ball is in baby's arms.
+
+The ball rolls and rolls, and baby grows and grows.
+**寓意：** Eyes follow the ball, hands open for it — tracking and grasping mean baby is quietly growing.
+
+---
+
+## 🔬 10月6日 — 🔬 Science Story (0-1 yr): Why Balls Roll So Far
+
+**2026年10月6日 · 星期一**
+
+Square block: push — it stops.
+
+Round ball: push — it rolls far.
+
+Why is that?
+
+Touch the ball — round and plump.
+
+The ball meets the ground at one tiny point.
+
+Tiny point, tiny friction.
+
+The block's whole side hugs the ground.
+
+Big side, big friction.
+
+So the round ball rumbles and rolls, far, far away.
+**寓意：** A ball touches the ground at one tiny point, with little friction, so it rolls far; a square side drags and stops soon.
+
+---
+
+## 10月6日 — Good Morning, Little Monster (0-1 yr)
+
+**2026年10月6日 · 星期二**
+
+The sun peeks over the hill. Good morning, sun! Good morning, hill!
+
+In a cozy little cave, a little monster wakes up. He stretches his arms. He stretches his legs. He yawns a big yawn. 'Ahhhh!'
+
+This is Little Monster. He is small and fuzzy and blue. He has two little horns and one big smile.
+
+Little Monster feels happy. Happy, happy, happy! He wiggles his toes. He wiggles his nose. He feels the warm sun on his tummy.
+
+But then—CRASH! BANG! BOOM! Thunder rumbles outside. Little Monster feels scared. Scared, scared, scared!
+
+He hides under his leaf blanket. 'Oh no! Oh no! Oh no!' he says.
+
+Mama Monster comes in. She is big and fuzzy and blue. She gives Little Monster a hug. Hug, hug, hug!
+
+'It's okay, little one. Thunder is just a big drum in the sky. Boom, boom, boom! It cannot hurt you.'
+
+Little Monster peeks out. He listens. Boom, boom, boom. The thunder sounds like a drum. A big, silly drum.
+
+Little Monster giggles. 'Hehehe!' He is not scared anymore.
+
+Then Little Monster feels grumpy. Grumpy, grumpy, grumpy! He wants his breakfast. Now, now, now!
+
+Mama Monster brings a bowl of warm mush. Yum, yum, yum! Little Monster eats it all up. Grumpy goes away.
+
+Now Little Monster feels shy. Shy, shy, shy. A little friend comes to visit. It is Little Bunny.
+
+Little Monster hides behind Mama. 'Peek-a-boo!' says Little Bunny. Little Monster peeks out. He smiles a tiny smile.
+
+'Hello,' says Little Monster. 'Hello,' says Little Bunny. They touch noses. Boop!
+
+Now Little Monster feels happy again. Happy, happy, happy! He and Little Bunny hop around the cave. Hop, hop, hop!
+
+The sun is up high. The thunder is gone. The world is warm and bright.
+
+Mama Monster gives Little Monster a big kiss. Smack! 'Good morning, Little Monster,' she says.
+
+Little Monster smiles his big smile. 'Good morning, Mama! Good morning, Bunny! Good morning, sun!'
+
+And he feels warm and safe and loved. All day long.
+**寓意：** Even little monsters have big feelings, and a hug makes everything better.
+
+---
+
+## 10月7日 — 会走路的小枕头（0-1岁·早安奇想版）
+
+**2026年10月7日 · 星期三**
+
+天亮了。窗帘缝里，溜进来一条亮亮的小光。
+
+宝宝的小枕头，圆溜溜、软乎乎。它轻轻伸了个懒腰，说：嗯——今天，我要自己走一走。
+
+小枕头咕噜一滚，滚下小床。吧嗒，吧嗒，它迈开两个小角角，走啦。
+
+它走到窗边，看见太阳公公。太阳公公说：早呀，小枕头。小枕头说：早呀，太阳公公。
+
+它走到花盆边，看见一朵小花。小花说：早呀，小枕头。小枕头说：早呀，小花花。
+
+它走到鱼缸边，看见一条小鱼。小鱼吐泡泡：咕噜，咕噜。小枕头说：早呀，小鱼鱼。
+
+它走到宝宝的小脚丫边，小脚丫蹬了蹬。小枕头说：早呀，小脚丫。
+
+它走到宝宝的小耳朵边，轻轻说：宝宝，宝宝，天亮了。
+
+宝宝睁开眼，笑了。咯咯，咯咯。
+
+宝宝一把抱住小枕头。软软的，暖暖的，香香的。
+
+小枕头说：我不走啦，我陪着宝宝。
+
+太阳公公笑呵呵，把亮亮的光，撒了一屋子。
+
+宝宝抱着小枕头，坐起来。窗外，小鸟叽叽喳喳：早呀，早呀。
+
+宝宝也挥挥小手：早安。
+**寓意：** 宝宝每天醒来，身边都有暖暖的爱。勇敢地看一看，早上真好呀。
+
+---
+
+## 🔬 10月7日 — 🔬科学故事（0-1岁）：风是从哪里来的
+
+**2026年10月7日 · 星期二**
+
+风儿吹，树叶摇。
+
+风儿看不见，摸不着。
+
+风从哪里来呀？
+
+空气宝宝告诉我们。
+
+空气就住在我们身边。
+
+它最不爱待在原地。
+
+这边空气跑走了，
+
+那边空气跑来补。
+
+空气跑呀跑，跑呀跑——这就是风。风不是怪物，是空气在赛跑呢。
+**寓意：** 空气一直在流动：这边空气跑了，那边的空气补过来，跑来跑去就是风。
+
+---
+
+## 10月7日 — 风儿挠痒痒（0-1岁）
+
+**2026年10月7日 · 星期二**
+
+秋天的风，轻轻的。
+
+吹到宝宝脸上——痒痒的。
+
+像小手挠一挠。
+
+树叶沙沙沙，唱歌啦。
+
+宝宝的头发，飘呀飘。
+
+小狗的耳朵，抖一抖。
+
+风儿又吹，痒痒的。
+
+宝宝咯咯咯，笑出声。
+
+风儿轻轻吹，宝宝慢慢大。秋天真舒服呀。
+**寓意：** 凉凉的秋风、沙沙的树叶——户外的每一样，都是宝宝的新鲜感受。
+
+---
+
+## 10月7日 — The Wind Tickle-Tickles (0-1 yr)
+
+**2026年10月7日 · 星期二**
+
+The autumn wind, soft and light.
+
+It touches baby's face — tickly!
+
+Like tiny fingers playing.
+
+The leaves whisper — swish, swish.
+
+Baby's hair floats up, up.
+
+The puppy's ears flick, flick.
+
+The wind blows again — tickly!
+
+Baby giggles out loud.
+
+The wind blows gently, and baby grows slowly. Autumn feels so nice.
+**寓意：** Cool wind and whispering leaves — everything outdoors is a fresh new feeling for baby.
+
+---
+
+## 🔬 10月7日 — 🔬 Science Story (0-1 yr): Where the Wind Comes From
+
+**2026年10月7日 · 星期二**
+
+The wind blows. The leaves sway.
+
+The wind cannot be seen or held.
+
+Where does it come from?
+
+The air tells us.
+
+Air lives all around us.
+
+It never likes to stay still.
+
+Air runs away from here,
+
+more air runs in over there.
+
+Air runs and runs and runs — that is the wind. The wind is air having a race.
+**寓意：** Air is always moving: when air rushes away from one place, more air rushes in to fill it — that running is the wind.
+
+---
+
+## 10月7日 — The Little Cloud That Wanted to See the Morning (0-1 yr)
+
+**2026年10月7日 · 星期三**
+
+High, high up in the blue, blue sky, there is a little cloud. The little cloud is soft. The little cloud is white. The little cloud is sleepy.
+
+The sun peeks up. Peek-a-boo, sun! The little cloud opens one eye. Blink. Blink. It opens the other eye. Blink. Blink. Good morning, sky! Good morning, sun!
+
+The little cloud looks down. Down, down, down. It sees the world far below. "Ooooh," says the little cloud. "I want to see the morning down there."
+
+So the little cloud floats down. Down, down, down. Past a bird. "Tweet, tweet!" says the bird. Past a kite. "Whoosh, whoosh!" says the kite. Down, down, down.
+
+The little cloud floats over a green hill. The grass goes swish, swish. The little cloud floats over a red barn. The rooster goes cock-a-doodle-doo! The little cloud floats over a little pond. The water goes drip, drip, plip.
+
+Then the little cloud sees something small. Something round. Something red. It is a little apple tree. And on the tree sits a little bird. The little bird is cold. The little bird is sleepy. The little bird goes brrr, brrr.
+
+"Oh, little bird," says the little cloud. "You look chilly. May I help you?" The little bird says, "Cheep, cheep. Yes, please."
+
+So the little cloud wraps around the little bird. Soft and white. Warm and light. The little bird snuggles in. "Mmmm," says the little bird. "Mmmm," says the little cloud.
+
+The sun climbs higher. The sky turns pink. The sky turns gold. The little bird peeps out. "Look!" says the little bird. "The morning is here!"
+
+The little cloud looks. The world is bright. The world is warm. The world is awake. The flowers go open, open. The bees go buzz, buzz. The leaves go wiggle, wiggle.
+
+"Good morning, flowers!" says the little cloud. "Good morning, bees!" says the little bird. "Good morning, world!" they say together.
+
+The little bird flies off to find breakfast. "Thank you, little cloud!" it sings. "Cheep, cheep, cheep!" The little cloud smiles a soft, white smile.
+
+Now the little cloud feels sleepy again. It floats up, up, up. Back to the blue, blue sky. It curls up small. It closes one eye. It closes the other eye.
+
+But before it sleeps, it whispers down to the world: "Good morning, little hill. Good morning, little barn. Good morning, little pond. Good morning, little bird."
+
+And the world whispers back: "Good morning, little cloud."
+**寓意：** Even a tiny cloud can bring a big, bright morning to a sleepy world. Curiosity is a gentle adventure, and home is always waiting.
+
+---
+
+## 10月8日 — 小猫咪的胡须（0-1岁·想象与奇幻·暖心陪伴版）
+
+**2026年10月8日 · 星期四**
+
+小猫咪趴在窗台上，伸了一个懒腰。它有一把神奇的小胡须。长长的，翘翘的，像两根小天线。
+
+风儿吹过来，呼——呼——。小胡须轻轻摇一摇，摇出好听的歌谣：喵呜，喵呜，喵呜。
+
+小宝宝听见了，咯咯笑起来。小猫咪回头看看，眼睛亮晶晶的，像两颗小星星。
+
+小猫咪用胡须碰碰小宝宝的手。痒痒的，软软的，像一片羽毛轻轻扫过。
+
+胡须上沾着阳光的味道。暖暖的，甜甜的，像刚晒过的小被子。
+
+突然，胡须抖一抖——噗！它变成一根小小的魔法棒，在空中画了一个圆。
+
+圆里出现一座小房子。房子是云朵做的，软绵绵，白胖胖。窗户上挂着一串小铃铛。
+
+叮当，叮当，小铃铛唱起来。小猫咪说：宝宝，这是你的梦房子。
+
+小宝宝眨眨眼���好像听懂了。他伸出小手，摸了摸小猫咪的胡须。
+
+小猫咪打个哈欠，呼——哈——。它把胡须轻轻搭在小宝宝的手心上。
+
+「闭上眼睛吧，」小猫咪轻轻说，「我的胡须会一直陪着你。像一条小船，带你漂到梦的岸边。」
+
+小宝宝的眼睛慢慢合上了。一、二、三。他听见自己的呼吸声，呼——吸——，呼——吸——，像海浪轻轻拍着沙滩。
+
+小猫咪轻轻跳下窗台，用胡须碰了碰门框。吱呀——门开了一条缝。
+
+门外是一片星星田。每一颗星星都亮晶晶的，像撒了一地的小灯笼。
+
+小猫咪走在星星田里，胡须上挂满了亮亮的光。它回头望望窗台，轻轻说：「明天见，小宝宝。明天，我的胡须还会摇出新的歌。」
+
+风儿轻轻吹，小铃铛轻轻响。叮当，叮当，明天见。
+**寓意：** 陪伴是最温柔的魔法。小小的胡须，大大的安心——明天见，小猫咪！
+
+---
+
+## 🔬 10月8日 — 🔬科学故事（0-1岁）：小露珠是哪里来的
+
+**2026年10月8日 · 星期三**
+
+白天，草叶上没有珠。
+
+早上，草叶上全是珠。
+
+谁挂上去的呀？
+
+是空气里的小水汽。
+
+白天暖，水汽藏得好好的。
+
+夜里凉，水汽冻得发抖。
+
+碰到凉凉的草叶，
+
+抱在一起，变成小珠。
+
+一颗颗，亮晶晶——这就是露水。太阳一晒，它们又变回水汽飞走啦。
+**寓意：** 夜里变凉，空气里的水汽碰到凉凉的草叶，就凝成小水珠——这就是露水，不是谁挂上去的。
+
+---
+
+## 10月8日 — 寒露的小露珠（0-1岁）
+
+**2026年10月8日 · 星期三**
+
+早上，宝宝看草地。
+
+草叶上，亮晶晶。
+
+一颗小露珠，两颗小露珠。
+
+排排队，圆溜溜。
+
+太阳一照，闪闪闪。
+
+小露珠，是夜里来的。
+
+夜里凉，水汽变成了珠。
+
+今天寒露，天更凉啦。
+
+宝宝穿暖暖，小手暖乎乎，露珠看着笑眯眯。
+**寓意：** 寒露到了，夜里更凉，露珠更多；换季的日子，宝宝要暖暖和和的。
+
+---
+
+## 10月8日 — Little Dewdrops of Cold Dew (0-1 yr)
+
+**2026年10月8日 · 星期三**
+
+Morning! Baby looks at the grass.
+
+On the blades — sparkle, sparkle.
+
+One dewdrop, two dewdrops.
+
+In a line, round and plump.
+
+The sun shines — glint, glint, glint.
+
+Dewdrops were born at night.
+
+Cold night, and vapor turns to pearls.
+
+Today is Cold Dew — cooler days.
+
+Baby stays warm and toasty, and the dewdrops smile.
+**寓意：** At Cold Dew the nights grow chill and dewdrops multiply — baby stays warm and cozy through the season.
+
+---
+
+## 🔬 10月8日 — 🔬 Science Story (0-1 yr): Where Dewdrops Come From
+
+**2026年10月8日 · 星期三**
+
+Daytime: no beads on the grass.
+
+Morning: the grass is full of beads.
+
+Who hung them there?
+
+The tiny vapor in the air.
+
+Warm days hide the vapor well.
+
+Cold nights make the vapor shiver.
+
+It touches the cool grass blades,
+
+huddles together, and turns to pearls.
+
+Sparkle, sparkle — that is dew. When the sun warms up, they fly away as vapor again.
+**寓意：** When nights turn cold, water vapor in the air touches the cool grass and turns into tiny drops — that is dew.
+
+---
+
+## 10月8日 — Little Baker, Big Bread (0–1 yr)
+
+**2026年10月8日 · 星期四**
+
+Well now, let me tell you about a little baker down by the river. Her name is May, and she has a hat as white as a cloud and a smile as round as a biscuit.
+
+Every morning, the sun goes up — up, up, up. And May wakes up — hop, hop, hop. She puts on her hat. Pat, pat. She ties her apron. Tap, tap. Off she goes to bake some bread.
+
+Into the bowl goes the flour. Puff, puff, puff! Into the bowl goes the water. Splash, splash, splash! Then a little honey. Drip, drip, drip!
+
+May stirs it round and round. Stir, stir, stir! She kneads it soft and slow. Squish, squish, squish! The dough says nothing at all — but it feels warm and soft as a sleepy kitten.
+
+Then May waits. Tick, tock. Tick, tock. The dough grows big — bigger, bigger, BIG! It puffs up like a fluffy little pillow.
+
+Into the oven it goes. And the little oven hums: hmmmm, hmmmm, hmmmm. Warm and cozy. Warm and cozy.
+
+Soon — sniff, sniff, sniff! What is that smell? Bread! Warm, round, golden bread! May claps her hands. Clap, clap, clap!
+
+But just then, hmm — who is that? A little dog with muddy paws stands at the door. Wag, wag, wag goes his tail. Woof, woof, woof says his mouth.
+
+"Oh no, no, no," laughs May. "Muddy paws, muddy paws! Not on my clean floor, you rascal!" So she wipes each paw. One, two, three, four. Rub, rub, rub. The little dog wiggles and giggles — well, dogs don't giggle, but his tail surely does.
+
+Then May cuts the bread. Slice, slice, slice! One piece for her. One piece for the dog. They sit by the river and eat — munch, munch, munch. The river goes by — swish, swish, swish.
+
+"See you tomorrow, little river," says May. "See you tomorrow, warm oven. See you tomorrow, my muddy-paw friend — but wash those paws first!"
+
+The dog gives one soft woof. May gives one soft pat. Pat, pat, pat. And home they go — hop, hop, hop — with the sun going down, down, down, and the smell of warm bread all the way home.
+**寓意：** Sharing what you make with someone you love makes every little job a happy one.
+
+---
+
+## 10月9日 — 爷爷的摇椅（0-1岁·生活与认知·暖心陪伴版）
+
+**2026年10月9日 · 星期五**
+
+小院子里，有一把老摇椅。吱呀——吱呀——摇呀摇。
+
+爷爷坐上去，摇椅摇呀摇。吱呀——吱呀——摇呀摇。
+
+小猫咪跑过来，跳上爷爷的膝盖。呼噜——呼噜——呼噜。
+
+摇椅摇呀摇，小猫咪呼噜呼噜。吱呀——呼噜——吱呀——呼噜。
+
+小黄狗跑过来，趴在摇椅旁边。哈——哈——哈，吐着舌头笑。
+
+摇椅摇呀摇，小黄狗哈哈笑。吱呀——哈哈——吱呀——哈哈。
+
+小宝宝爬过来，伸出小手手，摸摸摇椅的扶手。圆溜溜，滑溜溜。
+
+爷爷把宝宝抱起来，放在膝盖上。宝宝笑呀笑，咯咯咯，咯咯咯。
+
+摇椅摇呀摇，宝宝摇呀摇。吱呀——咯咯——吱呀——咯咯。
+
+太阳慢慢落下去，天边红扑扑。小鸟飞回家，叽叽喳喳，叽叽喳喳。
+
+摇椅慢慢停下来，吱——呀——停。
+
+爷爷说：太阳回家了，小鸟回家了，宝宝也要回家了。
+
+宝宝摇摇小手：明天见，摇椅。明天见，猫咪。明天见，狗狗。明天见，爷爷。
+
+爷爷笑呵呵：明天见，宝宝。明天，摇椅还在这里，爷爷也在这里。
+
+摇椅轻轻晃一下，吱呀。好像在说：明天见，明天见。
+**寓意：** 摇椅摇呀摇，爷爷陪宝宝。陪伴就是最好的礼物，明天见，明天见，明天还要一起摇。
+
+---
+
+## 🔬 10月9日 — 🔬科学故事（0-1岁）：勺子碰碗为什么会叮叮响
+
+**2026年10月9日 · 星期四**
+
+小勺子，碰小碗。
+
+叮——好清脆呀。
+
+声音从哪里来？
+
+碰一下，碗就抖了一下。
+
+抖得飞快，飞快。
+
+空气跟着一起抖。
+
+抖呀抖，钻进耳朵。
+
+轻一点碰，叮就轻一点。
+
+重一点碰，叮就响一点。原来叮叮声，是碗在快速地抖呀抖。
+**寓意：** 碰撞让碗很快地振动，振动传给空气，传进耳朵就是叮叮声；敲得轻，声音就轻。
+
+---
+
+## 10月9日 — 小勺子碰一碰（0-1岁）
+
+**2026年10月9日 · 星期四**
+
+吃饭饭，时间到。
+
+小勺子，舀一口。
+
+碰一碰小碗——叮，叮。
+
+这是开饭的小音乐。
+
+宝宝闻一闻——香香哒。
+
+宝宝张嘴巴——啊呜。
+
+一口，甜的。
+
+两口，软软的。
+
+小勺子叮叮响，宝宝一口一口慢慢长。
+**寓意：** 第一次尝辅食，叮叮的碰碗声是开饭的小音乐，慢慢吃，慢慢长。
+
+---
+
+## 10月9日 — Ting, Ting, Little Spoon (0-1 yr)
+
+**2026年10月9日 · 星期四**
+
+Mealtime! Mealtime!
+
+The little spoon scoops a bite.
+
+Tap on the bowl — ting, ting.
+
+That is mealtime music.
+
+Baby sniffs — smells sweet.
+
+Baby opens wide — om-nom.
+
+One bite — sweet.
+
+Two bites — soft and nice.
+
+The spoon goes ting-ting, and baby grows bite by bite.
+**寓意：** First tastes of solid food come with little ting-ting music — slow bites, slow growing.
+
+---
+
+## 🔬 10月9日 — 🔬 Science Story (0-1 yr): Why the Spoon Goes Ting
+
+**2026年10月9日 · 星期四**
+
+Little spoon, little bowl.
+
+Ting — how crisp and clear!
+
+Where is the sound from?
+
+A tap makes the bowl quiver.
+
+Quivering fast, so fast.
+
+The air quivers along.
+
+It quivers into our ears.
+
+Tap lightly — the ting is light.
+
+Tap harder — the ting is loud. The ting is the bowl quivering, quick as can be.
+**寓意：** The tap makes the bowl quiver fast; the quivering rides the air into our ears as ting. Tap softly, and ting is soft too.
+
+---
+
+## 10月9日 — The Little Shadow Who Lost Its Girl (0–1 yr)
+
+**2026年10月9日 · 星期五**
+
+On a sunny porch, a little shadow wakes up. She stretches. She yawns. She looks around. But where is her girl? The porch is warm. The porch is quiet. The little shadow is all alone.
+
+The little shadow slips off the step. Flop, flop, flop. She lands on the grass. The grass is green. The grass is soft. She looks left — no girl. She looks right — no girl. Only a little ladybug, red and round.
+
+"Ladybug, ladybug, have you seen my girl?" asks the shadow. The ladybug buzzes, "Bzzz, bzzz, bzzz. I saw her go that way — past the big blue flower!"
+
+The shadow goes that way. Flop, flop, flop. Past the big blue flower. Past the little stone wall. She sees a duck. The duck goes, "Quack, quack, quack!"
+
+"Duck, duck, have you seen my girl?" asks the shadow. The duck waddles and says, "Quack, quack, quack. I saw her go that way — under the apple tree!"
+
+The shadow goes that way. Flop, flop, flop. Under the apple tree. The apples go, "Plop, plop, plop." The shadow looks up. Apples are red. Apples are round. But no girl. Only a little bunny, hopping, hopping.
+
+"Bunny, bunny, have you seen my girl?" asks the shadow. The bunny twitches its nose and says, "Hop, hop, hop. I saw her go that way — to the big red barn!"
+
+The shadow goes that way. Flop, flop, flop. To the big red barn. The barn is big. The barn is red. Inside, it is dark and cool. The shadow hears a sound. "Mooo," says the cow. "Mooo, mooo."
+
+"Cow, cow, have you seen my girl?" asks the shadow. The cow chews and chews and says, "Mooo. I saw her go that way — to the little pond!"
+
+The shadow goes that way. Flop, flop, flop. To the little pond. The pond goes, "Ribbit, ribbit, ribbit." A frog sits on a lily pad. The frog is green. The frog is round.
+
+"Frog, frog, have you seen my girl?" asks the shadow. The frog blinks and says, "Ribbit, ribbit. I saw her go that way — to the white house with the red door!"
+
+The shadow goes that way. Flop, flop, flop. To the white house with the red door. The door is open. The shadow peeks inside. She sees a girl. The girl is sitting on the floor. The girl is playing with blocks. The girl is her girl!
+
+The girl looks up. She sees the little shadow. "There you are!" she says. "I was waiting for you!" The shadow smiles — if shadows can smile. The girl picks up a block. "Clack, clack, clack," goes the block.
+
+"Come play with me," says the girl. The shadow plays. They build a tower. Up, up, up. The tower falls down. "Crash!" goes the tower. The girl laughs. The shadow laughs too.
+
+The sun goes down. The room gets dark. The girl yawns. "Time for bed," says Mama. The girl lies down. The shadow lies down too — on the wall, on the floor, on the bed.
+
+"Goodnight, little shadow," says the girl. "See you tomorrow." The shadow cuddles close. The room is warm. The room is quiet. The shadow is not alone anymore. She is right where she belongs.
+
+Shhh. The girl sleeps. The shadow sleeps. The stars come out. The moon is bright. And all is well. All is well. See you tomorrow, little shadow. See you tomorrow.
+**寓意：** Even when we are apart, love keeps us close — and friends help us find our way home.
+
+---
+
+## 🔬 10月10日 — 🔬科学故事（0-1岁）：爸爸的胡子为什么扎扎的
+
+**2026年10月10日 · 星期五**
+
+妈妈的头发，软软的。
+
+爸爸的胡子，扎扎的。
+
+都是毛毛呀，为什么不一样？
+
+看一看，胡子粗粗的。
+
+摸一摸，胡子硬硬的。
+
+粗粗硬硬的小毛毛，
+
+碰到嫩嫩的皮肤，
+
+就像小刷子划过去。
+
+所以胡子亲亲，就扎扎的啦。粗和细，硬和软——毛毛各有各的本领。
+**寓意：** 胡子又粗又硬，头发比较细软——粗粗的毛碰到皮肤，就像小刷子一样扎扎的。
+
+---
+
+## 10月10日 — 爸爸的胡子扎扎的（0-1岁）
+
+**2026年10月10日 · 星期五**
+
+爸爸抱着宝宝。
+
+低下头，凑过来——
+
+啵！亲了一口。
+
+痒痒的，扎扎的。
+
+是爸爸的胡子呀！
+
+宝宝笑，咯咯咯。
+
+再亲一口——啵！
+
+又痒又扎又暖暖。
+
+妈妈的亲亲软软的，爸爸的亲亲扎扎的——都是爱宝宝的亲亲。
+**寓意：** 胡子扎扎的也是爱：不同触感的亲亲，都是暖暖的喜欢。
+
+---
+
+## 10月10日 — Daddy's Scratchy Kiss (0-1 yr)
+
+**2026年10月10日 · 星期五**
+
+Daddy holds baby close.
+
+He leans in, closer, closer —
+
+Mwah! A kiss on the cheek.
+
+Tickly, prickly!
+
+It is Daddy's beard!
+
+Baby giggles — hee, hee, hee.
+
+Another kiss — mwah!
+
+Prickly, tickly, and warm.
+
+Mommy's kisses are soft, Daddy's kisses are scratchy — both are full of love.
+**寓意：** Even a scratchy kiss is love — different feels, same warm heart.
+
+---
+
+## 🔬 10月10日 — 🔬 Science Story (0-1 yr): Why Daddy's Beard Is Scratchy
+
+**2026年10月10日 · 星期五**
+
+Mommy's hair is soft, soft.
+
+Daddy's beard is prickly!
+
+Both are hair — why different?
+
+Look close: beard hairs are thick.
+
+Feel them: beard hairs are stiff.
+
+Thick, stiff little hairs,
+
+touching soft, soft skin,
+
+brush along like a tiny brush.
+
+That is why beard kisses are scratchy. Thick or thin, stiff or soft — every hair has its own trick.
+**寓意：** Beard hairs are thick and stiff, head hairs are finer and softer — a thick stiff hair brushes skin like a tiny brush.
+
+---
+
+## 🔬 10月11日 — 🔬科学故事（0-1岁）：小袜子为什么暖暖的
+
+**2026年10月11日 · 星期六**
+
+穿上小袜子，
+
+小脚暖乎乎。
+
+袜子不会生火呀，
+
+怎么会暖暖的？
+
+毛线里藏着小秘密——
+
+好多好多小空气泡。
+
+空气是怕冷宝宝的小被子。
+
+它把暖暖的热量围起来，
+
+热量跑不掉，小脚就暖暖的啦。
+**寓意：** 袜子的毛线里藏着许多小空气泡泡，像小被子一样挡住热量跑掉，所以脚暖暖的。
+
+---
+
+## 10月11日 — 小袜子找朋友（0-1岁）
+
+**2026年10月11日 · 星期六**
+
+床上，一只小袜子。
+
+红红的，小小只。
+
+「我的朋友呢？」
+
+被子后面钻出一颗头。
+
+「在这里呀！」
+
+两只小袜子，抱一抱。
+
+一只套左脚，
+
+一只套右脚。
+
+小袜子找到朋友啦，宝宝的小脚暖暖的。
+**寓意：** 成双成对的小东西要在一起：袜子配好对，小脚才暖暖的。
+
+---
+
+## 10月11日 — Where Is My Sock? (0-1 yr)
+
+**2026年10月11日 · 星期六**
+
+On the bed, one little sock.
+
+Little and red, all alone.
+
+Where is my friend?
+
+From behind the blanket, someone peeks.
+
+Here I am!
+
+Two little socks hug each other.
+
+One goes on the left foot,
+
+one goes on the right foot.
+
+The socks found each other, and baby's feet are warm and toasty.
+**寓意：** Things that come in pairs belong together: socks find their pairs, and little feet stay warm.
+
+---
+
+## 🔬 10月11日 — 🔬 Science Story (0-1 yr): Why Socks Keep Toes Warm
+
+**2026年10月11日 · 星期六**
+
+Socks go on, on, on.
+
+Toes feel warm, warm, warm.
+
+Socks cannot make fire,
+
+so how do they warm us?
+
+The yarn hides a secret —
+
+many, many tiny air pockets.
+
+Air is a tiny blanket for warmth.
+
+It hugs the heat and holds it close,
+
+the heat cannot run away, and toes stay toasty.
+**寓意：** Yarn hides many tiny pockets of air, like a little blanket that stops heat from escaping — so toes stay warm.
+
+---
+
+## 🔬 10月12日 — 🔬科学故事（0-1岁）：镜子为什么照得出宝宝
+
+**2026年10月12日 · 星期日**
+
+镜子亮亮的，滑滑的。
+
+里面住着另一个宝宝。
+
+宝宝是怎么进去的呀？
+
+是光宝宝搬进来的。
+
+光跑到宝宝身上，
+
+又蹦到镜子上。
+
+镜子的背面，亮亮的，
+
+光碰到它，「嗖」地弹回来。
+
+弹回来的光，带着宝宝的样子——所以镜子里就有宝宝啦。
+**寓意：** 镜子背面有亮亮的镀层，光走到那里会被弹回来——弹回来的光带着宝宝的样子，所以镜子里「住着」宝宝。
+
+---
+
+## 10月12日 — 镜子里的宝宝（0-1岁）
+
+**2026年10月12日 · 星期日**
+
+镜子前面，坐一坐。
+
+咦？里面有个宝宝！
+
+白白胖胖，和我一样。
+
+拍拍手——里面也拍拍手。
+
+眨眨眼——里面也眨眨眼。
+
+笑一笑——里面也笑一笑。
+
+伸手摸摸——凉凉的，硬硬的。
+
+原来这不是别人。
+
+是宝宝自己呀！你好呀，小小的人。
+**寓意：** 镜子里的「另一个宝宝」，是宝宝认识自己的第一步——你好呀，小小的人。
+
+---
+
+## 10月12日 — Hello, Mirror Baby (0-1 yr)
+
+**2026年10月12日 · 星期日**
+
+Baby sits by the mirror.
+
+Oh! A baby inside!
+
+Plump and sweet, just like me.
+
+Clap, clap — the mirror baby claps.
+
+Blink, blink — the mirror baby blinks.
+
+Smile, smile — the mirror baby smiles.
+
+Reach and touch — cool and hard.
+
+This is not somebody else.
+
+It is baby! Hello, little person.
+**寓意：** The baby in the mirror is baby's first step toward knowing itself — hello, little person.
+
+---
+
+## 🔬 10月12日 — 🔬 Science Story (0-1 yr): Why Mirrors Show Baby
+
+**2026年10月12日 · 星期日**
+
+The mirror is shiny and smooth.
+
+Another baby lives inside.
+
+How did baby get in there?
+
+The light carried baby in!
+
+Light hops onto baby,
+
+then bounces to the mirror.
+
+The back of the mirror is shiny,
+
+and the light bounces back — whoosh!
+
+The bouncing light carries baby's picture — so the mirror shows baby!
+**寓意：** The back of a mirror is coated shiny, and light bounces off it — the bouncing light carries baby's picture, so the mirror shows baby.
+
+---
+
+## 🔬 10月13日 — 🔬科学故事（0-1岁）：大树为什么秋天掉叶子
+
+**2026年10月13日 · 星期一**
+
+秋天到，大树撒叶子。
+
+飘呀飘，落呀落。
+
+叶子调皮吗？不是哦。
+
+大树在认真地过冬呢。
+
+冬天又冷又干。
+
+大树靠根喝水，
+
+冬天里，根喝不到多少水。
+
+可叶子总在呼呼散水。
+
+散水的叶子舍不得放，大树会渴坏的——所以大树轻轻放手，让叶子落下来，安安稳稳睡过冬。
+**寓意：** 冬天又冷又干，根喝不到多少水；叶子会不断散失水分，大树就让叶子落下来，少喝水、省力气，安安稳稳过冬。
+
+---
+
+## 10月13日 — 大树叶子飘下来（0-1岁）
+
+**2026年10月13日 · 星期一**
+
+秋天的公园，风儿吹。
+
+大树枝头，金灿灿。
+
+一片叶子，飘——下来。
+
+两片叶子，飘——下来。
+
+转个圈，慢慢落。
+
+落在地上，铺成金毯子。
+
+一片落在小车上，
+
+正好在宝宝手边。
+
+宝宝捏一捏，脆脆的。这是大树写给宝宝的信呀。
+**寓意：** 落叶是大树写给秋天的信，一封一封，慢慢飘到宝宝身边。
+
+---
+
+## 10月13日 — Leaves Fall, Fall, Fall (0-1 yr)
+
+**2026年10月13日 · 星期一**
+
+Autumn park, wind blowing.
+
+The big tree wears gold, gold, gold.
+
+One leaf floats — down, down.
+
+Two leaves float — down, down.
+
+They spin a little, falling slowly.
+
+They carpet the ground in gold.
+
+One lands on the stroller,
+
+right by baby's hand.
+
+Baby pinches it — crisp! A letter from the big tree, just for baby.
+**寓意：** Falling leaves are letters the tree writes to autumn — one by one, floating down to baby.
+
+---
+
+## 🔬 10月13日 — 🔬 Science Story (0-1 yr): Why Trees Drop Their Leaves
+
+**2026年10月13日 · 星期一**
+
+Autumn comes. The tree drops leaves.
+
+They float, they fall, they fall.
+
+Are the leaves naughty? No, no.
+
+The tree is preparing for winter.
+
+Winter is cold and dry.
+
+Trees drink water with their roots,
+
+but winter roots drink very little.
+
+Yet leaves keep puffing water away.
+
+So the tree lets go, gently — the leaves fall, and the tree rests safe all winter.
+**寓意：** Winter is cold and dry; roots drink little, while leaves keep losing water. Dropping leaves helps the tree save water and rest through winter.
+
+---
+
+## 🔬 10月14日 — 🔬科学故事（0-1岁）：小黄鸭为什么浮在水上
+
+**2026年10月14日 · 星期二**
+
+小黄鸭，进浴盆。
+
+飘——浮着啦。
+
+摇一摇，晃一晃，
+
+就是不沉底。
+
+小黄鸭有秘密。
+
+它肚子里藏着空气。
+
+像一只小船，
+
+比同样大小的水轻。
+
+轻的浮起来，重的沉下去——所以小黄鸭稳稳漂着，帮宝宝洗澡澡。
+**寓意：** 小黄鸭的肚子里藏着空气，像小船一样，比同体积的水轻，所以浮着；实物比水重的就会沉下去。
+
+---
+
+## 10月14日 — 小鸭子洗澡澡（0-1岁）
+
+**2026年10月14日 · 星期二**
+
+浴盆里，水暖暖。
+
+小黄鸭，游啊游。
+
+宝宝捏一捏——嘎！
+
+小黄鸭唱歌啦。
+
+宝宝拍拍水，
+
+哗啦哗啦，
+
+溅起小水花。
+
+泡泡飞呀飞。
+
+洗个香香的澡，擦干干，暖乎乎——睡觉觉喽。晚安，小鸭子。
+**寓意：** 洗澡不只是洗干净：玩水、听声、大笑，都是宝宝快乐的一天。
+
+---
+
+## 10月14日 — Splish Splash, Little Duck (0-1 yr)
+
+**2026年10月14日 · 星期二**
+
+In the tub, warm warm water.
+
+Little yellow duck swims, swims.
+
+Baby squeezes — quack!
+
+The duck is singing!
+
+Baby pats the water,
+
+splish, splash, splish, splash,
+
+little drops jump up.
+
+Bubbles float, float, float.
+
+A sweet, sweet bath — dry off, warm up — bedtime! Good night, little duck.
+**寓意：** Bath time is more than getting clean: splashing, quacking, giggling — all the joy of baby's day.
+
+---
+
+## 🔬 10月14日 — 🔬 Science Story (0-1 yr): Why the Rubber Duck Floats
+
+**2026年10月14日 · 星期二**
+
+The rubber duck goes in.
+
+Float! It stays up.
+
+Rock, rock, wobble, wobble,
+
+it never sinks.
+
+The duck has a secret.
+
+Air hides in its belly.
+
+Like a little, little boat,
+
+lighter than the water it pushes.
+
+Light things float, heavy things sink — so the duck floats steadily through bath time.
+**寓意：** The duck hides air inside its belly, like a little boat lighter than the same amount of water — so it floats.
+
+---
+
+## 🔬 10月15日 — 🔬科学故事（0-1岁）：抱抱为什么让人安心
+
+**2026年10月15日 · 星期三**
+
+宝宝哭了，抱一抱，
+
+贴着大人暖暖的胸口，
+
+慢慢就安静啦。
+
+抱抱里有魔法吗？
+
+有一个身体的小魔法。
+
+皮肤贴着皮肤，暖暖的。
+
+耳朵听见心跳，咚、咚、咚。
+
+这个声音，宝宝早听惯啦。
+
+身体知道了：很安全。心跳慢慢稳，肌肉慢慢松——抱抱就是这样让宝宝安心的。
+**寓意：** 暖暖的皮肤贴着皮肤、听着熟悉的心跳，身体会觉得「很安全」，心跳慢慢变稳，人就放松下来了。
+
+---
+
+## 10月15日 — 抱抱是最暖和的（0-1岁）
+
+**2026年10月15日 · 星期三**
+
+被子暖暖的。
+
+毯子暖暖的。
+
+小袜子也暖暖的。
+
+宝宝哭了，呜呜。
+
+被子抱不动，
+
+毯子抱不动，
+
+小袜子也抱不动。
+
+妈妈张开手臂——抱抱。
+
+抱进怀里，轻轻拍。呜呜变小了，变成呼噜噜。抱抱最暖和，因为爱是热的。
+**寓意：** 抱抱是世界上最暖和的东西：比被子暖，比毯子暖，因为爱是热的。
+
+---
+
+## 10月15日 — A Hug Is Warmest (0-1 yr)
+
+**2026年10月15日 · 星期三**
+
+The quilt is warm, warm.
+
+The blanket is warm, warm.
+
+The little socks are warm too.
+
+Baby cries — boo-hoo.
+
+The quilt cannot hug baby,
+
+the blanket cannot hug baby,
+
+the socks cannot hug baby.
+
+Mommy opens her arms — a hug!
+
+In her arms, gently patted. Boo-hoo fades into little snores. A hug is warmest, because love is warm.
+**寓意：** A hug is the warmest thing in the world — warmer than quilts and blankets, because love is warm.
+
+---
+
+## 🔬 10月15日 — 🔬 Science Story (0-1 yr): Why Hugs Feel So Safe
+
+**2026年10月15日 · 星期三**
+
+Baby cries — a hug comes.
+
+Against a warm, warm chest,
+
+baby slowly calms down.
+
+Is there magic in a hug?
+
+There is a body-magic.
+
+Skin touches skin, warm and close.
+
+Little ears hear a heartbeat —
+
+thump, thump, thump.
+
+A sound baby has always known. The body learns: all is safe. The heartbeat steadies, the muscles soften — that is how a hug comforts baby.
+**寓意：** Warm skin touching skin and a familiar heartbeat tell the body it is safe; the heartbeat steadies and the body relaxes.
+
+---
+
+## 🔬 10月16日 — 🔬科学故事（0-1岁）：白天为什么看不见月亮
+
+**2026年10月16日 · 星期四**
+
+月亮晚上出来，
+
+白天不见了。
+
+月亮睡大觉去了吗？
+
+没有哦。
+
+白天，月亮常常也在天上。
+
+只是太阳太亮啦。
+
+太阳光把天空照得白亮白亮，
+
+淡淡的月光被盖住了。
+
+就像小手电在太阳底下不够亮——月亮还在，只是被太阳的光「抢了风头」。
+**寓意：** 白天月亮多半也在天上，只是太阳光太亮，把淡淡的月光盖住了，所以我们看不清它。
+
+---
+
+## 10月16日 — 晚安，小月亮（0-1岁）
+
+**2026年10月16日 · 星期四**
+
+窗帘拉上，灯变暗了。
+
+宝宝睡前说晚安。
+
+小月亮，晚安。
+
+小星星，晚安。
+
+窗台的小猫，晚安。
+
+鱼缸里的小鱼，晚安。
+
+小黄鸭，晚安。
+
+爸爸晚安，妈妈晚安。
+
+宝宝闭上眼睛。整个世界，都轻轻地说：晚安，小宝宝。
+**寓意：** 睡前跟世界一一道晚安，是宝宝的小仪式——安安稳稳，甜甜睡去。
+
+---
+
+## 10月16日 — Good Night, Little Moon (0-1 yr)
+
+**2026年10月16日 · 星期四**
+
+Curtains drawn, lights turned low.
+
+Baby says good night.
+
+Good night, little moon.
+
+Good night, little stars.
+
+Good night, kitty on the sill.
+
+Good night, little fish.
+
+Good night, rubber duck.
+
+Good night, Daddy. Good night, Mommy.
+
+Baby closes both eyes. The whole world whispers back: good night, little baby.
+**寓意：** Saying good night to the world is baby's little bedtime ritual — calm, cozy, and off to dreamland.
+
+---
+
+## 🔬 10月16日 — 🔬 Science Story (0-1 yr): Where Is the Moon in the Daytime?
+
+**2026年10月16日 · 星期四**
+
+The moon comes out at night,
+
+and disappears in the day.
+
+Does it go to sleep?
+
+No, no.
+
+The moon is often up there in daytime.
+
+But the sun is far too bright.
+
+Sunlight whitens the whole sky,
+
+and the moon's faint glow gets covered.
+
+Like a tiny flashlight under the noon sun — the moon is still there, only outshined.
+**寓意：** The moon is often in the sky during the day too; the sun is just so bright that its faint light gets washed out.
+
+---
+
+## 🔬 10月17日 — 🔬科学故事（0-1岁）：铃铛为什么会唱歌
+
+**2026年10月17日 · 星期五**
+
+小铃铛，圆肚皮。
+
+肚子里，住着小豆豆。
+
+铃铛一动，小豆豆跳。
+
+叮——撞一下左边，
+
+铃——撞一下右边。
+
+铃壁被撞得抖呀抖，
+
+抖得又快又欢。
+
+空气跟着抖，钻进耳朵。
+
+叮铃铃——歌声就来啦。大铃铛声音低，小铃铛声音高——每个铃铛都有自己的歌。
+**寓意：** 铃铛响是因为里面的小铃舌撞击铃壁，金属快速振动发出声音；铃越大越重，声音越低沉。
+
+---
+
+## 10月17日 — 小铃铛叮铃铃（0-1岁）
+
+**2026年10月17日 · 星期五**
+
+摇篮边，挂铃铛。
+
+亮晶晶，小小个。
+
+宝宝踢踢腿——叮铃铃。
+
+宝宝动动手——叮铃铃。
+
+打个哈欠——叮，铃。
+
+铃铛爱唱歌，
+
+宝宝爱听歌。
+
+一动一响，一动一响。
+
+小铃铛说：宝宝动一动，世界就回应你。晚安，明天继续唱。
+**寓意：** 小铃铛告诉宝宝：你的每个小动作，世界都会温柔地回应你。
+
+---
+
+## 10月17日 — Ding-a-Ling, Little Bell (0-1 yr)
+
+**2026年10月17日 · 星期五**
+
+By the crib, a little bell.
+
+Shiny, tiny, bright.
+
+Baby kicks — ding-a-ling!
+
+Baby waves — ding-a-ling!
+
+A yawn — ding, a-ling.
+
+The bell loves to sing,
+
+baby loves to listen.
+
+A move, a ring; a move, a ring.
+
+The bell says: every little move of yours, and the world answers. Good night — more songs tomorrow.
+**寓意：** The little bell tells baby: every small move of yours gets a gentle answer from the world.
+
+---
+
+## 🔬 10月17日 — 🔬 Science Story (0-1 yr): How a Bell Sings
+
+**2026年10月17日 · 星期五**
+
+The little bell has a round belly.
+
+Inside lives a tiny pea.
+
+The bell moves — the pea hops.
+
+Ding — it hits the left side,
+
+ling — it hits the right side.
+
+The metal wall quivers and quivers,
+
+fast and merry.
+
+The air quivers along, into our ears.
+
+Ding-a-ling — the song arrives! Big bells hum low, small bells ring high — every bell has its own song.
+**寓意：** A bell rings because its little clapper strikes the metal wall, making it quiver fast; bigger bells hum lower, smaller bells ring higher.
+
+---
+
 ## 🐱 黑猫当当历险记（系列连载）
 
 > 一只调皮的小黑猫当当，和姐姐白猫小不点、哥哥狸花猫八百，在爸爸妈妈的家里上演一集又一集温柔又好玩的冒险。每集都悄悄告诉孩子：要听爸爸妈妈的话。
@@ -6021,6 +8617,9 @@ Those colours were there the whole time, little one — just waiting for their t
 27. [9月19日 — 当当和大运河的风筝](#9月19日--当当和大运河的风筝)
 28. [9月26日 — 当当第一次见到小宝宝](#9月26日--当当第一次见到小宝宝)
 29. [9月30日 — 当当的轻手轻脚](#9月30日--当当的轻手轻脚)
+30. [10月3日 — 当当和小手](#10月3日--当当和小手)
+31. [10月10日 — 当当听宝宝咿呀](#10月10日--当当听宝宝咿呀)
+32. [10月17日 — 当当和第一次出门](#10月17日--当当和第一次出门)
 
 ---
 
@@ -6686,3 +9285,146 @@ Those colours were there the whole time, little one — just waiting for their t
 
 宝宝，守护不一定要做很大的事。有时候，安安静静地待在你身边，走路轻一点，声音轻一点，就是最好的守护了。晚安，我们的小小守护队。
 **故事小语：** 守护不一定要做很大的事：安安静静地待在你身边，也是一种守护。
+
+---
+
+## 10月3日 — 当当和小手
+
+**2026年10月3日 · 星期五** · 🐱 黑猫当当历险记
+
+下午的阳光，暖暖的。
+
+宝宝醒啦，躺在小床上。
+
+小手一挥，一挥，
+
+小手一抓，一抓，
+
+像在抓空气里的小鱼。
+
+当当趴在摇篮边，看住了。
+
+喵——宝宝真好玩。
+
+忽然，小手伸过来，
+
+朝着当当的尾巴，够呀够。
+
+当当想：动，还是不动？尾巴一摆，宝宝会吓一跳的。
+
+当当选了不动。
+
+它把尾巴尖，轻轻搁在小手边。
+
+小手抓住了！软软的，暖暖的。
+
+宝宝咯咯笑，抓着不撒手。
+
+妈妈轻手轻脚走过来，看见了，笑了：当当，你真好。
+
+当当眯起眼睛。
+
+尾巴尖借给宝宝当玩具，
+
+一动也不动。
+
+这是当当送给宝宝的、轻轻的礼物。
+**故事小语：** 轻轻的相遇要用轻轻的回应：当当一动不动，把尾巴尖借给了宝宝——这是它送给宝宝的第一个玩具。
+
+---
+
+## 10月10日 — 当当听宝宝咿呀
+
+**2026年10月10日 · 星期五** · 🐱 黑猫当当历险记
+
+早上，太阳照进小床。
+
+宝宝醒着，精神好。
+
+忽然——啊！
+
+咿——呀！
+
+哒——哒！
+
+没有人教，宝宝自己说得起劲。
+
+当当竖起耳朵。
+
+喵？宝宝在叫我吗？
+
+宝宝的小眼睛，转向当当。
+
+咿——呀！
+
+当当轻轻回一声：喵。
+
+咿——呀！喵。
+
+哒——哒！喵。
+
+一个说猫话，一个说宝宝话。
+
+谁也听不懂谁，谁也听得懂谁。
+
+爸爸举着手机，悄悄录下来。
+
+妈妈笑着说：这是你们俩的第一段对话呀。
+
+当当把尾巴卷好，
+
+又轻轻回了一声：喵。
+**故事小语：** 咿咿呀呀是宝宝最早的话；认真的听众，是最好的回应——当当轻轻回了一声「喵」。
+
+---
+
+## 10月17日 — 当当和第一次出门
+
+**2026年10月17日 · 星期五** · 🐱 黑猫当当历险记
+
+周六，天蓝蓝，风轻轻。
+
+爸爸推出小推车。
+
+妈妈把宝宝裹好，
+
+塞进软软的小窝。
+
+第一次出门晒太阳喽。
+
+当当跟在旁边，
+
+不前不后，正好。
+
+楼下，桂花开了，香香的。
+
+大金毛远远看见，
+
+摇着尾巴跑来——
+
+当当回头看摇篮，轻轻「喵」了一声：
+
+小声点，宝宝在睡觉。
+
+大金毛立刻放轻脚步，
+
+围着小车闻了闻，
+
+尾巴摇得慢慢的。
+
+树上的叶子飘下来一片，
+
+转个圈，落在宝宝盖被上。
+
+宝宝在梦里，咧嘴笑了。
+
+回家的时候，夕阳金灿灿。
+
+当当走在最前面，
+
+耳朵一转：家的方向。
+
+世界很大，慢慢认识——
+
+第一次出门，有全家陪着你呢。
+**故事小语：** 第一次认识世界，要有耐心的陪伴：走慢一点，看多一点，家的方向永远记得。
