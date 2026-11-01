@@ -10,5 +10,17 @@
       }
     ],
     "totalAdded": 0
+  },
+  {
+    "timestamp": "2026-11-01T21:32:28.680Z",
+    "mode": "--batch-only",
+    "results": [
+      {
+        "plan": "A",
+        "added": 0,
+        "note": "auto-unlocked at runtime"
+      }
+    ],
+    "totalAdded": 0
   }
 ]
