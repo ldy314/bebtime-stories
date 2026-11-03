@@ -10347,5 +10347,54 @@
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
     "episode": 34
+  },
+  {
+    "id": "2026-11-04-en",
+    "date": "2026年11月4日 · 星期三",
+    "dateShort": "11/04",
+    "title": "Good Night, Little Noo (0-1 yr)",
+    "language": "en",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1 yr",
+    "preview": "Little Noo is a small, fluffy creature who doesn't know who he is. He asks his friends, and they each tell him something different.",
+    "moral": "You are loved just as you are, and that is enough to know who you are.",
+    "content": [
+      "Little Noo is small and soft. He has two round eyes and a wiggly nose. But who is Little Noo? Hmm...",
+      "\"Moo-moo!\" says the cow. \"You are a moo-moo, like me!\" Little Noo tries to moo. \"Moo?\" he says. The cow laughs. \"No, no, you are not a moo-moo.\"",
+      "\"Baa-baa!\" says the sheep. \"You are a baa-baa, like me!\" Little Noo tries to baa. \"Baa?\" he says. The sheep giggles. \"No, no, you are not a baa-baa.\"",
+      "\"Quack-quack!\" says the duck. \"You are a quack-quack, like me!\" Little Noo tries to quack. \"Quack?\" he says. The duck chuckles. \"No, no, you are not a quack-quack.\"",
+      "Little Noo is sad. He does not moo. He does not baa. He does not quack. Who is Little Noo?",
+      "Then Mommy comes. She scoops Little Noo up. \"You are my Little Noo,\" she says. \"You are soft and sweet. You are my snuggle-buggle.\"",
+      "Little Noo smiles. He wiggles his nose. He is Little Noo. And Little Noo is loved.",
+      "Mommy rocks Little Noo. Rock, rock, rock. The stars twinkle. The moon glows. \"Good night, Little Noo,\" Mommy whispers. \"Good night, Mommy,\" says Little Noo. And they both fall fast asleep."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-11-04-cn",
+    "date": "2026年11月4日 · 星期三",
+    "dateShort": "11/04",
+    "title": "小狐狸的害怕（0-1岁）",
+    "language": "zh",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1岁",
+    "preview": "小狐狸有一个害怕，小小的，圆圆的。害怕藏在哪里呢？藏在黑黑的树洞后面。",
+    "moral": "害怕的时候，可以像小狐狸一样，把害怕说给妈妈听。妈妈抱一抱，害怕就变小了。",
+    "content": [
+      "小狐狸有一个害怕。小小的，圆圆的，像一颗小豆子。",
+      "害怕藏在哪里呢？藏在黑黑的树洞后面。呼——风一吹，树洞呜呜响。小狐狸的害怕，就咕噜咕噜滚出来。",
+      "小狐狸跑去找妈妈。哒哒哒，小脚丫踩在落叶上。妈妈，妈妈，我有一个害怕。",
+      "妈妈弯下腰，耳朵凑过来。嗯，妈妈听见了。害怕是什么样子的呀？",
+      "小狐狸说：黑黑的，圆圆的，会呜呜叫。妈妈说：来，妈妈抱一抱。",
+      "妈妈把小狐狸抱在怀里。软软的，暖暖的。妈妈轻轻拍：哦——哦——害怕不怕，害怕不怕。",
+      "小狐狸的害怕，慢慢变小了。从一颗小豆子，变成一粒小芝麻。",
+      "妈妈抱着小狐狸，走到树洞前。看，树洞里面有什么？小狐狸探头一看——呀，是一颗小松果。圆溜溜，胖乎乎。",
+      "原来，呜呜响的，是风在和小松果玩呢。小狐狸笑了。咯咯咯。",
+      "月亮升起来了，弯弯的，像一只小船。小狐狸躺在妈妈怀里，眼睛一眨一眨。",
+      "妈妈轻轻说：害怕的时候，告诉妈妈。妈妈抱一抱，害怕就变小了。",
+      "小狐狸闭上眼，呼吸慢慢匀了。呼——吸——，呼——吸——。",
+      "星星眨着眼睛，风轻轻吹过树洞。晚安，小狐狸。晚安，小松果。晚安，小小的害怕。"
+    ],
+    "category": "regular"
   }
 ]
