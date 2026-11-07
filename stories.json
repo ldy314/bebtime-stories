@@ -10643,5 +10643,58 @@
     "series": "dangdang",
     "seriesTitle": "黑猫当当历险记",
     "episode": 35
+  },
+  {
+    "id": "2026-11-08-en",
+    "date": "2026年11月8日 · 星期日",
+    "dateShort": "11/08",
+    "title": "The Little Cat's Sunny Spot (0-1 yr)",
+    "language": "en",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1 yr",
+    "preview": "On a warm sunny day, a little cat finds a soft, cozy spot. Baby and Mommy share a gentle surprise.",
+    "moral": "Kindness is as warm as sunshine — sharing a little spot makes everyone feel cozy.",
+    "content": [
+      "The sun is up. The day is warm. A little cat goes wandering. Pitter-patter, pitter-patter, goes the little cat.",
+      "\"Meow,\" says the little cat. \"Meow, meow.\" The little cat looks for a soft spot. A soft spot to rest.",
+      "The little cat sees a big green bush. \"Too prickly,\" says the little cat. \"Meow, meow.\" Pitter-patter, pitter-patter.",
+      "The little cat sees a tall tree. \"Too high,\" says the little cat. \"Meow, meow.\" Pitter-patter, pitter-patter.",
+      "The little cat sees a little red wagon. \"Too bumpy,\" says the little cat. \"Meow, meow.\" Pitter-patter, pitter-patter.",
+      "Then the little cat sees a warm, sunny step. A step by a door. The step is warm and soft. \"Meow,\" says the little cat. \"Meow, meow. This is cozy.\"",
+      "The little cat curls up. Curl, curl, curl. The sun shines down. Warm, warm, warm. The little cat closes its eyes. Purr, purr, purr.",
+      "Baby and Mommy come outside. Baby sees the little cat. \"Oh,\" says Baby. \"A cat!\"",
+      "Mommy says, \"Shh, the little cat is resting.\" Baby and Mommy sit down nearby. Quiet, quiet, quiet.",
+      "The little cat opens one eye. It sees Baby. It sees Mommy. The little cat purrs. Purr, purr, purr.",
+      "Baby reaches out a little hand. The little cat sniffs. Sniff, sniff. Then the little cat rubs its head on Baby's hand. Soft, soft, soft.",
+      "Baby laughs. \"Ha-ha!\" The little cat purrs louder. Purr, purr, purr.",
+      "Mommy says, \"The little cat likes you.\" Baby pats the little cat. Pat, pat, pat. The little cat closes its eyes again. Purr, purr, purr.",
+      "The sun is warm. The step is cozy. Baby and Mommy and the little cat sit together. Quiet, quiet, quiet.",
+      "Baby takes a deep breath. In and out. In and out. Baby feels warm and happy. The little cat feels warm and happy too.",
+      "The sun shines down. Warm, warm, warm. Everyone is cozy. Everyone is happy. The end."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-11-08-cn",
+    "date": "2026年11月8日 · 星期日",
+    "dateShort": "11/08",
+    "title": "郑和的宝船出海啦（0-1岁）",
+    "language": "zh",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1岁",
+    "preview": "港口停着一只大木船，船身宽宽，帆儿白白。郑和爷爷站船头，笑呵呵地说：出海喽！",
+    "moral": "大大的船，慢慢开，把好东西带给远方的朋友，心里暖暖的。",
+    "content": [
+      "港口停着一只大木船。船身宽宽，像一座小房子。帆儿白白，像一朵大云朵。",
+      "郑和爷爷站在船头，摸摸宝宝的头顶：出海喽——",
+      "哗啦，哗啦。船儿慢慢开。海风吹过来，呼呼，呼呼。",
+      "宝宝伸出小手手，接住一朵小浪花。浪花凉凉的，湿湿的，在掌心里痒痒地跳。",
+      "船舱里装着好多礼物。有滑滑的丝绸，软软的，摸一摸，像宝宝的头发。有香香的茶叶，闻一闻，像雨后的草地。还有圆圆的白瓷碗，敲一敲，叮叮当当，像小铃铛在唱歌。",
+      "郑和爷爷说：这些呀，都要送给远方的朋友。朋友收到礼物，会笑，会招手，会说：谢谢，谢谢！",
+      "海鸥飞过来，嘎嘎，嘎嘎，跟在船后面。宝宝拍拍手，海鸥拍拍翅膀。",
+      "太阳暖暖的，照在船板上，照在宝宝的脚丫上，照在郑和爷爷笑呵呵的脸上。",
+      "宝宝摸摸丝绸，滑滑的。闻闻茶叶，香香的。听听瓷碗，叮叮当当。宝宝呼——地舒一口气，眼睛眯成一条缝。"
+    ],
+    "category": "regular"
   }
 ]
