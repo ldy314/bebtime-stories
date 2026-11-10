@@ -10756,5 +10756,56 @@
       "贝壳轻轻和：早安，早安，沙沙沙。"
     ],
     "category": "regular"
+  },
+  {
+    "id": "2026-11-10-en",
+    "date": "2026年11月10日 · 星期二",
+    "dateShort": "11/10",
+    "title": "Good Night, Little Snore (0-1 yr)",
+    "language": "en",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1 yr",
+    "preview": "Daddy snores. Snore, snore, snore. Baby listens and giggles.",
+    "moral": "Familiar sounds at home are cozy and safe, and help us drift to sleep.",
+    "content": [
+      "Daddy lies on the big bed. His eyes are closed. His chest goes up and down.",
+      "Snore, snore, snore. Daddy snores. It sounds like a big, happy bear.",
+      "Baby sits on the rug. Baby hears the snore. Baby giggles. Hee, hee, hee.",
+      "Snore, snore, snore. Daddy snores again. Baby claps his hands. Clap, clap, clap.",
+      "Mommy comes in. She smiles. 'Shh, shh,' she says. 'Daddy is sleeping.'",
+      "But Daddy snores. Snore, snore, snore. Baby laughs. Ha, ha, ha.",
+      "Mommy picks up Baby. They sway and sway. Sway, sway, sway.",
+      "The snore goes soft. Snore... snore... snore. Like a sleepy little song.",
+      "Baby's eyes grow heavy. Blink, blink, blink. Mommy hums a tune. La, la, la.",
+      "Snore, snore, snore. Hum, hum, hum. The house is warm and cozy.",
+      "Baby yawns. Yawn, yawn, yawn. Mommy kisses Baby's nose. Mwah!",
+      "Good night, Baby. Good night, Daddy. Good night, little snore."
+    ],
+    "category": "regular"
+  },
+  {
+    "id": "2026-11-10-cn",
+    "date": "2026年11月10日 · 星期二",
+    "dateShort": "11/10",
+    "title": "小蜗牛慢慢爬（0-1岁）",
+    "language": "zh",
+    "ageGroup": "0-1",
+    "ageLabel": "0-1岁",
+    "preview": "小蜗牛背着圆圆的壳，慢慢爬。爬呀爬，爬到叶子上。",
+    "moral": "慢慢来，不着急，宝宝也有自己的小节奏。",
+    "content": [
+      "小蜗牛，慢慢爬。背上一个小圆壳，圆溜溜，亮光光。",
+      "爬呀爬，爬呀爬。沙沙沙，沙沙沙。叶子轻轻摇。",
+      "小蜗牛爬过一片绿叶子。绿叶子软软的，像小床。",
+      "爬呀爬，爬呀爬。滴答，滴答。露珠落下来，凉凉的。",
+      "小蜗牛停下来，触角伸一伸，缩一缩。嗯，好舒服。",
+      "爬呀爬，爬呀爬。呼——呼——风儿轻轻吹。",
+      "小蜗牛爬到一朵小花旁。小花红红的，香香的。",
+      "爬呀爬，爬呀爬。宝宝看着小蜗牛，眼睛眨呀眨。",
+      "小蜗牛慢慢爬，宝宝慢慢睡。",
+      "星星出来了，一闪一闪。小蜗牛缩进壳里，宝宝盖上小被子。",
+      "晚安，小蜗牛。晚安，宝宝。"
+    ],
+    "category": "regular"
   }
 ]
